@@ -1,0 +1,24 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model GA_ANKETA_BASE {
+  ABA_ID         Int               @id
+  ABA_INN        String
+  ABA_PHONE      String
+  gaAnketaOborot GA_ANKETA_OBOROT?
+}
+
+model GA_ANKETA_OBOROT {
+  ABO_ABA_ID    Int            @unique
+  ABO_OBOROT_AE Int
+  gaAnketaBase  GA_ANKETA_BASE @relation(fields: [ABO_ABA_ID], references: [ABA_ID])
+}
