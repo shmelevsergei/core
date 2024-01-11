@@ -15,6 +15,8 @@ model GA_ANKETA_BASE {
   ABA_INN        String
   ABA_PHONE      String
   gaAnketaOborot GA_ANKETA_OBOROT?
+
+  @@map("GA_ANKETA_BASE")
 }
 
 model GA_ANKETA_OBOROT {
