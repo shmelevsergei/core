@@ -26,6 +26,7 @@ model GA_ANKETA_BASE {
   @@id([ABA_ID])
   @@index([ABA_WSU_ID], map: "GA_ANKETA_BASE_ABA_ID_idx")
   @@index([ABA_WSU_ID], map: "GA_ANKETA_BASE_WSU_ID_idx")
+  @@ignore
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
@@ -82,6 +83,7 @@ model GA_ANKETA_ADDR {
 
   @@id([AAD_ABA_ID])
   @@index([AAD_ABA_ID])
+  @@ignore
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
