@@ -2,6 +2,7 @@
 import React from "react";
 import { TESelect } from "tw-elements-react";
 import {montes} from "@/app/administrator/components/mont/montes";
+import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select";
 
 type Data = {
     text: string,
@@ -12,10 +13,20 @@ const SelectBasicExample = () => {
 
 
     return (
-        <div className="flex justify-center">
-            <div className="relative mb-3 md:w-96 pt-5">
-                <TESelect data={data} className={'border-none'}/>
-            </div>
+        <div className="ml-auto">
+            <Select>
+                <SelectTrigger className="w-max">
+                    <SelectValue placeholder="ВЫБРАТЬ ПЕРИОД" />
+                </SelectTrigger>
+                <SelectContent>
+                    {
+                        data.map(item => (
+                            <SelectItem key={item.value} value={item.text}>{item.text}</SelectItem>
+                        ))
+                    }
+                </SelectContent>
+            </Select>
+
         </div>
     );
 }

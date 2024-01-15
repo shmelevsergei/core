@@ -2,12 +2,7 @@ import React from 'react'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import "tw-elements-react/dist/css/tw-elements-react.min.css";
-
-const inter = Inter({
-    subsets: ['latin'],
-    variable: '--font-inter'
-})
+import {cn} from "@/lib/utils";
 
 
 export const metadata: Metadata = {
@@ -15,14 +10,18 @@ export const metadata: Metadata = {
   description: 'Личный кабинет',
 }
 
+const inter = Inter({
+    subsets: ["latin"],
+    variable: "--font-inter",
+})
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="ru">
-      <body className={`${inter.variable} font-inter`}>
+    <html lang="ru" suppressHydrationWarning>
+      <body className={cn("font-inter antialiased", inter.variable)}>
         {children}
       </body>
     </html>

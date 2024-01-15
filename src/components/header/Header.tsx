@@ -2,9 +2,9 @@ import React from 'react';
 import Image from "next/image";
 
 import banner from '/public/banner-brands.png'
-import Search from "@/app/components/header/Search";
-import Question from "@/app/components/header/Question";
-import LogoutButton from "@/app/components/header/LogoutButton";
+import Search from "@/components/header/Search";
+import Question from "@/components/header/Question";
+import LogoutButton from "@/components/header/LogoutButton";
 const Header = () => {
     return (
         <header className={'min-h-16 bg-[#FCFCFF] shadow-base w-full'}>

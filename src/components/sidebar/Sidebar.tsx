@@ -3,9 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 import logo from '/public/logo-everycar.svg'
-import LinksSidebar from "@/app/components/linksSadebar/LiksSidebar";
+import LinksSidebar from "@/components/linksSadebar/LiksSidebar";
 
-import {reports, settings, questionnaires, shop} from "@/app/components/sidebar/linksSidebar";
+import {reports, settings, questionnaires, shop} from "@/components/sidebar/linksSidebar";
 
 const Sidebar = () => {
     return (

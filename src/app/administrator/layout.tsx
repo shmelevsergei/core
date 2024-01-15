@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Metadata } from 'next'
-import Sidebar from "@/app/components/sidebar/Sidebar";
-import Header from "@/app/components/header/Header";
+import Sidebar from "@/components/sidebar/Sidebar";
+import Header from "@/components/header/Header";
 
 
 export const metadata: Metadata = {
