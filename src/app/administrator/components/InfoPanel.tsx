@@ -15,8 +15,6 @@ const InfoPanel = () => {
                 <Brands/>
                 <Mont/>
             </div>
-
-
         </div>
     );
 };
