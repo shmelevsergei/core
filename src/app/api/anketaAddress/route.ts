@@ -6,9 +6,9 @@ const prisma = new PrismaClient();
 
 
 export async function GET(req: Request) {
-        // const data = await prisma.gA_ANKETA_ADDR.findMany()
-        // return NextResponse.json(data)
-        //
+        const data = await prisma.gA_ANKETA_ADDR.findMany()
+        return NextResponse.json(data)
+
         // try {
         //     const data = await prisma.gA_ANKETA_ADDR.findMany();
         //     response.status(200).json(data);
