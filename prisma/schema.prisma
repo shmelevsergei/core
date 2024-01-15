@@ -21,7 +21,7 @@ model GA_ANKETA_ADDR {
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model GA_ANKETA_BASE {
-  ABA_WSU_ID           BigInt   @default(0)
+  ABA_WSU_ID           Int      @default(0)
   ABA_STO_NAME         String
   ABA_STO_ID1          String
   ABA_REMZONA_QTY      Int      @default(0) @db.SmallInt
@@ -34,6 +34,7 @@ model GA_ANKETA_BASE {
   ABA_DATETIME         DateTime @db.Timestamp(6)
   ABA_STO_ID2          String
   ABA_STO_NAME_FIND    String
+
   //  @@ignore
   @@index([ABA_WSU_ID], map: "GA_ANKETA_BASE_ABA_ID_idx")
   @@index([ABA_WSU_ID], map: "GA_ANKETA_BASE_WSU_ID_idx")
@@ -54,6 +55,7 @@ model GA_ANKETA_BILETS {
   BIL_N8       String
   BIL_ABA_ID   BigInt   @id
   BIL_DATETIME DateTime @db.Timestamp(6)
+
   //  @@ignore
   @@index([BIL_ABA_ID])
   @@index([BIL_N1])
@@ -74,6 +76,7 @@ model GA_ANKETA_BRAND_IMG {
   ABI_NUM    Int    @db.SmallInt
   ABI_NAME   String
   ABI_PATH   String
+
   //  @@ignore
   @@index([ABI_ABA_ID])
 }
@@ -86,6 +89,7 @@ model GA_ANKETA_DIR {
   AIR_NAME3  String
   AIR_PHONE  String
   AIR_EMAIL  String
+
   //  @@ignore
   @@index([AIR_ABA_ID])
 }
@@ -100,6 +104,7 @@ model GA_ANKETA_DOGOVOR {
   ADO_EMAIL    String
   ADO_DATETIME DateTime @db.Timestamp(6)
   ADO_STATUS   Boolean
+
   //  @@ignore
   @@index([ADO_ABA_ID])
 }
@@ -141,6 +146,7 @@ model GA_ANKETA_OBOROT {
   ABO_OBOROT_NEXT                 Float?   @default(0) @db.Real
   ABO_SCORES_MONTH_PLAN_NEXT      Float    @default(0) @db.Real
   ABO_ABA_REMZONA_QTY             Int?     @db.SmallInt
+
   //  @@ignore
   @@index([ABO_ABA_ID, ABO_DATETIME], map: "GA_ANKETA_OBOROT_ABO_ABA_ID_ABA_DATETIME_idx")
   @@index([ABO_ABA_ID])
@@ -255,6 +261,7 @@ model GA_ANKETA_OBOROT_BRANDS {
   AOB_50012_21    Float    @default(0) @db.Real
   AOB_50013_21    Float    @default(0) @db.Real
   AOB_50014_21    Float    @default(0) @db.Real
+
   //  @@ignore
   @@index([AOB_ABA_ID])
 }
@@ -406,6 +413,7 @@ model GA_ANKETA_OBOROT_COUNTS {
   AOC_50012_21    Int      @default(0)
   AOC_50013_21    Int      @default(0)
   AOC_50014_21    Int      @default(0)
+
   //  @@ignore
   @@index([AOC_ABA_ID])
 }
@@ -506,6 +514,7 @@ model GA_SUP_50012_SELLOUT {
   SPR_CLIENT_ID    String
   SPR_CLIENT_CODE2 String
   SPR_ADDR_ENC     String
+
   //  @@ignore
   @@index([SPR_ADDR_ENC])
   @@index([SPR_BRAND, SPR_ARTICLE])
@@ -536,6 +545,7 @@ model GA_SUP_50013_SELLOUT {
   SPR_CLIENT_ID    String
   SPR_CLIENT_CODE2 String
   SPR_ADDR_ENC     String
+
   //  @@ignore
   @@index([SPR_ADDR_ENC])
   @@index([SPR_BRAND, SPR_ARTICLE])
@@ -566,6 +576,7 @@ model GA_SUP_50014_SELLOUT {
   SPR_CLIENT_ID    String
   SPR_CLIENT_CODE2 String
   SPR_ADDR_ENC     String
+
   //  @@ignore
   @@index([SPR_ADDR_ENC])
   @@index([SPR_BRAND, SPR_ARTICLE])
