@@ -1,4 +1,4 @@
-import Brands from "@/app/administrator/components/Brands";
+import Brands from "@/app/administrator/components/infoPanel/Brands";
 import Mont from "@/app/administrator/components/mont/Mont";
 
 
