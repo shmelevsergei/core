@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru" suppressHydrationWarning>
-      <body className={cn("font-inter antialiased max-w-[1280px] mx-auto", inter.variable)}>
+      <body className={cn("font-inter antialiased", inter.variable)}>
         {children}
       </body>
     </html>

@@ -15,7 +15,7 @@ export default function Layout({
     children: React.ReactNode
 }) {
     return (
-        <div className={'flex h-screen'}>
+        <div className={'flex h-screen max-w-[1280px] mx-auto '}>
             <div>
                 <Sidebar/>
             </div>
