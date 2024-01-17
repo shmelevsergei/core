@@ -1,5 +1,4 @@
 
-
 export const montes = [
     { text: "Январь", value: 1 },
     { text: "Февраль", value: 2 },

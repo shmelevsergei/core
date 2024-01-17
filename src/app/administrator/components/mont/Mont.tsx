@@ -1,6 +1,5 @@
 'use client'
 import React from "react";
-import { TESelect } from "tw-elements-react";
 import {montes} from "@/app/administrator/components/mont/montes";
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select";
 

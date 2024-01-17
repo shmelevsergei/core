@@ -4,7 +4,7 @@ export const reports = {
     linkButton: 'Отчеты',
     linksList:[
         {
-            href: "",
+            href: "/administrator/no_address/",
             text: "СТО без адреса"
         },
         {

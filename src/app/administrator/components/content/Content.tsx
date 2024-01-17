@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from "@/app/administrator/components/content/Card";
-import Info from "@/app/administrator/components/info/Info";
 
 const Content = () => {
     return (
