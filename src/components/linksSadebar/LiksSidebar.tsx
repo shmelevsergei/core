@@ -27,7 +27,7 @@ export const LinksSidebar = ({links} : {links: Links}) => {
                         <AccordionContent className={cn('pl-4 flex flex-col gap-2')}>
                             {
                                 links.linksList.map((link, idx)=>(
-                                    <Link key={idx} href={link.href} target={'_blank'}>{link.text}</Link>
+                                    <Link key={idx} href={link.href}>{link.text}</Link>
                                 ))
                             }
                         </AccordionContent>

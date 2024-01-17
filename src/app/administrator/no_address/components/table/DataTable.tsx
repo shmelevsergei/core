@@ -24,7 +24,7 @@ const DataTable = () => {
                                 <TableCell className="font-medium">{idx + 1}</TableCell>
                                 <TableCell>{name}</TableCell>
                                 <TableCell>
-                                    <Link href={`/administrator/no_address/${id}`}>{id}</Link>
+                                    <Link href={`/administrator/no_address/${id}`} target={'_blank'}>{id}</Link>
                                 </TableCell>
                             </TableRow>
                         ))
