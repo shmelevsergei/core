@@ -1,6 +1,5 @@
 import React from 'react';
 import {dataInfo, DataInfo} from "@/app/administrator/no_address/[id]/components/info/dataInfo";
-import {searchParamsToUrlQuery} from "next/dist/shared/lib/router/utils/querystring";
 
 
 
