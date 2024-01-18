@@ -1,4 +1,4 @@
-export interface AnketaDogovorRepository {
+export interface IAnketaDogovorRepository {
     ADO_ABA_ID: bigint;
     ADO_NAME1: string;
     ADO_NAME2: string;
