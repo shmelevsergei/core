@@ -11,5 +11,7 @@ export interface IAnketaBaseRepository {
     ABA_ID: bigint;
     ABA_DATETIME: Date;
     ABA_STO_ID2: string;
-    ABA_STO_NAME_FIND: string | null;
+    ABA_STO_NAME_FIND?: string | null;
 }
+
+
