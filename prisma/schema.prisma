@@ -9,7 +9,7 @@ datasource db {
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model GA_ANKETA_ADDR {
-  AAD_ABA_ID  Int    @id
+  AAD_ABA_ID  BigInt @id
   AAD_SHIROTA String
   AAD_DOLGOTA String
   AAD_OBLAST  String
@@ -21,7 +21,7 @@ model GA_ANKETA_ADDR {
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model GA_ANKETA_BASE {
-  ABA_WSU_ID           Int      @default(0)
+  ABA_WSU_ID           BigInt   @default(0)
   ABA_STO_NAME         String
   ABA_STO_ID1          String
   ABA_REMZONA_QTY      Int      @default(0) @db.SmallInt
@@ -33,9 +33,8 @@ model GA_ANKETA_BASE {
   ABA_ID               BigInt   @unique
   ABA_DATETIME         DateTime @db.Timestamp(6)
   ABA_STO_ID2          String
-  ABA_STO_NAME_FIND    String
+  ABA_STO_NAME_FIND    String?
 
-  //  @@ignore
   @@index([ABA_WSU_ID], map: "GA_ANKETA_BASE_ABA_ID_idx")
   @@index([ABA_WSU_ID], map: "GA_ANKETA_BASE_WSU_ID_idx")
 }
@@ -105,7 +104,6 @@ model GA_ANKETA_DOGOVOR {
   ADO_DATETIME DateTime @db.Timestamp(6)
   ADO_STATUS   Boolean
 
-  //  @@ignore
   @@index([ADO_ABA_ID])
 }
 
@@ -147,7 +145,6 @@ model GA_ANKETA_OBOROT {
   ABO_SCORES_MONTH_PLAN_NEXT      Float    @default(0) @db.Real
   ABO_ABA_REMZONA_QTY             Int?     @db.SmallInt
 
-  //  @@ignore
   @@index([ABO_ABA_ID, ABO_DATETIME], map: "GA_ANKETA_OBOROT_ABO_ABA_ID_ABA_DATETIME_idx")
   @@index([ABO_ABA_ID])
 }

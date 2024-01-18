@@ -1,7 +1,14 @@
 import React from 'react';
 import Card from "@/app/administrator/components/content/Card";
+import {anketaOborot} from "@/api/anketa_oborot";
+import {formattedNumber} from "@/lib/formatNumber";
 
-const Content = () => {
+
+
+const Content = async () => {
+
+    const data = await anketaOborot.getAnketaOborot();
+
     return (
         <div className={'grid grid-cols-3 gap-y-3 gap-x-4 justify-center items-center px-3'}>
             <Card text={'Всего, руб. (динамика)'} count={'1 250 356'} percent={'+-40%'} />
