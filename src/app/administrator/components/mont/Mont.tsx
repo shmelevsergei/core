@@ -2,31 +2,22 @@
 import React from "react";
 import {montes} from "@/app/administrator/components/mont/montes";
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select";
+import DatePickerWithRange from "@/components/ui/DataRangePicker";
 
 type Data = {
     text: string,
     value: number
 }
-const SelectBasicExample = () => {
+const Mont = () => {
     const data:Data[] = montes
 
 
     return (
-        <div className="ml-auto">
-            <Select>
-                <SelectTrigger className="w-max">
-                    <SelectValue placeholder="ВЫБРАТЬ ПЕРИОД" />
-                </SelectTrigger>
-                <SelectContent>
-                    {
-                        data.map(item => (
-                            <SelectItem key={item.value} value={item.text}>{item.text}</SelectItem>
-                        ))
-                    }
-                </SelectContent>
-            </Select>
+        <div className="ml-auto flex items-center gap-1">
+            <p className={'font-black text-[#000] uppercase'}>ВЫБРАТЬ ПЕРИОД: </p>
+            <DatePickerWithRange/>
 
         </div>
     );
 }
-export default SelectBasicExample
+export default Mont

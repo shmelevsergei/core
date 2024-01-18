@@ -9,6 +9,15 @@ const Content = async () => {
 
     const data = await anketaOborot.getAnketaOborot();
 
+    const oborot = data.reduce((acc, item) => {
+       return acc + item.ABO_OBOROT_ALL
+    },0)
+
+
+
+    const formattedOborot = formattedNumber(Math.round(oborot));
+
+    console.log(formattedOborot);
     return (
         <div className={'grid grid-cols-3 gap-y-3 gap-x-4 justify-center items-center px-3'}>
             <Card text={'Всего, руб. (динамика)'} count={'1 250 356'} percent={'+-40%'} />
