@@ -1,7 +1,7 @@
 import {cache} from "react";
 import {prisma} from "@/lib/db";
 import  {IAnketaBaseRepository} from "@/repository/anketaBase.repository";
-import {Prisma, PrismaPromise} from ".prisma/client";
+import {Prisma} from ".prisma/client";
 import {DefaultArgs, GetResult} from "prisma/prisma-client/runtime/library";
 
 const transformData = (data: Prisma.PrismaPromise<GetResult<Prisma.$GA_ANKETA_BASEPayload<DefaultArgs>, {
