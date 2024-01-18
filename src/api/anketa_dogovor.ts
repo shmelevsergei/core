@@ -5,7 +5,8 @@ import {DefaultArgs, GetResult} from "prisma/prisma-client/runtime/library";
 import {IAnketaDogovorRepository} from "@/repository/anketaDogovor.repository";
 
 
-const transformData = (data: Prisma.PrismaPromise<GetResult<Prisma.$GA_ANKETA_DOGOVORPayload<DefaultArgs>,{},
+const transformData = (data: Prisma.PrismaPromise<GetResult<Prisma.$GA_ANKETA_DOGOVORPayload<DefaultArgs>,
+    {},
     "findMany">>): Promise<IAnketaDogovorRepository[]> => {
     return data.then((items) => {
         return items.map((item) => ({

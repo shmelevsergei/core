@@ -4,9 +4,9 @@ import  {IAnketaBaseRepository} from "@/repository/anketaBase.repository";
 import {Prisma} from ".prisma/client";
 import {DefaultArgs, GetResult} from "prisma/prisma-client/runtime/library";
 
-const transformData = (data: Prisma.PrismaPromise<GetResult<Prisma.$GA_ANKETA_BASEPayload<DefaultArgs>, {
-    where: { ABA_ENABLED: boolean }
-}, "findMany">>): Promise<IAnketaBaseRepository[]> => {
+const transformData = (data: Prisma.PrismaPromise<GetResult<Prisma.$GA_ANKETA_BASEPayload<DefaultArgs>,
+    {}, 
+    "findMany">>): Promise<IAnketaBaseRepository[]> => {
     return data.then((items) => {
         return items.map((item) => ({
             ABA_WSU_ID: item.ABA_WSU_ID as unknown as bigint,
