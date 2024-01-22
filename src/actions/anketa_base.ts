@@ -35,7 +35,6 @@ class AnketaBase {
         }))
     );
 
-
     getAnketaBaseEnabledCurrentMonth = cache(():Promise<IAnketaBaseRepository[]> =>
         transformData(prisma.gA_ANKETA_BASE.findMany({
             where: {

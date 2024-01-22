@@ -1,10 +1,10 @@
 "use client"
 
-import * as React from "react"
-import {addDays, format, Locale, Localize} from "date-fns"
+import {HTMLAttributes, useEffect, useState} from "react";
+import {addDays, format } from "date-fns"
 import { Calendar as CalendarIcon } from "lucide-react"
 import { DateRange } from "react-day-picker"
-import ruLocale, {ru} from 'date-fns/locale/ru';
+import {ru} from 'date-fns/locale/ru';
 
 
 import { cn } from "@/lib/utils"
@@ -15,13 +15,33 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from "@/components/ui/popover"
+import {useAdministratorState} from "@/app/administrator/store/administrator.context";
 
 
-export default function DatePickerWithRange({ className }: React.HTMLAttributes<HTMLDivElement>) {
-    const [date, setDate] = React.useState<DateRange | undefined>({
+interface IDatePickerWithRange {
+    className?: HTMLAttributes<HTMLDivElement>;
+    changeDate?: boolean;
+}
+
+
+export default function DatePickerWithRange({ className, changeDate }: IDatePickerWithRange) {
+
+
+    const [date, setDate] = useState<DateRange | undefined>({
         from: new Date(2023, 11, 1),
         to: addDays(new Date(2023, 11, 31), 0),
     })
+
+    const {setState} = useAdministratorState()
+
+    useEffect(() => {
+        if (changeDate) {
+            setState(prevState => ({
+                ...prevState,
+                currentDate: date,
+            }))
+        }
+    }, [changeDate]);
 
     return (
         <div className={cn("grid gap-2", className)}>

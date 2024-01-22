@@ -1,22 +1,30 @@
 'use client'
-import React from "react";
-import {montes} from "@/app/administrator/components/mont/montes";
-import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select";
+import React, {useState} from "react";
 import DatePickerWithRange from "@/components/ui/DataRangePicker";
+import {Button} from "@/components/ui/button";
 
-type Data = {
-    text: string,
-    value: number
-}
 const Mont = () => {
-    const data:Data[] = montes
+    const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+    const [changeDate, setChangeDate] = useState(false)
 
+    const clickHandler = () => {
+        if (!isButtonDisabled) {
+            setIsButtonDisabled(true);
+
+            setTimeout(() => {
+                setIsButtonDisabled(false);
+                setChangeDate(false);
+            }, 2000);
+        }
+        if (!changeDate) {
+            setChangeDate(true);
+        }
+    }
 
     return (
         <div className="ml-auto flex items-center gap-1">
-            <p className={'font-black text-[#000] uppercase'}>ВЫБРАТЬ ПЕРИОД: </p>
-            <DatePickerWithRange/>
-
+            <DatePickerWithRange changeDate={changeDate}/>
+            <Button className={''} onClick={() => clickHandler()} disabled={isButtonDisabled}>Выбрать период</Button>
         </div>
     );
 }

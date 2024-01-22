@@ -1,9 +1,9 @@
+
 import Brands from "@/app/administrator/components/infoPanel/Brands";
 import Mont from "@/app/administrator/components/mont/Mont";
-import {anketaOborot} from "@/api/anketa_oborot";
 import {formattedNumber} from "@/lib/formatNumber";
-import {anketaBase} from "@/api/anketa_base";
-import {anketaDogovor} from "@/api/anketa_dogovor";
+import {anketaBase} from "@/actions/anketa_base";
+import {anketaDogovor} from "@/actions/anketa_dogovor";
 
 
 const InfoPanel = async () => {
