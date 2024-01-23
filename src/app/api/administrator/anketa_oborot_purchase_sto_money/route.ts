@@ -8,15 +8,17 @@ export async function GET(req: NextRequest, res: NextResponse) {
     const startDateParam = urlSearchParams.get('startDate');
     const endDateParam = urlSearchParams.get('endDate');
 
-    console.log(startDateParam, endDateParam)
+
     // Преобразуем строки в объекты типа Date
     const startDate = startDateParam ? new Date(startDateParam) : undefined;
     const endDate = endDateParam ? new Date(endDateParam) : undefined;
 
     // Вызываем ваш метод для получения данных
-    const result = await anketaOborot.getAnketaOborot({ startDate, endDate });
+    const result = await anketaOborot.getAnketaOborotPurchaseSto({startDate, endDate});
 
-    console.log(result)
+    const replace = (_: string, value: any) => {
+        return typeof value === "bigint"? value.toString() : value;
+    };
     // Отправляем данные в виде JSON-ответа
-    return NextResponse.json(result);
+    return NextResponse.json(JSON.stringify(result, replace));
 }

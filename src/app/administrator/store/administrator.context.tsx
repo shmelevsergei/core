@@ -4,6 +4,12 @@ import {DateRange} from "react-day-picker";
 
 type AdministratorStateType = {
     currentDate: DateRange | undefined,
+    updateContentInfo: boolean,
+    prevOborot: number,
+    oborot: number,
+    totalSto: number,
+    purchaseSto: number,
+    prevPurchaseSto: number,
 }
 
 const AdministratorStateContext = createContext<{
@@ -25,6 +31,12 @@ export const AdministratorProvider:FC<IAdministratorStateProvider> = ({children}
                 from: new Date(new Date().getFullYear(), new Date().getMonth() - 1, 1),
                 to: new Date(new Date().getFullYear(), new Date().getMonth(), 1),
             },
+            updateContentInfo: false,
+            prevOborot: 0,
+            oborot: 0,
+            totalSto: 0,
+            purchaseSto: 0,
+            prevPurchaseSto: 0,
         }
     });
     return (

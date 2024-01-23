@@ -1,0 +1,31 @@
+'use client'
+import React, {useEffect, useState} from 'react';
+import Card from "./Card";
+import {useAdministratorState} from "@/app/administrator/store/administrator.context";
+import {formattedNumber} from "@/lib/formatNumber";
+
+
+
+const PurchasePerMoney = () => {
+    const {state} = useAdministratorState()
+    const [perMoney, setPerMoney] = useState(0)
+    const [prevPerMoney, setPrevPerMoney] = useState(0)
+    const [percent, setPercent] = useState(0)
+
+    useEffect(() => {
+        setPerMoney(state?.oborot / state?.totalSto)
+        setPrevPerMoney(state?.prevOborot / state?.totalSto)
+    }, [state?.oborot, state?.prevOborot, state?.totalSto])
+
+    useEffect(() => {
+        if (prevPerMoney && perMoney) {
+            setPercent((perMoney - prevPerMoney) / prevPerMoney * 100)
+        }
+    }, [prevPerMoney, perMoney])
+
+    return (
+        <Card text={'Средняя закупка на 1 СТО, руб. (динамика)'} count={formattedNumber(Math.round(perMoney)) } percent={percent} />
+    );
+};
+
+export default PurchasePerMoney;

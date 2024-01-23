@@ -22,7 +22,7 @@ const transformData = (data: Prisma.PrismaPromise<GetResult<Prisma.$GA_ANKETA_DO
     });
 }
 class AnketaDogovor {
-    getAnketaDogovor = cache(():Promise<IAnketaDogovorRepository[]> => transformData(prisma.gA_ANKETA_DOGOVOR.findMany({
+    getAnketaDogovorTrue = cache(():Promise<IAnketaDogovorRepository[]> => transformData(prisma.gA_ANKETA_DOGOVOR.findMany({
         where: {
             ADO_STATUS: true
         }

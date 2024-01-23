@@ -24,7 +24,7 @@ interface IDatePickerWithRange {
 }
 
 
-export default function DatePickerWithRange({ className, changeDate }: IDatePickerWithRange) {
+export default function DatePickerWithRange({ className }: IDatePickerWithRange) {
 
 
     const [date, setDate] = useState<DateRange | undefined>({
@@ -35,13 +35,11 @@ export default function DatePickerWithRange({ className, changeDate }: IDatePick
     const {setState} = useAdministratorState()
 
     useEffect(() => {
-        if (changeDate) {
-            setState(prevState => ({
-                ...prevState,
-                currentDate: date,
-            }))
-        }
-    }, [changeDate]);
+        setState(prevState => ({
+            ...prevState,
+            currentDate: date,
+        }))
+    }, [date]);
 
     return (
         <div className={cn("grid gap-2", className)}>
