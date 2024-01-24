@@ -1,8 +1,9 @@
-import Card from "./Card";
 import Oborot from "./Oborot";
 import PurchasePerMoney from "./PurchasePerMoney";
 import WithPurchaseSto from "./WithPurchaseSto";
 import PurchasePerCount from "./PurchasePerCount";
+import PurchasePerMoneyQty from "@/app/administrator/components/content/PurchasePerMoneyQty";
+import PurchasePerCountQty from "./PurchasePerCountQty";
 const Content = () => {
 
     return (
@@ -11,8 +12,8 @@ const Content = () => {
             <PurchasePerMoney />
             <PurchasePerCount/>
             <WithPurchaseSto />
-            <Card text={'Средняя закупка на 1 подъемник, руб. (динамика)'} count={'81 967'} percent={0} />
-            <Card text={'Средняя закупка на 1 подъемник, шт. (динамика)'} count={'685'} percent={0} />
+            <PurchasePerMoneyQty />
+            <PurchasePerCountQty />
         </div>
 
     );

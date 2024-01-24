@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import Card from "@/app/administrator/components/content/Card";
 import {useAdministratorState} from "@/app/administrator/store/administrator.context";
 import {fetchAnketaOborotFromDate} from "@/lib/routs/fetchAnketaOborot";
-import {formattedNumber} from "@/lib/formatNumber";
+import {formattedNumber} from "@/lib/formulas/formatNumber";
 
 const Oborot = () => {
 

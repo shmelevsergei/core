@@ -1,19 +1,11 @@
 import {anketaOborot} from "@/actions/anketa_oborot";
 import {NextRequest, NextResponse} from "next/server";
+import {fetchUrlParamDate} from "@/lib/server/fetchUrlParam";
 
-export async function GET(req: NextRequest, res: NextResponse) {
-    const urlSearchParams = req.nextUrl.searchParams;
+export async function GET(req: NextRequest) {
+    const {startDate, endDate} = fetchUrlParamDate(req)
 
-    // Получаем параметры startDate и endDate из URL-запроса
-    const startDateParam = urlSearchParams.get('startDate');
-    const endDateParam = urlSearchParams.get('endDate');
-
-
-    // Преобразуем строки в объекты типа Date
-    const startDate = startDateParam ? new Date(startDateParam) : undefined;
-    const endDate = endDateParam ? new Date(endDateParam) : undefined;
-
-    // Вызываем ваш метод для получения данных
+    // Вызываем ваш метод для получения ответа
     const result = await anketaOborot.getAnketaOborot({ startDate, endDate });
 
     // Отправляем данные в виде JSON-ответа

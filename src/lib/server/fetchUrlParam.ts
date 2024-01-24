@@ -1,7 +1,7 @@
-import {anketaOborot} from "@/actions/anketa_oborot";
-import {NextRequest, NextResponse} from "next/server";
+import {NextRequest} from "next/server";
 
-export async function GET(req: NextRequest, res: NextResponse) {
+export const fetchUrlParamDate = (req: NextRequest)=> {
+
     const urlSearchParams = req.nextUrl.searchParams;
 
     // Получаем параметры startDate и endDate из URL-запроса
@@ -13,9 +13,6 @@ export async function GET(req: NextRequest, res: NextResponse) {
     const startDate = startDateParam ? new Date(startDateParam) : undefined;
     const endDate = endDateParam ? new Date(endDateParam) : undefined;
 
-    // Вызываем ваш метод для получения данных
-    const result = await anketaOborot.getAnketaOborotPurchaseStoCount({startDate, endDate});
 
-    // Отправляем данные в виде JSON-ответа
-    return NextResponse.json(result);
+    return {startDate, endDate};
 }

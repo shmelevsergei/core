@@ -5,6 +5,7 @@ import {IAnketaBaseRepository} from "@/repository/anketaBase.repository";
 import {fetchAnketaDogovor} from "@/lib/routs/fetchAnketaDogovor";
 import {IAnketaDogovorRepository} from "@/repository/anketaDogovor.repository";
 import { useAdministratorState } from "@/app/administrator/store/administrator.context";
+import {formattedNumber} from "@/lib/formulas/formatNumber";
 
 
 
@@ -49,10 +50,10 @@ const AllBrands = () => {
 
     return (
         <div className={'text-[#020944] text-xl flex flex-col gap-3'}>
-            <p className={' font-extrabold'}>ВСЕГО СТО - {allBrands?.length} (новички - {newsBrands?.length})</p>
+            <p className={' font-extrabold'}>ВСЕГО СТО - {formattedNumber(allBrands?.length)} (новички - {formattedNumber(newsBrands?.length)})</p>
             <p className={'font-medium'}>
                 Оферта подписана
-                - {dogovorTrue.length} ({((dogovorTrue.length / allBrands.length) * 100).toFixed(1)}%) </p>
+                - {formattedNumber(dogovorTrue.length)} ({((dogovorTrue.length / allBrands.length) * 100).toFixed(1)}%) </p>
             <p className={'font-medium'}>Среднее кол-во подъемников - {
                ((allBrands.reduce((acc, item) => {
                     return acc + item.ABA_REMZONA_QTY

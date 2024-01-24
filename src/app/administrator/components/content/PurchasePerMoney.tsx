@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react';
 import Card from "./Card";
 import {useAdministratorState} from "@/app/administrator/store/administrator.context";
-import {formattedNumber} from "@/lib/formatNumber";
+import {formattedNumber} from "@/lib/formulas/formatNumber";
 
 
 
@@ -11,6 +11,7 @@ const PurchasePerMoney = () => {
     const [perMoney, setPerMoney] = useState(0)
     const [prevPerMoney, setPrevPerMoney] = useState(0)
     const [percent, setPercent] = useState(0)
+    const [totalMoney, setTotalMoney] = useState(0)
 
     useEffect(() => {
         setPerMoney(state?.oborot / state?.totalSto)
@@ -20,11 +21,12 @@ const PurchasePerMoney = () => {
     useEffect(() => {
         if (prevPerMoney && perMoney) {
             setPercent((perMoney - prevPerMoney) / prevPerMoney * 100)
+            setTotalMoney(Math.round(perMoney))
         }
     }, [prevPerMoney, perMoney])
 
     return (
-        <Card text={'Средняя закупка на 1 СТО, руб. (динамика)'} count={formattedNumber(Math.round(perMoney)) } percent={percent} />
+        <Card text={'Средняя закупка на 1 СТО, руб. (динамика)'} count={formattedNumber(totalMoney) } percent={percent} />
     );
 };
 

@@ -5,7 +5,7 @@ import Card from "./Card";
 import { useAdministratorState } from '../../store/administrator.context';
 import { fetchAnketaOborotPurchaseStoMoney} from "@/lib/routs/fetchAnketaOborot";
 import {IAnketaBaseRepository} from "@/repository/anketaBase.repository";
-import {formattedNumber} from "@/lib/formatNumber";
+import {formattedNumber} from "@/lib/formulas/formatNumber";
 
 const WithPurchaseSto = () => {
     const [purchaseSto, setPurchaseSto] = useState<IAnketaBaseRepository[]>([])

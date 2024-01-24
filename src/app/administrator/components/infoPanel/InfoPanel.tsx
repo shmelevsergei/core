@@ -1,7 +1,7 @@
 
 import Brands from "@/app/administrator/components/infoPanel/Brands";
 import Mont from "@/app/administrator/components/mont/Mont";
-import {formattedNumber} from "@/lib/formatNumber";
+import {formattedNumber} from "@/lib/formulas/formatNumber";
 import {anketaBase} from "@/actions/anketa_base";
 import {anketaDogovor} from "@/actions/anketa_dogovor";
 import AllBrands from "@/app/administrator/components/infoPanel/AllBrands";
