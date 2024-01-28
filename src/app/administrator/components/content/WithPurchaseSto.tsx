@@ -1,7 +1,7 @@
 'use client'
 
 import React, {useEffect, useState} from 'react';
-import Card from "./Card";
+import UiCard from "./ui-card";
 import { useAdministratorState } from '../../store/administrator.context';
 import { fetchAnketaOborotPurchaseStoMoney} from "@/lib/routs/fetchAnketaOborot";
 import {IAnketaBaseRepository} from "@/repository/anketaBase.repository";
@@ -72,7 +72,7 @@ const WithPurchaseSto = () => {
 
 
     return (
-        <Card text={'Кол-во СТО с закупкой'} count={formattedNumber(purchaseSto.length) } percent={percent} />
+        <UiCard text={'Кол-во СТО с закупкой'} count={formattedNumber(purchaseSto.length) } percent={percent} />
     );
 };
 

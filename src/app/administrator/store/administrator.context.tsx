@@ -8,12 +8,14 @@ type AdministratorStateType = {
     prevOborot: number,
     oborot: number,
     totalSto: number,
+    dogovorTrue: number,
     purchaseSto: number,
     prevPurchaseSto: number,
     purchaseStoCount: number,
     prevPurchaseStoCount: number,
     remzonaQty: number,
     prevRemzonaQty: number,
+
 }
 
 const AdministratorStateContext = createContext<{
@@ -39,6 +41,7 @@ export const AdministratorProvider:FC<IAdministratorStateProvider> = ({children}
             prevOborot: 0,
             oborot: 0,
             totalSto: 0,
+            dogovorTrue: 0,
             purchaseSto: 0,
             prevPurchaseSto: 0,
             purchaseStoCount: 0,

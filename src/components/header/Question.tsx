@@ -1,10 +1,9 @@
 import React from 'react';
+import {Button} from "@/components/ui/button";
 
 const Question = () => {
     return (
-        <button>
-            Задать вопрос
-        </button>
+        <Button variant="ghost">Задать вопрос</Button>
     );
 };
 

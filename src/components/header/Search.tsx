@@ -1,8 +1,10 @@
 import React from 'react';
+import {Input} from "@/components/ui/input";
+import {cn} from "@/lib/utils";
 
 const Search = () => {
     return (
-            <input placeholder={'НАЙТИ СТО'} className={'bg-[#E7E7E7] shadow-base py-2.5 px-3.5 h-max text-sm text-[#000] placeholder:text-[#000] leading-[100%] min-w-[300px]'}/>
+            <Input type={'text'} placeholder={'НАЙТИ СТО'} className={cn('mr-2')}/>
         )
 };
 

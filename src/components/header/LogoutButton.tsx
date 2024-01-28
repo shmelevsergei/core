@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
 import {useRouter} from "next/navigation";
+import {Button} from "@/components/ui/button";
 
 const LogoutButton = () => {
     const redirect = useRouter()
@@ -9,9 +10,7 @@ const LogoutButton = () => {
         redirect.push('/')
     }
     return (
-        <button onClick={handleClick}>
-            Выйти
-        </button>
+        <Button variant="outline" onClick={handleClick}>Выйти</Button>
     );
 };
 

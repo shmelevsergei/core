@@ -1,6 +1,6 @@
 'use client'
 import React, {useEffect, useState} from 'react';
-import Card from "@/app/administrator/components/content/Card";
+import UiCard from "@/app/administrator/components/content/ui-card";
 import {useAdministratorState} from "@/app/administrator/store/administrator.context";
 import {fetchAnketaOborotFromDate} from "@/lib/routs/fetchAnketaOborot";
 import {formattedNumber} from "@/lib/formulas/formatNumber";
@@ -64,7 +64,7 @@ const Oborot = () => {
     }, [prevOborot, oborot])
 
     return (
-        <Card text={'Всего, руб. (динамика)'} count={formattedNumber(Math.round(oborot))} percent={percent} />
+        <UiCard text={'Всего, руб. (динамика)'} count={formattedNumber(Math.round(oborot))} percent={percent} />
     );
 };
 

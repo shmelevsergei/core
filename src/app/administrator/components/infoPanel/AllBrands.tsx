@@ -38,6 +38,10 @@ const AllBrands = () => {
         const response = await fetchAnketaDogovor();
 
         const data = await JSON.parse(response);
+        setState(prevState => ({
+            ...prevState,
+            dogovorTrue: data.length
+        }))
         setDogovorTrue(data);
     }
 

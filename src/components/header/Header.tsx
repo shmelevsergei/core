@@ -14,7 +14,7 @@ const Header = () => {
                     <Search/>
 
 
-                <div className={'text-sm ml-auto flex items-center gap-7'}>
+                <div className={'text-sm ml-auto flex items-center gap-2'}>
                     <Question/>
                     <LogoutButton/>
                 </div>

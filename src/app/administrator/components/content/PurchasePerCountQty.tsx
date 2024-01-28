@@ -1,6 +1,6 @@
 'use client'
 import React, {useEffect, useState} from 'react';
-import Card from './Card';
+import UiCard from './ui-card';
 import {useAdministratorState} from "@/app/administrator/store/administrator.context";
 import {formattedNumber} from "@/lib/formulas/formatNumber";
 
@@ -25,7 +25,7 @@ const PurchasePerCountQty = () => {
     }, [prevPerCountQty, perCountQty])
 
     return (
-        <Card text={'Средняя закупка на 1 подъемник, шт. (динамика)'} count={formattedNumber(totalCountQty)} percent={percent} />
+        <UiCard text={'Средняя закупка на 1 подъемник, шт. (динамика)'} count={formattedNumber(totalCountQty)} percent={percent} />
     );
 };
 

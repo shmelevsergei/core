@@ -1,6 +1,6 @@
 'use client'
 import React, {useEffect, useState} from 'react';
-import Card from "./Card";
+import UiCard from "./ui-card";
 import {fetchAnketaOborotPurchaseStoMoney, fetchAnketaOborotRemzonaQty} from "@/lib/routs/fetchAnketaOborot";
 import { useAdministratorState } from '../../store/administrator.context';
 import {formattedNumber} from "@/lib/formulas/formatNumber";
@@ -68,7 +68,7 @@ const PurchasePerMoneyQty = () => {
         }
     },[perMoneyQty, prevPerMoneyQty])
     return (
-        <Card text={'Средняя закупка на 1 подъемник, руб. (динамика)'} count={formattedNumber(totalMoneyQty) } percent={percent} />
+        <UiCard text={'Средняя закупка на 1 подъемник, руб. (динамика)'} count={formattedNumber(totalMoneyQty) } percent={percent} />
     );
 };
 
