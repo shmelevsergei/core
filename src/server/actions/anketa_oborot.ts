@@ -71,5 +71,21 @@ class AnketaOborot {
         return result[0]?.sum;
     })
 
+    getAnketaOborotNotByDistributor = cache(async ({startDate, endDate}: {
+        startDate: Date | undefined,
+        endDate: Date | undefined
+    }) => prisma.gA_ANKETA_OBOROT.findMany({
+            where: {
+                ABO_DATETIME: {
+                    gte: startDate,
+                    lte: endDate
+                },
+                ABO_OBOROT_ALL: {
+                    gte: 0
+                }
+            }
+        })
+    );
+
 }
 export const anketaOborot = new AnketaOborot()

@@ -1,4 +1,6 @@
-export const fetchAnketaDogovor = async () => {
+import {IAnketaDogovorRepository} from "@/repository/anketaDogovor.repository";
+
+export const fetchAnketaDogovor = async ():Promise<IAnketaDogovorRepository[] | undefined> => {
 
     const url =`/api/administrator/anketa_dogovor_true`
 
@@ -6,7 +8,7 @@ export const fetchAnketaDogovor = async () => {
         // Отправляем запрос
         const response = await fetch(url);
         if (response.ok) {
-            return await response.json()
+            return JSON.parse(await response.json())
         } else {
             console.error(`Error: ${response.status} - ${response.statusText}`);
         }

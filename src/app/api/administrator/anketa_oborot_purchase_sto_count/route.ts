@@ -1,6 +1,6 @@
-import {anketaOborot} from "@/actions/anketa_oborot";
+import {anketaOborot} from "@/server/actions/anketa_oborot";
 import {NextRequest, NextResponse} from "next/server";
-import {fetchUrlParamDate} from "@/lib/server/fetchUrlParam";
+import {fetchUrlParamDate} from "@/server/lib/fetchUrlParam";
 
 export async function GET(req: NextRequest) {
     const {startDate, endDate} = fetchUrlParamDate(req)

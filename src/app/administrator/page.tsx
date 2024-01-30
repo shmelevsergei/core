@@ -1,5 +1,3 @@
-
-
 import Content from "@/app/administrator/components/content/Content";
 import InfoPanel from "@/app/administrator/components/infoPanel/InfoPanel";
 import Info from "@/app/administrator/components/info/Info";
@@ -8,23 +6,28 @@ import Competition from "@/app/administrator/components/competition/Competition"
 import Points from "@/app/administrator/components/points/Points";
 import Online from "@/app/administrator/components/online/Online";
 import {AdministratorProvider} from "@/app/administrator/store/administrator.context";
+import Divider from "@/components/ui/divider";
+import {cn} from "@/lib/utils";
 
 const Page = () => {
 
     return (
         <main>
             <AdministratorProvider>
-                <div className={'flex flex-col gap-4 '}>
+                <div className={'flex flex-col gap-4'}>
                     <InfoPanel />
                     <Content />
                     <Info />
-                    <div className={'grid grid-cols-3 gap-3 px-3'}>
-                        <Branding />
-                        <Competition />
-                        <div className={'grid grid-rows-2 gap-3'}>
-                            <Points />
-                            <Online />
+                    <div className={'px-3'}>
+                        <div className={'grid grid-cols-3 gap-3'}>
+                            <Branding />
+                            <Competition />
+                            <div className={'grid grid-rows-2 gap-3'}>
+                                <Points />
+                                <Online />
+                            </div>
                         </div>
+                        <Divider className={cn('my-5')}/>
                     </div>
                 </div>
             </AdministratorProvider>

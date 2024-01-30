@@ -27,12 +27,19 @@ interface IDatePickerWithRange {
 export default function DatePickerWithRange({ className }: IDatePickerWithRange) {
 
 
-    const [date, setDate] = useState<DateRange | undefined>({
-        from: new Date(2023, 11, 1),
-        to: addDays(new Date(2023, 11, 31), 0),
-    })
+    const [date, setDate] = useState<DateRange | undefined>()
 
-    const {setState} = useAdministratorState()
+    const {state, setState} = useAdministratorState()
+
+    useEffect(() => {
+        setDate(
+            {
+                from: state.currentDate?.from,
+                to: state.currentDate?.to,
+            }
+        )
+    }, [])
+
 
     useEffect(() => {
         setState(prevState => ({

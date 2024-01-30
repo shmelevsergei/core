@@ -1,7 +1,7 @@
 'use client'
 import React, {useEffect, useState} from 'react';
 import UiCard from "./ui-card";
-import {fetchAnketaOborotPurchaseStoMoney, fetchAnketaOborotRemzonaQty} from "@/lib/routs/fetchAnketaOborot";
+import {fetchAnketaOborotPurchaseStoMoney, fetchAnketaOborotRemzonaQty} from "@/server/routs/fetchAnketaOborot";
 import { useAdministratorState } from '../../store/administrator.context';
 import {formattedNumber} from "@/lib/formulas/formatNumber";
 

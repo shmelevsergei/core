@@ -3,6 +3,7 @@
 import React, {useEffect} from 'react';
 import Card from "@/app/administrator/components/info/Card";
 import {useAdministratorState} from "@/app/administrator/store/administrator.context";
+import UiCard from "@/app/administrator/components/info/ui-card";
 
 const OfferHasNotSing = () => {
     const [count, setCount] = React.useState(0);
@@ -16,7 +17,7 @@ const OfferHasNotSing = () => {
     }, [state.totalSto, state.dogovorTrue])
 
     return (
-        <Card text={'Не подписали договор оферты'} count={count} percent={+percent} link={''}/>
+        <UiCard text={'Не подписали договор оферты'} count={count} percent={+percent} link={''} />
     );
 };
 

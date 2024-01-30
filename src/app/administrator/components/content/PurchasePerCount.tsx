@@ -2,7 +2,7 @@
 
 import React, {useEffect, useState} from 'react';
 import UiCard from './ui-card';
-import {fetchAnketaOborotPurchaseStoCount, fetchAnketaOborotPurchaseStoMoney} from "@/lib/routs/fetchAnketaOborot";
+import {fetchAnketaOborotPurchaseStoCount, fetchAnketaOborotPurchaseStoMoney} from "@/server/routs/fetchAnketaOborot";
 import { useAdministratorState } from '../../store/administrator.context';
 import {formattedNumber} from "@/lib/formulas/formatNumber";
 
@@ -68,7 +68,7 @@ const PurchasePerCount = () => {
         }
 
 
-    }, [prevPerCount, perCount])
+    }, [prevPerCount, perCount, state.totalSto])
 
 
     return (

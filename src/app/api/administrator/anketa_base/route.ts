@@ -1,5 +1,5 @@
 import {NextRequest, NextResponse} from "next/server";
-import {anketaBase} from "@/actions/anketa_base";
+import {anketaBase} from "@/server/actions/anketa_base";
 
 export async function GET() {
     const response = await anketaBase.getAnketaBaseEnabled();

@@ -19,7 +19,7 @@ model GA_ANKETA_ADDR {
   @@index([AAD_ABA_ID])
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+/// The underlying table does not contain a valid unique identifier and can therefore currently not  handled by Prisma Client.
 model GA_ANKETA_BASE {
   ABA_WSU_ID           BigInt   @default(0)
   ABA_STO_NAME         String
