@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import logo from '/public/logo-everycar.svg'
-import LinksSidebar from "@/components/linksSadebar/LiksSidebar";
+import LinksSidebar from "@/components/sidebar/linksSadebar/LiksSidebar";
 
 import {reports, settings, questionnaires, shop} from "@/components/sidebar/linksSidebar";
 
@@ -14,7 +14,7 @@ const Sidebar = () => {
                 <Image src={logo} alt={'Everycar'}/>
             </Link>
             <div  className={'py-8 px-8 text-white text-sm flex flex-col gap-4 overflow-y-auto'}>
-                <Link href={'/administrator'} className={'text-base'}>Главная</Link>
+                <Link href={'/'} className={'text-base'}>Главная</Link>
                 <div className={'flex flex-col gap-4'}>
                     <LinksSidebar links={reports} />
                     <LinksSidebar links={questionnaires} />

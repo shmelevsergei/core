@@ -8,7 +8,7 @@ import LogoutButton from "@/components/header/LogoutButton";
 const Header = () => {
     return (
         <header className={'min-h-16 bg-[#FCFCFF] shadow-base w-full'}>
-            <div className={'flex items-center pr-4'}>
+            <div className={'flex items-center pr-4 h-full'}>
 
                     <Image src={banner} alt={'Banner'}/>
                     <Search/>
