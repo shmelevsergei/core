@@ -8,11 +8,11 @@ const ConfirmationDetails = () => {
     return (
         <div>
             <Title text={'Данные подтверждения'} />
-            <Card className={cn('grid grid-cols-3 gap-4 p-4 mt-4')}>
+            <div className={cn('grid grid-cols-3 gap-4 mt-4 px-1')}>
                 <InputForm id={'confirmation-login-1'} placeholder={'Логин 1'} type={'text'} label={'Логин 1'}/>
                 <InputForm id={'confirmation-login-2'} placeholder={'Логин 2'} type={'text'} label={'Логин 2'}/>
                 <InputForm id={'confirmation-lifts'} placeholder={''} type={'text'} label={'Кол-во подъемников'}/>
-            </Card>
+            </div>
         </div>
     );
 };

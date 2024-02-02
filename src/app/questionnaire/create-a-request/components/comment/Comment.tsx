@@ -5,10 +5,11 @@ import {cn} from "@/lib/utils";
 
 const Comment = () => {
     return (
-        <div>
+        <div className={'mt-4'}>
             <Title text={'Комментарий'} />
-            <Textarea id={'comment'} placeholder={'Оставьте комментарий...'} rows={4} className={cn('mt-4')}/>
-
+            <div className={'px-1'}>
+                <Textarea id={'comment'} placeholder={'Оставьте комментарий...'} rows={4} className={cn('mt-4')}/>
+            </div>
         </div>
     );
 };

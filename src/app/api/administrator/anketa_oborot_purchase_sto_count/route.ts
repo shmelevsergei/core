@@ -1,4 +1,4 @@
-import {anketaOborot} from "@/server/actions/anketa_oborot";
+import {anketaOborot} from "@/server/actions/webshop_db/anketa_oborot";
 import {NextRequest, NextResponse} from "next/server";
 import {fetchUrlParamDate} from "@/server/lib/fetchUrlParam";
 

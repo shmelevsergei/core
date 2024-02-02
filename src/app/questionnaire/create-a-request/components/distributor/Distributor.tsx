@@ -8,9 +8,9 @@ const Distributor = () => {
     return (
         <>
             <Title text={'Дистрибьютер'} />
-            <Card className={cn('p-4 mt-4 h-full')}>
+            <div className={cn('mt-4 px-1')}>
                 <InputForm id={'name'} placeholder={'Название'} type={'text'} label={'Название'}/>
-            </Card>
+            </div>
 
         </>
     );

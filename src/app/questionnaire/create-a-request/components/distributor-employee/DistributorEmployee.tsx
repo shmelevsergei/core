@@ -8,13 +8,13 @@ const DistributorEmployee = () => {
     return (
         <>
             <Title text={'Сотрудник дистрибьютора'} />
-             <Card className={cn('p-4 mt-4 grid grid-cols-2 gap-5')}>
+             <div className={cn('mt-4 grid grid-cols-2 gap-5 px-1')}>
                  <InputForm id={'lastname-employee'} placeholder={'Фамилия'} type={'text'} label={'Фамилия'}/>
                  <InputForm id={'name-employee'} placeholder={'Имя'} type={'text'} label={'Имя'}/>
                  <InputForm id={'surname-employee'} placeholder={'Отчество'} type={'text'} label={'Отчество'}/>
                  <InputForm id={'phone-employee'} placeholder={'Контактный телефон'} type={'tel'} label={'Контактный телефон'}/>
                  <InputForm id={'mail-employee'} placeholder={'E-Mail'} type={'email'} label={'E-Mail'}/>
-             </Card>
+             </div>
         </>
     );
 };

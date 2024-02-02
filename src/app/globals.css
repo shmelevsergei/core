@@ -74,3 +74,28 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .input {
+    @apply relative flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-50
+  }
+
+  .input div {
+    @apply w-full
+  }
+  .input input {
+    @apply w-full h-full outline-none
+  }
+  .input ul {
+    @apply flex flex-col  border rounded-sm absolute top-full left-0 mt-3 bg-white h-max p-2 text-sm z-10
+  }
+  .input ul>button {
+    @apply text-start block hover:bg-gray-300 transition-all p-1.5 rounded border-b last:border-0
+  }
+
+  .item {
+    @apply select-none
+  }
+
+
+}

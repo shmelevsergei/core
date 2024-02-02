@@ -8,7 +8,7 @@ const ManagerDetails = () => {
     return (
         <div>
            <Title text={'Данные руководителя'} />
-            <Card className={cn('grid grid-cols-3 gap-4 p-4 mt-4')}>
+            <div className={cn('grid grid-cols-3 gap-4 mt-4 px-1')}>
                 <InputForm id={'lastname-manager'} placeholder={'Фамилия'} type={'text'} label={'Фамилия'}/>
                 <InputForm id={'name-manager'} placeholder={'Имя'} type={'text'} label={'Имя'}/>
                 <InputForm id={'surname-manager'} placeholder={'Отчество'} type={'text'} label={'Отчество'}/>
@@ -20,7 +20,7 @@ const ManagerDetails = () => {
                 <InputForm id={'phone-signatory-manager'} placeholder={'Телефон подписанта'} type={'tel'} label={'Телефон подписанта'}/>
                 <InputForm id={'mail-signatory-manager'} placeholder={'E-Mail подписанта'} type={'email'} label={'Email подписанта'}/>
 
-            </Card>
+            </div>
         </div>
     );
 };

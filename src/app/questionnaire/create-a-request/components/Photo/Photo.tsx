@@ -2,7 +2,7 @@ import React from 'react';
 
 const Photo = () => {
     return (
-        <div>
+        <div className={'px-1'}>
             Photo
         </div>
     );

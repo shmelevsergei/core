@@ -1,5 +1,5 @@
 import {NextRequest, NextResponse} from "next/server";
-import {anketaDogovor} from "@/server/actions/anketa_dogovor";
+import {anketaDogovor} from "@/server/actions/webshop_db/anketa_dogovor";
 
 export async function GET() {
     const response = await anketaDogovor.getAnketaDogovorTrue();
