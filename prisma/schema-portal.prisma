@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generate/client2"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL_PORTAL")
+}
+
+model Questionnaire {
+  id                   Int                   @id @default(autoincrement())
+  distributor          String
+  distributor_employee DistributorEmployee[]
+  data_sto             DataSto[]
+  inns                 IInn[]
+  status               Status
+}
+
+enum Status {
+  draft
+  accepted
+  rejected
+  sent
+}
+
+model DistributorEmployee {
+  id              Int           @id @default(autoincrement())
+  name            String
+  surname         String
+  lastname        String
+  phone           String
+  email           String
+  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
+  questionnaireId Int
+}
+
+model DataSto {
+  id                   Int           @id @default(autoincrement())
+  name                 String
+  city                 String
+  area                 String
+  address              String
+  code_client_avtoevro String
+  code_client_avtorus  String
+  code_client_rossko   String
+  questionnaire        Questionnaire @relation(fields: [questionnaireId], references: [id])
+  questionnaireId      Int
+}
+
+model IInn {
+  id              Int           @id @default(autoincrement())
+  inn             String
+  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
+  questionnaireId Int
+}
