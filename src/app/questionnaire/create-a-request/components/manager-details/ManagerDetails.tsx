@@ -5,9 +5,11 @@ import {cn} from "@/lib/utils";
 import InputForm from "@/app/questionnaire/create-a-request/components/InputForm";
 import InputPhone from "@/app/questionnaire/create-a-request/components/manager-details/InputPhone";
 
+
 const ManagerDetails = () => {
     return (
         <div>
+
            <Title text={'Данные руководителя / подписанта'} />
             <div className={cn('grid grid-cols-2 gap-4 mt-4 px-1')}>
                 <div className={'flex flex-col gap-4'}>
