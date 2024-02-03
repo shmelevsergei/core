@@ -1,8 +1,6 @@
-import {cache} from "react";
-import {prismaWebShop} from "@/lib/db";
-import  {IAnketaBaseRepository} from "@/repository/anketaBase.repository";
-import {Prisma} from ".prisma/client";
-import {DefaultArgs, GetResult} from "prisma/prisma-client/runtime/library";
+import { cache } from "react";
+import { prismaWebShop } from "@/lib/db";
+import { IAnketaBaseRepository } from "@/repository/anketaBase.repository";
 
 // const transformData = async (data: Prisma.PrismaPromise<GetResult<Prisma.$GA_ANKETA_BASEPayload<DefaultArgs>,
 //     {},
@@ -26,25 +24,29 @@ import {DefaultArgs, GetResult} from "prisma/prisma-client/runtime/library";
 // };
 
 class AnketaBase {
-    getAnketaBaseEnabled = cache(():Promise<IAnketaBaseRepository[]> => (prismaWebShop.gA_ANKETA_BASE.findMany({
-            where: {
-                ABA_ENABLED: true
-            }
-        }))
-    );
+	getAnketaBaseEnabled = cache(
+		(): Promise<IAnketaBaseRepository[]> =>
+			prismaWebShop.gA_ANKETA_BASE.findMany({
+				where: {
+					ABA_ENABLED: true,
+				},
+			})
+	);
 
-    getAnketaBaseEnabledCurrentMonth = cache(():Promise<IAnketaBaseRepository[]> => (prismaWebShop.gA_ANKETA_BASE.findMany({
-            where: {
-                ABA_ENABLED: true,
-                ABA_DATETIME_CREATED: {
-                    gte: new Date(new Date().setMonth(new Date().getMonth() - 1)),
-                    lte: new Date()
-                }
-            }
-        }))
-    );
-
+	getAnketaBaseEnabledCurrentMonth = cache(
+		(): Promise<IAnketaBaseRepository[]> =>
+			prismaWebShop.gA_ANKETA_BASE.findMany({
+				where: {
+					ABA_ENABLED: true,
+					ABA_DATETIME_CREATED: {
+						gte: new Date(
+							new Date().setMonth(new Date().getMonth() - 1)
+						),
+						lte: new Date(),
+					},
+				},
+			})
+	);
 }
-
 
 export const anketaBase = new AnketaBase();
