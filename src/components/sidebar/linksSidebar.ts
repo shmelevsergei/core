@@ -2,114 +2,114 @@ export const reports = {
     id: 'headingOne',
     activeElement: 'element1',
     linkButton: 'Отчеты',
-    linksList:[
+    linksList: [
         {
-            href: "/reports/no_address/",
-            text: "СТО без адреса"
+            href: '/reports/no_address/',
+            text: 'СТО без адреса',
         },
         {
-            href: "",
-            text: "Закупка 0"
+            href: '',
+            text: 'Закупка 0',
         },
         {
-            href: "",
-            text: "Не подписана оферта"
+            href: '',
+            text: 'Не подписана оферта',
         },
         {
-            href: "",
-            text: "По дистрибьюторам"
+            href: '',
+            text: 'По дистрибьюторам',
         },
         {
-            href: "",
-            text: "По брендам проекта"
+            href: '',
+            text: 'По брендам проекта',
         },
         {
-            href: "",
-            text: "Бренды по запросу"
+            href: '',
+            text: 'Бренды по запросу',
         },
         {
-            href: "",
-            text: "Розыгрыш"
+            href: '',
+            text: 'Розыгрыш',
         },
         {
-            href: "",
-            text: "Для брендов"
-        }
-    ]
+            href: '',
+            text: 'Для брендов',
+        },
+    ],
 }
 
 export const questionnaires = {
     id: 'headingTwo',
     activeElement: 'element2',
     linkButton: 'Анкеты',
-    linksList:[
+    linksList: [
         {
-            href: "",
-            text: "Заявки (шт.)"
+            href: '',
+            text: 'Заявки (шт.)',
         },
         {
-            href: "/questionnaire/create-a-request/",
-            text: "Создать заявку"
+            href: '/questionnaire/create-a-request/',
+            text: 'Создать заявку',
         },
         {
-            href: "",
-            text: "Отклоненные (шт.)"
+            href: '',
+            text: 'Отклоненные (шт.)',
         },
         {
-            href: "",
-            text: "Поиск СТО"
+            href: '',
+            text: 'Поиск СТО',
         },
-    ]
+    ],
 }
 
 export const settings = {
     id: 'headingThree',
     activeElement: 'element3',
     linkButton: 'Настройки',
-    linksList:[
+    linksList: [
         {
-            href: "",
-            text: "Сетевые СТО"
+            href: '',
+            text: 'Сетевые СТО',
         },
         {
-            href: "",
-            text: "Бренды месяца"
+            href: '',
+            text: 'Бренды месяца',
         },
         {
-            href: "",
-            text: "Плашки"
+            href: '',
+            text: 'Плашки',
         },
         {
-            href: "",
-            text: "GRADE"
+            href: '',
+            text: 'GRADE',
         },
         {
-            href: "",
-            text: "Архивировать"
+            href: '',
+            text: 'Архивировать',
         },
-    ]
+    ],
 }
 
 export const shop = {
     id: 'headingFour',
     activeElement: 'element4',
     linkButton: 'Интернет-магазин',
-    linksList:[
+    linksList: [
         {
-            href: "",
-            text: "Карточки товара"
+            href: '',
+            text: 'Карточки товара',
         },
         {
-            href: "",
-            text: "Бренды месяца"
+            href: '',
+            text: 'Бренды месяца',
         },
         {
-            href: "",
-            text: "Заказы"
+            href: '',
+            text: 'Заказы',
         },
         {
-            href: "",
-            text: "Сертификаты"
+            href: '',
+            text: 'Сертификаты',
         },
-    ]
+    ],
 }

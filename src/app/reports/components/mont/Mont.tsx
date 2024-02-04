@@ -1,37 +1,42 @@
 'use client'
-import React, {useState} from "react";
-import DatePickerWithRange from "@/components/ui/DataRangePicker";
-import {Button} from "@/components/ui/button";
-import {useAdministratorState} from "@/app/reports/store/administrator.context";
+import React, { useState } from 'react'
+import DatePickerWithRange from '@/components/ui/DataRangePicker'
+import { Button } from '@/components/ui/button'
+import { useAdministratorState } from '@/app/reports/store/administrator.context'
 
 const Mont = () => {
-    const [isButtonDisabled, setIsButtonDisabled] = useState(false);
-    const {setState} =useAdministratorState();
+    const [isButtonDisabled, setIsButtonDisabled] = useState(false)
+    const { setState } = useAdministratorState()
 
     const clickHandler = () => {
-        setState(prevState => ({
+        setState((prevState) => ({
             ...prevState,
-            updateContentInfo: true
+            updateContentInfo: true,
         }))
         if (!isButtonDisabled) {
-            setIsButtonDisabled(true);
+            setIsButtonDisabled(true)
 
             setTimeout(() => {
-                setIsButtonDisabled(false);
-                setState(prevState => ({
+                setIsButtonDisabled(false)
+                setState((prevState) => ({
                     ...prevState,
-                    updateContentInfo: false
+                    updateContentInfo: false,
                 }))
-
-            }, 2000);
+            }, 2000)
         }
     }
 
     return (
         <div className="ml-auto flex items-center gap-1">
             <DatePickerWithRange />
-            <Button className={''} onClick={() => clickHandler()} disabled={isButtonDisabled}>Выбрать период</Button>
+            <Button
+                className={''}
+                onClick={() => clickHandler()}
+                disabled={isButtonDisabled}
+            >
+                Выбрать период
+            </Button>
         </div>
-    );
+    )
 }
 export default Mont

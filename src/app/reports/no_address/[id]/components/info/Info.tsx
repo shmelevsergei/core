@@ -1,12 +1,12 @@
-import React from 'react';
-import {dataInfo, DataInfo} from "@/app/reports/no_address/[id]/components/info/dataInfo";
+import React from 'react'
+import {
+    dataInfo,
+    DataInfo,
+} from '@/app/reports/no_address/[id]/components/info/dataInfo'
 
-
-
-const Info = ({id}: {id:string}) => {
-
-    const data:DataInfo = dataInfo
-     return (
+const Info = ({ id }: { id: string }) => {
+    const data: DataInfo = dataInfo
+    return (
         <div className={'flex gap-24 text-xl'}>
             <div>
                 <h2 className={' font-extrabold '}>{data.name}</h2>
@@ -18,14 +18,11 @@ const Info = ({id}: {id:string}) => {
                     <p>{data.city} </p>
                 </div>
                 <div>
-                    <address className={'not-italic'}>
-                        {data.address}
-                    </address>
+                    <address className={'not-italic'}>{data.address}</address>
                 </div>
             </div>
-
         </div>
-    );
-};
+    )
+}
 
-export default Info;
+export default Info

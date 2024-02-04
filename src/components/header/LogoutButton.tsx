@@ -1,7 +1,7 @@
 'use client'
-import React from 'react';
-import {useRouter} from "next/navigation";
-import {Button} from "@/components/ui/button";
+import React from 'react'
+import { useRouter } from 'next/navigation'
+import { Button } from '@/components/ui/button'
 
 const LogoutButton = () => {
     const redirect = useRouter()
@@ -10,8 +10,10 @@ const LogoutButton = () => {
         redirect.push('/')
     }
     return (
-        <Button variant="outline" onClick={handleClick}>Выйти</Button>
-    );
-};
+        <Button variant="outline" onClick={handleClick}>
+            Выйти
+        </Button>
+    )
+}
 
-export default LogoutButton;
+export default LogoutButton

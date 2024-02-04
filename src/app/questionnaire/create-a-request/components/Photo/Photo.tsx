@@ -1,11 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 const Photo = () => {
-    return (
-        <div className={'px-1'}>
-            Photo
-        </div>
-    );
-};
+    return <div className={'px-1'}>Photo</div>
+}
 
-export default Photo;
+export default Photo

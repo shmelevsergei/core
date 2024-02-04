@@ -1,6 +1,6 @@
-import React from 'react';
-import OfferHasNotSing from "@/app/reports/components/info/OfferHasNotSing";
-import NotByFromDistributor from './NotByFromDistributor';
+import React from 'react'
+import OfferHasNotSing from '@/app/reports/components/info/OfferHasNotSing'
+import NotByFromDistributor from './NotByFromDistributor'
 
 const Info = () => {
     return (
@@ -8,7 +8,7 @@ const Info = () => {
             <OfferHasNotSing />
             <NotByFromDistributor />
         </div>
-    );
-};
+    )
+}
 
-export default Info;
+export default Info

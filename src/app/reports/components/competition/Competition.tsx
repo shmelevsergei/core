@@ -1,10 +1,8 @@
-import React from 'react';
-import UiCompetition from "@/app/reports/components/competition/ui-competition";
+import React from 'react'
+import UiCompetition from '@/app/reports/components/competition/ui-competition'
 
 const Competition = () => {
-    return (
-        <UiCompetition/>
-    );
-};
+    return <UiCompetition />
+}
 
-export default Competition;
+export default Competition

@@ -1,11 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 const Page = () => {
-    return (
-        <main>
-            Анкеты
-        </main>
-    );
-};
+    return <main>Анкеты</main>
+}
 
-export default Page;
+export default Page

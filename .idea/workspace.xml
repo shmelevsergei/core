@@ -5,12 +5,153 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd7a64a1-0d6e-443b-a63c-a3ac575cb48c" name="Changes" comment="add input">
-      <change afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/manager-details/InputPhone.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components.json" beforeDir="false" afterPath="$PROJECT_DIR$/components.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/edge.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/edge.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/edge.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/edge.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/index-browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/index-browser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/runtime/edge-esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/runtime/edge-esm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/runtime/edge.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/runtime/edge.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/runtime/index-browser.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/runtime/index-browser.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/runtime/index-browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/runtime/index-browser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/runtime/library.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/runtime/library.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/runtime/library.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/runtime/library.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/edge.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/edge.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/edge.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/edge.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/index-browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/index-browser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/runtime/edge-esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/runtime/edge-esm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/runtime/edge.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/runtime/edge.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/runtime/index-browser.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/runtime/index-browser.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/runtime/index-browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/runtime/index-browser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/runtime/library.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/runtime/library.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/runtime/library.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/runtime/library.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/administrator/anketa_base/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/administrator/anketa_base/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/administrator/anketa_base_news/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/administrator/anketa_base_news/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/administrator/anketa_dogovor_true/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/administrator/anketa_dogovor_true/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/administrator/anketa_oborot/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/administrator/anketa_oborot/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/administrator/anketa_oborot_not_by_distributor/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/administrator/anketa_oborot_not_by_distributor/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/administrator/anketa_oborot_purchase_sto_count/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/administrator/anketa_oborot_purchase_sto_count/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/administrator/anketa_oborot_purchase_sto_money/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/administrator/anketa_oborot_purchase_sto_money/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/administrator/anketa_oborot_remzona_qty/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/administrator/anketa_oborot_remzona_qty/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/AddInn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/AddInn.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/InputForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/InputForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/InputPhone.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/InputPhone.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/Photo/Photo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/Photo/Photo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/Title.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/Title.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/comment/Comment.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/comment/Comment.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/confirmation-details/ConfirmationDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/confirmation-details/ConfirmationDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/data-sto/DataSto.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/data-sto/DataSto.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/data-sto/InputAddressSto.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/data-sto/InputAddressSto.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/data-sto/InputAreaSto.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/data-sto/InputAreaSto.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/data-sto/InputCitySto.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/data-sto/InputCitySto.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/distributor-employee/DistributorEmployee.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/distributor-employee/DistributorEmployee.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/distributor/Distributor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/distributor/Distributor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/lifts/Lifts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/lifts/Lifts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/manager-details/CheckBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/manager-details/CheckBox.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/manager-details/ManagerDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/manager-details/ManagerDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/branding/Branding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/branding/Branding.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/branding/ui-branding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/branding/ui-branding.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/competition/Competition.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/competition/Competition.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/competition/ui-competition.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/competition/ui-competition.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/content/Content.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/content/Content.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/content/Oborot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/content/Oborot.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/content/PurchasePerCount.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/content/PurchasePerCount.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/content/PurchasePerCountQty.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/content/PurchasePerCountQty.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/content/PurchasePerMoney.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/content/PurchasePerMoney.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/content/PurchasePerMoneyQty.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/content/PurchasePerMoneyQty.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/content/WithPurchaseSto.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/content/WithPurchaseSto.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/content/ui-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/content/ui-card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/info/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/info/Card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/info/Info.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/info/Info.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/info/NotByFromDistributor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/info/NotByFromDistributor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/info/OfferHasNotSing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/info/OfferHasNotSing.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/info/ui-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/info/ui-card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/infoPanel/AllBrands.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/infoPanel/AllBrands.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/infoPanel/Brands.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/infoPanel/Brands.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/infoPanel/InfoPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/infoPanel/InfoPanel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/mont/Mont.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/mont/Mont.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/mont/montes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/mont/montes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/online/Online.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/online/Online.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/components/points/Points.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/points/Points.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/no_address/[id]/components/distribution/Distribution.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/no_address/[id]/components/distribution/Distribution.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/no_address/[id]/components/distribution/Purchases.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/no_address/[id]/components/distribution/Purchases.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/no_address/[id]/components/info/Info.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/no_address/[id]/components/info/Info.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/no_address/[id]/components/info/dataInfo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/no_address/[id]/components/info/dataInfo.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/no_address/[id]/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/no_address/[id]/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/no_address/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/no_address/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/no_address/components/table/DataTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/no_address/components/table/DataTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/no_address/components/table/datsTable.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/no_address/components/table/datsTable.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/no_address/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/no_address/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/no_address/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/no_address/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reports/store/administrator.context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/store/administrator.context.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/LogoutButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/LogoutButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/Question.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Question.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/Search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sidebar/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sidebar/linksSadebar/LiksSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/linksSadebar/LiksSidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sidebar/linksSidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/linksSidebar.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/DataRangePicker.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/DataRangePicker.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/accordion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/accordion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/calendar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/calendar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/checkbox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/checkbox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/divider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/divider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/label.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/label.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/popover.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/popover.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/progress.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/progress.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/scroll-area.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/scroll-area.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/select.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/separator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/separator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/skeleton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/skeleton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/spinner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/spinner.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/table.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/tabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/tabs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/textarea.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/textarea.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/db.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/db.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/formulas/formatNumber.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/formulas/formatNumber.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/formulas/formulas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/formulas/formulas.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/anketaBase.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/anketaBase.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/anketaDogovor.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/anketaDogovor.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/anketaOborot.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/anketaOborot.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/actions/webshop_db/anketa_address.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/actions/webshop_db/anketa_address.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/actions/webshop_db/anketa_base.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/actions/webshop_db/anketa_base.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/actions/webshop_db/anketa_dogovor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/actions/webshop_db/anketa_dogovor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/actions/webshop_db/anketa_oborot.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/actions/webshop_db/anketa_oborot.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/lib/dadata/fetchDadata.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/lib/dadata/fetchDadata.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/lib/fetchUrlParam.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/lib/fetchUrlParam.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/lib/variables.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/lib/variables.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/routs/fetchAnketaBase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/routs/fetchAnketaBase.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/routs/fetchAnketaDogovor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/routs/fetchAnketaDogovor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/routs/fetchAnketaOborot.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/routs/fetchAnketaOborot.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/questionnaire.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/questionnaire.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,31 +183,54 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "<unknown>",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/GlobalProjects/LKGROUPAUTO/core",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "D:\\GlobalProjects\\LKGROUPAUTO\\core\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/shmel/OneDrive/Рабочий стол/GlobalProjects/LKGROUPAUTO/core&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;C:\\Users\\shmel\\OneDrive\\Рабочий стол\\GlobalProjects\\LKGROUPAUTO\\core\\node_modules\\eslint&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.prettier.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\shmel\\OneDrive\\Рабочий стол\\GlobalProjects\\LKGROUPAUTO\\core\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\shmel\\OneDrive\\Рабочий стол\\GlobalProjects\\LKGROUPAUTO\\core\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\GlobalProjects\LKGROUPAUTO\core" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="prettier" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="prettier" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.prettier" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-c44b541a36ca-JavaScript-WS-233.13135.92" />
+        <option value="bundled-js-predefined-1d06a55b98c1-985749b364ce-JavaScript-WS-233.14015.89" />
       </set>
     </attachedChunks>
   </component>
@@ -83,6 +247,13 @@
       <workItem from="1706948447134" duration="6141000" />
       <workItem from="1706971793267" duration="685000" />
       <workItem from="1706972822723" duration="916000" />
+      <workItem from="1707060780283" duration="128000" />
+      <workItem from="1707061039656" duration="162000" />
+      <workItem from="1707061229587" duration="41000" />
+      <workItem from="1707061290665" duration="300000" />
+      <workItem from="1707061655744" duration="446000" />
+      <workItem from="1707062461339" duration="2874000" />
+      <workItem from="1707065382317" duration="8000" />
     </task>
     <servers />
   </component>
