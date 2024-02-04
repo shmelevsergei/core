@@ -14,11 +14,16 @@ interface CustomInputProps {
     placeholder: string
     id: string
     disabled?: boolean
+    onChange?: (e: any) => void
+    value?: string
 }
 
 // eslint-disable-next-line react/display-name
 const CustomInput = forwardRef<HTMLInputElement, CustomInputProps>(
-    ({ label, name, placeholder, id, disabled }, forwardedRef) => {
+    (
+        { label, name, placeholder, id, disabled, onChange, value },
+        forwardedRef
+    ) => {
         return (
             <div className={`grid w-full max-w-sm items-center gap-1.5`}>
                 <Label htmlFor={id}>{label}</Label>
@@ -28,6 +33,8 @@ const CustomInput = forwardRef<HTMLInputElement, CustomInputProps>(
                     name={name}
                     placeholder={placeholder}
                     disabled={disabled}
+                    value={value}
+                    onChange={onChange}
                 />
             </div>
         )
@@ -40,6 +47,8 @@ interface InputPhoneProps {
     placeholder: string
     id: string
     disabled?: boolean
+    onChange?: (e: any) => void
+    value?: string
 }
 
 const InputPhone = ({
@@ -48,6 +57,8 @@ const InputPhone = ({
     placeholder,
     id,
     disabled,
+    onChange,
+    value,
 }: InputPhoneProps) => {
     const [detail, setDetail] = useState<MaskEventDetail | null>(null)
 
@@ -74,6 +85,8 @@ const InputPhone = ({
             placeholder={placeholder}
             id={id}
             disabled={disabled}
+            onChange={onChange}
+            value={value}
         />
     )
 }
