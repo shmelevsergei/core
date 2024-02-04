@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd7a64a1-0d6e-443b-a63c-a3ac575cb48c" name="Changes" comment="add input">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
@@ -152,6 +153,9 @@
       <change beforePath="$PROJECT_DIR$/src/types/questionnaire.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/questionnaire.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> c60be61155cf90d731e35788f66121df0592fd24
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,6 +187,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -203,6 +208,23 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\shmel\\OneDrive\\Рабочий стол\\GlobalProjects\\LKGROUPAUTO\\core\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/shmel/OneDrive/Рабочий стол/GlobalProjects/LKGROUPAUTO/core",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors",
+    "ts.external.directory.path": "C:\\Users\\shmel\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+>>>>>>> c60be61155cf90d731e35788f66121df0592fd24
   }
 }</component>
   <component name="RecentsManager">
@@ -252,8 +274,14 @@
       <workItem from="1707061229587" duration="41000" />
       <workItem from="1707061290665" duration="300000" />
       <workItem from="1707061655744" duration="446000" />
+<<<<<<< HEAD
       <workItem from="1707062461339" duration="2874000" />
       <workItem from="1707065382317" duration="8000" />
+=======
+      <workItem from="1707062164084" duration="32000" />
+      <workItem from="1707062258943" duration="56000" />
+      <workItem from="1707062358774" duration="99000" />
+>>>>>>> c60be61155cf90d731e35788f66121df0592fd24
     </task>
     <servers />
   </component>
