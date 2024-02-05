@@ -6,13 +6,6 @@ import { cn } from '@/lib/utils'
 import InputForm from '@/app/questionnaire/create-a-request/components/InputForm'
 import { Separator } from '@/components/ui/separator'
 import AddInn from '@/app/questionnaire/create-a-request/components/AddInn'
-import {
-    AddressSuggestions,
-    DaDataAddress,
-    DaDataSuggestion,
-} from 'react-dadata'
-// import 'react-dadata/dist/react-dadata.css';
-import { DADATA_API_KEY } from '@/server/lib/variables'
 import InputCitySto from '@/app/questionnaire/create-a-request/components/data-sto/InputCitySto'
 import InputAreaSto from '@/app/questionnaire/create-a-request/components/data-sto/InputAreaSto'
 import InputAddressSto from '@/app/questionnaire/create-a-request/components/data-sto/InputAddressSto'

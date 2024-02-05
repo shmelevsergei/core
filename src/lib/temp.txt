@@ -1,0 +1,19 @@
+// if (!file) return
+        //
+        // try {
+        //     const formData = new FormData()
+        //
+        //     formData.append('file', file)
+        //     formData.append('description', description)
+        //
+        //     console.log(formData.get('file'))
+        //
+        //     const res = await fetch('/api/upload', {
+        //         method: 'POST',
+        //         body: formData,
+        //     })
+        //
+        //     if (!res.ok) throw new Error(await res.text())
+        // } catch (e: any) {
+        //     console.error(e)
+        // }

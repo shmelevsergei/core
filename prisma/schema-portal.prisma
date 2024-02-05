@@ -9,11 +9,16 @@ datasource db {
 }
 
 model Questionnaire {
-  id                   Int                   @id @default(autoincrement())
+  id                   Int                  @id @default(autoincrement())
   distributor          String
-  distributor_employee DistributorEmployee[]
-  data_sto             DataSto[]
+  distributor_employee DistributorEmployee?
+  data_sto             DataSto?
   inns                 IInn[]
+  images               Images[]
+  lifts                Lifts?
+  manager              Manager?
+  signatoryManager     SignatoryManager?
+  confirmData          ConfirmData?
   status               Status
 }
 
@@ -32,7 +37,7 @@ model DistributorEmployee {
   phone           String
   email           String
   questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
-  questionnaireId Int
+  questionnaireId Int           @unique
 }
 
 model DataSto {
@@ -45,7 +50,7 @@ model DataSto {
   code_client_avtorus  String
   code_client_rossko   String
   questionnaire        Questionnaire @relation(fields: [questionnaireId], references: [id])
-  questionnaireId      Int
+  questionnaireId      Int           @unique
 }
 
 model IInn {
@@ -53,4 +58,60 @@ model IInn {
   inn             String
   questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
   questionnaireId Int
+}
+
+model Manager {
+  id       Int    @id @default(autoincrement())
+  name     String
+  surname  String
+  lastname String
+  phone    String
+  emaie    String
+
+  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
+  questionnaireId Int           @unique
+}
+
+model SignatoryManager {
+  id       Int    @id @default(autoincrement())
+  name     String
+  surname  String
+  lastname String
+  phone    String
+  emaie    String
+
+  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
+  questionnaireId Int           @unique
+}
+
+model Lifts {
+  id                       Int @id @default(autoincrement())
+  twoPostLiftScissors      Int
+  fourPostLift             Int
+  fourPostLiftTraverse     Int
+  pits                     Int
+  pitsEquippedTraverse     Int
+  postElectronicDiagnostic Int
+  postAdditionalEquipment  Int
+
+  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
+  questionnaireId Int           @unique
+}
+
+model ConfirmData {
+  id       Int    @id @default(autoincrement())
+  loginOne String
+  loginTwo String
+  lifts    Int
+
+  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
+  questionnaireId Int           @unique
+}
+
+model Images {
+  id              Int            @id @default(autoincrement())
+  path            String
+  description     String
+  Questionnaire   Questionnaire? @relation(fields: [questionnaireId], references: [id])
+  questionnaireId Int?
 }

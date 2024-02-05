@@ -4,7 +4,10 @@ import { cn } from '@/lib/utils'
 import InputForm from '@/app/questionnaire/create-a-request/components/InputForm'
 import InputPhone from '@/app/questionnaire/create-a-request/components/InputPhone'
 import CheckBox from './CheckBox'
-import { IDataManager, IDataSignatoryManager } from '@/types/managerDetails'
+import {
+    IDataManager,
+    IDataSignatoryManager,
+} from '@/types/questionnaire/create-a-request/questionnaire'
 
 const ManagerDetails = () => {
     const [isChecked, setIsChecked] = useState(false)
