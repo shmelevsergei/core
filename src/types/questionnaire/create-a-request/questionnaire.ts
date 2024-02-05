@@ -43,8 +43,8 @@ export interface IInn {
 
 export interface IImageProps {
     id?: number
-    description?: string
-    path?: string
+    description: string
+    path: string
 }
 
 export interface IDataManager {
