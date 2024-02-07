@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import UiCard from '@/app/reports/components/content/ui-card'
 import { useAdministratorState } from '@/app/reports/store/administrator.context'
-import { fetchAnketaOborotFromDate } from '@/server/routs/fetchAnketaOborot'
+import { fetchAnketaOborotFromDate } from '@/server/routs/webshop_db/fetchAnketaOborot'
 import { formattedNumber } from '@/lib/formulas/formatNumber'
 
 const Oborot = () => {

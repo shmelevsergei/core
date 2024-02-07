@@ -7,34 +7,45 @@ import {
 } from 'react-dadata'
 import { DADATA_API_KEY } from '@/server/lib/variables'
 import { Label } from '@/components/ui/label'
+import {useQuestionnaireState} from "@/app/questionnaire/store/questionnaire.context";
 
-const InputCitySto = () => {
+const InputAreaSto = ({name}:{name?:string}) => {
     const areaRef = useRef<AddressSuggestions | null>(null)
     const [value, setValue] = useState<
         DaDataSuggestion<DaDataAddress> | undefined
     >()
-    const [city, setCity] = useState<HTMLInputElement | null>(null)
+    const { setState} = useQuestionnaireState()
 
     const apiKey: string = DADATA_API_KEY
     const id = useId()
 
-    useEffect(() => {
-        if (areaRef) {
-            console.log(areaRef.current?.props.value?.value)
+    const handleInputChange = (newValue: DaDataSuggestion<DaDataAddress>| undefined) => {
+
+        if (newValue) {
+            setState(prevState => ({
+             ...prevState,
+                questionnaire: {
+                 ...prevState.questionnaire,
+                    data_sto: {
+                     ...prevState.questionnaire.data_sto,
+                        area: newValue.value
+                    }
+                }
+            }))
         }
-    })
+    }
 
     return (
         <div className={`grid w-full max-w-sm items-center gap-1.5`}>
             <Label htmlFor={id}>Область</Label>
             <AddressSuggestions
                 token={apiKey}
+                onChange={handleInputChange}
                 value={value}
-                onChange={setValue}
                 uid={id}
-                minChars={3}
                 ref={areaRef}
-                inputProps={{ name: 'city', id: id, placeholder: 'Область' }}
+                minChars={3}
+                inputProps={{ name: name, id: id, placeholder: 'Область' }}
                 containerClassName={'input'}
                 highlightClassName={'item'}
             />
@@ -42,4 +53,4 @@ const InputCitySto = () => {
     )
 }
 
-export default InputCitySto
+export default InputAreaSto

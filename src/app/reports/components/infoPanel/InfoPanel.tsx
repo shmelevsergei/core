@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react'
 import {
     fetchAnketaBase,
     fetchAnketaBaseNews,
-} from '@/server/routs/fetchAnketaBase'
-import { fetchAnketaDogovor } from '@/server/routs/fetchAnketaDogovor'
+} from '@/server/routs/webshop_db/fetchAnketaBase'
+import { fetchAnketaDogovor } from '@/server/routs/webshop_db/fetchAnketaDogovor'
 import { useAdministratorState } from '@/app/reports/store/administrator.context'
 import AllBrands from '@/app/reports/components/infoPanel/AllBrands'
 import { Skeleton } from '@/components/ui/skeleton'

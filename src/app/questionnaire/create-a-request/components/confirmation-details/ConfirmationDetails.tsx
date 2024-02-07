@@ -1,10 +1,36 @@
 import React from 'react'
 import Title from '@/app/questionnaire/create-a-request/components/Title'
-import { Card } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import InputForm from '@/app/questionnaire/create-a-request/components/InputForm'
+import {useQuestionnaireState} from "@/app/questionnaire/store/questionnaire.context";
 
 const ConfirmationDetails = () => {
+    const { setState} = useQuestionnaireState()
+
+    const handleInputChange = (field: string, e: React.ChangeEvent<HTMLInputElement>) => {
+        const newValue = e.target.value
+
+        setState(prevState => ({
+          ...prevState,
+            questionnaire: {
+              ...prevState.questionnaire,
+                 confirmData: {
+                  ...prevState.questionnaire.confirmData,
+                    loginOne: newValue,
+                     loginTwo: newValue,
+                     lifts: +newValue
+                 
+                }
+            }
+        }))
+    }
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
+
+        if (!/^\d$/.test(e.key) &&!allowedKeys.includes(e.key)) {
+            e.preventDefault();
+        }
+    }
     return (
         <div>
             <Title text={'Данные подтверждения'} />
@@ -14,18 +40,22 @@ const ConfirmationDetails = () => {
                     placeholder={'Логин 1'}
                     type={'text'}
                     label={'Логин 1'}
+                    onChange={(e) => handleInputChange('loginOne', e)}
                 />
                 <InputForm
                     id={'confirmation-login-2'}
                     placeholder={'Логин 2'}
                     type={'text'}
                     label={'Логин 2'}
+                    onChange={(e) => handleInputChange('loginTwo', e)}
                 />
                 <InputForm
                     id={'confirmation-lifts'}
                     placeholder={''}
                     type={'text'}
                     label={'Кол-во подъемников'}
+                    onChange={(e) => handleInputChange('lifts', e)}
+                    onKeyDown={(e) => handleKeyDown(e)}
                 />
             </div>
         </div>

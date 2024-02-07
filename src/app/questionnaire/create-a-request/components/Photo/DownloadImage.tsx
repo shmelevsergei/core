@@ -19,14 +19,14 @@ const DownloadImage = () => {
         setState((prevState) => ({
             ...prevState,
             questionnaire: {
-                images: [...(prevState.questionnaire.images || []), newImage],
-            },
-            isModalDownloadImages: false,
+                ...prevState.questionnaire,
+                images: [...prevState.questionnaire.images || [], newImage]
+            }
         }))
     }
 
     const isImageFile = (file: File): boolean => {
-        const imageTypes = ['image/jpeg', 'image/png', 'image/gif']
+        const imageTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/svg']
         return imageTypes.includes(file.type)
     }
 
@@ -45,6 +45,7 @@ const DownloadImage = () => {
         } else {
             console.log('Файл не является изображением')
         }
+        handleCloseClick()
     }
 
     const handleCloseClick = () => {

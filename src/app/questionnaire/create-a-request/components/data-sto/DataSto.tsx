@@ -9,8 +9,24 @@ import AddInn from '@/app/questionnaire/create-a-request/components/AddInn'
 import InputCitySto from '@/app/questionnaire/create-a-request/components/data-sto/InputCitySto'
 import InputAreaSto from '@/app/questionnaire/create-a-request/components/data-sto/InputAreaSto'
 import InputAddressSto from '@/app/questionnaire/create-a-request/components/data-sto/InputAddressSto'
+import {useQuestionnaireState} from "@/app/questionnaire/store/questionnaire.context";
 
 const DataSto = () => {
+    const {state, setState} = useQuestionnaireState()
+
+    const handleInputChange = (field: string, e: React.ChangeEvent<HTMLInputElement>) => {
+        setState(prevState => ({
+            ...prevState,
+            questionnaire: {
+                ...prevState.questionnaire,
+                data_sto: {
+                    ...prevState.questionnaire.data_sto,
+                    [field]: e.target.value
+                }
+            }
+        }))
+    }
+
     return (
         <>
             <Title text={'Данные СТО'} />
@@ -21,6 +37,7 @@ const DataSto = () => {
                         placeholder={'Название СТО'}
                         type={'text'}
                         label={'Название СТО'}
+                        onChange={(e) => handleInputChange('name', e)}
                     />
                     <InputCitySto />
                     <InputAreaSto />
@@ -30,18 +47,22 @@ const DataSto = () => {
                         placeholder={'Код клиента АВТО-ЕВРО'}
                         type={'text'}
                         label={'Код клиента АВТО-ЕВРО'}
+                        onChange={(e) => handleInputChange('code_avtoevro', e)}
+
                     />
                     <InputForm
                         id={'code-avtorus-sto'}
                         placeholder={'Код клиента АВТОРУСЬ'}
                         type={'text'}
                         label={'Код клиента АВТОРУСЬ'}
+                        onChange={(e) => handleInputChange('code_avtorus', e)}
                     />
                     <InputForm
                         id={'code-rossko-sto'}
                         placeholder={'Код клиента РОССКО'}
                         type={'text'}
                         label={'Код клиента РОССКО'}
+                        onChange={(e) => handleInputChange('code_rossko', e)}
                     />
                 </div>
                 <Separator className={'my-5'} />

@@ -10,12 +10,14 @@ interface InputFormProps {
     type: string
     disabled?: boolean
     value?: string | undefined
+    name?: string
     onChange?: (e: any) => void
+    onKeyDown?: (e:any) => void
 }
 
 // eslint-disable-next-line react/display-name
 const InputForm = React.forwardRef<HTMLInputElement, InputFormProps>(
-    ({ id, label, placeholder, type, disabled, value, onChange }, ref) => {
+    ({ id, label, placeholder, type, disabled, value, name, onChange, onKeyDown }, ref) => {
         return (
             <div className={`grid w-full max-w-sm items-center gap-1.5`}>
                 <Label htmlFor={id}>{label}</Label>
@@ -27,6 +29,9 @@ const InputForm = React.forwardRef<HTMLInputElement, InputFormProps>(
                     onChange={onChange}
                     disabled={disabled}
                     value={value}
+                    name={name}
+                    onKeyDown={onKeyDown}
+
                 />
             </div>
         )

@@ -11,7 +11,7 @@ import ConfirmationDetails from '@/app/questionnaire/create-a-request/components
 import Comment from '@/app/questionnaire/create-a-request/components/comment/Comment'
 import Photo from '@/app/questionnaire/create-a-request/components/Photo/Photo'
 
-import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
+import { ScrollArea } from '@/components/ui/scroll-area'
 import { Card } from '@/components/ui/card'
 import DownloadImage from '@/app/questionnaire/create-a-request/components/Photo/DownloadImage'
 import {
@@ -19,52 +19,17 @@ import {
     useQuestionnaireState,
 } from '@/app/questionnaire/store/questionnaire.context'
 import { Button } from '@/components/ui/button'
+import Form from "@/app/questionnaire/create-a-request/components/Form";
 
 const Page = () => {
-    const { state } = useQuestionnaireState()
-    const [isDisabled, setIsDisabled] = useState(false)
-    const handleClick = (e: any) => {
-        e.preventDefault()
-        setIsDisabled(true)
-        console.log(state.questionnaire)
-    }
 
-    useEffect(() => {
-        setTimeout(() => {
-            setIsDisabled(false)
-        }, 1000)
-    }, [isDisabled])
 
     return (
         <main>
             <QuestionnaireProvider>
                 <Card className={cn('p-4 h-[calc(100vh-100px)]')}>
                     <ScrollArea className={cn('h-full pr-4')}>
-                        <Distributor />
-                        <Separator className={cn('my-3 w-full')} />
-                        <DistributorEmployee />
-                        <Separator className={cn('my-3 w-full')} />
-                        <DataSto />
-                        <Separator className={cn('my-3 w-full')} />
-                        <ManagerDetails />
-                        <Separator className={cn('my-3 w-full')} />
-                        <Lifts />
-                        <Separator className={cn('my-3 w-full')} />
-                        <ConfirmationDetails />
-                        <Separator className={cn('my-3 w-full')} />
-                        <Comment />
-                        <Separator className={cn('my-3 w-full')} />
-                        <Photo />
-                        <Separator className={cn('my-3 w-full')} />
-                        <Button
-                            onClick={handleClick}
-                            disabled={isDisabled}
-                            className={cn(
-                                'bg-blue-700 mx-auto w-max block mt-10 hover:bg-blue-600'
-                            )}
-                        >
-                            Отправить анкету
-                        </Button>
+                        <Form/>
                     </ScrollArea>
                 </Card>
                 <DownloadImage />

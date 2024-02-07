@@ -4,7 +4,7 @@ import UiCard from './ui-card'
 import {
     fetchAnketaOborotPurchaseStoMoney,
     fetchAnketaOborotRemzonaQty,
-} from '@/server/routs/fetchAnketaOborot'
+} from '@/server/routs/webshop_db/fetchAnketaOborot'
 import { useAdministratorState } from '../../store/administrator.context'
 import { formattedNumber } from '@/lib/formulas/formatNumber'
 

@@ -20,6 +20,9 @@ model Questionnaire {
   signatoryManager     SignatoryManager?
   confirmData          ConfirmData?
   status               Status
+  comment              String?              @db.Text
+  created_date         DateTime
+  updated_date         DateTime
 }
 
 enum Status {
@@ -66,7 +69,7 @@ model Manager {
   surname  String
   lastname String
   phone    String
-  emaie    String
+  email    String
 
   questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
   questionnaireId Int           @unique
@@ -78,7 +81,7 @@ model SignatoryManager {
   surname  String
   lastname String
   phone    String
-  emaie    String
+  email    String
 
   questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
   questionnaireId Int           @unique
@@ -109,9 +112,9 @@ model ConfirmData {
 }
 
 model Images {
-  id              Int            @id @default(autoincrement())
+  id              Int           @id @default(autoincrement())
   path            String
   description     String
-  Questionnaire   Questionnaire? @relation(fields: [questionnaireId], references: [id])
-  questionnaireId Int?
+  Questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
+  questionnaireId Int           @unique
 }

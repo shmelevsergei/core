@@ -1598,18 +1598,27 @@ export namespace Prisma {
     id: number | null
     distributor: string | null
     status: $Enums.Status | null
+    comment: string | null
+    created_date: Date | null
+    updated_date: Date | null
   }
 
   export type QuestionnaireMaxAggregateOutputType = {
     id: number | null
     distributor: string | null
     status: $Enums.Status | null
+    comment: string | null
+    created_date: Date | null
+    updated_date: Date | null
   }
 
   export type QuestionnaireCountAggregateOutputType = {
     id: number
     distributor: number
     status: number
+    comment: number
+    created_date: number
+    updated_date: number
     _all: number
   }
 
@@ -1626,18 +1635,27 @@ export namespace Prisma {
     id?: true
     distributor?: true
     status?: true
+    comment?: true
+    created_date?: true
+    updated_date?: true
   }
 
   export type QuestionnaireMaxAggregateInputType = {
     id?: true
     distributor?: true
     status?: true
+    comment?: true
+    created_date?: true
+    updated_date?: true
   }
 
   export type QuestionnaireCountAggregateInputType = {
     id?: true
     distributor?: true
     status?: true
+    comment?: true
+    created_date?: true
+    updated_date?: true
     _all?: true
   }
 
@@ -1731,6 +1749,9 @@ export namespace Prisma {
     id: number
     distributor: string
     status: $Enums.Status
+    comment: string | null
+    created_date: Date
+    updated_date: Date
     _count: QuestionnaireCountAggregateOutputType | null
     _avg: QuestionnaireAvgAggregateOutputType | null
     _sum: QuestionnaireSumAggregateOutputType | null
@@ -1756,6 +1777,9 @@ export namespace Prisma {
     id?: boolean
     distributor?: boolean
     status?: boolean
+    comment?: boolean
+    created_date?: boolean
+    updated_date?: boolean
     distributor_employee?: boolean | Questionnaire$distributor_employeeArgs<ExtArgs>
     data_sto?: boolean | Questionnaire$data_stoArgs<ExtArgs>
     inns?: boolean | Questionnaire$innsArgs<ExtArgs>
@@ -1771,6 +1795,9 @@ export namespace Prisma {
     id?: boolean
     distributor?: boolean
     status?: boolean
+    comment?: boolean
+    created_date?: boolean
+    updated_date?: boolean
   }
 
   export type QuestionnaireInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -1802,6 +1829,9 @@ export namespace Prisma {
       id: number
       distributor: string
       status: $Enums.Status
+      comment: string | null
+      created_date: Date
+      updated_date: Date
     }, ExtArgs["result"]["questionnaire"]>
     composites: {}
   }
@@ -2214,6 +2244,9 @@ export namespace Prisma {
     readonly id: FieldRef<"Questionnaire", 'Int'>
     readonly distributor: FieldRef<"Questionnaire", 'String'>
     readonly status: FieldRef<"Questionnaire", 'Status'>
+    readonly comment: FieldRef<"Questionnaire", 'String'>
+    readonly created_date: FieldRef<"Questionnaire", 'DateTime'>
+    readonly updated_date: FieldRef<"Questionnaire", 'DateTime'>
   }
     
 
@@ -5619,7 +5652,7 @@ export namespace Prisma {
     surname: string | null
     lastname: string | null
     phone: string | null
-    emaie: string | null
+    email: string | null
     questionnaireId: number | null
   }
 
@@ -5629,7 +5662,7 @@ export namespace Prisma {
     surname: string | null
     lastname: string | null
     phone: string | null
-    emaie: string | null
+    email: string | null
     questionnaireId: number | null
   }
 
@@ -5639,7 +5672,7 @@ export namespace Prisma {
     surname: number
     lastname: number
     phone: number
-    emaie: number
+    email: number
     questionnaireId: number
     _all: number
   }
@@ -5661,7 +5694,7 @@ export namespace Prisma {
     surname?: true
     lastname?: true
     phone?: true
-    emaie?: true
+    email?: true
     questionnaireId?: true
   }
 
@@ -5671,7 +5704,7 @@ export namespace Prisma {
     surname?: true
     lastname?: true
     phone?: true
-    emaie?: true
+    email?: true
     questionnaireId?: true
   }
 
@@ -5681,7 +5714,7 @@ export namespace Prisma {
     surname?: true
     lastname?: true
     phone?: true
-    emaie?: true
+    email?: true
     questionnaireId?: true
     _all?: true
   }
@@ -5778,7 +5811,7 @@ export namespace Prisma {
     surname: string
     lastname: string
     phone: string
-    emaie: string
+    email: string
     questionnaireId: number
     _count: ManagerCountAggregateOutputType | null
     _avg: ManagerAvgAggregateOutputType | null
@@ -5807,7 +5840,7 @@ export namespace Prisma {
     surname?: boolean
     lastname?: boolean
     phone?: boolean
-    emaie?: boolean
+    email?: boolean
     questionnaireId?: boolean
     questionnaire?: boolean | QuestionnaireDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["manager"]>
@@ -5818,7 +5851,7 @@ export namespace Prisma {
     surname?: boolean
     lastname?: boolean
     phone?: boolean
-    emaie?: boolean
+    email?: boolean
     questionnaireId?: boolean
   }
 
@@ -5838,7 +5871,7 @@ export namespace Prisma {
       surname: string
       lastname: string
       phone: string
-      emaie: string
+      email: string
       questionnaireId: number
     }, ExtArgs["result"]["manager"]>
     composites: {}
@@ -6240,7 +6273,7 @@ export namespace Prisma {
     readonly surname: FieldRef<"Manager", 'String'>
     readonly lastname: FieldRef<"Manager", 'String'>
     readonly phone: FieldRef<"Manager", 'String'>
-    readonly emaie: FieldRef<"Manager", 'String'>
+    readonly email: FieldRef<"Manager", 'String'>
     readonly questionnaireId: FieldRef<"Manager", 'Int'>
   }
     
@@ -6597,7 +6630,7 @@ export namespace Prisma {
     surname: string | null
     lastname: string | null
     phone: string | null
-    emaie: string | null
+    email: string | null
     questionnaireId: number | null
   }
 
@@ -6607,7 +6640,7 @@ export namespace Prisma {
     surname: string | null
     lastname: string | null
     phone: string | null
-    emaie: string | null
+    email: string | null
     questionnaireId: number | null
   }
 
@@ -6617,7 +6650,7 @@ export namespace Prisma {
     surname: number
     lastname: number
     phone: number
-    emaie: number
+    email: number
     questionnaireId: number
     _all: number
   }
@@ -6639,7 +6672,7 @@ export namespace Prisma {
     surname?: true
     lastname?: true
     phone?: true
-    emaie?: true
+    email?: true
     questionnaireId?: true
   }
 
@@ -6649,7 +6682,7 @@ export namespace Prisma {
     surname?: true
     lastname?: true
     phone?: true
-    emaie?: true
+    email?: true
     questionnaireId?: true
   }
 
@@ -6659,7 +6692,7 @@ export namespace Prisma {
     surname?: true
     lastname?: true
     phone?: true
-    emaie?: true
+    email?: true
     questionnaireId?: true
     _all?: true
   }
@@ -6756,7 +6789,7 @@ export namespace Prisma {
     surname: string
     lastname: string
     phone: string
-    emaie: string
+    email: string
     questionnaireId: number
     _count: SignatoryManagerCountAggregateOutputType | null
     _avg: SignatoryManagerAvgAggregateOutputType | null
@@ -6785,7 +6818,7 @@ export namespace Prisma {
     surname?: boolean
     lastname?: boolean
     phone?: boolean
-    emaie?: boolean
+    email?: boolean
     questionnaireId?: boolean
     questionnaire?: boolean | QuestionnaireDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["signatoryManager"]>
@@ -6796,7 +6829,7 @@ export namespace Prisma {
     surname?: boolean
     lastname?: boolean
     phone?: boolean
-    emaie?: boolean
+    email?: boolean
     questionnaireId?: boolean
   }
 
@@ -6816,7 +6849,7 @@ export namespace Prisma {
       surname: string
       lastname: string
       phone: string
-      emaie: string
+      email: string
       questionnaireId: number
     }, ExtArgs["result"]["signatoryManager"]>
     composites: {}
@@ -7218,7 +7251,7 @@ export namespace Prisma {
     readonly surname: FieldRef<"SignatoryManager", 'String'>
     readonly lastname: FieldRef<"SignatoryManager", 'String'>
     readonly phone: FieldRef<"SignatoryManager", 'String'>
-    readonly emaie: FieldRef<"SignatoryManager", 'String'>
+    readonly email: FieldRef<"SignatoryManager", 'String'>
     readonly questionnaireId: FieldRef<"SignatoryManager", 'Int'>
   }
     
@@ -9702,7 +9735,7 @@ export namespace Prisma {
     id: number
     path: string
     description: string
-    questionnaireId: number | null
+    questionnaireId: number
     _count: ImagesCountAggregateOutputType | null
     _avg: ImagesAvgAggregateOutputType | null
     _sum: ImagesSumAggregateOutputType | null
@@ -9729,7 +9762,7 @@ export namespace Prisma {
     path?: boolean
     description?: boolean
     questionnaireId?: boolean
-    Questionnaire?: boolean | Images$QuestionnaireArgs<ExtArgs>
+    Questionnaire?: boolean | QuestionnaireDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["images"]>
 
   export type ImagesSelectScalar = {
@@ -9740,20 +9773,20 @@ export namespace Prisma {
   }
 
   export type ImagesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    Questionnaire?: boolean | Images$QuestionnaireArgs<ExtArgs>
+    Questionnaire?: boolean | QuestionnaireDefaultArgs<ExtArgs>
   }
 
 
   export type $ImagesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Images"
     objects: {
-      Questionnaire: Prisma.$QuestionnairePayload<ExtArgs> | null
+      Questionnaire: Prisma.$QuestionnairePayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
       path: string
       description: string
-      questionnaireId: number | null
+      questionnaireId: number
     }, ExtArgs["result"]["images"]>
     composites: {}
   }
@@ -10119,7 +10152,7 @@ export namespace Prisma {
   export interface Prisma__ImagesClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: 'PrismaPromise';
 
-    Questionnaire<T extends Images$QuestionnaireArgs<ExtArgs> = {}>(args?: Subset<T, Images$QuestionnaireArgs<ExtArgs>>): Prisma__QuestionnaireClient<$Result.GetResult<Prisma.$QuestionnairePayload<ExtArgs>, T, 'findUniqueOrThrow'> | null, null, ExtArgs>;
+    Questionnaire<T extends QuestionnaireDefaultArgs<ExtArgs> = {}>(args?: Subset<T, QuestionnaireDefaultArgs<ExtArgs>>): Prisma__QuestionnaireClient<$Result.GetResult<Prisma.$QuestionnairePayload<ExtArgs>, T, 'findUniqueOrThrow'> | Null, Null, ExtArgs>;
 
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -10465,22 +10498,6 @@ export namespace Prisma {
 
 
   /**
-   * Images.Questionnaire
-   */
-  export type Images$QuestionnaireArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Questionnaire
-     */
-    select?: QuestionnaireSelect<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well.
-     */
-    include?: QuestionnaireInclude<ExtArgs> | null
-    where?: QuestionnaireWhereInput
-  }
-
-
-  /**
    * Images without action
    */
   export type ImagesDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -10513,7 +10530,10 @@ export namespace Prisma {
   export const QuestionnaireScalarFieldEnum: {
     id: 'id',
     distributor: 'distributor',
-    status: 'status'
+    status: 'status',
+    comment: 'comment',
+    created_date: 'created_date',
+    updated_date: 'updated_date'
   };
 
   export type QuestionnaireScalarFieldEnum = (typeof QuestionnaireScalarFieldEnum)[keyof typeof QuestionnaireScalarFieldEnum]
@@ -10562,7 +10582,7 @@ export namespace Prisma {
     surname: 'surname',
     lastname: 'lastname',
     phone: 'phone',
-    emaie: 'emaie',
+    email: 'email',
     questionnaireId: 'questionnaireId'
   };
 
@@ -10575,7 +10595,7 @@ export namespace Prisma {
     surname: 'surname',
     lastname: 'lastname',
     phone: 'phone',
-    emaie: 'emaie',
+    email: 'email',
     questionnaireId: 'questionnaireId'
   };
 
@@ -10690,6 +10710,20 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'DateTime'
+   */
+  export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
+    
+
+
+  /**
+   * Reference to a field of type 'DateTime[]'
+   */
+  export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
+    
+
+
+  /**
    * Reference to a field of type 'Float'
    */
   export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -10713,6 +10747,9 @@ export namespace Prisma {
     id?: IntFilter<"Questionnaire"> | number
     distributor?: StringFilter<"Questionnaire"> | string
     status?: EnumStatusFilter<"Questionnaire"> | $Enums.Status
+    comment?: StringNullableFilter<"Questionnaire"> | string | null
+    created_date?: DateTimeFilter<"Questionnaire"> | Date | string
+    updated_date?: DateTimeFilter<"Questionnaire"> | Date | string
     distributor_employee?: XOR<DistributorEmployeeNullableRelationFilter, DistributorEmployeeWhereInput> | null
     data_sto?: XOR<DataStoNullableRelationFilter, DataStoWhereInput> | null
     inns?: IInnListRelationFilter
@@ -10727,6 +10764,9 @@ export namespace Prisma {
     id?: SortOrder
     distributor?: SortOrder
     status?: SortOrder
+    comment?: SortOrderInput | SortOrder
+    created_date?: SortOrder
+    updated_date?: SortOrder
     distributor_employee?: DistributorEmployeeOrderByWithRelationInput
     data_sto?: DataStoOrderByWithRelationInput
     inns?: IInnOrderByRelationAggregateInput
@@ -10744,6 +10784,9 @@ export namespace Prisma {
     NOT?: QuestionnaireWhereInput | QuestionnaireWhereInput[]
     distributor?: StringFilter<"Questionnaire"> | string
     status?: EnumStatusFilter<"Questionnaire"> | $Enums.Status
+    comment?: StringNullableFilter<"Questionnaire"> | string | null
+    created_date?: DateTimeFilter<"Questionnaire"> | Date | string
+    updated_date?: DateTimeFilter<"Questionnaire"> | Date | string
     distributor_employee?: XOR<DistributorEmployeeNullableRelationFilter, DistributorEmployeeWhereInput> | null
     data_sto?: XOR<DataStoNullableRelationFilter, DataStoWhereInput> | null
     inns?: IInnListRelationFilter
@@ -10758,6 +10801,9 @@ export namespace Prisma {
     id?: SortOrder
     distributor?: SortOrder
     status?: SortOrder
+    comment?: SortOrderInput | SortOrder
+    created_date?: SortOrder
+    updated_date?: SortOrder
     _count?: QuestionnaireCountOrderByAggregateInput
     _avg?: QuestionnaireAvgOrderByAggregateInput
     _max?: QuestionnaireMaxOrderByAggregateInput
@@ -10772,6 +10818,9 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"Questionnaire"> | number
     distributor?: StringWithAggregatesFilter<"Questionnaire"> | string
     status?: EnumStatusWithAggregatesFilter<"Questionnaire"> | $Enums.Status
+    comment?: StringNullableWithAggregatesFilter<"Questionnaire"> | string | null
+    created_date?: DateTimeWithAggregatesFilter<"Questionnaire"> | Date | string
+    updated_date?: DateTimeWithAggregatesFilter<"Questionnaire"> | Date | string
   }
 
   export type DistributorEmployeeWhereInput = {
@@ -10974,7 +11023,7 @@ export namespace Prisma {
     surname?: StringFilter<"Manager"> | string
     lastname?: StringFilter<"Manager"> | string
     phone?: StringFilter<"Manager"> | string
-    emaie?: StringFilter<"Manager"> | string
+    email?: StringFilter<"Manager"> | string
     questionnaireId?: IntFilter<"Manager"> | number
     questionnaire?: XOR<QuestionnaireRelationFilter, QuestionnaireWhereInput>
   }
@@ -10985,7 +11034,7 @@ export namespace Prisma {
     surname?: SortOrder
     lastname?: SortOrder
     phone?: SortOrder
-    emaie?: SortOrder
+    email?: SortOrder
     questionnaireId?: SortOrder
     questionnaire?: QuestionnaireOrderByWithRelationInput
   }
@@ -11000,7 +11049,7 @@ export namespace Prisma {
     surname?: StringFilter<"Manager"> | string
     lastname?: StringFilter<"Manager"> | string
     phone?: StringFilter<"Manager"> | string
-    emaie?: StringFilter<"Manager"> | string
+    email?: StringFilter<"Manager"> | string
     questionnaire?: XOR<QuestionnaireRelationFilter, QuestionnaireWhereInput>
   }, "id" | "questionnaireId">
 
@@ -11010,7 +11059,7 @@ export namespace Prisma {
     surname?: SortOrder
     lastname?: SortOrder
     phone?: SortOrder
-    emaie?: SortOrder
+    email?: SortOrder
     questionnaireId?: SortOrder
     _count?: ManagerCountOrderByAggregateInput
     _avg?: ManagerAvgOrderByAggregateInput
@@ -11028,7 +11077,7 @@ export namespace Prisma {
     surname?: StringWithAggregatesFilter<"Manager"> | string
     lastname?: StringWithAggregatesFilter<"Manager"> | string
     phone?: StringWithAggregatesFilter<"Manager"> | string
-    emaie?: StringWithAggregatesFilter<"Manager"> | string
+    email?: StringWithAggregatesFilter<"Manager"> | string
     questionnaireId?: IntWithAggregatesFilter<"Manager"> | number
   }
 
@@ -11041,7 +11090,7 @@ export namespace Prisma {
     surname?: StringFilter<"SignatoryManager"> | string
     lastname?: StringFilter<"SignatoryManager"> | string
     phone?: StringFilter<"SignatoryManager"> | string
-    emaie?: StringFilter<"SignatoryManager"> | string
+    email?: StringFilter<"SignatoryManager"> | string
     questionnaireId?: IntFilter<"SignatoryManager"> | number
     questionnaire?: XOR<QuestionnaireRelationFilter, QuestionnaireWhereInput>
   }
@@ -11052,7 +11101,7 @@ export namespace Prisma {
     surname?: SortOrder
     lastname?: SortOrder
     phone?: SortOrder
-    emaie?: SortOrder
+    email?: SortOrder
     questionnaireId?: SortOrder
     questionnaire?: QuestionnaireOrderByWithRelationInput
   }
@@ -11067,7 +11116,7 @@ export namespace Prisma {
     surname?: StringFilter<"SignatoryManager"> | string
     lastname?: StringFilter<"SignatoryManager"> | string
     phone?: StringFilter<"SignatoryManager"> | string
-    emaie?: StringFilter<"SignatoryManager"> | string
+    email?: StringFilter<"SignatoryManager"> | string
     questionnaire?: XOR<QuestionnaireRelationFilter, QuestionnaireWhereInput>
   }, "id" | "questionnaireId">
 
@@ -11077,7 +11126,7 @@ export namespace Prisma {
     surname?: SortOrder
     lastname?: SortOrder
     phone?: SortOrder
-    emaie?: SortOrder
+    email?: SortOrder
     questionnaireId?: SortOrder
     _count?: SignatoryManagerCountOrderByAggregateInput
     _avg?: SignatoryManagerAvgOrderByAggregateInput
@@ -11095,7 +11144,7 @@ export namespace Prisma {
     surname?: StringWithAggregatesFilter<"SignatoryManager"> | string
     lastname?: StringWithAggregatesFilter<"SignatoryManager"> | string
     phone?: StringWithAggregatesFilter<"SignatoryManager"> | string
-    emaie?: StringWithAggregatesFilter<"SignatoryManager"> | string
+    email?: StringWithAggregatesFilter<"SignatoryManager"> | string
     questionnaireId?: IntWithAggregatesFilter<"SignatoryManager"> | number
   }
 
@@ -11240,34 +11289,34 @@ export namespace Prisma {
     id?: IntFilter<"Images"> | number
     path?: StringFilter<"Images"> | string
     description?: StringFilter<"Images"> | string
-    questionnaireId?: IntNullableFilter<"Images"> | number | null
-    Questionnaire?: XOR<QuestionnaireNullableRelationFilter, QuestionnaireWhereInput> | null
+    questionnaireId?: IntFilter<"Images"> | number
+    Questionnaire?: XOR<QuestionnaireRelationFilter, QuestionnaireWhereInput>
   }
 
   export type ImagesOrderByWithRelationInput = {
     id?: SortOrder
     path?: SortOrder
     description?: SortOrder
-    questionnaireId?: SortOrderInput | SortOrder
+    questionnaireId?: SortOrder
     Questionnaire?: QuestionnaireOrderByWithRelationInput
   }
 
   export type ImagesWhereUniqueInput = Prisma.AtLeast<{
     id?: number
+    questionnaireId?: number
     AND?: ImagesWhereInput | ImagesWhereInput[]
     OR?: ImagesWhereInput[]
     NOT?: ImagesWhereInput | ImagesWhereInput[]
     path?: StringFilter<"Images"> | string
     description?: StringFilter<"Images"> | string
-    questionnaireId?: IntNullableFilter<"Images"> | number | null
-    Questionnaire?: XOR<QuestionnaireNullableRelationFilter, QuestionnaireWhereInput> | null
-  }, "id">
+    Questionnaire?: XOR<QuestionnaireRelationFilter, QuestionnaireWhereInput>
+  }, "id" | "questionnaireId">
 
   export type ImagesOrderByWithAggregationInput = {
     id?: SortOrder
     path?: SortOrder
     description?: SortOrder
-    questionnaireId?: SortOrderInput | SortOrder
+    questionnaireId?: SortOrder
     _count?: ImagesCountOrderByAggregateInput
     _avg?: ImagesAvgOrderByAggregateInput
     _max?: ImagesMaxOrderByAggregateInput
@@ -11282,12 +11331,15 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"Images"> | number
     path?: StringWithAggregatesFilter<"Images"> | string
     description?: StringWithAggregatesFilter<"Images"> | string
-    questionnaireId?: IntNullableWithAggregatesFilter<"Images"> | number | null
+    questionnaireId?: IntWithAggregatesFilter<"Images"> | number
   }
 
   export type QuestionnaireCreateInput = {
     distributor: string
     status: $Enums.Status
+    comment?: string | null
+    created_date: Date | string
+    updated_date: Date | string
     distributor_employee?: DistributorEmployeeCreateNestedOneWithoutQuestionnaireInput
     data_sto?: DataStoCreateNestedOneWithoutQuestionnaireInput
     inns?: IInnCreateNestedManyWithoutQuestionnaireInput
@@ -11302,6 +11354,9 @@ export namespace Prisma {
     id?: number
     distributor: string
     status: $Enums.Status
+    comment?: string | null
+    created_date: Date | string
+    updated_date: Date | string
     distributor_employee?: DistributorEmployeeUncheckedCreateNestedOneWithoutQuestionnaireInput
     data_sto?: DataStoUncheckedCreateNestedOneWithoutQuestionnaireInput
     inns?: IInnUncheckedCreateNestedManyWithoutQuestionnaireInput
@@ -11315,6 +11370,9 @@ export namespace Prisma {
   export type QuestionnaireUpdateInput = {
     distributor?: StringFieldUpdateOperationsInput | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    created_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
     distributor_employee?: DistributorEmployeeUpdateOneWithoutQuestionnaireNestedInput
     data_sto?: DataStoUpdateOneWithoutQuestionnaireNestedInput
     inns?: IInnUpdateManyWithoutQuestionnaireNestedInput
@@ -11329,6 +11387,9 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     distributor?: StringFieldUpdateOperationsInput | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    created_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
     distributor_employee?: DistributorEmployeeUncheckedUpdateOneWithoutQuestionnaireNestedInput
     data_sto?: DataStoUncheckedUpdateOneWithoutQuestionnaireNestedInput
     inns?: IInnUncheckedUpdateManyWithoutQuestionnaireNestedInput
@@ -11343,17 +11404,26 @@ export namespace Prisma {
     id?: number
     distributor: string
     status: $Enums.Status
+    comment?: string | null
+    created_date: Date | string
+    updated_date: Date | string
   }
 
   export type QuestionnaireUpdateManyMutationInput = {
     distributor?: StringFieldUpdateOperationsInput | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    created_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type QuestionnaireUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     distributor?: StringFieldUpdateOperationsInput | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    created_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type DistributorEmployeeCreateInput = {
@@ -11545,7 +11615,7 @@ export namespace Prisma {
     surname: string
     lastname: string
     phone: string
-    emaie: string
+    email: string
     questionnaire: QuestionnaireCreateNestedOneWithoutManagerInput
   }
 
@@ -11555,7 +11625,7 @@ export namespace Prisma {
     surname: string
     lastname: string
     phone: string
-    emaie: string
+    email: string
     questionnaireId: number
   }
 
@@ -11564,7 +11634,7 @@ export namespace Prisma {
     surname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
     phone?: StringFieldUpdateOperationsInput | string
-    emaie?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
     questionnaire?: QuestionnaireUpdateOneRequiredWithoutManagerNestedInput
   }
 
@@ -11574,7 +11644,7 @@ export namespace Prisma {
     surname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
     phone?: StringFieldUpdateOperationsInput | string
-    emaie?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
     questionnaireId?: IntFieldUpdateOperationsInput | number
   }
 
@@ -11584,7 +11654,7 @@ export namespace Prisma {
     surname: string
     lastname: string
     phone: string
-    emaie: string
+    email: string
     questionnaireId: number
   }
 
@@ -11593,7 +11663,7 @@ export namespace Prisma {
     surname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
     phone?: StringFieldUpdateOperationsInput | string
-    emaie?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
   }
 
   export type ManagerUncheckedUpdateManyInput = {
@@ -11602,7 +11672,7 @@ export namespace Prisma {
     surname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
     phone?: StringFieldUpdateOperationsInput | string
-    emaie?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
     questionnaireId?: IntFieldUpdateOperationsInput | number
   }
 
@@ -11611,7 +11681,7 @@ export namespace Prisma {
     surname: string
     lastname: string
     phone: string
-    emaie: string
+    email: string
     questionnaire: QuestionnaireCreateNestedOneWithoutSignatoryManagerInput
   }
 
@@ -11621,7 +11691,7 @@ export namespace Prisma {
     surname: string
     lastname: string
     phone: string
-    emaie: string
+    email: string
     questionnaireId: number
   }
 
@@ -11630,7 +11700,7 @@ export namespace Prisma {
     surname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
     phone?: StringFieldUpdateOperationsInput | string
-    emaie?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
     questionnaire?: QuestionnaireUpdateOneRequiredWithoutSignatoryManagerNestedInput
   }
 
@@ -11640,7 +11710,7 @@ export namespace Prisma {
     surname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
     phone?: StringFieldUpdateOperationsInput | string
-    emaie?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
     questionnaireId?: IntFieldUpdateOperationsInput | number
   }
 
@@ -11650,7 +11720,7 @@ export namespace Prisma {
     surname: string
     lastname: string
     phone: string
-    emaie: string
+    email: string
     questionnaireId: number
   }
 
@@ -11659,7 +11729,7 @@ export namespace Prisma {
     surname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
     phone?: StringFieldUpdateOperationsInput | string
-    emaie?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
   }
 
   export type SignatoryManagerUncheckedUpdateManyInput = {
@@ -11668,7 +11738,7 @@ export namespace Prisma {
     surname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
     phone?: StringFieldUpdateOperationsInput | string
-    emaie?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
     questionnaireId?: IntFieldUpdateOperationsInput | number
   }
 
@@ -11807,34 +11877,34 @@ export namespace Prisma {
   export type ImagesCreateInput = {
     path: string
     description: string
-    Questionnaire?: QuestionnaireCreateNestedOneWithoutImagesInput
+    Questionnaire: QuestionnaireCreateNestedOneWithoutImagesInput
   }
 
   export type ImagesUncheckedCreateInput = {
     id?: number
     path: string
     description: string
-    questionnaireId?: number | null
+    questionnaireId: number
   }
 
   export type ImagesUpdateInput = {
     path?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    Questionnaire?: QuestionnaireUpdateOneWithoutImagesNestedInput
+    Questionnaire?: QuestionnaireUpdateOneRequiredWithoutImagesNestedInput
   }
 
   export type ImagesUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     path?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    questionnaireId?: NullableIntFieldUpdateOperationsInput | number | null
+    questionnaireId?: IntFieldUpdateOperationsInput | number
   }
 
   export type ImagesCreateManyInput = {
     id?: number
     path: string
     description: string
-    questionnaireId?: number | null
+    questionnaireId: number
   }
 
   export type ImagesUpdateManyMutationInput = {
@@ -11846,7 +11916,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     path?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
-    questionnaireId?: NullableIntFieldUpdateOperationsInput | number | null
+    questionnaireId?: IntFieldUpdateOperationsInput | number
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -11880,6 +11950,32 @@ export namespace Prisma {
     in?: $Enums.Status[] | ListEnumStatusFieldRefInput<$PrismaModel>
     notIn?: $Enums.Status[] | ListEnumStatusFieldRefInput<$PrismaModel>
     not?: NestedEnumStatusFilter<$PrismaModel> | $Enums.Status
+  }
+
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type DateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
   export type DistributorEmployeeNullableRelationFilter = {
@@ -11924,6 +12020,11 @@ export namespace Prisma {
     isNot?: ConfirmDataWhereInput | null
   }
 
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
   export type IInnOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
@@ -11936,6 +12037,9 @@ export namespace Prisma {
     id?: SortOrder
     distributor?: SortOrder
     status?: SortOrder
+    comment?: SortOrder
+    created_date?: SortOrder
+    updated_date?: SortOrder
   }
 
   export type QuestionnaireAvgOrderByAggregateInput = {
@@ -11946,12 +12050,18 @@ export namespace Prisma {
     id?: SortOrder
     distributor?: SortOrder
     status?: SortOrder
+    comment?: SortOrder
+    created_date?: SortOrder
+    updated_date?: SortOrder
   }
 
   export type QuestionnaireMinOrderByAggregateInput = {
     id?: SortOrder
     distributor?: SortOrder
     status?: SortOrder
+    comment?: SortOrder
+    created_date?: SortOrder
+    updated_date?: SortOrder
   }
 
   export type QuestionnaireSumOrderByAggregateInput = {
@@ -12000,6 +12110,38 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumStatusFilter<$PrismaModel>
     _max?: NestedEnumStatusFilter<$PrismaModel>
+  }
+
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
   export type QuestionnaireRelationFilter = {
@@ -12127,7 +12269,7 @@ export namespace Prisma {
     surname?: SortOrder
     lastname?: SortOrder
     phone?: SortOrder
-    emaie?: SortOrder
+    email?: SortOrder
     questionnaireId?: SortOrder
   }
 
@@ -12142,7 +12284,7 @@ export namespace Prisma {
     surname?: SortOrder
     lastname?: SortOrder
     phone?: SortOrder
-    emaie?: SortOrder
+    email?: SortOrder
     questionnaireId?: SortOrder
   }
 
@@ -12152,7 +12294,7 @@ export namespace Prisma {
     surname?: SortOrder
     lastname?: SortOrder
     phone?: SortOrder
-    emaie?: SortOrder
+    email?: SortOrder
     questionnaireId?: SortOrder
   }
 
@@ -12167,7 +12309,7 @@ export namespace Prisma {
     surname?: SortOrder
     lastname?: SortOrder
     phone?: SortOrder
-    emaie?: SortOrder
+    email?: SortOrder
     questionnaireId?: SortOrder
   }
 
@@ -12182,7 +12324,7 @@ export namespace Prisma {
     surname?: SortOrder
     lastname?: SortOrder
     phone?: SortOrder
-    emaie?: SortOrder
+    email?: SortOrder
     questionnaireId?: SortOrder
   }
 
@@ -12192,7 +12334,7 @@ export namespace Prisma {
     surname?: SortOrder
     lastname?: SortOrder
     phone?: SortOrder
-    emaie?: SortOrder
+    email?: SortOrder
     questionnaireId?: SortOrder
   }
 
@@ -12297,27 +12439,6 @@ export namespace Prisma {
     questionnaireId?: SortOrder
   }
 
-  export type IntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
-  }
-
-  export type QuestionnaireNullableRelationFilter = {
-    is?: QuestionnaireWhereInput | null
-    isNot?: QuestionnaireWhereInput | null
-  }
-
-  export type SortOrderInput = {
-    sort: SortOrder
-    nulls?: NullsOrder
-  }
-
   export type ImagesCountOrderByAggregateInput = {
     id?: SortOrder
     path?: SortOrder
@@ -12347,22 +12468,6 @@ export namespace Prisma {
   export type ImagesSumOrderByAggregateInput = {
     id?: SortOrder
     questionnaireId?: SortOrder
-  }
-
-  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedIntNullableFilter<$PrismaModel>
-    _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
   export type DistributorEmployeeCreateNestedOneWithoutQuestionnaireInput = {
@@ -12471,6 +12576,14 @@ export namespace Prisma {
 
   export type EnumStatusFieldUpdateOperationsInput = {
     set?: $Enums.Status
+  }
+
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
+  }
+
+  export type DateTimeFieldUpdateOperationsInput = {
+    set?: Date | string
   }
 
   export type DistributorEmployeeUpdateOneWithoutQuestionnaireNestedInput = {
@@ -12761,22 +12874,12 @@ export namespace Prisma {
     connect?: QuestionnaireWhereUniqueInput
   }
 
-  export type QuestionnaireUpdateOneWithoutImagesNestedInput = {
+  export type QuestionnaireUpdateOneRequiredWithoutImagesNestedInput = {
     create?: XOR<QuestionnaireCreateWithoutImagesInput, QuestionnaireUncheckedCreateWithoutImagesInput>
     connectOrCreate?: QuestionnaireCreateOrConnectWithoutImagesInput
     upsert?: QuestionnaireUpsertWithoutImagesInput
-    disconnect?: QuestionnaireWhereInput | boolean
-    delete?: QuestionnaireWhereInput | boolean
     connect?: QuestionnaireWhereUniqueInput
     update?: XOR<XOR<QuestionnaireUpdateToOneWithWhereWithoutImagesInput, QuestionnaireUpdateWithoutImagesInput>, QuestionnaireUncheckedUpdateWithoutImagesInput>
-  }
-
-  export type NullableIntFieldUpdateOperationsInput = {
-    set?: number | null
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -12809,6 +12912,31 @@ export namespace Prisma {
     in?: $Enums.Status[] | ListEnumStatusFieldRefInput<$PrismaModel>
     notIn?: $Enums.Status[] | ListEnumStatusFieldRefInput<$PrismaModel>
     not?: NestedEnumStatusFilter<$PrismaModel> | $Enums.Status
+  }
+
+  export type NestedStringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type NestedDateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
@@ -12865,6 +12993,23 @@ export namespace Prisma {
     _max?: NestedEnumStatusFilter<$PrismaModel>
   }
 
+  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
   export type NestedIntNullableFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
     in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
@@ -12876,31 +13021,18 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
-  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedIntNullableFilter<$PrismaModel>
-    _max?: NestedIntNullableFilter<$PrismaModel>
-  }
-
-  export type NestedFloatNullableFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
   export type DistributorEmployeeCreateWithoutQuestionnaireInput = {
@@ -13022,7 +13154,7 @@ export namespace Prisma {
     surname: string
     lastname: string
     phone: string
-    emaie: string
+    email: string
   }
 
   export type ManagerUncheckedCreateWithoutQuestionnaireInput = {
@@ -13031,7 +13163,7 @@ export namespace Prisma {
     surname: string
     lastname: string
     phone: string
-    emaie: string
+    email: string
   }
 
   export type ManagerCreateOrConnectWithoutQuestionnaireInput = {
@@ -13044,7 +13176,7 @@ export namespace Prisma {
     surname: string
     lastname: string
     phone: string
-    emaie: string
+    email: string
   }
 
   export type SignatoryManagerUncheckedCreateWithoutQuestionnaireInput = {
@@ -13053,7 +13185,7 @@ export namespace Prisma {
     surname: string
     lastname: string
     phone: string
-    emaie: string
+    email: string
   }
 
   export type SignatoryManagerCreateOrConnectWithoutQuestionnaireInput = {
@@ -13187,7 +13319,7 @@ export namespace Prisma {
     id?: IntFilter<"Images"> | number
     path?: StringFilter<"Images"> | string
     description?: StringFilter<"Images"> | string
-    questionnaireId?: IntNullableFilter<"Images"> | number | null
+    questionnaireId?: IntFilter<"Images"> | number
   }
 
   export type LiftsUpsertWithoutQuestionnaireInput = {
@@ -13238,7 +13370,7 @@ export namespace Prisma {
     surname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
     phone?: StringFieldUpdateOperationsInput | string
-    emaie?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
   }
 
   export type ManagerUncheckedUpdateWithoutQuestionnaireInput = {
@@ -13247,7 +13379,7 @@ export namespace Prisma {
     surname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
     phone?: StringFieldUpdateOperationsInput | string
-    emaie?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
   }
 
   export type SignatoryManagerUpsertWithoutQuestionnaireInput = {
@@ -13266,7 +13398,7 @@ export namespace Prisma {
     surname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
     phone?: StringFieldUpdateOperationsInput | string
-    emaie?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
   }
 
   export type SignatoryManagerUncheckedUpdateWithoutQuestionnaireInput = {
@@ -13275,7 +13407,7 @@ export namespace Prisma {
     surname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
     phone?: StringFieldUpdateOperationsInput | string
-    emaie?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
   }
 
   export type ConfirmDataUpsertWithoutQuestionnaireInput = {
@@ -13305,6 +13437,9 @@ export namespace Prisma {
   export type QuestionnaireCreateWithoutDistributor_employeeInput = {
     distributor: string
     status: $Enums.Status
+    comment?: string | null
+    created_date: Date | string
+    updated_date: Date | string
     data_sto?: DataStoCreateNestedOneWithoutQuestionnaireInput
     inns?: IInnCreateNestedManyWithoutQuestionnaireInput
     images?: ImagesCreateNestedManyWithoutQuestionnaireInput
@@ -13318,6 +13453,9 @@ export namespace Prisma {
     id?: number
     distributor: string
     status: $Enums.Status
+    comment?: string | null
+    created_date: Date | string
+    updated_date: Date | string
     data_sto?: DataStoUncheckedCreateNestedOneWithoutQuestionnaireInput
     inns?: IInnUncheckedCreateNestedManyWithoutQuestionnaireInput
     images?: ImagesUncheckedCreateNestedManyWithoutQuestionnaireInput
@@ -13346,6 +13484,9 @@ export namespace Prisma {
   export type QuestionnaireUpdateWithoutDistributor_employeeInput = {
     distributor?: StringFieldUpdateOperationsInput | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    created_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
     data_sto?: DataStoUpdateOneWithoutQuestionnaireNestedInput
     inns?: IInnUpdateManyWithoutQuestionnaireNestedInput
     images?: ImagesUpdateManyWithoutQuestionnaireNestedInput
@@ -13359,6 +13500,9 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     distributor?: StringFieldUpdateOperationsInput | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    created_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
     data_sto?: DataStoUncheckedUpdateOneWithoutQuestionnaireNestedInput
     inns?: IInnUncheckedUpdateManyWithoutQuestionnaireNestedInput
     images?: ImagesUncheckedUpdateManyWithoutQuestionnaireNestedInput
@@ -13371,6 +13515,9 @@ export namespace Prisma {
   export type QuestionnaireCreateWithoutData_stoInput = {
     distributor: string
     status: $Enums.Status
+    comment?: string | null
+    created_date: Date | string
+    updated_date: Date | string
     distributor_employee?: DistributorEmployeeCreateNestedOneWithoutQuestionnaireInput
     inns?: IInnCreateNestedManyWithoutQuestionnaireInput
     images?: ImagesCreateNestedManyWithoutQuestionnaireInput
@@ -13384,6 +13531,9 @@ export namespace Prisma {
     id?: number
     distributor: string
     status: $Enums.Status
+    comment?: string | null
+    created_date: Date | string
+    updated_date: Date | string
     distributor_employee?: DistributorEmployeeUncheckedCreateNestedOneWithoutQuestionnaireInput
     inns?: IInnUncheckedCreateNestedManyWithoutQuestionnaireInput
     images?: ImagesUncheckedCreateNestedManyWithoutQuestionnaireInput
@@ -13412,6 +13562,9 @@ export namespace Prisma {
   export type QuestionnaireUpdateWithoutData_stoInput = {
     distributor?: StringFieldUpdateOperationsInput | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    created_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
     distributor_employee?: DistributorEmployeeUpdateOneWithoutQuestionnaireNestedInput
     inns?: IInnUpdateManyWithoutQuestionnaireNestedInput
     images?: ImagesUpdateManyWithoutQuestionnaireNestedInput
@@ -13425,6 +13578,9 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     distributor?: StringFieldUpdateOperationsInput | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    created_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
     distributor_employee?: DistributorEmployeeUncheckedUpdateOneWithoutQuestionnaireNestedInput
     inns?: IInnUncheckedUpdateManyWithoutQuestionnaireNestedInput
     images?: ImagesUncheckedUpdateManyWithoutQuestionnaireNestedInput
@@ -13437,6 +13593,9 @@ export namespace Prisma {
   export type QuestionnaireCreateWithoutInnsInput = {
     distributor: string
     status: $Enums.Status
+    comment?: string | null
+    created_date: Date | string
+    updated_date: Date | string
     distributor_employee?: DistributorEmployeeCreateNestedOneWithoutQuestionnaireInput
     data_sto?: DataStoCreateNestedOneWithoutQuestionnaireInput
     images?: ImagesCreateNestedManyWithoutQuestionnaireInput
@@ -13450,6 +13609,9 @@ export namespace Prisma {
     id?: number
     distributor: string
     status: $Enums.Status
+    comment?: string | null
+    created_date: Date | string
+    updated_date: Date | string
     distributor_employee?: DistributorEmployeeUncheckedCreateNestedOneWithoutQuestionnaireInput
     data_sto?: DataStoUncheckedCreateNestedOneWithoutQuestionnaireInput
     images?: ImagesUncheckedCreateNestedManyWithoutQuestionnaireInput
@@ -13478,6 +13640,9 @@ export namespace Prisma {
   export type QuestionnaireUpdateWithoutInnsInput = {
     distributor?: StringFieldUpdateOperationsInput | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    created_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
     distributor_employee?: DistributorEmployeeUpdateOneWithoutQuestionnaireNestedInput
     data_sto?: DataStoUpdateOneWithoutQuestionnaireNestedInput
     images?: ImagesUpdateManyWithoutQuestionnaireNestedInput
@@ -13491,6 +13656,9 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     distributor?: StringFieldUpdateOperationsInput | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    created_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
     distributor_employee?: DistributorEmployeeUncheckedUpdateOneWithoutQuestionnaireNestedInput
     data_sto?: DataStoUncheckedUpdateOneWithoutQuestionnaireNestedInput
     images?: ImagesUncheckedUpdateManyWithoutQuestionnaireNestedInput
@@ -13503,6 +13671,9 @@ export namespace Prisma {
   export type QuestionnaireCreateWithoutManagerInput = {
     distributor: string
     status: $Enums.Status
+    comment?: string | null
+    created_date: Date | string
+    updated_date: Date | string
     distributor_employee?: DistributorEmployeeCreateNestedOneWithoutQuestionnaireInput
     data_sto?: DataStoCreateNestedOneWithoutQuestionnaireInput
     inns?: IInnCreateNestedManyWithoutQuestionnaireInput
@@ -13516,6 +13687,9 @@ export namespace Prisma {
     id?: number
     distributor: string
     status: $Enums.Status
+    comment?: string | null
+    created_date: Date | string
+    updated_date: Date | string
     distributor_employee?: DistributorEmployeeUncheckedCreateNestedOneWithoutQuestionnaireInput
     data_sto?: DataStoUncheckedCreateNestedOneWithoutQuestionnaireInput
     inns?: IInnUncheckedCreateNestedManyWithoutQuestionnaireInput
@@ -13544,6 +13718,9 @@ export namespace Prisma {
   export type QuestionnaireUpdateWithoutManagerInput = {
     distributor?: StringFieldUpdateOperationsInput | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    created_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
     distributor_employee?: DistributorEmployeeUpdateOneWithoutQuestionnaireNestedInput
     data_sto?: DataStoUpdateOneWithoutQuestionnaireNestedInput
     inns?: IInnUpdateManyWithoutQuestionnaireNestedInput
@@ -13557,6 +13734,9 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     distributor?: StringFieldUpdateOperationsInput | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    created_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
     distributor_employee?: DistributorEmployeeUncheckedUpdateOneWithoutQuestionnaireNestedInput
     data_sto?: DataStoUncheckedUpdateOneWithoutQuestionnaireNestedInput
     inns?: IInnUncheckedUpdateManyWithoutQuestionnaireNestedInput
@@ -13569,6 +13749,9 @@ export namespace Prisma {
   export type QuestionnaireCreateWithoutSignatoryManagerInput = {
     distributor: string
     status: $Enums.Status
+    comment?: string | null
+    created_date: Date | string
+    updated_date: Date | string
     distributor_employee?: DistributorEmployeeCreateNestedOneWithoutQuestionnaireInput
     data_sto?: DataStoCreateNestedOneWithoutQuestionnaireInput
     inns?: IInnCreateNestedManyWithoutQuestionnaireInput
@@ -13582,6 +13765,9 @@ export namespace Prisma {
     id?: number
     distributor: string
     status: $Enums.Status
+    comment?: string | null
+    created_date: Date | string
+    updated_date: Date | string
     distributor_employee?: DistributorEmployeeUncheckedCreateNestedOneWithoutQuestionnaireInput
     data_sto?: DataStoUncheckedCreateNestedOneWithoutQuestionnaireInput
     inns?: IInnUncheckedCreateNestedManyWithoutQuestionnaireInput
@@ -13610,6 +13796,9 @@ export namespace Prisma {
   export type QuestionnaireUpdateWithoutSignatoryManagerInput = {
     distributor?: StringFieldUpdateOperationsInput | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    created_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
     distributor_employee?: DistributorEmployeeUpdateOneWithoutQuestionnaireNestedInput
     data_sto?: DataStoUpdateOneWithoutQuestionnaireNestedInput
     inns?: IInnUpdateManyWithoutQuestionnaireNestedInput
@@ -13623,6 +13812,9 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     distributor?: StringFieldUpdateOperationsInput | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    created_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
     distributor_employee?: DistributorEmployeeUncheckedUpdateOneWithoutQuestionnaireNestedInput
     data_sto?: DataStoUncheckedUpdateOneWithoutQuestionnaireNestedInput
     inns?: IInnUncheckedUpdateManyWithoutQuestionnaireNestedInput
@@ -13635,6 +13827,9 @@ export namespace Prisma {
   export type QuestionnaireCreateWithoutLiftsInput = {
     distributor: string
     status: $Enums.Status
+    comment?: string | null
+    created_date: Date | string
+    updated_date: Date | string
     distributor_employee?: DistributorEmployeeCreateNestedOneWithoutQuestionnaireInput
     data_sto?: DataStoCreateNestedOneWithoutQuestionnaireInput
     inns?: IInnCreateNestedManyWithoutQuestionnaireInput
@@ -13648,6 +13843,9 @@ export namespace Prisma {
     id?: number
     distributor: string
     status: $Enums.Status
+    comment?: string | null
+    created_date: Date | string
+    updated_date: Date | string
     distributor_employee?: DistributorEmployeeUncheckedCreateNestedOneWithoutQuestionnaireInput
     data_sto?: DataStoUncheckedCreateNestedOneWithoutQuestionnaireInput
     inns?: IInnUncheckedCreateNestedManyWithoutQuestionnaireInput
@@ -13676,6 +13874,9 @@ export namespace Prisma {
   export type QuestionnaireUpdateWithoutLiftsInput = {
     distributor?: StringFieldUpdateOperationsInput | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    created_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
     distributor_employee?: DistributorEmployeeUpdateOneWithoutQuestionnaireNestedInput
     data_sto?: DataStoUpdateOneWithoutQuestionnaireNestedInput
     inns?: IInnUpdateManyWithoutQuestionnaireNestedInput
@@ -13689,6 +13890,9 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     distributor?: StringFieldUpdateOperationsInput | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    created_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
     distributor_employee?: DistributorEmployeeUncheckedUpdateOneWithoutQuestionnaireNestedInput
     data_sto?: DataStoUncheckedUpdateOneWithoutQuestionnaireNestedInput
     inns?: IInnUncheckedUpdateManyWithoutQuestionnaireNestedInput
@@ -13701,6 +13905,9 @@ export namespace Prisma {
   export type QuestionnaireCreateWithoutConfirmDataInput = {
     distributor: string
     status: $Enums.Status
+    comment?: string | null
+    created_date: Date | string
+    updated_date: Date | string
     distributor_employee?: DistributorEmployeeCreateNestedOneWithoutQuestionnaireInput
     data_sto?: DataStoCreateNestedOneWithoutQuestionnaireInput
     inns?: IInnCreateNestedManyWithoutQuestionnaireInput
@@ -13714,6 +13921,9 @@ export namespace Prisma {
     id?: number
     distributor: string
     status: $Enums.Status
+    comment?: string | null
+    created_date: Date | string
+    updated_date: Date | string
     distributor_employee?: DistributorEmployeeUncheckedCreateNestedOneWithoutQuestionnaireInput
     data_sto?: DataStoUncheckedCreateNestedOneWithoutQuestionnaireInput
     inns?: IInnUncheckedCreateNestedManyWithoutQuestionnaireInput
@@ -13742,6 +13952,9 @@ export namespace Prisma {
   export type QuestionnaireUpdateWithoutConfirmDataInput = {
     distributor?: StringFieldUpdateOperationsInput | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    created_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
     distributor_employee?: DistributorEmployeeUpdateOneWithoutQuestionnaireNestedInput
     data_sto?: DataStoUpdateOneWithoutQuestionnaireNestedInput
     inns?: IInnUpdateManyWithoutQuestionnaireNestedInput
@@ -13755,6 +13968,9 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     distributor?: StringFieldUpdateOperationsInput | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    created_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
     distributor_employee?: DistributorEmployeeUncheckedUpdateOneWithoutQuestionnaireNestedInput
     data_sto?: DataStoUncheckedUpdateOneWithoutQuestionnaireNestedInput
     inns?: IInnUncheckedUpdateManyWithoutQuestionnaireNestedInput
@@ -13767,6 +13983,9 @@ export namespace Prisma {
   export type QuestionnaireCreateWithoutImagesInput = {
     distributor: string
     status: $Enums.Status
+    comment?: string | null
+    created_date: Date | string
+    updated_date: Date | string
     distributor_employee?: DistributorEmployeeCreateNestedOneWithoutQuestionnaireInput
     data_sto?: DataStoCreateNestedOneWithoutQuestionnaireInput
     inns?: IInnCreateNestedManyWithoutQuestionnaireInput
@@ -13780,6 +13999,9 @@ export namespace Prisma {
     id?: number
     distributor: string
     status: $Enums.Status
+    comment?: string | null
+    created_date: Date | string
+    updated_date: Date | string
     distributor_employee?: DistributorEmployeeUncheckedCreateNestedOneWithoutQuestionnaireInput
     data_sto?: DataStoUncheckedCreateNestedOneWithoutQuestionnaireInput
     inns?: IInnUncheckedCreateNestedManyWithoutQuestionnaireInput
@@ -13808,6 +14030,9 @@ export namespace Prisma {
   export type QuestionnaireUpdateWithoutImagesInput = {
     distributor?: StringFieldUpdateOperationsInput | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    created_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
     distributor_employee?: DistributorEmployeeUpdateOneWithoutQuestionnaireNestedInput
     data_sto?: DataStoUpdateOneWithoutQuestionnaireNestedInput
     inns?: IInnUpdateManyWithoutQuestionnaireNestedInput
@@ -13821,6 +14046,9 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     distributor?: StringFieldUpdateOperationsInput | string
     status?: EnumStatusFieldUpdateOperationsInput | $Enums.Status
+    comment?: NullableStringFieldUpdateOperationsInput | string | null
+    created_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_date?: DateTimeFieldUpdateOperationsInput | Date | string
     distributor_employee?: DistributorEmployeeUncheckedUpdateOneWithoutQuestionnaireNestedInput
     data_sto?: DataStoUncheckedUpdateOneWithoutQuestionnaireNestedInput
     inns?: IInnUncheckedUpdateManyWithoutQuestionnaireNestedInput

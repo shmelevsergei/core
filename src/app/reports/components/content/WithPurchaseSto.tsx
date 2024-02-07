@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import UiCard from './ui-card'
 import { useAdministratorState } from '../../store/administrator.context'
-import { fetchAnketaOborotPurchaseStoMoney } from '@/server/routs/fetchAnketaOborot'
+import { fetchAnketaOborotPurchaseStoMoney } from '@/server/routs/webshop_db/fetchAnketaOborot'
 import { IAnketaBaseRepository } from '@/repository/anketaBase.repository'
 import { formattedNumber } from '@/lib/formulas/formatNumber'
 

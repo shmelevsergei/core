@@ -7,13 +7,12 @@ import ImageBlock from '@/app/questionnaire/create-a-request/components/Photo/Im
 
 import { cn } from '@/lib/utils'
 import { useQuestionnaireState } from '@/app/questionnaire/store/questionnaire.context'
-const image1 = '/public/downloads/images/image-registration.png'
-const image2 = '/public/downloads/images/image-resetpass.png'
 
 const Photo = () => {
     const { state, setState } = useQuestionnaireState()
 
-    const handleClick = () => {
+    const handleClick = (e:any) => {
+        e.preventDefault()
         setState((prevState) => ({
             ...prevState,
             isModalDownloadImages: true,

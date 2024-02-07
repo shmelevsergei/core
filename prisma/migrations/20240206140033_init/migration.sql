@@ -1,14 +1,5 @@
-/*
-  Warnings:
-
-  - You are about to drop the `Anketa` table. If the table is not empty, all the data it contains will be lost.
-
-*/
 -- CreateEnum
 CREATE TYPE "Status" AS ENUM ('draft', 'accepted', 'rejected', 'sent');
-
--- DropTable
-DROP TABLE "Anketa";
 
 -- CreateTable
 CREATE TABLE "Questionnaire" (
@@ -63,7 +54,7 @@ CREATE TABLE "Manager" (
     "surname" TEXT NOT NULL,
     "lastname" TEXT NOT NULL,
     "phone" TEXT NOT NULL,
-    "emaie" TEXT NOT NULL,
+    "email" TEXT NOT NULL,
     "questionnaireId" INTEGER NOT NULL,
 
     CONSTRAINT "Manager_pkey" PRIMARY KEY ("id")
@@ -76,7 +67,7 @@ CREATE TABLE "SignatoryManager" (
     "surname" TEXT NOT NULL,
     "lastname" TEXT NOT NULL,
     "phone" TEXT NOT NULL,
-    "emaie" TEXT NOT NULL,
+    "email" TEXT NOT NULL,
     "questionnaireId" INTEGER NOT NULL,
 
     CONSTRAINT "SignatoryManager_pkey" PRIMARY KEY ("id")
@@ -113,7 +104,7 @@ CREATE TABLE "Images" (
     "id" SERIAL NOT NULL,
     "path" TEXT NOT NULL,
     "description" TEXT NOT NULL,
-    "questionnaireId" INTEGER,
+    "questionnaireId" INTEGER NOT NULL,
 
     CONSTRAINT "Images_pkey" PRIMARY KEY ("id")
 );
@@ -135,6 +126,9 @@ CREATE UNIQUE INDEX "Lifts_questionnaireId_key" ON "Lifts"("questionnaireId");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "ConfirmData_questionnaireId_key" ON "ConfirmData"("questionnaireId");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Images_questionnaireId_key" ON "Images"("questionnaireId");
 
 -- AddForeignKey
 ALTER TABLE "DistributorEmployee" ADD CONSTRAINT "DistributorEmployee_questionnaireId_fkey" FOREIGN KEY ("questionnaireId") REFERENCES "Questionnaire"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -158,4 +152,4 @@ ALTER TABLE "Lifts" ADD CONSTRAINT "Lifts_questionnaireId_fkey" FOREIGN KEY ("qu
 ALTER TABLE "ConfirmData" ADD CONSTRAINT "ConfirmData_questionnaireId_fkey" FOREIGN KEY ("questionnaireId") REFERENCES "Questionnaire"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Images" ADD CONSTRAINT "Images_questionnaireId_fkey" FOREIGN KEY ("questionnaireId") REFERENCES "Questionnaire"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "Images" ADD CONSTRAINT "Images_questionnaireId_fkey" FOREIGN KEY ("questionnaireId") REFERENCES "Questionnaire"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

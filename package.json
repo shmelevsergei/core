@@ -33,6 +33,7 @@
         "react-dadata": "^2.23.1",
         "react-day-picker": "^8.10.0",
         "react-dom": "^18",
+        "react-hook-form": "^7.50.1",
         "react-intl": "^6.5.5",
         "tailwind-merge": "^2.2.0",
         "tailwindcss-animate": "^1.0.7",

@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useState } from 'react'
 import Title from '@/app/questionnaire/create-a-request/components/Title'
 import { cn } from '@/lib/utils'
@@ -5,21 +6,21 @@ import InputForm from '@/app/questionnaire/create-a-request/components/InputForm
 import InputPhone from '@/app/questionnaire/create-a-request/components/InputPhone'
 import CheckBox from './CheckBox'
 import {
-    IDataManager,
     IDataSignatoryManager,
 } from '@/types/questionnaire/create-a-request/questionnaire'
+import {useQuestionnaireState} from "@/app/questionnaire/store/questionnaire.context";
 
 const ManagerDetails = () => {
     const [isChecked, setIsChecked] = useState(false)
     const [disabled, setIsDisabled] = useState(false)
-
-    const [dataManager, setDataManager] = useState<IDataManager>({
-        name: '',
-        surname: '',
-        lastname: '',
-        phone: '',
-        email: '',
-    })
+    const [dataManager, setDataManager] =
+        useState<IDataSignatoryManager>({
+            name: '',
+            surname: '',
+            lastname: '',
+            phone: '',
+            email: '',
+        })
     const [dataSignatoryManager, setDataSignatoryManager] =
         useState<IDataSignatoryManager>({
             name: '',
@@ -29,24 +30,66 @@ const ManagerDetails = () => {
             email: '',
         })
 
+    const {state, setState} = useQuestionnaireState()
+
+
     const handleCheckedChange = () => {
         setIsChecked(!isChecked)
     }
 
     const handleInputManagerChange = (field: string, e: any) => {
+        const newValue = e.target.value
+
         setDataManager((prevData) => ({
             ...prevData,
-            [field]: e.target.value,
+            [field]: newValue,
         }))
+
+        setState(prevState => ({
+         ...prevState,
+            questionnaire: {
+             ...prevState.questionnaire,
+                manager: {
+                 ...prevState.questionnaire.manager,
+                    [field]:newValue,
+                },
+            },
+        }))
+        if (disabled) {
+            setState(prevState => ({
+                ...prevState,
+                questionnaire: {
+                    ...prevState.questionnaire,
+                    signatoryManager: {
+                        ...prevState.questionnaire.signatoryManager,
+                        [field]:newValue,
+                    },
+                },
+            }))
+        }
     }
 
     const handleInputSignatoryManagerChange = (field: string, e: any) => {
-        if (!disabled) {
-            setDataSignatoryManager((prevData) => ({
-                ...prevData,
-                [field]: e.target.value,
-            }))
-        }
+
+        const newValue = e.target.value
+
+        setDataSignatoryManager((prevData) => ({
+            ...prevData,
+            [field]: newValue,
+        }))
+
+
+        setState(prevState => ({
+            ...prevState,
+            questionnaire: {
+                ...prevState.questionnaire,
+                signatoryManager: {
+                    ...prevState.questionnaire.signatoryManager,
+                    [field]: newValue
+                }
+            }
+        }))
+
     }
 
     useEffect(() => {
@@ -59,11 +102,29 @@ const ManagerDetails = () => {
                 phone: dataManager.phone,
                 email: dataManager.email,
             }))
+
         }
     }, [disabled, dataManager])
 
     useEffect(() => {
         setIsDisabled(!isChecked)
+        if (!isChecked) {
+            setState(prevState => ({
+                ...prevState,
+                questionnaire: {
+                    ...prevState.questionnaire,
+                    signatoryManager: {
+                        ...prevState.questionnaire.signatoryManager,
+                        name: dataManager.name,
+                        surname: dataManager.surname,
+                        lastname: dataManager.lastname,
+                        phone: dataManager.phone,
+                        email: dataManager.email,
+                    },
+                },
+            }))
+        }
+
     }, [isChecked])
 
     return (
@@ -83,6 +144,7 @@ const ManagerDetails = () => {
                         onChange={(e) =>
                             handleInputManagerChange('lastname', e)
                         }
+                        value={state.questionnaire.manager.lastname}
                     />
                     <InputForm
                         id={'name-manager'}
@@ -90,6 +152,7 @@ const ManagerDetails = () => {
                         type={'text'}
                         label={'Имя'}
                         onChange={(e) => handleInputManagerChange('name', e)}
+                        value={state.questionnaire.manager.name}
                     />
                     <InputForm
                         id={'surname-manager'}
@@ -97,6 +160,7 @@ const ManagerDetails = () => {
                         type={'text'}
                         label={'Отчество'}
                         onChange={(e) => handleInputManagerChange('surname', e)}
+                        value={state.questionnaire.manager.surname}
                     />
                     <InputPhone
                         name={'phone-manager'}
@@ -104,6 +168,7 @@ const ManagerDetails = () => {
                         label={'Телефон'}
                         placeholder={'+7 (999) 999 99 99'}
                         onChange={(e) => handleInputManagerChange('phone', e)}
+                        value={state.questionnaire.manager.phone}
                     />
                     <InputForm
                         id={'mail-manager'}
@@ -111,6 +176,7 @@ const ManagerDetails = () => {
                         type={'email'}
                         label={'Адрес электронной почты'}
                         onChange={(e) => handleInputManagerChange('email', e)}
+                        value={state.questionnaire.manager.email}
                     />
                     <CheckBox
                         className="mt-3"
