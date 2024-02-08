@@ -1,14 +1,20 @@
 import {questionnaire} from "@/server/actions/portal_db/questionnaire";
 import {NextRequest, NextResponse} from "next/server";
+import {IUploadQuestionnaire} from "@/types/questionnaire/create-a-request/questionnaire";
 
 export async function POST(req: NextRequest, res: NextResponse) {
     try {
         const requestBody = await req.json();
-        questionnaire.createQuestionnaire(requestBody);
+        await questionnaire.createQuestionnaire(requestBody);
 
-        return Response.json(requestBody)
+        const response: IUploadQuestionnaire = {
+            success: true,
+            requestBody
+        }
+
+        return NextResponse.json(response)
     } catch (error) {
         console.error('Error processing request:', error);
-        return Response.json(res);
+        return NextResponse.json({success: false, res});
     }
 }

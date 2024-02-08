@@ -47,7 +47,7 @@ const DataSto = () => {
                         placeholder={'Код клиента АВТО-ЕВРО'}
                         type={'text'}
                         label={'Код клиента АВТО-ЕВРО'}
-                        onChange={(e) => handleInputChange('code_avtoevro', e)}
+                        onChange={(e) => handleInputChange('code_client_avtoevro', e)}
 
                     />
                     <InputForm
@@ -55,14 +55,14 @@ const DataSto = () => {
                         placeholder={'Код клиента АВТОРУСЬ'}
                         type={'text'}
                         label={'Код клиента АВТОРУСЬ'}
-                        onChange={(e) => handleInputChange('code_avtorus', e)}
+                        onChange={(e) => handleInputChange('code_client_avtorus', e)}
                     />
                     <InputForm
                         id={'code-rossko-sto'}
                         placeholder={'Код клиента РОССКО'}
                         type={'text'}
                         label={'Код клиента РОССКО'}
-                        onChange={(e) => handleInputChange('code_rossko', e)}
+                        onChange={(e) => handleInputChange('code_client_rossko', e)}
                     />
                 </div>
                 <Separator className={'my-5'} />

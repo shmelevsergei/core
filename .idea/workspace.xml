@@ -5,64 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd7a64a1-0d6e-443b-a63c-a3ac575cb48c" name="Changes" comment="add input">
-      <change afterPath="$PROJECT_DIR$/src/app/api/questionnaire/create-a-request/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/Form.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server/routs/portal_db/fetchQuestionnaire.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/questionnaire/create-a-request/uploadImages.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/default.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/default.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/edge.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/edge.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/index-browser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/query_engine-windows.dll.node" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/runtime/edge-esm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/runtime/edge.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/runtime/index-browser.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/runtime/index-browser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/runtime/library.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/runtime/library.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/runtime/wasm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/schema.prisma" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/wasm.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/wasm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20240201165853_init/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/20240205121609_init/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/migrations/migration_lock.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/edge.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/edge.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/schema.prisma" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prisma/schema-portal.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema-portal.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/AddInn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/AddInn.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/InputForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/InputForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/downloads/images/image-authorisation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/downloads/images/image-registration.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/downloads/images/image-resetpass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/questionnaire/create-a-request/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/questionnaire/create-a-request/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/upload/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/upload/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/Form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/Form.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/Photo/DownloadImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/Photo/DownloadImage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/Photo/Photo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/Photo/Photo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/comment/Comment.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/comment/Comment.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/confirmation-details/ConfirmationDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/confirmation-details/ConfirmationDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/Photo/ImageBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/Photo/ImageBlock.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/data-sto/DataSto.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/data-sto/DataSto.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/data-sto/InputAddressSto.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/data-sto/InputAddressSto.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/data-sto/InputAreaSto.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/data-sto/InputAreaSto.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/data-sto/InputCitySto.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/data-sto/InputCitySto.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/distributor-employee/DistributorEmployee.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/distributor-employee/DistributorEmployee.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/distributor/Distributor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/distributor/Distributor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/lifts/Lifts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/lifts/Lifts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/manager-details/ManagerDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/manager-details/ManagerDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/store/questionnaire.context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/store/questionnaire.context.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/reports/components/content/Oborot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/content/Oborot.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/reports/components/content/PurchasePerCount.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/content/PurchasePerCount.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/reports/components/content/PurchasePerMoneyQty.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/content/PurchasePerMoneyQty.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/reports/components/content/WithPurchaseSto.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/content/WithPurchaseSto.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/reports/components/infoPanel/InfoPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reports/components/infoPanel/InfoPanel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/actions/portal_db/questionnaire.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/actions/portal_db/questionnaire.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/routs/fetchAnketaBase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/routs/webshop_db/fetchAnketaBase.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/routs/fetchAnketaDogovor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/routs/webshop_db/fetchAnketaDogovor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/routs/fetchAnketaOborot.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/routs/webshop_db/fetchAnketaOborot.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/routs/portal_db/fetchQuestionnaire.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/routs/portal_db/fetchQuestionnaire.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/types/questionnaire/create-a-request/questionnaire.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/questionnaire/create-a-request/questionnaire.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,26 +63,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "js.linters.configure.manually.selectedeslint": "true",
-    "last_opened_file_path": "C:/Users/shmel/OneDrive/Рабочий стол/GlobalProjects/LKGROUPAUTO/core",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "D:\\GlobalProjects\\LKGROUPAUTO\\core\\node_modules\\eslint",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "D:\\GlobalProjects\\LKGROUPAUTO\\core\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/shmel/OneDrive/Рабочий стол/GlobalProjects/LKGROUPAUTO/core&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;D:\\GlobalProjects\\LKGROUPAUTO\\core\\node_modules\\eslint&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\GlobalProjects\\LKGROUPAUTO\\core\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\GlobalProjects\LKGROUPAUTO\core" />
@@ -154,7 +121,9 @@
       <workItem from="1707062258943" duration="56000" />
       <workItem from="1707062358774" duration="99000" />
       <workItem from="1707223128591" duration="14939000" />
-      <workItem from="1707293055030" duration="21475000" />
+      <workItem from="1707293055030" duration="24849000" />
+      <workItem from="1707382511604" duration="40000" />
+      <workItem from="1707401741373" duration="11629000" />
     </task>
     <servers />
   </component>

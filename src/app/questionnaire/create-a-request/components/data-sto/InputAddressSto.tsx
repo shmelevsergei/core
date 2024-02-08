@@ -38,6 +38,21 @@ const InputAddressSto = ({name}:{name?:string}) => {
 
     }
 
+    const handleManualInput = (e: React.FocusEvent<HTMLInputElement>) => {
+        const newValue = e.target.value
+
+        setState(prevState => ({
+            ...prevState,
+            questionnaire: {
+                ...prevState.questionnaire,
+                data_sto: {
+                    ...prevState.questionnaire.data_sto,
+                    address: newValue
+                }
+            }
+        }))
+    }
+
 
     return (
         <div className={`grid w-full max-w-sm items-center gap-1.5`}>
@@ -49,7 +64,7 @@ const InputAddressSto = ({name}:{name?:string}) => {
                 uid={id}
                 minChars={3}
                 ref={addressRef}
-                inputProps={{ name: name, id: id, placeholder: 'Адрес СТО' }}
+                inputProps={{ name: name, id: id, placeholder: 'Адрес СТО', onBlur:handleManualInput }}
                 containerClassName={'input'}
                 highlightClassName={'item'}
             />

@@ -11303,14 +11303,14 @@ export namespace Prisma {
 
   export type ImagesWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    questionnaireId?: number
     AND?: ImagesWhereInput | ImagesWhereInput[]
     OR?: ImagesWhereInput[]
     NOT?: ImagesWhereInput | ImagesWhereInput[]
     path?: StringFilter<"Images"> | string
     description?: StringFilter<"Images"> | string
+    questionnaireId?: IntFilter<"Images"> | number
     Questionnaire?: XOR<QuestionnaireRelationFilter, QuestionnaireWhereInput>
-  }, "id" | "questionnaireId">
+  }, "id">
 
   export type ImagesOrderByWithAggregationInput = {
     id?: SortOrder

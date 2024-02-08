@@ -116,5 +116,5 @@ model Images {
   path            String
   description     String
   Questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
-  questionnaireId Int           @unique
+  questionnaireId Int
 }

@@ -82,3 +82,8 @@ export interface IConfirmData {
     loginTwo: string
     lifts: number
 }
+
+export interface IUploadQuestionnaire {
+    success: boolean
+    requestBody: IQuestionnaire
+}

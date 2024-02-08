@@ -34,8 +34,8 @@ const ImageBlock = ({
     }
 
     return (
-        <Card className={cn('p-3 w-max grid gap-1.5 relative')}>
-            <Image src={path} alt={description} width={200} height={200} />
+        <Card className={cn('p-3 flex flex-col gap-1.5 relative w-[200px] h-[250px] justify-between')}>
+            <Image src={path} alt={description} width={180} height={180} className={'max-w-[200px] max-h-[200px] overflow-hidden object-cover'} />
             <Label>{description}</Label>
 
             <button

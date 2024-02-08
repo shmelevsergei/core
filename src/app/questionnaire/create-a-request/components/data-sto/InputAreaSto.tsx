@@ -35,6 +35,21 @@ const InputAreaSto = ({name}:{name?:string}) => {
         }
     }
 
+    const handleManualInput = (e: React.FocusEvent<HTMLInputElement>) => {
+        const newValue = e.target.value
+
+        setState(prevState => ({
+            ...prevState,
+            questionnaire: {
+                ...prevState.questionnaire,
+                data_sto: {
+                    ...prevState.questionnaire.data_sto,
+                    area: newValue
+                }
+            }
+        }))
+    }
+
     return (
         <div className={`grid w-full max-w-sm items-center gap-1.5`}>
             <Label htmlFor={id}>Область</Label>
@@ -45,7 +60,7 @@ const InputAreaSto = ({name}:{name?:string}) => {
                 uid={id}
                 ref={areaRef}
                 minChars={3}
-                inputProps={{ name: name, id: id, placeholder: 'Область' }}
+                inputProps={{ name: name, id: id, placeholder: 'Область', onBlur: handleManualInput }}
                 containerClassName={'input'}
                 highlightClassName={'item'}
             />

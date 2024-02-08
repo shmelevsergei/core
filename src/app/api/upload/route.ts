@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { join, resolve } from 'path'
-import { writeFile } from 'node:fs/promises'
+import { writeFile } from 'fs/promises'
+import {UploadImages} from "@/types/questionnaire/create-a-request/uploadImages";
 
 export async function POST(req: NextRequest) {
     const data = await req.formData()
     const file: File | null = data.get('file') as unknown as File
-    const description: string = data.get('description') as unknown as string
 
     if (!file) {
         return NextResponse.json({ success: false })
@@ -15,9 +15,16 @@ export async function POST(req: NextRequest) {
     const buffer = Buffer.from(bytes)
 
     const projectFolderPath = resolve(process.cwd())
-    const path = join(projectFolderPath, 'public/downloads/images', file.name)
 
-    await writeFile(path, buffer)
+    const now = new Date()
+    const timeStamp = now.toISOString().replace(/[-T:]/g, '').split('.')[0]
+    const fileName = `${timeStamp}-${file.name}`
+    const writePath = join(projectFolderPath, '/public/downloads/images', fileName)
+    const path = join('downloads/images', fileName)
 
-    return NextResponse.json({ success: true })
+    await writeFile(writePath, buffer)
+
+    const response: UploadImages =  { success: true, path }
+
+    return NextResponse.json(response)
 }
