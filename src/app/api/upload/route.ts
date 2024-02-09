@@ -22,12 +22,13 @@ export async function POST(req: NextRequest) {
     const fileName = `${timeStamp}-${file.name}`
     // const writePath = join(projectFolderPath, '/public/downloads/images', fileName)
     // const path = join('downloads/images', fileName)
-    const writePath = join(projectFolderPath, 'public', 'downloads', 'images', fileName);
+    // const writePath = join(projectFolderPath, 'public', 'downloads', 'images', fileName);
+
+    const writePath = join(projectFolderPath, 'images', fileName);
 
     await writeFile(writePath, buffer)
 
-
-    const path = join('downloads', 'images', fileName).split(sep).join('/');
+    const path = join(projectFolderPath, 'images', fileName).split(sep).join('/');
     const response: UploadImages =  { success: true, path }
 
     return NextResponse.json(response)
