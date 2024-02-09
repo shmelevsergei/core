@@ -28,8 +28,8 @@ const Photo = () => {
                     <ImageBlock
                         key={image.path}
                         index={idx}
-                        description={image.description || ''}
-                        path={`${image.path}` || ''}
+                        description={image.description}
+                        path={`/${image.path}`}
                     />
                 ))}
             </div>

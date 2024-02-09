@@ -51,7 +51,7 @@ const DownloadImage = () => {
         if (file && isImageFile(file)) {
             const response: UploadImages = await postImage(file)
             const newImage: IImageProps = {
-                path: `/${response.path}`,
+                path: response.path,
                 description: description,
             }
             addImage(newImage)
