@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { join, resolve } from 'path'
+import { join, resolve, sep } from 'path'
 import { writeFile } from 'fs/promises'
 import {UploadImages} from "@/types/questionnaire/create-a-request/uploadImages";
 
@@ -19,8 +19,10 @@ export async function POST(req: NextRequest) {
     const now = new Date()
     const timeStamp = now.toISOString().replace(/[-T:]/g, '').split('.')[0]
     const fileName = `${timeStamp}-${file.name}`
-    const writePath = join(projectFolderPath, '/public/downloads/images', fileName)
-    const path = join('downloads/images', fileName)
+    // const writePath = join(projectFolderPath, '/public/downloads/images', fileName)
+    // const path = join('downloads/images', fileName)
+    const writePath = join(projectFolderPath, 'public', 'downloads', 'images', fileName);
+    const path = join('downloads', 'images', fileName).split(sep).join('/');
 
     await writeFile(writePath, buffer)
 
