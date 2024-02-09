@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
     // const writePath = join(projectFolderPath, '/public/downloads/images', fileName)
     // const path = join('downloads/images', fileName)
     // const writePath = join(projectFolderPath, 'public', 'downloads', 'images', fileName);
-    const writePath = join('/', 'tmp', '/', 'images', fileName);
+    const writePath = join('/', 'home', '/', 'images', fileName);
 
     await writeFile(writePath, buffer)
 
