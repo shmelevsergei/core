@@ -3,6 +3,7 @@ import { join, resolve, sep } from 'path'
 import { writeFile } from 'fs/promises'
 import {UploadImages} from "@/types/questionnaire/create-a-request/uploadImages";
 
+
 export async function POST(req: NextRequest) {
     const data = await req.formData()
     const file: File | null = data.get('file') as unknown as File
@@ -22,10 +23,11 @@ export async function POST(req: NextRequest) {
     // const writePath = join(projectFolderPath, '/public/downloads/images', fileName)
     // const path = join('downloads/images', fileName)
     const writePath = join(projectFolderPath, 'public', 'downloads', 'images', fileName);
-    const path = join('downloads', 'images', fileName).split(sep).join('/');
 
     await writeFile(writePath, buffer)
 
+
+    const path = join('downloads', 'images', fileName).split(sep).join('/');
     const response: UploadImages =  { success: true, path }
 
     return NextResponse.json(response)

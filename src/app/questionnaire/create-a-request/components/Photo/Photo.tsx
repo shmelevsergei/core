@@ -11,6 +11,7 @@ import { useQuestionnaireState } from '@/app/questionnaire/store/questionnaire.c
 const Photo = () => {
     const { state, setState } = useQuestionnaireState()
 
+
     const handleClick = (e:any) => {
         e.preventDefault()
         setState((prevState) => ({
@@ -28,7 +29,7 @@ const Photo = () => {
                         key={image.path}
                         index={idx}
                         description={image.description || ''}
-                        path={image.path || ''}
+                        path={`${image.path}` || ''}
                     />
                 ))}
             </div>
