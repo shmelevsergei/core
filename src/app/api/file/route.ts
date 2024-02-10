@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
         const timeStamp = now.toISOString().replace(/[-T:]/g, '').split('.')[0]
         const fileName = `${timeStamp}-${file.name}`
 
-        const writePath = join('\\', 'media', fileName);
+        const writePath = join('/', 'media', fileName);
 
         await writeFile(writePath, buffer)
 
