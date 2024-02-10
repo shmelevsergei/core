@@ -17,14 +17,15 @@ const DownloadImage = () => {
     const [isShowModal, setIsShowModal] = useState<boolean>()
     const { state, setState } = useQuestionnaireState()
 
-    function addImage(newImage: IImageProps) {
+    function addImage(newImageServer: IImageProps) {
         setState((prevState) => ({
             ...prevState,
             questionnaire: {
                 ...prevState.questionnaire,
-                images: [...prevState.questionnaire.images || [], newImage]
+                images: [...prevState.questionnaire.images || [], newImageServer]
             }
         }))
+
     }
 
     const isImageFile = (file: File): boolean => {
@@ -36,9 +37,9 @@ const DownloadImage = () => {
         const formData = new FormData();
         formData.append('file', data);
 
-        const response = await fetch('/api/upload', {
+        const response = await fetch('/api/file', {
             method: 'POST',
-            body: formData
+            body: formData,
         })
 
         return await response.json()
@@ -50,11 +51,14 @@ const DownloadImage = () => {
 
         if (file && isImageFile(file)) {
             const response: UploadImages = await postImage(file)
-            const newImage: IImageProps = {
+            const path = URL.createObjectURL(file)
+            const newImageServer: IImageProps = {
                 path: response.path,
                 description: description,
+                blobPath: path
             }
-            addImage(newImage)
+
+            addImage(newImageServer)
             setFile(undefined)
             setDescription('')
         } else {

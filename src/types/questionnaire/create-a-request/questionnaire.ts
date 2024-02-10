@@ -48,6 +48,8 @@ export interface IImageProps {
     id?: number
     description: string
     path: string
+    fileName? : string
+    blobPath: string
 }
 
 export interface IDataManager {

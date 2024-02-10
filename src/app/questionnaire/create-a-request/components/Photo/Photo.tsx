@@ -24,12 +24,13 @@ const Photo = () => {
         <div className={'px-1 grid gap-3'}>
             <Title text={'Фотографии'} />
             <div className={'flex flex-wrap gap-2'}>
-                {state.questionnaire.images?.map((image, idx) => (
+                {state.questionnaire.images.map((image, idx) => (
                     <ImageBlock
-                        key={image.path}
+                        key={idx}
                         index={idx}
                         description={image.description}
-                        path={`/${image.path}`}
+                        blobPath={image.blobPath}
+                        path={image.path}
                     />
                 ))}
             </div>

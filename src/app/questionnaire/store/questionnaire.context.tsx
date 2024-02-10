@@ -32,6 +32,7 @@ type QuestionnaireStateType = {
         status: 'draft' | 'accepted' | 'rejected' | 'sent'
         comment: string
     }
+    images: IImageProps[]
 }
 
 const QuestionnaireStateContext = createContext<{
@@ -101,8 +102,10 @@ export const QuestionnaireProvider: FC<IQuestionnaireStateProvider> = ({
                     area: ''
                 },
                 status: "sent",
-                comment: ''
+                comment: '',
+
             },
+            images: []
         }
     })
 

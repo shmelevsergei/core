@@ -1,4 +1,5 @@
 export interface UploadImages {
-    success: boolean,
+    success: boolean
     path: string
+    fileName?: string
 }
