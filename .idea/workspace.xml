@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd7a64a1-0d6e-443b-a63c-a3ac575cb48c" name="Changes" comment="add input">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/file/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/file/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/Photo/DownloadImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/Photo/DownloadImage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/Photo/ImageBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/Photo/ImageBlock.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/Photo/Photo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/Photo/Photo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/store/questionnaire.context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/store/questionnaire.context.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/questionnaire/create-a-request/questionnaire.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/questionnaire/create-a-request/questionnaire.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/questionnaire/create-a-request/uploadImages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/questionnaire/create-a-request/uploadImages.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +106,7 @@
       <workItem from="1707483447403" duration="1243000" />
       <workItem from="1707547721839" duration="27000" />
       <workItem from="1707547779955" duration="6651000" />
-      <workItem from="1707578613136" duration="20432000" />
+      <workItem from="1707578613136" duration="21641000" />
     </task>
     <servers />
   </component>

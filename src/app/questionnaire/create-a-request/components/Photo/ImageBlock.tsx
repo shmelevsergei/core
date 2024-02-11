@@ -1,28 +1,25 @@
-import React, {useEffect, useState} from 'react'
+'use client'
+import React from 'react'
 import Image from 'next/image'
 import { Card } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { cn } from '@/lib/utils'
 import { XCircle } from 'lucide-react'
 import { useQuestionnaireState } from '@/app/questionnaire/store/questionnaire.context'
-import {useNavigate} from "react-router";
-import {useRouter} from "next/navigation";
+
 
 const ImageBlock = ({
     description,
     index,
     path,
-    fileName,
     blobPath
 }: {
     description: string
     index: number
     path: string
-    fileName?: string
     blobPath: string
 }) => {
     const { state, setState } = useQuestionnaireState()
-    const router = useRouter()
 
     const removeFileServer = async(path: string) => {
         await fetch('/api/file', {
@@ -35,7 +32,7 @@ const ImageBlock = ({
 
     const handleRemoveClick = async (e:any) => {
         e.preventDefault()
-        router.refresh()
+
 
         if (state.questionnaire.images && path) {
             const updateImageServer = [...state.questionnaire.images]
