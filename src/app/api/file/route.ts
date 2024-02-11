@@ -1,23 +1,48 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { join, resolve, sep } from 'path'
-import {unlink, writeFile} from 'fs/promises'
-import {UploadImages} from "@/types/questionnaire/create-a-request/uploadImages";
-import {PATH_DOWNLOAD_IMAGE} from "@/server/lib/variables";
+import { join } from 'path'
+import {unlink, writeFile, readFile} from 'fs/promises'
 
 
 export async function DELETE(req: NextRequest) {
     const path = await req.json();
 
     if (!path) {
-        return NextResponse.json({ success: false, error: 'Missing fileName' }, { status: 400});
+        return NextResponse.json({ success: false, error: 'Missing filePath' }, { status: 400});
     }
-    // console.log(json)
 
     await unlink(path);
 
     return NextResponse.json({});
 }
 
+
+export async function GET(req: NextRequest) {
+    try {
+
+        const { searchParams} = new URL(req.url)
+        const name = searchParams.get('fileName')
+        if (!name) {
+            return NextResponse.json({ success: false, error: 'Missing filePath' }, { status: 400});
+        }
+
+        const projectPath = process.cwd()
+
+        const filePath = join(projectPath, 'uploads', name)
+
+        const fileContent = await readFile(filePath)
+
+        return NextResponse.json(fileContent, {
+            headers: {
+                'Content-Type': 'application/octet-stream',
+                'Content-Disposition': `attachment; filename="${name}"`,
+            }
+        })
+
+    } catch (error) {
+        console.error(error);
+        return NextResponse.json({ success: false, error: 'Internal server error' }, { status: 500 });
+    }
+}
 
 
 export async function POST(req: NextRequest) {

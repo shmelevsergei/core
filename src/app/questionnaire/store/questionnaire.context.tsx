@@ -12,7 +12,7 @@ import {
     IConfirmData,
     IDataManager, IDataSignatoryManager,
     IDataSto,
-    IDistributorEmployee,
+    IDistributorEmployee, IImageClient,
     IImageProps,
     IInn, ILifts,
 } from '@/types/questionnaire/create-a-request/questionnaire'
@@ -32,7 +32,7 @@ type QuestionnaireStateType = {
         status: 'draft' | 'accepted' | 'rejected' | 'sent'
         comment: string
     }
-    images: IImageProps[]
+    images: IImageClient[]
 }
 
 const QuestionnaireStateContext = createContext<{

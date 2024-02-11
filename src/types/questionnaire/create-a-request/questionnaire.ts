@@ -48,6 +48,11 @@ export interface IImageProps {
     id?: number
     description: string
     path: string
+}
+
+export interface IImageClient {
+    description: string
+    path: string
     fileName? : string
     blobPath: string
 }

@@ -11,7 +11,6 @@ import { useQuestionnaireState } from '@/app/questionnaire/store/questionnaire.c
 const Photo = () => {
     const { state, setState } = useQuestionnaireState()
 
-
     const handleClick = (e:any) => {
         e.preventDefault()
         setState((prevState) => ({
@@ -24,13 +23,13 @@ const Photo = () => {
         <div className={'px-1 grid gap-3'}>
             <Title text={'Фотографии'} />
             <div className={'flex flex-wrap gap-2'}>
-                {state.questionnaire.images.map((image, idx) => (
+                {state.images.map((image, idx) => (
                     <ImageBlock
                         key={idx}
                         index={idx}
                         description={image.description}
-                        blobPath={image.blobPath}
                         path={image.path}
+                        blobPath={image.blobPath}
                     />
                 ))}
             </div>

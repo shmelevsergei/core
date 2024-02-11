@@ -6,10 +6,10 @@ import { Card } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { useQuestionnaireState } from '@/app/questionnaire/store/questionnaire.context'
-import { IImageProps } from '@/types/questionnaire/create-a-request/questionnaire'
+import {IImageClient, IImageProps} from '@/types/questionnaire/create-a-request/questionnaire'
 import { XCircle } from 'lucide-react'
 import {NextRequest, NextResponse} from "next/server";
-import {UploadImages} from "@/types/questionnaire/create-a-request/uploadImages";
+import {ResponseDataFile, UploadImages} from "@/types/questionnaire/create-a-request/uploadImages";
 
 const DownloadImage = () => {
     const [file, setFile] = useState<File>()
@@ -17,13 +17,14 @@ const DownloadImage = () => {
     const [isShowModal, setIsShowModal] = useState<boolean>()
     const { state, setState } = useQuestionnaireState()
 
-    function addImage(newImageServer: IImageProps) {
+    function addImage(newImageServer: IImageProps, newImageClient: IImageClient) {
         setState((prevState) => ({
             ...prevState,
             questionnaire: {
                 ...prevState.questionnaire,
                 images: [...prevState.questionnaire.images || [], newImageServer]
-            }
+            },
+            images: [...prevState.images || [], newImageClient]
         }))
 
     }
@@ -45,20 +46,24 @@ const DownloadImage = () => {
         return await response.json()
     }
 
-
     const handleSubmit = async (e: React.FormEvent<HTMLButtonElement>) => {
         e.preventDefault()
 
         if (file && isImageFile(file)) {
             const response: UploadImages = await postImage(file)
-            const path = URL.createObjectURL(file)
+
             const newImageServer: IImageProps = {
                 path: response.path,
                 description: description,
-                blobPath: path
             }
 
-            addImage(newImageServer)
+            const newImageClient: IImageClient = {
+                path: response.path,
+                description: description,
+                blobPath: URL.createObjectURL(file)
+            }
+
+            addImage(newImageServer, newImageClient)
             setFile(undefined)
             setDescription('')
         } else {
