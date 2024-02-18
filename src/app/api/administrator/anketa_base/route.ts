@@ -7,5 +7,6 @@ export async function GET() {
         return typeof value === 'bigint' ? value.toString() : value
     }
 
+
     return NextResponse.json(JSON.stringify(response, replace))
 }

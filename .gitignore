@@ -17,6 +17,7 @@
 /build
 /public/downloads/images/
 /uploads
+/prisma/modules
 
 # misc
 .DS_Store

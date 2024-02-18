@@ -1,0 +1,110 @@
+model Questionnaire {
+  id                   Int                  @id @default(autoincrement())
+  distributor          String
+  distributor_employee DistributorEmployee?
+  data_sto             DataSto?
+  inns                 IInn[]
+  images               Images[]
+  lifts                Lifts?
+  manager              Manager?
+  signatoryManager     SignatoryManager?
+  confirmData          ConfirmData?
+  status               Status
+  comment              String?              @db.Text
+  created_date         DateTime
+  updated_date         DateTime
+}
+
+enum Status {
+  draft
+  accepted
+  rejected
+  sent
+}
+
+model DistributorEmployee {
+  id              Int           @id @default(autoincrement())
+  name            String
+  surname         String
+  lastname        String
+  phone           String
+  email           String
+  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
+  questionnaireId Int           @unique
+}
+
+model DataSto {
+  id                   Int           @id @default(autoincrement())
+  name                 String
+  city                 String
+  area                 String
+  address              String
+  code_client_avtoevro String
+  code_client_avtorus  String
+  code_client_rossko   String
+  questionnaire        Questionnaire @relation(fields: [questionnaireId], references: [id])
+  questionnaireId      Int           @unique
+}
+
+model IInn {
+  id              Int           @id @default(autoincrement())
+  inn             String
+  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
+  questionnaireId Int
+}
+
+model Manager {
+  id       Int    @id @default(autoincrement())
+  name     String
+  surname  String
+  lastname String
+  phone    String
+  email    String
+
+  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
+  questionnaireId Int           @unique
+}
+
+model SignatoryManager {
+  id       Int    @id @default(autoincrement())
+  name     String
+  surname  String
+  lastname String
+  phone    String
+  email    String
+
+  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
+  questionnaireId Int           @unique
+}
+
+model Lifts {
+  id                       Int @id @default(autoincrement())
+  twoPostLiftScissors      Int
+  fourPostLift             Int
+  fourPostLiftTraverse     Int
+  pits                     Int
+  pitsEquippedTraverse     Int
+  postElectronicDiagnostic Int
+  postAdditionalEquipment  Int
+
+  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
+  questionnaireId Int           @unique
+}
+
+model ConfirmData {
+  id       Int    @id @default(autoincrement())
+  loginOne String
+  loginTwo String
+  lifts    Int
+
+  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
+  questionnaireId Int           @unique
+}
+
+model Images {
+  id              Int           @id @default(autoincrement())
+  path            String
+  description     String
+  Questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
+  questionnaireId Int
+}

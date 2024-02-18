@@ -5,8 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd7a64a1-0d6e-443b-a63c-a3ac575cb48c" name="Changes" comment="add input">
+      <change afterPath="$PROJECT_DIR$/prisma/modules/portal/db.prisma" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prisma/modules/portal/questionnaire.prisma" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prisma/modules/portal/user.prisma" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api/create-password/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/repository/user.repository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server/actions/portal_db/users.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server/actions/webshop_db/users.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/questionnaire/users/users.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/Photo/ImageBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/questionnaire/create-a-request/components/Photo/ImageBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/edge.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/edge.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/edge.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/edge.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/index-browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/index-browser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/query_engine-windows.dll.node" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/query_engine-windows.dll.node" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/runtime/edge-esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/runtime/edge-esm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/runtime/edge.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/runtime/edge.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/runtime/index-browser.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/runtime/index-browser.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/runtime/index-browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/runtime/index-browser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/runtime/library.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/runtime/library.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/runtime/library.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/runtime/library.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client1/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client1/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/edge.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/edge.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/index-browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/index-browser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/generate/client2/wasm.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/generate/client2/wasm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema-portal.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema-portal.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema-webshop.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema-webshop.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/administrator/anketa_base/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/administrator/anketa_base/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,32 +75,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/GlobalProjects/LKGROUPAUTO/upload_images&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;D:\\GlobalProjects\\LKGROUPAUTO\\core\\node_modules\\eslint&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\GlobalProjects\\LKGROUPAUTO\\core\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "js.linters.configure.manually.selectedeslint": "true",
+    "last_opened_file_path": "D:/GlobalProjects/LKGROUPAUTO/core/src/server/actions/portal_db",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "D:\\GlobalProjects\\LKGROUPAUTO\\core\\node_modules\\eslint",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "D:\\GlobalProjects\\LKGROUPAUTO\\core\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GlobalProjects\LKGROUPAUTO\core\src\server\actions\portal_db" />
       <recent name="D:\GlobalProjects\LKGROUPAUTO\core" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GlobalProjects\LKGROUPAUTO\core\prisma\modules\portal" />
+      <recent name="D:\GlobalProjects\LKGROUPAUTO\core\prisma\modules" />
       <recent name="D:\GlobalProjects\LKGROUPAUTO\core" />
       <recent name="D:\GlobalProjects\LKGROUPAUTO\core\src\app\api\questionnaire" />
       <recent name="D:\GlobalProjects\LKGROUPAUTO\core\src\server\routs\webshop_db" />
@@ -106,7 +145,11 @@
       <workItem from="1707483447403" duration="1243000" />
       <workItem from="1707547721839" duration="27000" />
       <workItem from="1707547779955" duration="6651000" />
-      <workItem from="1707578613136" duration="21641000" />
+      <workItem from="1707578613136" duration="21950000" />
+      <workItem from="1707724851488" duration="46000" />
+      <workItem from="1707841107493" duration="1789000" />
+      <workItem from="1707895767632" duration="5907000" />
+      <workItem from="1707909128078" duration="18752000" />
     </task>
     <servers />
   </component>

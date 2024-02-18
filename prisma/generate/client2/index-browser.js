@@ -191,6 +191,15 @@ exports.Prisma.ImagesScalarFieldEnum = {
   questionnaireId: 'questionnaireId'
 };
 
+exports.Prisma.UserScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  password: 'password',
+  role: 'role',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -212,6 +221,12 @@ exports.Status = exports.$Enums.Status = {
   sent: 'sent'
 };
 
+exports.Role = exports.$Enums.Role = {
+  sto: 'sto',
+  distributor: 'distributor',
+  admin: 'admin'
+};
+
 exports.Prisma.ModelName = {
   Questionnaire: 'Questionnaire',
   DistributorEmployee: 'DistributorEmployee',
@@ -221,7 +236,8 @@ exports.Prisma.ModelName = {
   SignatoryManager: 'SignatoryManager',
   Lifts: 'Lifts',
   ConfirmData: 'ConfirmData',
-  Images: 'Images'
+  Images: 'Images',
+  User: 'User'
 };
 
 /**
