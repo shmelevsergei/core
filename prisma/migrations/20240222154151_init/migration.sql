@@ -1,11 +1,17 @@
 -- CreateEnum
 CREATE TYPE "Status" AS ENUM ('draft', 'accepted', 'rejected', 'sent');
 
+-- CreateEnum
+CREATE TYPE "Role" AS ENUM ('sto', 'distributor', 'admin');
+
 -- CreateTable
 CREATE TABLE "Questionnaire" (
     "id" SERIAL NOT NULL,
     "distributor" TEXT NOT NULL,
     "status" "Status" NOT NULL,
+    "comment" TEXT,
+    "created_date" TIMESTAMP(3) NOT NULL,
+    "updated_date" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "Questionnaire_pkey" PRIMARY KEY ("id")
 );
@@ -109,6 +115,18 @@ CREATE TABLE "Images" (
     CONSTRAINT "Images_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateTable
+CREATE TABLE "User" (
+    "id" SERIAL NOT NULL,
+    "name" TEXT NOT NULL,
+    "password" TEXT NOT NULL,
+    "role" "Role" NOT NULL DEFAULT 'sto',
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "User_pkey" PRIMARY KEY ("id")
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "DistributorEmployee_questionnaireId_key" ON "DistributorEmployee"("questionnaireId");
 
@@ -126,9 +144,6 @@ CREATE UNIQUE INDEX "Lifts_questionnaireId_key" ON "Lifts"("questionnaireId");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "ConfirmData_questionnaireId_key" ON "ConfirmData"("questionnaireId");
-
--- CreateIndex
-CREATE UNIQUE INDEX "Images_questionnaireId_key" ON "Images"("questionnaireId");
 
 -- AddForeignKey
 ALTER TABLE "DistributorEmployee" ADD CONSTRAINT "DistributorEmployee_questionnaireId_fkey" FOREIGN KEY ("questionnaireId") REFERENCES "Questionnaire"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

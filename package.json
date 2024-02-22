@@ -8,7 +8,6 @@
         "start": "next start",
         "lint": "next lint",
         "prettier": "prettier -w .",
-        "merge-portal": "cd ./prisma/modules/portal && type *.prisma > ../../schema-portal.prisma",
         "gen-portal": "npx prisma generate --schema prisma/schema-portal.prisma",
         "gen-webshop": "npx prisma generate --schema prisma/schema-webshop.prisma",
         "migrate-portal": "npx prisma migrate dev --name init --schema prisma/schema-portal.prisma",
@@ -50,8 +49,8 @@
     },
     "devDependencies": {
         "@types/node": "^20",
-        "@types/react": "^18",
-        "@types/react-dom": "^18",
+        "@types/react": "^18.2.57",
+        "@types/react-dom": "^18.2.19",
         "autoprefixer": "^10.0.1",
         "eslint": "^8",
         "eslint-config-next": "14.0.4",
@@ -62,6 +61,6 @@
         "rimraf": "^5.0.5",
         "sharp": "^0.33.2",
         "tailwindcss": "^3.3.0",
-        "typescript": "^5"
+        "typescript": "^5.3.3"
     }
 }
