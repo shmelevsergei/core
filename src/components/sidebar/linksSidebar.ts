@@ -4,7 +4,7 @@ export const reports = {
     linkButton: 'Отчеты',
     linksList: [
         {
-            href: '/reports/no_address/',
+            href: '/administrator/reports/no_address/',
             text: 'СТО без адреса',
         },
         {
@@ -48,7 +48,7 @@ export const questionnaires = {
             text: 'Заявки (шт.)',
         },
         {
-            href: '/questionnaire/create-a-request/',
+            href: '/administrator/questionnaire/create-a-request/',
             text: 'Создать заявку',
         },
         {

@@ -1,5 +1,5 @@
 import React from 'react'
-import DataTable from '@/app/reports/no_address/components/table/DataTable'
+import DataTable from '@/app/administrator/reports/no_address/components/table/DataTable'
 
 const Page = () => {
     return (

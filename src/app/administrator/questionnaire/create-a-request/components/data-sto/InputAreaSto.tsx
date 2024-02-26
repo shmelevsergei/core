@@ -7,30 +7,31 @@ import {
 } from 'react-dadata'
 import { DADATA_API_KEY } from '@/server/lib/variables'
 import { Label } from '@/components/ui/label'
-import {useQuestionnaireState} from "@/app/questionnaire/store/questionnaire.context";
+import { useQuestionnaireState } from '@/app/administrator/questionnaire/store/questionnaire.context'
 
-const InputAreaSto = ({name}:{name?:string}) => {
+const InputAreaSto = ({ name }: { name?: string }) => {
     const areaRef = useRef<AddressSuggestions | null>(null)
     const [value, setValue] = useState<
         DaDataSuggestion<DaDataAddress> | undefined
     >()
-    const { setState} = useQuestionnaireState()
+    const { setState } = useQuestionnaireState()
 
     const apiKey: string = DADATA_API_KEY
     const id = useId()
 
-    const handleInputChange = (newValue: DaDataSuggestion<DaDataAddress>| undefined) => {
-
+    const handleInputChange = (
+        newValue: DaDataSuggestion<DaDataAddress> | undefined
+    ) => {
         if (newValue) {
-            setState(prevState => ({
-             ...prevState,
+            setState((prevState) => ({
+                ...prevState,
                 questionnaire: {
-                 ...prevState.questionnaire,
+                    ...prevState.questionnaire,
                     data_sto: {
-                     ...prevState.questionnaire.data_sto,
-                        area: newValue.value
-                    }
-                }
+                        ...prevState.questionnaire.data_sto,
+                        area: newValue.value,
+                    },
+                },
             }))
         }
     }
@@ -38,15 +39,15 @@ const InputAreaSto = ({name}:{name?:string}) => {
     const handleManualInput = (e: React.FocusEvent<HTMLInputElement>) => {
         const newValue = e.target.value
 
-        setState(prevState => ({
+        setState((prevState) => ({
             ...prevState,
             questionnaire: {
                 ...prevState.questionnaire,
                 data_sto: {
                     ...prevState.questionnaire.data_sto,
-                    area: newValue
-                }
-            }
+                    area: newValue,
+                },
+            },
         }))
     }
 
@@ -60,7 +61,12 @@ const InputAreaSto = ({name}:{name?:string}) => {
                 uid={id}
                 ref={areaRef}
                 minChars={3}
-                inputProps={{ name: name, id: id, placeholder: 'Область', onBlur: handleManualInput }}
+                inputProps={{
+                    name: name,
+                    id: id,
+                    placeholder: 'Область',
+                    onBlur: handleManualInput,
+                }}
                 containerClassName={'input'}
                 highlightClassName={'item'}
             />

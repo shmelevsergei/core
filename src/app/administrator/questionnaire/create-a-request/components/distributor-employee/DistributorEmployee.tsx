@@ -1,25 +1,28 @@
 'use client'
 import React from 'react'
-import Title from '@/app/questionnaire/create-a-request/components/Title'
+import Title from '@/app/administrator/questionnaire/create-a-request/components/Title'
 import { cn } from '@/lib/utils'
 
-import InputForm from '@/app/questionnaire/create-a-request/components/InputForm'
+import InputForm from '@/app/administrator/questionnaire/create-a-request/components/InputForm'
 import InputPhone from '../InputPhone'
-import {useQuestionnaireState} from "@/app/questionnaire/store/questionnaire.context";
+import { useQuestionnaireState } from '@/app/administrator/questionnaire/store/questionnaire.context'
 
 const DistributorEmployee = () => {
-    const { setState} = useQuestionnaireState()
+    const { setState } = useQuestionnaireState()
 
-    const handleInputChange = (field: string, e: React.ChangeEvent<HTMLInputElement>) => {
-        setState(prevState => ({
+    const handleInputChange = (
+        field: string,
+        e: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        setState((prevState) => ({
             ...prevState,
             questionnaire: {
                 ...prevState.questionnaire,
                 distributor_employee: {
                     ...prevState.questionnaire.distributor_employee,
-                    [field]: e.target.value
-                }
-            }
+                    [field]: e.target.value,
+                },
+            },
         }))
     }
 

@@ -1,34 +1,42 @@
 import React from 'react'
-import Title from '@/app/questionnaire/create-a-request/components/Title'
+import Title from '@/app/administrator/questionnaire/create-a-request/components/Title'
 import { cn } from '@/lib/utils'
-import InputForm from '@/app/questionnaire/create-a-request/components/InputForm'
-import {useQuestionnaireState} from "@/app/questionnaire/store/questionnaire.context";
+import InputForm from '@/app/administrator/questionnaire/create-a-request/components/InputForm'
+import { useQuestionnaireState } from '@/app/administrator/questionnaire/store/questionnaire.context'
 
 const ConfirmationDetails = () => {
-    const { setState} = useQuestionnaireState()
+    const { setState } = useQuestionnaireState()
 
-    const handleInputChange = (field: string, e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleInputChange = (
+        field: string,
+        e: React.ChangeEvent<HTMLInputElement>
+    ) => {
         const newValue = e.target.value
 
-        setState(prevState => ({
-          ...prevState,
+        setState((prevState) => ({
+            ...prevState,
             questionnaire: {
-              ...prevState.questionnaire,
-                 confirmData: {
-                  ...prevState.questionnaire.confirmData,
+                ...prevState.questionnaire,
+                confirmData: {
+                    ...prevState.questionnaire.confirmData,
                     loginOne: newValue,
-                     loginTwo: newValue,
-                     lifts: +newValue
-                 
-                }
-            }
+                    loginTwo: newValue,
+                    lifts: +newValue,
+                },
+            },
         }))
     }
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
+        const allowedKeys = [
+            'Backspace',
+            'Delete',
+            'ArrowLeft',
+            'ArrowRight',
+            'Tab',
+        ]
 
-        if (!/^\d$/.test(e.key) &&!allowedKeys.includes(e.key)) {
-            e.preventDefault();
+        if (!/^\d$/.test(e.key) && !allowedKeys.includes(e.key)) {
+            e.preventDefault()
         }
     }
     return (

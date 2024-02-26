@@ -10,7 +10,7 @@ import {
 import {
     dataTable,
     DatsTable,
-} from '@/app/reports/no_address/components/table/datsTable'
+} from '@/app/administrator/reports/no_address/components/table/datsTable'
 import Link from 'next/link'
 
 const DataTable = () => {
@@ -31,7 +31,7 @@ const DataTable = () => {
                         <TableCell>{name}</TableCell>
                         <TableCell>
                             <Link
-                                href={`/administrator/no_address/${id}`}
+                                href={`/administrator/reports/no_address/${id}`}
                                 target={'_blank'}
                             >
                                 {id}

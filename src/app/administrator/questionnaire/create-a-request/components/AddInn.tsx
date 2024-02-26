@@ -1,56 +1,53 @@
 'use client'
-import React, {useEffect, useRef, useState} from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Label } from '@/components/ui/label'
 import { Input, InputProps } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Trash2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Card } from '@/components/ui/card'
-import {useQuestionnaireState} from "@/app/questionnaire/store/questionnaire.context";
-import {IInn} from "@/types/questionnaire/create-a-request/questionnaire";
+import { useQuestionnaireState } from '@/app/administrator/questionnaire/store/questionnaire.context'
+import { IInn } from '@/types/questionnaire/create-a-request/questionnaire'
 
 const AddInn = () => {
     const [values, setValues] = useState<string[]>([])
     const [currentInput, setCurrentInput] = useState<string>('')
-    const {state, setState} = useQuestionnaireState()
+    const { state, setState } = useQuestionnaireState()
 
     const removeInput = (index: number) => {
-        setValues((prevInputs) =>
-            prevInputs.filter((_, i) => i !== index))
+        setValues((prevInputs) => prevInputs.filter((_, i) => i !== index))
 
         const updateInn = [...state.questionnaire.inns]
 
         updateInn.splice(index, 1)
 
-        setState(prevState => ({
+        setState((prevState) => ({
             ...prevState,
             questionnaire: {
                 ...prevState.questionnaire,
-                inns: updateInn
-            }
+                inns: updateInn,
+            },
         }))
-
     }
 
-    const addInput = (e:React.FormEvent<HTMLButtonElement>) => {
+    const addInput = (e: React.FormEvent<HTMLButtonElement>) => {
         e.preventDefault()
         if (currentInput.trim() !== '') {
             setValues((prevInputs) => [...prevInputs, currentInput])
-            setCurrentInput( '')
+            setCurrentInput('')
 
             const newInn: IInn = {
-                inn: currentInput
+                inn: currentInput,
             }
 
-            setState(prevState => ({
+            setState((prevState) => ({
                 ...prevState,
                 questionnaire: {
                     ...prevState.questionnaire,
-                    inns: [...prevState.questionnaire.inns, newInn]
-                }
+                    inns: [...prevState.questionnaire.inns, newInn],
+                },
             }))
         }
-
     }
 
     return (

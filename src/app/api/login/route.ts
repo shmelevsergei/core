@@ -1,8 +1,8 @@
 import { users } from '@/server/actions/portal_db/users'
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
-export async function POST(res: NextResponse) {
-    const data = await res.json()
+export async function POST(req: NextRequest) {
+    const data = await req.json()
 
     const response = await users.loginUser(data)
 

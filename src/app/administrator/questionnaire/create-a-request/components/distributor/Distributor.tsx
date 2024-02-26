@@ -1,6 +1,6 @@
 import React from 'react'
-import Title from '@/app/questionnaire/create-a-request/components/Title'
-import InputForm from '@/app/questionnaire/create-a-request/components/InputForm'
+import Title from '@/app/administrator/questionnaire/create-a-request/components/Title'
+import InputForm from '@/app/administrator/questionnaire/create-a-request/components/InputForm'
 import { cn } from '@/lib/utils'
 
 const Distributor = () => {

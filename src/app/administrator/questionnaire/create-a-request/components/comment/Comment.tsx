@@ -1,21 +1,21 @@
 import React from 'react'
-import Title from '@/app/questionnaire/create-a-request/components/Title'
+import Title from '@/app/administrator/questionnaire/create-a-request/components/Title'
 import { Textarea } from '@/components/ui/textarea'
 import { cn } from '@/lib/utils'
-import {useQuestionnaireState} from "@/app/questionnaire/store/questionnaire.context";
+import { useQuestionnaireState } from '@/app/administrator/questionnaire/store/questionnaire.context'
 
 const Comment = () => {
-    const { setState} = useQuestionnaireState()
+    const { setState } = useQuestionnaireState()
 
-    const handleInputChange = ( e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         const newValue = e.target.value
 
-        setState(prevState => ({
+        setState((prevState) => ({
             ...prevState,
             questionnaire: {
                 ...prevState.questionnaire,
-                comment: newValue
-            }
+                comment: newValue,
+            },
         }))
     }
 

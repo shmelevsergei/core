@@ -1,37 +1,44 @@
 import React from 'react'
-import Title from '@/app/questionnaire/create-a-request/components/Title'
+import Title from '@/app/administrator/questionnaire/create-a-request/components/Title'
 import { cn } from '@/lib/utils'
-import InputForm from '@/app/questionnaire/create-a-request/components/InputForm'
-import {useQuestionnaireState} from "@/app/questionnaire/store/questionnaire.context";
+import InputForm from '@/app/administrator/questionnaire/create-a-request/components/InputForm'
+import { useQuestionnaireState } from '@/app/administrator/questionnaire/store/questionnaire.context'
 
 const Lifts = () => {
-
-    const { setState} = useQuestionnaireState()
-    const handleInputChange = (field: string, e: React.ChangeEvent<HTMLInputElement>) => {
+    const { setState } = useQuestionnaireState()
+    const handleInputChange = (
+        field: string,
+        e: React.ChangeEvent<HTMLInputElement>
+    ) => {
         const newValue = e.target.value
 
-
         if (/^\d*$/.test(newValue) || newValue === '') {
-            setState(prevState => ({
+            setState((prevState) => ({
                 ...prevState,
                 questionnaire: {
                     ...prevState.questionnaire,
                     lifts: {
                         ...prevState.questionnaire.lifts,
                         [field]: newValue === '' ? 0 : +newValue,
-                    }
-                }
+                    },
+                },
             }))
         }
     }
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
+        const allowedKeys = [
+            'Backspace',
+            'Delete',
+            'ArrowLeft',
+            'ArrowRight',
+            'Tab',
+        ]
 
         if (!/^\d$/.test(e.key) && !allowedKeys.includes(e.key)) {
-            e.preventDefault();
+            e.preventDefault()
         }
-    };
+    }
 
     return (
         <div>
@@ -42,9 +49,10 @@ const Lifts = () => {
                     placeholder={''}
                     type={'text'}
                     label={'2-х стоечный подъемник (ножницы)'}
-                    onChange={(e) => handleInputChange('twoPostLiftScissors', e)}
+                    onChange={(e) =>
+                        handleInputChange('twoPostLiftScissors', e)
+                    }
                     onKeyDown={(e) => handleKeyDown(e)}
-
                 />
                 <InputForm
                     id={'lift-4'}
@@ -59,7 +67,9 @@ const Lifts = () => {
                     placeholder={''}
                     type={'text'}
                     label={'4-х стоечных подъемников с траверсом'}
-                    onChange={(e) => handleInputChange('fourPostLiftTraverse', e)}
+                    onChange={(e) =>
+                        handleInputChange('fourPostLiftTraverse', e)
+                    }
                     onKeyDown={(e) => handleKeyDown(e)}
                 />
                 <InputForm
@@ -75,7 +85,9 @@ const Lifts = () => {
                     placeholder={''}
                     type={'text'}
                     label={'Ямы, оборудованные траверсом'}
-                    onChange={(e) => handleInputChange('pitsEquippedTraverse', e)}
+                    onChange={(e) =>
+                        handleInputChange('pitsEquippedTraverse', e)
+                    }
                     onKeyDown={(e) => handleKeyDown(e)}
                 />
                 <InputForm
@@ -83,7 +95,9 @@ const Lifts = () => {
                     placeholder={''}
                     type={'text'}
                     label={'Пост электронно-диагностических работ'}
-                    onChange={(e) => handleInputChange('postElectronicDiagnostic', e)}
+                    onChange={(e) =>
+                        handleInputChange('postElectronicDiagnostic', e)
+                    }
                     onKeyDown={(e) => handleKeyDown(e)}
                 />
                 <InputForm
@@ -91,7 +105,9 @@ const Lifts = () => {
                     placeholder={''}
                     type={'text'}
                     label={'Пост установки доп. оборудования'}
-                    onChange={(e) => handleInputChange('postAdditionalEquipment', e)}
+                    onChange={(e) =>
+                        handleInputChange('postAdditionalEquipment', e)
+                    }
                     onKeyDown={(e) => handleKeyDown(e)}
                 />
             </div>

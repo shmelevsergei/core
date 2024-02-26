@@ -1,17 +1,17 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import Title from '@/app/questionnaire/create-a-request/components/Title'
+import Title from '@/app/administrator/questionnaire/create-a-request/components/Title'
 import { Button } from '@/components/ui/button'
-import ImageBlock from '@/app/questionnaire/create-a-request/components/Photo/ImageBlock'
+import ImageBlock from '@/app/administrator/questionnaire/create-a-request/components/Photo/ImageBlock'
 
 import { cn } from '@/lib/utils'
-import { useQuestionnaireState } from '@/app/questionnaire/store/questionnaire.context'
+import { useQuestionnaireState } from '@/app/administrator/questionnaire/store/questionnaire.context'
 
 const Photo = () => {
     const { state, setState } = useQuestionnaireState()
 
-    const handleClick = (e:any) => {
+    const handleClick = (e: any) => {
         e.preventDefault()
         setState((prevState) => ({
             ...prevState,

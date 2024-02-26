@@ -1,26 +1,23 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import Title from '@/app/questionnaire/create-a-request/components/Title'
+import Title from '@/app/administrator/questionnaire/create-a-request/components/Title'
 import { cn } from '@/lib/utils'
-import InputForm from '@/app/questionnaire/create-a-request/components/InputForm'
-import InputPhone from '@/app/questionnaire/create-a-request/components/InputPhone'
+import InputForm from '@/app/administrator/questionnaire/create-a-request/components/InputForm'
+import InputPhone from '@/app/administrator/questionnaire/create-a-request/components/InputPhone'
 import CheckBox from './CheckBox'
-import {
-    IDataSignatoryManager,
-} from '@/types/questionnaire/create-a-request/questionnaire'
-import {useQuestionnaireState} from "@/app/questionnaire/store/questionnaire.context";
+import { IDataSignatoryManager } from '@/types/questionnaire/create-a-request/questionnaire'
+import { useQuestionnaireState } from '@/app/administrator/questionnaire/store/questionnaire.context'
 
 const ManagerDetails = () => {
     const [isChecked, setIsChecked] = useState(false)
     const [disabled, setIsDisabled] = useState(false)
-    const [dataManager, setDataManager] =
-        useState<IDataSignatoryManager>({
-            name: '',
-            surname: '',
-            lastname: '',
-            phone: '',
-            email: '',
-        })
+    const [dataManager, setDataManager] = useState<IDataSignatoryManager>({
+        name: '',
+        surname: '',
+        lastname: '',
+        phone: '',
+        email: '',
+    })
     const [dataSignatoryManager, setDataSignatoryManager] =
         useState<IDataSignatoryManager>({
             name: '',
@@ -30,8 +27,7 @@ const ManagerDetails = () => {
             email: '',
         })
 
-    const {state, setState} = useQuestionnaireState()
-
+    const { state, setState } = useQuestionnaireState()
 
     const handleCheckedChange = () => {
         setIsChecked(!isChecked)
@@ -45,24 +41,24 @@ const ManagerDetails = () => {
             [field]: newValue,
         }))
 
-        setState(prevState => ({
-         ...prevState,
+        setState((prevState) => ({
+            ...prevState,
             questionnaire: {
-             ...prevState.questionnaire,
+                ...prevState.questionnaire,
                 manager: {
-                 ...prevState.questionnaire.manager,
-                    [field]:newValue,
+                    ...prevState.questionnaire.manager,
+                    [field]: newValue,
                 },
             },
         }))
         if (disabled) {
-            setState(prevState => ({
+            setState((prevState) => ({
                 ...prevState,
                 questionnaire: {
                     ...prevState.questionnaire,
                     signatoryManager: {
                         ...prevState.questionnaire.signatoryManager,
-                        [field]:newValue,
+                        [field]: newValue,
                     },
                 },
             }))
@@ -70,7 +66,6 @@ const ManagerDetails = () => {
     }
 
     const handleInputSignatoryManagerChange = (field: string, e: any) => {
-
         const newValue = e.target.value
 
         setDataSignatoryManager((prevData) => ({
@@ -78,18 +73,16 @@ const ManagerDetails = () => {
             [field]: newValue,
         }))
 
-
-        setState(prevState => ({
+        setState((prevState) => ({
             ...prevState,
             questionnaire: {
                 ...prevState.questionnaire,
                 signatoryManager: {
                     ...prevState.questionnaire.signatoryManager,
-                    [field]: newValue
-                }
-            }
+                    [field]: newValue,
+                },
+            },
         }))
-
     }
 
     useEffect(() => {
@@ -102,14 +95,13 @@ const ManagerDetails = () => {
                 phone: dataManager.phone,
                 email: dataManager.email,
             }))
-
         }
     }, [disabled, dataManager])
 
     useEffect(() => {
         setIsDisabled(!isChecked)
         if (!isChecked) {
-            setState(prevState => ({
+            setState((prevState) => ({
                 ...prevState,
                 questionnaire: {
                     ...prevState.questionnaire,
@@ -124,7 +116,6 @@ const ManagerDetails = () => {
                 },
             }))
         }
-
     }, [isChecked])
 
     return (

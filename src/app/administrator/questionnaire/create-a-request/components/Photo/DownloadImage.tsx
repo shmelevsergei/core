@@ -5,11 +5,17 @@ import { Input } from '@/components/ui/input'
 import { Card } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
-import { useQuestionnaireState } from '@/app/questionnaire/store/questionnaire.context'
-import {IImageClient, IImageProps} from '@/types/questionnaire/create-a-request/questionnaire'
+import { useQuestionnaireState } from '@/app/administrator/questionnaire/store/questionnaire.context'
+import {
+    IImageClient,
+    IImageProps,
+} from '@/types/questionnaire/create-a-request/questionnaire'
 import { XCircle } from 'lucide-react'
-import {NextRequest, NextResponse} from "next/server";
-import {ResponseDataFile, UploadImages} from "@/types/questionnaire/create-a-request/uploadImages";
+import { NextRequest, NextResponse } from 'next/server'
+import {
+    ResponseDataFile,
+    UploadImages,
+} from '@/types/questionnaire/create-a-request/uploadImages'
 
 const DownloadImage = () => {
     const [file, setFile] = useState<File>()
@@ -17,16 +23,21 @@ const DownloadImage = () => {
     const [isShowModal, setIsShowModal] = useState<boolean>()
     const { state, setState } = useQuestionnaireState()
 
-    function addImage(newImageServer: IImageProps, newImageClient: IImageClient) {
+    function addImage(
+        newImageServer: IImageProps,
+        newImageClient: IImageClient
+    ) {
         setState((prevState) => ({
             ...prevState,
             questionnaire: {
                 ...prevState.questionnaire,
-                images: [...prevState.questionnaire.images || [], newImageServer]
+                images: [
+                    ...(prevState.questionnaire.images || []),
+                    newImageServer,
+                ],
             },
-            images: [...prevState.images || [], newImageClient]
+            images: [...(prevState.images || []), newImageClient],
         }))
-
     }
 
     const isImageFile = (file: File): boolean => {
@@ -34,9 +45,9 @@ const DownloadImage = () => {
         return imageTypes.includes(file.type)
     }
 
-    const postImage = async(data: File) => {
-        const formData = new FormData();
-        formData.append('file', data);
+    const postImage = async (data: File) => {
+        const formData = new FormData()
+        formData.append('file', data)
 
         const response = await fetch('/api/file', {
             method: 'POST',
@@ -60,7 +71,7 @@ const DownloadImage = () => {
             const newImageClient: IImageClient = {
                 path: response.path,
                 description: description,
-                blobPath: URL.createObjectURL(file)
+                blobPath: URL.createObjectURL(file),
             }
 
             addImage(newImageServer, newImageClient)
@@ -99,7 +110,9 @@ const DownloadImage = () => {
                                     id="picture"
                                     type="file"
                                     name="picture"
-                                    onChange={(e) => setFile(e.target.files?.[0])}
+                                    onChange={(e) =>
+                                        setFile(e.target.files?.[0])
+                                    }
                                 />
                                 {file && !isImageFile(file) && (
                                     <p className={'text-red-600 text-sm'}>
@@ -114,7 +127,9 @@ const DownloadImage = () => {
                                     id="description"
                                     type="text"
                                     name="description"
-                                    onChange={(e) => setDescription(e.target.value)}
+                                    onChange={(e) =>
+                                        setDescription(e.target.value)
+                                    }
                                     placeholder={'Описание фотографии'}
                                     value={description}
                                 />
@@ -124,7 +139,6 @@ const DownloadImage = () => {
                                 Добавить
                             </Button>
                         </div>
-
                     </form>
 
                     <button
