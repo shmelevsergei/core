@@ -116,7 +116,7 @@ const ManagerDetails = () => {
                 },
             }))
         }
-    }, [isChecked])
+    }, [isChecked, dataManager, setState])
 
     return (
         <div>
