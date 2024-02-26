@@ -7,6 +7,7 @@ const LogoutButton = () => {
     const redirect = useRouter()
 
     const handleClick = () => {
+        localStorage.removeItem('login')
         redirect.push('/')
     }
     return (

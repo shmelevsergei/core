@@ -1,14 +1,14 @@
 'use client'
-import Brands from '@/app/reports/components/infoPanel/Brands'
-import Mont from '@/app/reports/components/mont/Mont'
+import Brands from '@/app/administrator/reports/components/infoPanel/Brands'
+import Mont from '@/app/administrator/reports/components/mont/Mont'
 import { useEffect, useState } from 'react'
 import {
     fetchAnketaBase,
     fetchAnketaBaseNews,
 } from '@/server/routs/webshop_db/fetchAnketaBase'
 import { fetchAnketaDogovor } from '@/server/routs/webshop_db/fetchAnketaDogovor'
-import { useAdministratorState } from '@/app/reports/store/administrator.context'
-import AllBrands from '@/app/reports/components/infoPanel/AllBrands'
+import { useAdministratorState } from '@/app/administrator/reports/store/administrator.context'
+import AllBrands from '@/app/administrator/reports/components/infoPanel/AllBrands'
 import { Skeleton } from '@/components/ui/skeleton'
 
 const InfoPanel = () => {

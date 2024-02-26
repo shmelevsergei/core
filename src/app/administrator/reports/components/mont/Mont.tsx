@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import DatePickerWithRange from '@/components/ui/DataRangePicker'
 import { Button } from '@/components/ui/button'
-import { useAdministratorState } from '@/app/reports/store/administrator.context'
+import { useAdministratorState } from '@/app/administrator/reports/store/administrator.context'
 
 const Mont = () => {
     const [isButtonDisabled, setIsButtonDisabled] = useState(false)

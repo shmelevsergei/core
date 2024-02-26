@@ -1,5 +1,5 @@
 import React from 'react'
-import OfferHasNotSing from '@/app/reports/components/info/OfferHasNotSing'
+import OfferHasNotSing from '@/app/administrator/reports/components/info/OfferHasNotSing'
 import NotByFromDistributor from './NotByFromDistributor'
 
 const Info = () => {

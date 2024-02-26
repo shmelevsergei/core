@@ -230,7 +230,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\shmel\\Desktop\\LKGROUPAUTO\\core\\prisma\\generate\\client2",
+      "value": "C:\\Users\\shmel\\Desktop\\WorkGroupAuto\\LKGROUPAUTO\\core\\prisma\\generate\\client2",
       "fromEnvVar": null
     },
     "config": {
@@ -247,7 +247,7 @@ const config = {
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../../.env",
+    "rootEnvPath": null,
     "schemaEnvPath": "../../../.env"
   },
   "relativePath": "../..",

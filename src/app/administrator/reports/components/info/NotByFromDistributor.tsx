@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import UiCard from './ui-card'
-import { useAdministratorState } from '@/app/reports/store/administrator.context'
+import { useAdministratorState } from '@/app/administrator/reports/store/administrator.context'
 
 const NotByFromDistributor = () => {
     const [count, setCount] = useState(0)

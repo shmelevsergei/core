@@ -2,7 +2,7 @@ import Oborot from './Oborot'
 import PurchasePerMoney from './PurchasePerMoney'
 import WithPurchaseSto from './WithPurchaseSto'
 import PurchasePerCount from './PurchasePerCount'
-import PurchasePerMoneyQty from '@/app/reports/components/content/PurchasePerMoneyQty'
+import PurchasePerMoneyQty from '@/app/administrator/reports/components/content/PurchasePerMoneyQty'
 import PurchasePerCountQty from './PurchasePerCountQty'
 const Content = () => {
     return (

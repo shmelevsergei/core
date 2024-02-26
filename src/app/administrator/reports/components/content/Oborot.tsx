@@ -1,9 +1,10 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import UiCard from '@/app/reports/components/content/ui-card'
-import { useAdministratorState } from '@/app/reports/store/administrator.context'
+
 import { fetchAnketaOborotFromDate } from '@/server/routs/webshop_db/fetchAnketaOborot'
 import { formattedNumber } from '@/lib/formulas/formatNumber'
+import { useAdministratorState } from '@/app/administrator/reports/store/administrator.context'
+import UiCard from './ui-card'
 
 const Oborot = () => {
     const { state, setState } = useAdministratorState()

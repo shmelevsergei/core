@@ -1,13 +1,13 @@
-import Content from '@/app/reports/components/content/Content'
-import InfoPanel from '@/app/reports/components/infoPanel/InfoPanel'
-import Info from '@/app/reports/components/info/Info'
-import Branding from '@/app/reports/components/branding/Branding'
-import Competition from '@/app/reports/components/competition/Competition'
-import Points from '@/app/reports/components/points/Points'
-import Online from '@/app/reports/components/online/Online'
-import { AdministratorProvider } from '@/app/reports/store/administrator.context'
 import Divider from '@/components/ui/divider'
 import { cn } from '@/lib/utils'
+import { AdministratorProvider } from './store/administrator.context'
+import InfoPanel from './components/infoPanel/InfoPanel'
+import Content from './components/content/Content'
+import Info from './components/info/Info'
+import Branding from './components/branding/Branding'
+import Competition from './components/competition/Competition'
+import Points from './components/points/Points'
+import Online from './components/online/Online'
 
 const Page = () => {
     return (

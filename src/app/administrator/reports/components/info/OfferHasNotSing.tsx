@@ -1,8 +1,8 @@
 'use client'
 
 import React, { useEffect } from 'react'
-import { useAdministratorState } from '@/app/reports/store/administrator.context'
-import UiCard from '@/app/reports/components/info/ui-card'
+import { useAdministratorState } from '@/app/administrator/reports/store/administrator.context'
+import UiCard from '@/app/administrator/reports/components/info/ui-card'
 
 const OfferHasNotSing = () => {
     const [count, setCount] = React.useState(0)
