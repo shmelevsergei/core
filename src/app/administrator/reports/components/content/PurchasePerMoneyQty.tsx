@@ -1,10 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import UiCard from './ui-card'
-import {
-    fetchAnketaOborotPurchaseStoMoney,
-    fetchAnketaOborotRemzonaQty,
-} from '@/server/routs/webshop_db/fetchAnketaOborot'
+// import { oborotRemzonaQty } from '@/server/routs/webshop_db/fetchAnketaOborot'
 import { useAdministratorState } from '../../store/administrator.context'
 import { formattedNumber } from '@/lib/formulas/formatNumber'
 
@@ -18,61 +15,58 @@ const PurchasePerMoneyQty = () => {
     const startDate = state?.currentDate?.from
     const endDate = state?.currentDate?.to
 
-    useEffect(() => {
-        if (state.updateContentInfo) {
-            const fetchPurchase = async () => {
-                const result = await fetchAnketaOborotRemzonaQty({
-                    startDate,
-                    endDate,
-                })
+    // useEffect(() => {
+    //     if (state.updateContentInfo) {
+    //         const fetchPurchase = async () => {
+    //             const result = await oborotRemzonaQty({
+    //                 startDate,
+    //                 endDate,
+    //             })
+    //             if (!result) return
+    //             setState((prevState) => ({
+    //                 ...prevState,
+    //                 remzonaQty: result,
+    //             }))
 
-                const data = JSON.parse(result)
+    //             setPerMoneyQty(result)
+    //         }
 
-                setState((prevState) => ({
-                    ...prevState,
-                    remzonaQty: data,
-                }))
+    //         const fetchPrevPurchase = async () => {
+    //             if (startDate && endDate) {
+    //                 const startDateCopy = new Date(startDate)
+    //                 const endDateCopy = new Date(endDate)
 
-                setPerMoneyQty(data)
-            }
+    //                 startDateCopy.setMonth(startDateCopy.getMonth() - 1)
+    //                 endDateCopy.setMonth(endDateCopy.getMonth() - 1)
 
-            const fetchPrevPurchase = async () => {
-                if (startDate && endDate) {
-                    const startDateCopy = new Date(startDate)
-                    const endDateCopy = new Date(endDate)
+    //                 const result = await oborotRemzonaQty({
+    //                     startDate: startDateCopy,
+    //                     endDate: endDateCopy,
+    //                 })
+    //                 if (!result) return
+    //                 setState((prevState) => ({
+    //                     ...prevState,
+    //                     prevRemzonaQty: result,
+    //                 }))
 
-                    startDateCopy.setMonth(startDateCopy.getMonth() - 1)
-                    endDateCopy.setMonth(endDateCopy.getMonth() - 1)
+    //                 setPrevPerMoneyQty(result)
+    //             } else {
+    //                 console.error('startDate and endDate must be defined')
+    //             }
+    //         }
+    //         // fetchPrevPurchase()
+    //         // fetchPurchase()
+    //     }
+    // }, [state.updateContentInfo])
 
-                    const result = await fetchAnketaOborotRemzonaQty({
-                        startDate: startDateCopy,
-                        endDate: endDateCopy,
-                    })
-                    const data = JSON.parse(result)
-
-                    setState((prevState) => ({
-                        ...prevState,
-                        prevRemzonaQty: data,
-                    }))
-
-                    setPrevPerMoneyQty(data)
-                } else {
-                    console.error('startDate and endDate must be defined')
-                }
-            }
-            fetchPrevPurchase()
-            fetchPurchase()
-        }
-    }, [state.updateContentInfo])
-
-    useEffect(() => {
-        if (perMoneyQty && prevPerMoneyQty) {
-            setPercent(
-                ((perMoneyQty - prevPerMoneyQty) / prevPerMoneyQty) * 100
-            )
-            setTotalMoneyQty(Math.round(state?.oborot / perMoneyQty))
-        }
-    }, [perMoneyQty, prevPerMoneyQty])
+    // useEffect(() => {
+    //     if (perMoneyQty && prevPerMoneyQty) {
+    //         setPercent(
+    //             ((perMoneyQty - prevPerMoneyQty) / prevPerMoneyQty) * 100
+    //         )
+    //         setTotalMoneyQty(Math.round(state?.oborot / perMoneyQty))
+    //     }
+    // }, [perMoneyQty, prevPerMoneyQty])
     return (
         <UiCard
             text={'Средняя закупка на 1 подъемник, руб. (динамика)'}

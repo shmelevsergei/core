@@ -2,55 +2,17 @@
 import Brands from '@/app/administrator/reports/components/infoPanel/Brands'
 import Mont from '@/app/administrator/reports/components/mont/Mont'
 import { useEffect, useState } from 'react'
-import {
-    fetchAnketaBase,
-    fetchAnketaBaseNews,
-} from '@/server/routs/webshop_db/fetchAnketaBase'
-import { fetchAnketaDogovor } from '@/server/routs/webshop_db/fetchAnketaDogovor'
 import { useAdministratorState } from '@/app/administrator/reports/store/administrator.context'
 import AllBrands from '@/app/administrator/reports/components/infoPanel/AllBrands'
 import { Skeleton } from '@/components/ui/skeleton'
 
 const InfoPanel = () => {
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
 
     const {
-        state: { totalSto, dogovorTrue, newsBrands, avarageOfLifts },
+        state: { allSto, offerSigned, newcomers, averageLifts },
         setState,
     } = useAdministratorState()
-
-    useEffect(() => {
-        const data = async () => {
-            const allBrands = await fetchAnketaBase()
-            const newsBrands = await fetchAnketaBaseNews()
-            const dogovorTrue = await fetchAnketaDogovor()
-
-            return {
-                allBrands,
-                newsBrands,
-                dogovorTrue,
-            }
-        }
-
-        data().then(({ allBrands, dogovorTrue, newsBrands }) => {
-            if (allBrands && dogovorTrue && newsBrands) {
-                const avarageOfLifts =
-                    allBrands?.reduce((acc, item) => {
-                        return acc + item?.ABA_REMZONA_QTY
-                    }, 0) / allBrands?.length
-
-                setState((prevState) => ({
-                    ...prevState,
-                    totalSto: allBrands?.length || 0,
-                    dogovorTrue: dogovorTrue?.length || 0,
-                    newsBrands: newsBrands?.length || 0,
-                    avarageOfLifts: avarageOfLifts || 0,
-                }))
-            }
-
-            setIsLoading(true)
-        })
-    }, [])
 
     return (
         <div
@@ -63,13 +25,13 @@ const InfoPanel = () => {
                     <Skeleton className={'h-6 w-[350px]'} />
                     <Skeleton className={'h-6 w-[350px]'} />
                     <Skeleton className={'h-6 w-[365px]'} />
-                </div> // <div className={'flex justify-center'}>Loading...</div>
+                </div>
             ) : (
                 <AllBrands
-                    allBrands={totalSto}
-                    newsBrands={newsBrands}
-                    dogovorTrue={dogovorTrue}
-                    avarageOfLifts={avarageOfLifts}
+                    allSto={allSto}
+                    newcomers={newcomers}
+                    offerSigned={offerSigned}
+                    averageLifts={averageLifts}
                 />
             )}
 

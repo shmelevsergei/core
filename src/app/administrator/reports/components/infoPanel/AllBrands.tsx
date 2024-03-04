@@ -3,30 +3,30 @@ import React from 'react'
 import { formattedNumber } from '@/lib/formulas/formatNumber'
 
 interface IAllBrandsProps {
-    allBrands: number
-    newsBrands: number
-    dogovorTrue: number
-    avarageOfLifts: number
+    allSto: number
+    newcomers: number
+    offerSigned: number
+    averageLifts: number
 }
 
 const AllBrands = ({
-    allBrands,
-    newsBrands,
-    dogovorTrue,
-    avarageOfLifts,
+    allSto,
+    newcomers,
+    offerSigned,
+    averageLifts,
 }: IAllBrandsProps) => {
     return (
         <div className={'text-[#020944] text-xl flex flex-col gap-3'}>
             <p className={' font-extrabold'}>
-                ВСЕГО СТО - {formattedNumber(allBrands)} (новички -{' '}
-                {formattedNumber(newsBrands)})
+                ВСЕГО СТО - {formattedNumber(allSto)} (новички -{' '}
+                {formattedNumber(newcomers)})
             </p>
             <p className={'font-medium'}>
-                Оферта подписана - {formattedNumber(dogovorTrue)} (
-                {((dogovorTrue / allBrands) * 100).toFixed(1)}%){' '}
+                Оферта подписана - {formattedNumber(offerSigned)} (
+                {allSto !== 0 ? ((offerSigned / allSto) * 100).toFixed(1) : 0}%){' '}
             </p>
             <p className={'font-medium'}>
-                Среднее кол-во подъемников - {avarageOfLifts.toFixed(2)}
+                Среднее кол-во подъемников - {averageLifts.toFixed(2)}
             </p>
         </div>
     )

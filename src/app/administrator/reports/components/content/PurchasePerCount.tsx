@@ -1,13 +1,8 @@
 'use client'
-
 import React, { useEffect, useState } from 'react'
 import UiCard from './ui-card'
-import {
-    fetchAnketaOborotPurchaseStoCount,
-    fetchAnketaOborotPurchaseStoMoney,
-} from '@/server/routs/webshop_db/fetchAnketaOborot'
+// import { oborotPurchaseStoCount } from '@/server/routs/webshop_db/fetchAnketaOborot'
 import { useAdministratorState } from '../../store/administrator.context'
-import { formattedNumber } from '@/lib/formulas/formatNumber'
 
 const PurchasePerCount = () => {
     const { state, setState } = useAdministratorState()
@@ -19,57 +14,57 @@ const PurchasePerCount = () => {
     const startDate = state?.currentDate?.from
     const endDate = state?.currentDate?.to
 
-    useEffect(() => {
-        if (state.updateContentInfo) {
-            const fetchPurchase = async () => {
-                const result = await fetchAnketaOborotPurchaseStoCount({
-                    startDate,
-                    endDate,
-                })
-                const data = JSON.parse(result)
+    // useEffect(() => {
+    //     if (state.updateContentInfo) {
+    //         const fetchPurchase = async () => {
+    //             const result = await oborotPurchaseStoCount({
+    //                 startDate,
+    //                 endDate,
+    //             })
+    //             if (!result) return
 
-                setState((prevState) => ({
-                    ...prevState,
-                    purchaseStoCount: data,
-                }))
-                setPerCount(data)
-            }
+    //             setState((prevState) => ({
+    //                 ...prevState,
+    //                 purchaseStoCount: result,
+    //             }))
+    //             setPerCount(result)
+    //         }
 
-            const fetchPrevPurchase = async () => {
-                if (startDate && endDate) {
-                    const startDateCopy = new Date(startDate)
-                    const endDateCopy = new Date(endDate)
+    //         const fetchPrevPurchase = async () => {
+    //             if (startDate && endDate) {
+    //                 const startDateCopy = new Date(startDate)
+    //                 const endDateCopy = new Date(endDate)
 
-                    startDateCopy.setMonth(startDateCopy.getMonth() - 1)
-                    endDateCopy.setMonth(endDateCopy.getMonth() - 1)
+    //                 startDateCopy.setMonth(startDateCopy.getMonth() - 1)
+    //                 endDateCopy.setMonth(endDateCopy.getMonth() - 1)
 
-                    const result = await fetchAnketaOborotPurchaseStoCount({
-                        startDate: startDateCopy,
-                        endDate: endDateCopy,
-                    })
-                    const data = JSON.parse(result)
+    //                 const result = await oborotPurchaseStoCount({
+    //                     startDate: startDateCopy,
+    //                     endDate: endDateCopy,
+    //                 })
 
-                    setState((prevState) => ({
-                        ...prevState,
-                        prevPurchaseStoCount: data,
-                    }))
+    //                 if (!result) return
+    //                 setState((prevState) => ({
+    //                     ...prevState,
+    //                     prevPurchaseStoCount: result,
+    //                 }))
 
-                    setPrevPerCount(data)
-                } else {
-                    console.error('startDate and endDate must be defined')
-                }
-            }
-            fetchPrevPurchase()
-            fetchPurchase()
-        }
-    }, [state.updateContentInfo])
+    //                 setPrevPerCount(result)
+    //             } else {
+    //                 console.error('startDate and endDate must be defined')
+    //             }
+    //         }
+    //         // fetchPrevPurchase()
+    //         // fetchPurchase()
+    //     }
+    // }, [state.updateContentInfo])
 
-    useEffect(() => {
-        if (prevPerCount && perCount) {
-            setPercent(((perCount - prevPerCount) / prevPerCount) * 100)
-            setTotalCount(Math.round(perCount / state.totalSto))
-        }
-    }, [prevPerCount, perCount, state.totalSto])
+    // useEffect(() => {
+    //     if (prevPerCount && perCount) {
+    //         setPercent(((perCount - prevPerCount) / prevPerCount) * 100)
+    //         setTotalCount(Math.round(perCount / state.totalSto))
+    //     }
+    // }, [prevPerCount, perCount, state.totalSto])
 
     return (
         <UiCard

@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 import { anketaBase } from '@/server/actions/webshop_db/anketa_base'
 
 export async function GET() {

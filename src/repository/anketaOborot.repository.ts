@@ -14,13 +14,7 @@ export interface IAnketaOborotRepository {
     ABO_COUNT_ARKONA: number
     ABO_COUNT_AUTORUS: number
     ABO_OBOROT_BRANDS: number
-    ABO_OBOROT_BRAND_LOOK1: number
     ABO_SCORES: number
-    ABO_OBOROT_BRAND_LOOK2?: number
-    ABO_OBOROT_BRAND_LOOK2_ROSSKO?: number
-    ABO_OBOROT_BRAND_LOOK2_AE?: number
-    ABO_OBOROT_BRAND_LOOK2_ARKONA?: number
-    ABO_OBOROT_BRAND_LOOK2_AUTORUS?: number
     ABO_OBOROT_BRANDS_MONTH_ROSSKO?: number
     ABO_OBOROT_BRANDS_MONTH_AE?: number
     ABO_OBOROT_BRANDS_MONTH_ARKONA?: number
@@ -33,5 +27,5 @@ export interface IAnketaOborotRepository {
     ABO_OBOROT_BRAND6?: number
     ABO_OBOROT_NEXT?: number
     ABO_SCORES_MONTH_PLAN_NEXT: number
-    ABO_ABA_REMZONA_QTY?: number
+    ABO_ABA_REMZONA_QTY: number
 }

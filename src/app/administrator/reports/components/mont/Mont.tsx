@@ -1,8 +1,9 @@
 'use client'
 import React, { useState } from 'react'
-import DatePickerWithRange from '@/components/ui/DataRangePicker'
 import { Button } from '@/components/ui/button'
 import { useAdministratorState } from '@/app/administrator/reports/store/administrator.context'
+import SelectMonth from './SelectMonth'
+import SelectYear from './SelectYear'
 
 const Mont = () => {
     const [isButtonDisabled, setIsButtonDisabled] = useState(false)
@@ -28,7 +29,8 @@ const Mont = () => {
 
     return (
         <div className="ml-auto flex items-center gap-1">
-            <DatePickerWithRange />
+            <SelectMonth />
+            <SelectYear />
             <Button
                 className={''}
                 onClick={() => clickHandler()}
