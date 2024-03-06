@@ -2,7 +2,7 @@ import React from 'react'
 import {
     dataInfo,
     DataInfo,
-} from '@/app/administrator/reports/no_address/[id]/components/info/dataInfo'
+} from '@/app/administrator/no_address/[id]/components/info/dataInfo'
 
 const Info = ({ id }: { id: string }) => {
     const data: DataInfo = dataInfo

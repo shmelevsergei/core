@@ -31,7 +31,7 @@ const DataTable = () => {
                         <TableCell>{name}</TableCell>
                         <TableCell>
                             <Link
-                                href={`/administrator/reports/no_address/${id}`}
+                                href={`/administrator/no_address/${id}`}
                                 target={'_blank'}
                             >
                                 {id}
