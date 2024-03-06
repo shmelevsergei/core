@@ -10,7 +10,7 @@ import {
 import {
     dataTable,
     DatsTable,
-} from '@/app/administrator/reports/no_address/components/table/datsTable'
+} from '@/app/administrator/no_address/components/table/datsTable'
 import Link from 'next/link'
 
 const DataTable = () => {

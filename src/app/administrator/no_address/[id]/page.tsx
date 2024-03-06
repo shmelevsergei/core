@@ -1,7 +1,7 @@
 import React from 'react'
-import Info from '@/app/administrator/reports/no_address/[id]/components/info/Info'
-import Distribution from '@/app/administrator/reports/no_address/[id]/components/distribution/Distribution'
-import Purchases from '@/app/administrator/reports/no_address/[id]/components/distribution/Purchases'
+import Info from '@/app/administrator/no_address/[id]/components/info/Info'
+import Distribution from '@/app/administrator/no_address/[id]/components/distribution/Distribution'
+import Purchases from '@/app/administrator/no_address/[id]/components/distribution/Purchases'
 
 const Page = ({ params }: { params: { id: string } }) => {
     return (
