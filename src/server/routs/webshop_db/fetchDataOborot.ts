@@ -78,9 +78,44 @@ export const fetchOborot = async ({
                 (item) => item.ABO_OBOROT_ALL > 0
             )
 
+            const purchaseStoCountData = allPurchaseStoNotNullData.reduce(
+                (acc, item) =>
+                    acc +
+                    item.ABO_COUNT_AE +
+                    item.ABO_COUNT_ARKONA +
+                    item.ABO_COUNT_AUTORUS +
+                    item.ABO_COUNT_ROSSKO,
+                0
+            )
+            const prevPurchaseStoCountData =
+                prevAllPurchaseStoNotNullData.reduce(
+                    (acc, item) =>
+                        acc +
+                        item.ABO_COUNT_AE +
+                        item.ABO_COUNT_ARKONA +
+                        item.ABO_COUNT_AUTORUS +
+                        item.ABO_COUNT_ROSSKO,
+                    0
+                )
+
+            const allRemzonaQtyData = allPurchaseStoNotNullData.reduce(
+                (acc, item) => acc + item.ABO_ABA_REMZONA_QTY,
+                0
+            )
+            const prevAllRemzonaQtyData = prevAllPurchaseStoNotNullData.reduce(
+                (acc, item) => acc + item.ABO_ABA_REMZONA_QTY,
+                0
+            )
+
             const data = {
                 allMoney: allMoneyData,
                 prevAllMoney: prevAllMoneyData,
+                allPurchaseStoNotNull: allPurchaseStoNotNullData,
+                prevAllPurchaseStoNotNull: prevAllPurchaseStoNotNullData,
+                purchaseStoCount: purchaseStoCountData,
+                prevPurchaseStoCount: prevPurchaseStoCountData,
+                allRemzonaQty: allRemzonaQtyData,
+                prevAllRemzonaQty: prevAllRemzonaQtyData,
             }
 
             return data

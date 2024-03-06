@@ -57,6 +57,12 @@ const Form = () => {
                     if (infoUser.status === 'admin') {
                         router.push('/administrator')
                     }
+                    if (infoUser.status === 'distributor') {
+                        router.push('/distributor')
+                    }
+                    if (infoUser.status === 'sto') {
+                        router.push('/sto')
+                    }
                 }
             } else {
                 console.error(

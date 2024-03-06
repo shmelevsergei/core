@@ -63,6 +63,7 @@ export const fetchDataBase = async () => {
         allSto: allStoData,
         newcomers: newcomersData,
         offerSigned: offerSignedData,
+        allLifts: averageLiftsData,
         averageLifts:
             averageLiftsData && allStoData
                 ? averageLiftsData / allStoData?.length

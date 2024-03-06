@@ -1,8 +1,8 @@
 import React from 'react'
 import type { Metadata } from 'next'
 import Header from '@/components/header/Header'
-import { AdministratorProvider } from './store/administrator.context'
-import SidebarAdministrator from '@/components/sidebar/SidebarAdministrator'
+import SidebarDistributor from '@/components/sidebar/SidebarDistributor'
+import { DistributorProvider } from './store/distributor.context'
 
 export const metadata: Metadata = {
     title: 'GROUPAUTO | EVERYCAR',
@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
-        <AdministratorProvider>
+        <DistributorProvider>
             <div className={'flex h-screen max-w-[1280px] mx-auto '}>
                 <div>
-                    <SidebarAdministrator />
+                    <SidebarDistributor />
                 </div>
 
                 <div className={'flex flex-col w-full'}>
@@ -22,6 +22,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     {children}
                 </div>
             </div>
-        </AdministratorProvider>
+        </DistributorProvider>
     )
 }

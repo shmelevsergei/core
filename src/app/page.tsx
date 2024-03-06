@@ -3,8 +3,8 @@ import Form from '@/components/form/Form'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 
-interface IUserData {
-    name: string
+export interface IUserData {
+    user: string
     status: string
 }
 
@@ -19,10 +19,14 @@ function Home() {
         }
         const userStatus: IUserData = JSON.parse(localData)
 
-        console.log(userStatus.status)
-
         if (userStatus.status === 'admin') {
             navigate.push('/administrator')
+        }
+        if (userStatus.status === 'distributor') {
+            navigate.push('/distributor')
+        }
+        if (userStatus.status === 'sto') {
+            navigate.push('/sto')
         }
     })
 
