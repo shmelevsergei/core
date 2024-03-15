@@ -11,7 +11,11 @@ import Online from './components/online/Online'
 import { useAdministratorState } from './store/administrator.context'
 import { useEffect, useRef } from 'react'
 import { fetchDataBase } from '@/server/routs/webshop_db/fetchDataBase'
-import { fetchOborot } from '@/server/routs/webshop_db/fetchDataOborot'
+import { fetchDataOborot } from '@/server/routs/webshop_db/fetchDataOborot'
+import { fetchDataBranding } from '@/server/routs/webshop_db/fetchDataBranding'
+import { fetchDataSorevnovanie } from '@/server/routs/webshop_db/fetchDataSorevnovanie'
+import { fetchDataScores } from '@/server/routs/webshop_db/fetchDataScores'
+import SalesDistributers from './components/salesDistributers/SalesDistributers'
 
 const Page = () => {
     const { state, setState } = useAdministratorState()
@@ -25,6 +29,18 @@ const Page = () => {
                     await fetchDataBase()
 
                 const {
+                    allBranded,
+                    boxBranded,
+                    partialBranded,
+                    posterBranded,
+                } = await fetchDataBranding()
+
+                const { totalParticipants, masterConsultant, supervisor } =
+                    await fetchDataSorevnovanie()
+
+                const { totalScores } = await fetchDataScores()
+
+                const {
                     allMoney,
                     prevAllMoney,
                     allPurchaseStoNotNull,
@@ -33,7 +49,8 @@ const Page = () => {
                     prevPurchaseStoCount,
                     allRemzonaQty,
                     prevAllRemzonaQty,
-                } = await fetchOborot({
+                    pointsToAwarded,
+                } = await fetchDataOborot({
                     startDate: state.currentDate?.from,
                     endDate: state.currentDate?.to,
                 })
@@ -54,6 +71,21 @@ const Page = () => {
                         prevPurchaseStoCount,
                         allRemzonaQty,
                         prevAllRemzonaQty,
+                        branding: {
+                            ...prevState.branding,
+                            allBranded: allBranded,
+                            boxBranded: boxBranded,
+                            partialBranded: partialBranded,
+                            posterBranded: posterBranded,
+                        },
+                        competitions: {
+                            ...prevState.competitions,
+                            totalParticipants: totalParticipants,
+                            supervisor: supervisor,
+                            masterConsultant: masterConsultant,
+                        },
+                        totalScores,
+                        pointsToAwarded,
                     }))
                 }
             }
@@ -74,20 +106,24 @@ const Page = () => {
 
     return (
         <main>
-            <div className={'flex flex-col gap-4'}>
+            <div className={'h-full'}>
                 <InfoPanel />
-                <Content />
-                <Info />
-                <div className={'px-3'}>
-                    <div className={'grid grid-cols-3 gap-3'}>
-                        <Branding />
-                        <Competition />
-                        <div className={'grid grid-rows-2 gap-3'}>
-                            <Points />
-                            <Online />
+
+                <div className="pt-5 flex flex-col gap-5 overflow-auto h-[500px]">
+                    <Content />
+                    <Info />
+                    <div className={'px-3'}>
+                        <div className={'grid grid-cols-3 gap-3'}>
+                            <Branding />
+                            <Competition />
+                            <div className={'grid grid-rows-2 gap-3'}>
+                                <Points />
+                                <Online />
+                            </div>
                         </div>
+                        <Divider className={cn('my-5')} />
+                        <SalesDistributers />
                     </div>
-                    <Divider className={cn('my-5')} />
                 </div>
             </div>
         </main>

@@ -1,8 +1,15 @@
 import React from 'react'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
+import { ICompetitions } from '@/types/administrator/competitions'
 
-const UiCompetition = () => {
+const UiCompetition = ({
+    dataCompetitions,
+}: {
+    dataCompetitions: { competitions: ICompetitions; allSto: number }
+}) => {
+    const { competitions, allSto } = dataCompetitions
+    const { masterConsultant, supervisor, totalParticipants } = competitions
     return (
         <Card className={cn('w-full h-full py-3 px-3 shadow-md')}>
             <CardHeader
@@ -18,7 +25,12 @@ const UiCompetition = () => {
                         )}
                     >
                         <span className={'text-[15px]'}>СТО</span>{' '}
-                        <span className={'text-2xl'}>250 (6%)</span>
+                        <span className={'text-2xl'}>
+                            {totalParticipants} (
+                            {Math.round((totalParticipants / allSto) * 100) ||
+                                0}
+                            %)
+                        </span>
                     </Card>
                     <Card
                         className={cn(
@@ -26,7 +38,7 @@ const UiCompetition = () => {
                         )}
                     >
                         <span className={'text-[15px]'}>РУКОВОДИТЕЛЬ</span>{' '}
-                        <span className={'text-2xl'}>1</span>
+                        <span className={'text-2xl'}>{supervisor}</span>
                     </Card>
                     <Card
                         className={cn(
@@ -36,7 +48,7 @@ const UiCompetition = () => {
                         <span className={'text-[15px]'}>
                             МАСТЕР-КОНСУЛЬТАНТ
                         </span>{' '}
-                        <span className={'text-2xl'}>0</span>
+                        <span className={'text-2xl'}>{masterConsultant}</span>
                     </Card>
                 </div>
             </CardContent>

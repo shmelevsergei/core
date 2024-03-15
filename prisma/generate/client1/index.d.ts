@@ -35,6 +35,26 @@ export type GA_ANKETA_DOGOVOR = $Result.DefaultSelection<Prisma.$GA_ANKETA_DOGOV
  */
 export type GA_ANKETA_OBOROT = $Result.DefaultSelection<Prisma.$GA_ANKETA_OBOROTPayload>
 /**
+ * Model GA_ANKETA_BRAND
+ * The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+ */
+export type GA_ANKETA_BRAND = $Result.DefaultSelection<Prisma.$GA_ANKETA_BRANDPayload>
+/**
+ * Model GA_ANKETA_SCORES
+ * The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+ */
+export type GA_ANKETA_SCORES = $Result.DefaultSelection<Prisma.$GA_ANKETA_SCORESPayload>
+/**
+ * Model GA_ANKETA_SCORES_HISTORY
+ * The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+ */
+export type GA_ANKETA_SCORES_HISTORY = $Result.DefaultSelection<Prisma.$GA_ANKETA_SCORES_HISTORYPayload>
+/**
+ * Model GA_ANKETA_SOREVNOVANIE
+ * The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+ */
+export type GA_ANKETA_SOREVNOVANIE = $Result.DefaultSelection<Prisma.$GA_ANKETA_SOREVNOVANIEPayload>
+/**
  * Model GA_WS_USERS
  * The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
  */
@@ -201,6 +221,46 @@ export class PrismaClient<
     * ```
     */
   get gA_ANKETA_OBOROT(): Prisma.GA_ANKETA_OBOROTDelegate<ExtArgs>;
+
+  /**
+   * `prisma.gA_ANKETA_BRAND`: Exposes CRUD operations for the **GA_ANKETA_BRAND** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more GA_ANKETA_BRANDS
+    * const gA_ANKETA_BRANDS = await prisma.gA_ANKETA_BRAND.findMany()
+    * ```
+    */
+  get gA_ANKETA_BRAND(): Prisma.GA_ANKETA_BRANDDelegate<ExtArgs>;
+
+  /**
+   * `prisma.gA_ANKETA_SCORES`: Exposes CRUD operations for the **GA_ANKETA_SCORES** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more GA_ANKETA_SCORES
+    * const gA_ANKETA_SCORES = await prisma.gA_ANKETA_SCORES.findMany()
+    * ```
+    */
+  get gA_ANKETA_SCORES(): Prisma.GA_ANKETA_SCORESDelegate<ExtArgs>;
+
+  /**
+   * `prisma.gA_ANKETA_SCORES_HISTORY`: Exposes CRUD operations for the **GA_ANKETA_SCORES_HISTORY** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more GA_ANKETA_SCORES_HISTORIES
+    * const gA_ANKETA_SCORES_HISTORIES = await prisma.gA_ANKETA_SCORES_HISTORY.findMany()
+    * ```
+    */
+  get gA_ANKETA_SCORES_HISTORY(): Prisma.GA_ANKETA_SCORES_HISTORYDelegate<ExtArgs>;
+
+  /**
+   * `prisma.gA_ANKETA_SOREVNOVANIE`: Exposes CRUD operations for the **GA_ANKETA_SOREVNOVANIE** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more GA_ANKETA_SOREVNOVANIES
+    * const gA_ANKETA_SOREVNOVANIES = await prisma.gA_ANKETA_SOREVNOVANIE.findMany()
+    * ```
+    */
+  get gA_ANKETA_SOREVNOVANIE(): Prisma.GA_ANKETA_SOREVNOVANIEDelegate<ExtArgs>;
 
   /**
    * `prisma.gA_WS_USERS`: Exposes CRUD operations for the **GA_WS_USERS** model.
@@ -685,6 +745,10 @@ export namespace Prisma {
     GA_ANKETA_BASE: 'GA_ANKETA_BASE',
     GA_ANKETA_DOGOVOR: 'GA_ANKETA_DOGOVOR',
     GA_ANKETA_OBOROT: 'GA_ANKETA_OBOROT',
+    GA_ANKETA_BRAND: 'GA_ANKETA_BRAND',
+    GA_ANKETA_SCORES: 'GA_ANKETA_SCORES',
+    GA_ANKETA_SCORES_HISTORY: 'GA_ANKETA_SCORES_HISTORY',
+    GA_ANKETA_SOREVNOVANIE: 'GA_ANKETA_SOREVNOVANIE',
     GA_WS_USERS: 'GA_WS_USERS'
   };
 
@@ -702,7 +766,7 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     meta: {
-      modelProps: 'gA_ANKETA_ADDR' | 'gA_ANKETA_BASE' | 'gA_ANKETA_DOGOVOR' | 'gA_ANKETA_OBOROT' | 'gA_WS_USERS'
+      modelProps: 'gA_ANKETA_ADDR' | 'gA_ANKETA_BASE' | 'gA_ANKETA_DOGOVOR' | 'gA_ANKETA_OBOROT' | 'gA_ANKETA_BRAND' | 'gA_ANKETA_SCORES' | 'gA_ANKETA_SCORES_HISTORY' | 'gA_ANKETA_SOREVNOVANIE' | 'gA_WS_USERS'
       txIsolationLevel: Prisma.TransactionIsolationLevel
     },
     model: {
@@ -970,6 +1034,270 @@ export namespace Prisma {
           }
         }
       }
+      GA_ANKETA_BRAND: {
+        payload: Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>
+        fields: Prisma.GA_ANKETA_BRANDFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.GA_ANKETA_BRANDFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.GA_ANKETA_BRANDFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload>
+          }
+          findFirst: {
+            args: Prisma.GA_ANKETA_BRANDFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.GA_ANKETA_BRANDFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload>
+          }
+          findMany: {
+            args: Prisma.GA_ANKETA_BRANDFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload>[]
+          }
+          create: {
+            args: Prisma.GA_ANKETA_BRANDCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload>
+          }
+          createMany: {
+            args: Prisma.GA_ANKETA_BRANDCreateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          delete: {
+            args: Prisma.GA_ANKETA_BRANDDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload>
+          }
+          update: {
+            args: Prisma.GA_ANKETA_BRANDUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload>
+          }
+          deleteMany: {
+            args: Prisma.GA_ANKETA_BRANDDeleteManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          updateMany: {
+            args: Prisma.GA_ANKETA_BRANDUpdateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          upsert: {
+            args: Prisma.GA_ANKETA_BRANDUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload>
+          }
+          aggregate: {
+            args: Prisma.GA_ANKETA_BRANDAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregateGA_ANKETA_BRAND>
+          }
+          groupBy: {
+            args: Prisma.GA_ANKETA_BRANDGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<GA_ANKETA_BRANDGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.GA_ANKETA_BRANDCountArgs<ExtArgs>,
+            result: $Utils.Optional<GA_ANKETA_BRANDCountAggregateOutputType> | number
+          }
+        }
+      }
+      GA_ANKETA_SCORES: {
+        payload: Prisma.$GA_ANKETA_SCORESPayload<ExtArgs>
+        fields: Prisma.GA_ANKETA_SCORESFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.GA_ANKETA_SCORESFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SCORESPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.GA_ANKETA_SCORESFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SCORESPayload>
+          }
+          findFirst: {
+            args: Prisma.GA_ANKETA_SCORESFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SCORESPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.GA_ANKETA_SCORESFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SCORESPayload>
+          }
+          findMany: {
+            args: Prisma.GA_ANKETA_SCORESFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SCORESPayload>[]
+          }
+          create: {
+            args: Prisma.GA_ANKETA_SCORESCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SCORESPayload>
+          }
+          createMany: {
+            args: Prisma.GA_ANKETA_SCORESCreateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          delete: {
+            args: Prisma.GA_ANKETA_SCORESDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SCORESPayload>
+          }
+          update: {
+            args: Prisma.GA_ANKETA_SCORESUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SCORESPayload>
+          }
+          deleteMany: {
+            args: Prisma.GA_ANKETA_SCORESDeleteManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          updateMany: {
+            args: Prisma.GA_ANKETA_SCORESUpdateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          upsert: {
+            args: Prisma.GA_ANKETA_SCORESUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SCORESPayload>
+          }
+          aggregate: {
+            args: Prisma.GA_ANKETA_SCORESAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregateGA_ANKETA_SCORES>
+          }
+          groupBy: {
+            args: Prisma.GA_ANKETA_SCORESGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<GA_ANKETA_SCORESGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.GA_ANKETA_SCORESCountArgs<ExtArgs>,
+            result: $Utils.Optional<GA_ANKETA_SCORESCountAggregateOutputType> | number
+          }
+        }
+      }
+      GA_ANKETA_SCORES_HISTORY: {
+        payload: Prisma.$GA_ANKETA_SCORES_HISTORYPayload<ExtArgs>
+        fields: Prisma.GA_ANKETA_SCORES_HISTORYFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.GA_ANKETA_SCORES_HISTORYFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SCORES_HISTORYPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.GA_ANKETA_SCORES_HISTORYFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SCORES_HISTORYPayload>
+          }
+          findFirst: {
+            args: Prisma.GA_ANKETA_SCORES_HISTORYFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SCORES_HISTORYPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.GA_ANKETA_SCORES_HISTORYFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SCORES_HISTORYPayload>
+          }
+          findMany: {
+            args: Prisma.GA_ANKETA_SCORES_HISTORYFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SCORES_HISTORYPayload>[]
+          }
+          create: {
+            args: Prisma.GA_ANKETA_SCORES_HISTORYCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SCORES_HISTORYPayload>
+          }
+          createMany: {
+            args: Prisma.GA_ANKETA_SCORES_HISTORYCreateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          delete: {
+            args: Prisma.GA_ANKETA_SCORES_HISTORYDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SCORES_HISTORYPayload>
+          }
+          update: {
+            args: Prisma.GA_ANKETA_SCORES_HISTORYUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SCORES_HISTORYPayload>
+          }
+          deleteMany: {
+            args: Prisma.GA_ANKETA_SCORES_HISTORYDeleteManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          updateMany: {
+            args: Prisma.GA_ANKETA_SCORES_HISTORYUpdateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          upsert: {
+            args: Prisma.GA_ANKETA_SCORES_HISTORYUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SCORES_HISTORYPayload>
+          }
+          aggregate: {
+            args: Prisma.GA_ANKETA_SCORES_HISTORYAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregateGA_ANKETA_SCORES_HISTORY>
+          }
+          groupBy: {
+            args: Prisma.GA_ANKETA_SCORES_HISTORYGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<GA_ANKETA_SCORES_HISTORYGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.GA_ANKETA_SCORES_HISTORYCountArgs<ExtArgs>,
+            result: $Utils.Optional<GA_ANKETA_SCORES_HISTORYCountAggregateOutputType> | number
+          }
+        }
+      }
+      GA_ANKETA_SOREVNOVANIE: {
+        payload: Prisma.$GA_ANKETA_SOREVNOVANIEPayload<ExtArgs>
+        fields: Prisma.GA_ANKETA_SOREVNOVANIEFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.GA_ANKETA_SOREVNOVANIEFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SOREVNOVANIEPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.GA_ANKETA_SOREVNOVANIEFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SOREVNOVANIEPayload>
+          }
+          findFirst: {
+            args: Prisma.GA_ANKETA_SOREVNOVANIEFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SOREVNOVANIEPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.GA_ANKETA_SOREVNOVANIEFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SOREVNOVANIEPayload>
+          }
+          findMany: {
+            args: Prisma.GA_ANKETA_SOREVNOVANIEFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SOREVNOVANIEPayload>[]
+          }
+          create: {
+            args: Prisma.GA_ANKETA_SOREVNOVANIECreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SOREVNOVANIEPayload>
+          }
+          createMany: {
+            args: Prisma.GA_ANKETA_SOREVNOVANIECreateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          delete: {
+            args: Prisma.GA_ANKETA_SOREVNOVANIEDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SOREVNOVANIEPayload>
+          }
+          update: {
+            args: Prisma.GA_ANKETA_SOREVNOVANIEUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SOREVNOVANIEPayload>
+          }
+          deleteMany: {
+            args: Prisma.GA_ANKETA_SOREVNOVANIEDeleteManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          updateMany: {
+            args: Prisma.GA_ANKETA_SOREVNOVANIEUpdateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          upsert: {
+            args: Prisma.GA_ANKETA_SOREVNOVANIEUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SOREVNOVANIEPayload>
+          }
+          aggregate: {
+            args: Prisma.GA_ANKETA_SOREVNOVANIEAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregateGA_ANKETA_SOREVNOVANIE>
+          }
+          groupBy: {
+            args: Prisma.GA_ANKETA_SOREVNOVANIEGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<GA_ANKETA_SOREVNOVANIEGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.GA_ANKETA_SOREVNOVANIECountArgs<ExtArgs>,
+            result: $Utils.Optional<GA_ANKETA_SOREVNOVANIECountAggregateOutputType> | number
+          }
+        }
+      }
       GA_WS_USERS: {
         payload: Prisma.$GA_WS_USERSPayload<ExtArgs>
         fields: Prisma.GA_WS_USERSFieldRefs
@@ -1222,6 +1550,7 @@ export namespace Prisma {
     AAD_OBLAST: string | null
     AAD_GOROD: string | null
     AAD_ADDR: string | null
+    AAD_POSTCODE: string | null
   }
 
   export type GA_ANKETA_ADDRMaxAggregateOutputType = {
@@ -1231,6 +1560,7 @@ export namespace Prisma {
     AAD_OBLAST: string | null
     AAD_GOROD: string | null
     AAD_ADDR: string | null
+    AAD_POSTCODE: string | null
   }
 
   export type GA_ANKETA_ADDRCountAggregateOutputType = {
@@ -1240,6 +1570,7 @@ export namespace Prisma {
     AAD_OBLAST: number
     AAD_GOROD: number
     AAD_ADDR: number
+    AAD_POSTCODE: number
     _all: number
   }
 
@@ -1259,6 +1590,7 @@ export namespace Prisma {
     AAD_OBLAST?: true
     AAD_GOROD?: true
     AAD_ADDR?: true
+    AAD_POSTCODE?: true
   }
 
   export type GA_ANKETA_ADDRMaxAggregateInputType = {
@@ -1268,6 +1600,7 @@ export namespace Prisma {
     AAD_OBLAST?: true
     AAD_GOROD?: true
     AAD_ADDR?: true
+    AAD_POSTCODE?: true
   }
 
   export type GA_ANKETA_ADDRCountAggregateInputType = {
@@ -1277,6 +1610,7 @@ export namespace Prisma {
     AAD_OBLAST?: true
     AAD_GOROD?: true
     AAD_ADDR?: true
+    AAD_POSTCODE?: true
     _all?: true
   }
 
@@ -1373,6 +1707,7 @@ export namespace Prisma {
     AAD_OBLAST: string
     AAD_GOROD: string
     AAD_ADDR: string
+    AAD_POSTCODE: string
     _count: GA_ANKETA_ADDRCountAggregateOutputType | null
     _avg: GA_ANKETA_ADDRAvgAggregateOutputType | null
     _sum: GA_ANKETA_ADDRSumAggregateOutputType | null
@@ -1401,6 +1736,7 @@ export namespace Prisma {
     AAD_OBLAST?: boolean
     AAD_GOROD?: boolean
     AAD_ADDR?: boolean
+    AAD_POSTCODE?: boolean
   }, ExtArgs["result"]["gA_ANKETA_ADDR"]>
 
   export type GA_ANKETA_ADDRSelectScalar = {
@@ -1410,6 +1746,7 @@ export namespace Prisma {
     AAD_OBLAST?: boolean
     AAD_GOROD?: boolean
     AAD_ADDR?: boolean
+    AAD_POSTCODE?: boolean
   }
 
 
@@ -1423,6 +1760,7 @@ export namespace Prisma {
       AAD_OBLAST: string
       AAD_GOROD: string
       AAD_ADDR: string
+      AAD_POSTCODE: string
     }, ExtArgs["result"]["gA_ANKETA_ADDR"]>
     composites: {}
   }
@@ -1823,6 +2161,7 @@ export namespace Prisma {
     readonly AAD_OBLAST: FieldRef<"GA_ANKETA_ADDR", 'String'>
     readonly AAD_GOROD: FieldRef<"GA_ANKETA_ADDR", 'String'>
     readonly AAD_ADDR: FieldRef<"GA_ANKETA_ADDR", 'String'>
+    readonly AAD_POSTCODE: FieldRef<"GA_ANKETA_ADDR", 'String'>
   }
     
 
@@ -2341,7 +2680,7 @@ export namespace Prisma {
     ABA_WSU_ID: bigint
     ABA_STO_NAME: string
     ABA_STO_ID1: string
-    ABA_REMZONA_QTY: number
+    ABA_REMZONA_QTY: number | null
     ABA_ENABLED: boolean
     ABA_PHONE: string
     ABA_INN: string
@@ -2349,7 +2688,7 @@ export namespace Prisma {
     ABA_DATETIME_UPDATED: Date
     ABA_ID: bigint
     ABA_DATETIME: Date
-    ABA_STO_ID2: string
+    ABA_STO_ID2: string | null
     ABA_STO_NAME_FIND: string | null
     ABA_DESC: string | null
     _count: GA_ANKETA_BASECountAggregateOutputType | null
@@ -2415,7 +2754,7 @@ export namespace Prisma {
       ABA_WSU_ID: bigint
       ABA_STO_NAME: string
       ABA_STO_ID1: string
-      ABA_REMZONA_QTY: number
+      ABA_REMZONA_QTY: number | null
       ABA_ENABLED: boolean
       ABA_PHONE: string
       ABA_INN: string
@@ -2423,7 +2762,7 @@ export namespace Prisma {
       ABA_DATETIME_UPDATED: Date
       ABA_ID: bigint
       ABA_DATETIME: Date
-      ABA_STO_ID2: string
+      ABA_STO_ID2: string | null
       ABA_STO_NAME_FIND: string | null
       ABA_DESC: string | null
     }, ExtArgs["result"]["gA_ANKETA_BASE"]>
@@ -5455,6 +5794,3731 @@ export namespace Prisma {
 
 
   /**
+   * Model GA_ANKETA_BRAND
+   */
+
+  export type AggregateGA_ANKETA_BRAND = {
+    _count: GA_ANKETA_BRANDCountAggregateOutputType | null
+    _avg: GA_ANKETA_BRANDAvgAggregateOutputType | null
+    _sum: GA_ANKETA_BRANDSumAggregateOutputType | null
+    _min: GA_ANKETA_BRANDMinAggregateOutputType | null
+    _max: GA_ANKETA_BRANDMaxAggregateOutputType | null
+  }
+
+  export type GA_ANKETA_BRANDAvgAggregateOutputType = {
+    ABR_ABA_ID: number | null
+  }
+
+  export type GA_ANKETA_BRANDSumAggregateOutputType = {
+    ABR_ABA_ID: bigint | null
+  }
+
+  export type GA_ANKETA_BRANDMinAggregateOutputType = {
+    ABR_ABA_ID: bigint | null
+    ABR_STATUS: boolean | null
+    ABR_DATETIME: Date | null
+    ABR_HALF_STATUS: boolean | null
+    ABR_VYVESKA_STATUS: boolean | null
+    ABR_KOROB_STATUS: boolean | null
+  }
+
+  export type GA_ANKETA_BRANDMaxAggregateOutputType = {
+    ABR_ABA_ID: bigint | null
+    ABR_STATUS: boolean | null
+    ABR_DATETIME: Date | null
+    ABR_HALF_STATUS: boolean | null
+    ABR_VYVESKA_STATUS: boolean | null
+    ABR_KOROB_STATUS: boolean | null
+  }
+
+  export type GA_ANKETA_BRANDCountAggregateOutputType = {
+    ABR_ABA_ID: number
+    ABR_STATUS: number
+    ABR_DATETIME: number
+    ABR_HALF_STATUS: number
+    ABR_VYVESKA_STATUS: number
+    ABR_KOROB_STATUS: number
+    _all: number
+  }
+
+
+  export type GA_ANKETA_BRANDAvgAggregateInputType = {
+    ABR_ABA_ID?: true
+  }
+
+  export type GA_ANKETA_BRANDSumAggregateInputType = {
+    ABR_ABA_ID?: true
+  }
+
+  export type GA_ANKETA_BRANDMinAggregateInputType = {
+    ABR_ABA_ID?: true
+    ABR_STATUS?: true
+    ABR_DATETIME?: true
+    ABR_HALF_STATUS?: true
+    ABR_VYVESKA_STATUS?: true
+    ABR_KOROB_STATUS?: true
+  }
+
+  export type GA_ANKETA_BRANDMaxAggregateInputType = {
+    ABR_ABA_ID?: true
+    ABR_STATUS?: true
+    ABR_DATETIME?: true
+    ABR_HALF_STATUS?: true
+    ABR_VYVESKA_STATUS?: true
+    ABR_KOROB_STATUS?: true
+  }
+
+  export type GA_ANKETA_BRANDCountAggregateInputType = {
+    ABR_ABA_ID?: true
+    ABR_STATUS?: true
+    ABR_DATETIME?: true
+    ABR_HALF_STATUS?: true
+    ABR_VYVESKA_STATUS?: true
+    ABR_KOROB_STATUS?: true
+    _all?: true
+  }
+
+  export type GA_ANKETA_BRANDAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GA_ANKETA_BRAND to aggregate.
+     */
+    where?: GA_ANKETA_BRANDWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_BRANDS to fetch.
+     */
+    orderBy?: GA_ANKETA_BRANDOrderByWithRelationInput | GA_ANKETA_BRANDOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: GA_ANKETA_BRANDWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_BRANDS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_BRANDS.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned GA_ANKETA_BRANDS
+    **/
+    _count?: true | GA_ANKETA_BRANDCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: GA_ANKETA_BRANDAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: GA_ANKETA_BRANDSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: GA_ANKETA_BRANDMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: GA_ANKETA_BRANDMaxAggregateInputType
+  }
+
+  export type GetGA_ANKETA_BRANDAggregateType<T extends GA_ANKETA_BRANDAggregateArgs> = {
+        [P in keyof T & keyof AggregateGA_ANKETA_BRAND]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateGA_ANKETA_BRAND[P]>
+      : GetScalarType<T[P], AggregateGA_ANKETA_BRAND[P]>
+  }
+
+
+
+
+  export type GA_ANKETA_BRANDGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: GA_ANKETA_BRANDWhereInput
+    orderBy?: GA_ANKETA_BRANDOrderByWithAggregationInput | GA_ANKETA_BRANDOrderByWithAggregationInput[]
+    by: GA_ANKETA_BRANDScalarFieldEnum[] | GA_ANKETA_BRANDScalarFieldEnum
+    having?: GA_ANKETA_BRANDScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: GA_ANKETA_BRANDCountAggregateInputType | true
+    _avg?: GA_ANKETA_BRANDAvgAggregateInputType
+    _sum?: GA_ANKETA_BRANDSumAggregateInputType
+    _min?: GA_ANKETA_BRANDMinAggregateInputType
+    _max?: GA_ANKETA_BRANDMaxAggregateInputType
+  }
+
+  export type GA_ANKETA_BRANDGroupByOutputType = {
+    ABR_ABA_ID: bigint
+    ABR_STATUS: boolean
+    ABR_DATETIME: Date
+    ABR_HALF_STATUS: boolean
+    ABR_VYVESKA_STATUS: boolean
+    ABR_KOROB_STATUS: boolean
+    _count: GA_ANKETA_BRANDCountAggregateOutputType | null
+    _avg: GA_ANKETA_BRANDAvgAggregateOutputType | null
+    _sum: GA_ANKETA_BRANDSumAggregateOutputType | null
+    _min: GA_ANKETA_BRANDMinAggregateOutputType | null
+    _max: GA_ANKETA_BRANDMaxAggregateOutputType | null
+  }
+
+  type GetGA_ANKETA_BRANDGroupByPayload<T extends GA_ANKETA_BRANDGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<GA_ANKETA_BRANDGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof GA_ANKETA_BRANDGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], GA_ANKETA_BRANDGroupByOutputType[P]>
+            : GetScalarType<T[P], GA_ANKETA_BRANDGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type GA_ANKETA_BRANDSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    ABR_ABA_ID?: boolean
+    ABR_STATUS?: boolean
+    ABR_DATETIME?: boolean
+    ABR_HALF_STATUS?: boolean
+    ABR_VYVESKA_STATUS?: boolean
+    ABR_KOROB_STATUS?: boolean
+  }, ExtArgs["result"]["gA_ANKETA_BRAND"]>
+
+  export type GA_ANKETA_BRANDSelectScalar = {
+    ABR_ABA_ID?: boolean
+    ABR_STATUS?: boolean
+    ABR_DATETIME?: boolean
+    ABR_HALF_STATUS?: boolean
+    ABR_VYVESKA_STATUS?: boolean
+    ABR_KOROB_STATUS?: boolean
+  }
+
+
+  export type $GA_ANKETA_BRANDPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "GA_ANKETA_BRAND"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      ABR_ABA_ID: bigint
+      ABR_STATUS: boolean
+      ABR_DATETIME: Date
+      ABR_HALF_STATUS: boolean
+      ABR_VYVESKA_STATUS: boolean
+      ABR_KOROB_STATUS: boolean
+    }, ExtArgs["result"]["gA_ANKETA_BRAND"]>
+    composites: {}
+  }
+
+
+  type GA_ANKETA_BRANDGetPayload<S extends boolean | null | undefined | GA_ANKETA_BRANDDefaultArgs> = $Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload, S>
+
+  type GA_ANKETA_BRANDCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<GA_ANKETA_BRANDFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: GA_ANKETA_BRANDCountAggregateInputType | true
+    }
+
+  export interface GA_ANKETA_BRANDDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['GA_ANKETA_BRAND'], meta: { name: 'GA_ANKETA_BRAND' } }
+    /**
+     * Find zero or one GA_ANKETA_BRAND that matches the filter.
+     * @param {GA_ANKETA_BRANDFindUniqueArgs} args - Arguments to find a GA_ANKETA_BRAND
+     * @example
+     * // Get one GA_ANKETA_BRAND
+     * const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUnique<T extends GA_ANKETA_BRANDFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_BRANDFindUniqueArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+
+    /**
+     * Find one GA_ANKETA_BRAND that matches the filter or throw an error  with `error.code='P2025'` 
+     *     if no matches were found.
+     * @param {GA_ANKETA_BRANDFindUniqueOrThrowArgs} args - Arguments to find a GA_ANKETA_BRAND
+     * @example
+     * // Get one GA_ANKETA_BRAND
+     * const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUniqueOrThrow<T extends GA_ANKETA_BRANDFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_BRANDFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find the first GA_ANKETA_BRAND that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_BRANDFindFirstArgs} args - Arguments to find a GA_ANKETA_BRAND
+     * @example
+     * // Get one GA_ANKETA_BRAND
+     * const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirst<T extends GA_ANKETA_BRANDFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_BRANDFindFirstArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+
+    /**
+     * Find the first GA_ANKETA_BRAND that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_BRANDFindFirstOrThrowArgs} args - Arguments to find a GA_ANKETA_BRAND
+     * @example
+     * // Get one GA_ANKETA_BRAND
+     * const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirstOrThrow<T extends GA_ANKETA_BRANDFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_BRANDFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find zero or more GA_ANKETA_BRANDS that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_BRANDFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all GA_ANKETA_BRANDS
+     * const gA_ANKETA_BRANDS = await prisma.gA_ANKETA_BRAND.findMany()
+     * 
+     * // Get first 10 GA_ANKETA_BRANDS
+     * const gA_ANKETA_BRANDS = await prisma.gA_ANKETA_BRAND.findMany({ take: 10 })
+     * 
+     * // Only select the `ABR_ABA_ID`
+     * const gA_ANKETA_BRANDWithABR_ABA_IDOnly = await prisma.gA_ANKETA_BRAND.findMany({ select: { ABR_ABA_ID: true } })
+     * 
+    **/
+    findMany<T extends GA_ANKETA_BRANDFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_BRANDFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'findMany'>>
+
+    /**
+     * Create a GA_ANKETA_BRAND.
+     * @param {GA_ANKETA_BRANDCreateArgs} args - Arguments to create a GA_ANKETA_BRAND.
+     * @example
+     * // Create one GA_ANKETA_BRAND
+     * const GA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.create({
+     *   data: {
+     *     // ... data to create a GA_ANKETA_BRAND
+     *   }
+     * })
+     * 
+    **/
+    create<T extends GA_ANKETA_BRANDCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_BRANDCreateArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+
+    /**
+     * Create many GA_ANKETA_BRANDS.
+     *     @param {GA_ANKETA_BRANDCreateManyArgs} args - Arguments to create many GA_ANKETA_BRANDS.
+     *     @example
+     *     // Create many GA_ANKETA_BRANDS
+     *     const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.createMany({
+     *       data: {
+     *         // ... provide data here
+     *       }
+     *     })
+     *     
+    **/
+    createMany<T extends GA_ANKETA_BRANDCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_BRANDCreateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a GA_ANKETA_BRAND.
+     * @param {GA_ANKETA_BRANDDeleteArgs} args - Arguments to delete one GA_ANKETA_BRAND.
+     * @example
+     * // Delete one GA_ANKETA_BRAND
+     * const GA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.delete({
+     *   where: {
+     *     // ... filter to delete one GA_ANKETA_BRAND
+     *   }
+     * })
+     * 
+    **/
+    delete<T extends GA_ANKETA_BRANDDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_BRANDDeleteArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+
+    /**
+     * Update one GA_ANKETA_BRAND.
+     * @param {GA_ANKETA_BRANDUpdateArgs} args - Arguments to update one GA_ANKETA_BRAND.
+     * @example
+     * // Update one GA_ANKETA_BRAND
+     * const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    update<T extends GA_ANKETA_BRANDUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_BRANDUpdateArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+
+    /**
+     * Delete zero or more GA_ANKETA_BRANDS.
+     * @param {GA_ANKETA_BRANDDeleteManyArgs} args - Arguments to filter GA_ANKETA_BRANDS to delete.
+     * @example
+     * // Delete a few GA_ANKETA_BRANDS
+     * const { count } = await prisma.gA_ANKETA_BRAND.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+    **/
+    deleteMany<T extends GA_ANKETA_BRANDDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_BRANDDeleteManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more GA_ANKETA_BRANDS.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_BRANDUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many GA_ANKETA_BRANDS
+     * const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    updateMany<T extends GA_ANKETA_BRANDUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_BRANDUpdateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one GA_ANKETA_BRAND.
+     * @param {GA_ANKETA_BRANDUpsertArgs} args - Arguments to update or create a GA_ANKETA_BRAND.
+     * @example
+     * // Update or create a GA_ANKETA_BRAND
+     * const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.upsert({
+     *   create: {
+     *     // ... data to create a GA_ANKETA_BRAND
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the GA_ANKETA_BRAND we want to update
+     *   }
+     * })
+    **/
+    upsert<T extends GA_ANKETA_BRANDUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_BRANDUpsertArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+
+    /**
+     * Count the number of GA_ANKETA_BRANDS.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_BRANDCountArgs} args - Arguments to filter GA_ANKETA_BRANDS to count.
+     * @example
+     * // Count the number of GA_ANKETA_BRANDS
+     * const count = await prisma.gA_ANKETA_BRAND.count({
+     *   where: {
+     *     // ... the filter for the GA_ANKETA_BRANDS we want to count
+     *   }
+     * })
+    **/
+    count<T extends GA_ANKETA_BRANDCountArgs>(
+      args?: Subset<T, GA_ANKETA_BRANDCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], GA_ANKETA_BRANDCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a GA_ANKETA_BRAND.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_BRANDAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends GA_ANKETA_BRANDAggregateArgs>(args: Subset<T, GA_ANKETA_BRANDAggregateArgs>): Prisma.PrismaPromise<GetGA_ANKETA_BRANDAggregateType<T>>
+
+    /**
+     * Group by GA_ANKETA_BRAND.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_BRANDGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends GA_ANKETA_BRANDGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: GA_ANKETA_BRANDGroupByArgs['orderBy'] }
+        : { orderBy?: GA_ANKETA_BRANDGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, GA_ANKETA_BRANDGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetGA_ANKETA_BRANDGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the GA_ANKETA_BRAND model
+   */
+  readonly fields: GA_ANKETA_BRANDFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for GA_ANKETA_BRAND.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__GA_ANKETA_BRANDClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+
+
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+
+
+  /**
+   * Fields of the GA_ANKETA_BRAND model
+   */ 
+  interface GA_ANKETA_BRANDFieldRefs {
+    readonly ABR_ABA_ID: FieldRef<"GA_ANKETA_BRAND", 'BigInt'>
+    readonly ABR_STATUS: FieldRef<"GA_ANKETA_BRAND", 'Boolean'>
+    readonly ABR_DATETIME: FieldRef<"GA_ANKETA_BRAND", 'DateTime'>
+    readonly ABR_HALF_STATUS: FieldRef<"GA_ANKETA_BRAND", 'Boolean'>
+    readonly ABR_VYVESKA_STATUS: FieldRef<"GA_ANKETA_BRAND", 'Boolean'>
+    readonly ABR_KOROB_STATUS: FieldRef<"GA_ANKETA_BRAND", 'Boolean'>
+  }
+    
+
+  // Custom InputTypes
+
+  /**
+   * GA_ANKETA_BRAND findUnique
+   */
+  export type GA_ANKETA_BRANDFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_BRAND
+     */
+    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_BRAND to fetch.
+     */
+    where: GA_ANKETA_BRANDWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND findUniqueOrThrow
+   */
+  export type GA_ANKETA_BRANDFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_BRAND
+     */
+    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_BRAND to fetch.
+     */
+    where: GA_ANKETA_BRANDWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND findFirst
+   */
+  export type GA_ANKETA_BRANDFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_BRAND
+     */
+    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_BRAND to fetch.
+     */
+    where?: GA_ANKETA_BRANDWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_BRANDS to fetch.
+     */
+    orderBy?: GA_ANKETA_BRANDOrderByWithRelationInput | GA_ANKETA_BRANDOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GA_ANKETA_BRANDS.
+     */
+    cursor?: GA_ANKETA_BRANDWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_BRANDS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_BRANDS.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GA_ANKETA_BRANDS.
+     */
+    distinct?: GA_ANKETA_BRANDScalarFieldEnum | GA_ANKETA_BRANDScalarFieldEnum[]
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND findFirstOrThrow
+   */
+  export type GA_ANKETA_BRANDFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_BRAND
+     */
+    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_BRAND to fetch.
+     */
+    where?: GA_ANKETA_BRANDWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_BRANDS to fetch.
+     */
+    orderBy?: GA_ANKETA_BRANDOrderByWithRelationInput | GA_ANKETA_BRANDOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GA_ANKETA_BRANDS.
+     */
+    cursor?: GA_ANKETA_BRANDWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_BRANDS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_BRANDS.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GA_ANKETA_BRANDS.
+     */
+    distinct?: GA_ANKETA_BRANDScalarFieldEnum | GA_ANKETA_BRANDScalarFieldEnum[]
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND findMany
+   */
+  export type GA_ANKETA_BRANDFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_BRAND
+     */
+    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_BRANDS to fetch.
+     */
+    where?: GA_ANKETA_BRANDWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_BRANDS to fetch.
+     */
+    orderBy?: GA_ANKETA_BRANDOrderByWithRelationInput | GA_ANKETA_BRANDOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing GA_ANKETA_BRANDS.
+     */
+    cursor?: GA_ANKETA_BRANDWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_BRANDS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_BRANDS.
+     */
+    skip?: number
+    distinct?: GA_ANKETA_BRANDScalarFieldEnum | GA_ANKETA_BRANDScalarFieldEnum[]
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND create
+   */
+  export type GA_ANKETA_BRANDCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_BRAND
+     */
+    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
+    /**
+     * The data needed to create a GA_ANKETA_BRAND.
+     */
+    data: XOR<GA_ANKETA_BRANDCreateInput, GA_ANKETA_BRANDUncheckedCreateInput>
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND createMany
+   */
+  export type GA_ANKETA_BRANDCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many GA_ANKETA_BRANDS.
+     */
+    data: GA_ANKETA_BRANDCreateManyInput | GA_ANKETA_BRANDCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND update
+   */
+  export type GA_ANKETA_BRANDUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_BRAND
+     */
+    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
+    /**
+     * The data needed to update a GA_ANKETA_BRAND.
+     */
+    data: XOR<GA_ANKETA_BRANDUpdateInput, GA_ANKETA_BRANDUncheckedUpdateInput>
+    /**
+     * Choose, which GA_ANKETA_BRAND to update.
+     */
+    where: GA_ANKETA_BRANDWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND updateMany
+   */
+  export type GA_ANKETA_BRANDUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update GA_ANKETA_BRANDS.
+     */
+    data: XOR<GA_ANKETA_BRANDUpdateManyMutationInput, GA_ANKETA_BRANDUncheckedUpdateManyInput>
+    /**
+     * Filter which GA_ANKETA_BRANDS to update
+     */
+    where?: GA_ANKETA_BRANDWhereInput
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND upsert
+   */
+  export type GA_ANKETA_BRANDUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_BRAND
+     */
+    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
+    /**
+     * The filter to search for the GA_ANKETA_BRAND to update in case it exists.
+     */
+    where: GA_ANKETA_BRANDWhereUniqueInput
+    /**
+     * In case the GA_ANKETA_BRAND found by the `where` argument doesn't exist, create a new GA_ANKETA_BRAND with this data.
+     */
+    create: XOR<GA_ANKETA_BRANDCreateInput, GA_ANKETA_BRANDUncheckedCreateInput>
+    /**
+     * In case the GA_ANKETA_BRAND was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<GA_ANKETA_BRANDUpdateInput, GA_ANKETA_BRANDUncheckedUpdateInput>
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND delete
+   */
+  export type GA_ANKETA_BRANDDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_BRAND
+     */
+    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
+    /**
+     * Filter which GA_ANKETA_BRAND to delete.
+     */
+    where: GA_ANKETA_BRANDWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND deleteMany
+   */
+  export type GA_ANKETA_BRANDDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GA_ANKETA_BRANDS to delete
+     */
+    where?: GA_ANKETA_BRANDWhereInput
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND without action
+   */
+  export type GA_ANKETA_BRANDDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_BRAND
+     */
+    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
+  }
+
+
+
+  /**
+   * Model GA_ANKETA_SCORES
+   */
+
+  export type AggregateGA_ANKETA_SCORES = {
+    _count: GA_ANKETA_SCORESCountAggregateOutputType | null
+    _avg: GA_ANKETA_SCORESAvgAggregateOutputType | null
+    _sum: GA_ANKETA_SCORESSumAggregateOutputType | null
+    _min: GA_ANKETA_SCORESMinAggregateOutputType | null
+    _max: GA_ANKETA_SCORESMaxAggregateOutputType | null
+  }
+
+  export type GA_ANKETA_SCORESAvgAggregateOutputType = {
+    ANS_WSU_ID: number | null
+    ANS_SCORES: number | null
+  }
+
+  export type GA_ANKETA_SCORESSumAggregateOutputType = {
+    ANS_WSU_ID: bigint | null
+    ANS_SCORES: number | null
+  }
+
+  export type GA_ANKETA_SCORESMinAggregateOutputType = {
+    ANS_WSU_ID: bigint | null
+    ANS_SCORES: number | null
+    ANS_DATETIME: Date | null
+    ANS_ISSHOW: boolean | null
+  }
+
+  export type GA_ANKETA_SCORESMaxAggregateOutputType = {
+    ANS_WSU_ID: bigint | null
+    ANS_SCORES: number | null
+    ANS_DATETIME: Date | null
+    ANS_ISSHOW: boolean | null
+  }
+
+  export type GA_ANKETA_SCORESCountAggregateOutputType = {
+    ANS_WSU_ID: number
+    ANS_SCORES: number
+    ANS_DATETIME: number
+    ANS_ISSHOW: number
+    _all: number
+  }
+
+
+  export type GA_ANKETA_SCORESAvgAggregateInputType = {
+    ANS_WSU_ID?: true
+    ANS_SCORES?: true
+  }
+
+  export type GA_ANKETA_SCORESSumAggregateInputType = {
+    ANS_WSU_ID?: true
+    ANS_SCORES?: true
+  }
+
+  export type GA_ANKETA_SCORESMinAggregateInputType = {
+    ANS_WSU_ID?: true
+    ANS_SCORES?: true
+    ANS_DATETIME?: true
+    ANS_ISSHOW?: true
+  }
+
+  export type GA_ANKETA_SCORESMaxAggregateInputType = {
+    ANS_WSU_ID?: true
+    ANS_SCORES?: true
+    ANS_DATETIME?: true
+    ANS_ISSHOW?: true
+  }
+
+  export type GA_ANKETA_SCORESCountAggregateInputType = {
+    ANS_WSU_ID?: true
+    ANS_SCORES?: true
+    ANS_DATETIME?: true
+    ANS_ISSHOW?: true
+    _all?: true
+  }
+
+  export type GA_ANKETA_SCORESAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GA_ANKETA_SCORES to aggregate.
+     */
+    where?: GA_ANKETA_SCORESWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_SCORES to fetch.
+     */
+    orderBy?: GA_ANKETA_SCORESOrderByWithRelationInput | GA_ANKETA_SCORESOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: GA_ANKETA_SCORESWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_SCORES from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_SCORES.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned GA_ANKETA_SCORES
+    **/
+    _count?: true | GA_ANKETA_SCORESCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: GA_ANKETA_SCORESAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: GA_ANKETA_SCORESSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: GA_ANKETA_SCORESMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: GA_ANKETA_SCORESMaxAggregateInputType
+  }
+
+  export type GetGA_ANKETA_SCORESAggregateType<T extends GA_ANKETA_SCORESAggregateArgs> = {
+        [P in keyof T & keyof AggregateGA_ANKETA_SCORES]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateGA_ANKETA_SCORES[P]>
+      : GetScalarType<T[P], AggregateGA_ANKETA_SCORES[P]>
+  }
+
+
+
+
+  export type GA_ANKETA_SCORESGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: GA_ANKETA_SCORESWhereInput
+    orderBy?: GA_ANKETA_SCORESOrderByWithAggregationInput | GA_ANKETA_SCORESOrderByWithAggregationInput[]
+    by: GA_ANKETA_SCORESScalarFieldEnum[] | GA_ANKETA_SCORESScalarFieldEnum
+    having?: GA_ANKETA_SCORESScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: GA_ANKETA_SCORESCountAggregateInputType | true
+    _avg?: GA_ANKETA_SCORESAvgAggregateInputType
+    _sum?: GA_ANKETA_SCORESSumAggregateInputType
+    _min?: GA_ANKETA_SCORESMinAggregateInputType
+    _max?: GA_ANKETA_SCORESMaxAggregateInputType
+  }
+
+  export type GA_ANKETA_SCORESGroupByOutputType = {
+    ANS_WSU_ID: bigint
+    ANS_SCORES: number
+    ANS_DATETIME: Date
+    ANS_ISSHOW: boolean
+    _count: GA_ANKETA_SCORESCountAggregateOutputType | null
+    _avg: GA_ANKETA_SCORESAvgAggregateOutputType | null
+    _sum: GA_ANKETA_SCORESSumAggregateOutputType | null
+    _min: GA_ANKETA_SCORESMinAggregateOutputType | null
+    _max: GA_ANKETA_SCORESMaxAggregateOutputType | null
+  }
+
+  type GetGA_ANKETA_SCORESGroupByPayload<T extends GA_ANKETA_SCORESGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<GA_ANKETA_SCORESGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof GA_ANKETA_SCORESGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], GA_ANKETA_SCORESGroupByOutputType[P]>
+            : GetScalarType<T[P], GA_ANKETA_SCORESGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type GA_ANKETA_SCORESSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    ANS_WSU_ID?: boolean
+    ANS_SCORES?: boolean
+    ANS_DATETIME?: boolean
+    ANS_ISSHOW?: boolean
+  }, ExtArgs["result"]["gA_ANKETA_SCORES"]>
+
+  export type GA_ANKETA_SCORESSelectScalar = {
+    ANS_WSU_ID?: boolean
+    ANS_SCORES?: boolean
+    ANS_DATETIME?: boolean
+    ANS_ISSHOW?: boolean
+  }
+
+
+  export type $GA_ANKETA_SCORESPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "GA_ANKETA_SCORES"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      ANS_WSU_ID: bigint
+      ANS_SCORES: number
+      ANS_DATETIME: Date
+      ANS_ISSHOW: boolean
+    }, ExtArgs["result"]["gA_ANKETA_SCORES"]>
+    composites: {}
+  }
+
+
+  type GA_ANKETA_SCORESGetPayload<S extends boolean | null | undefined | GA_ANKETA_SCORESDefaultArgs> = $Result.GetResult<Prisma.$GA_ANKETA_SCORESPayload, S>
+
+  type GA_ANKETA_SCORESCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<GA_ANKETA_SCORESFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: GA_ANKETA_SCORESCountAggregateInputType | true
+    }
+
+  export interface GA_ANKETA_SCORESDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['GA_ANKETA_SCORES'], meta: { name: 'GA_ANKETA_SCORES' } }
+    /**
+     * Find zero or one GA_ANKETA_SCORES that matches the filter.
+     * @param {GA_ANKETA_SCORESFindUniqueArgs} args - Arguments to find a GA_ANKETA_SCORES
+     * @example
+     * // Get one GA_ANKETA_SCORES
+     * const gA_ANKETA_SCORES = await prisma.gA_ANKETA_SCORES.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUnique<T extends GA_ANKETA_SCORESFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SCORESFindUniqueArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SCORESClient<$Result.GetResult<Prisma.$GA_ANKETA_SCORESPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+
+    /**
+     * Find one GA_ANKETA_SCORES that matches the filter or throw an error  with `error.code='P2025'` 
+     *     if no matches were found.
+     * @param {GA_ANKETA_SCORESFindUniqueOrThrowArgs} args - Arguments to find a GA_ANKETA_SCORES
+     * @example
+     * // Get one GA_ANKETA_SCORES
+     * const gA_ANKETA_SCORES = await prisma.gA_ANKETA_SCORES.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUniqueOrThrow<T extends GA_ANKETA_SCORESFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SCORESFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SCORESClient<$Result.GetResult<Prisma.$GA_ANKETA_SCORESPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find the first GA_ANKETA_SCORES that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SCORESFindFirstArgs} args - Arguments to find a GA_ANKETA_SCORES
+     * @example
+     * // Get one GA_ANKETA_SCORES
+     * const gA_ANKETA_SCORES = await prisma.gA_ANKETA_SCORES.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirst<T extends GA_ANKETA_SCORESFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SCORESFindFirstArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SCORESClient<$Result.GetResult<Prisma.$GA_ANKETA_SCORESPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+
+    /**
+     * Find the first GA_ANKETA_SCORES that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SCORESFindFirstOrThrowArgs} args - Arguments to find a GA_ANKETA_SCORES
+     * @example
+     * // Get one GA_ANKETA_SCORES
+     * const gA_ANKETA_SCORES = await prisma.gA_ANKETA_SCORES.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirstOrThrow<T extends GA_ANKETA_SCORESFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SCORESFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SCORESClient<$Result.GetResult<Prisma.$GA_ANKETA_SCORESPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find zero or more GA_ANKETA_SCORES that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SCORESFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all GA_ANKETA_SCORES
+     * const gA_ANKETA_SCORES = await prisma.gA_ANKETA_SCORES.findMany()
+     * 
+     * // Get first 10 GA_ANKETA_SCORES
+     * const gA_ANKETA_SCORES = await prisma.gA_ANKETA_SCORES.findMany({ take: 10 })
+     * 
+     * // Only select the `ANS_WSU_ID`
+     * const gA_ANKETA_SCORESWithANS_WSU_IDOnly = await prisma.gA_ANKETA_SCORES.findMany({ select: { ANS_WSU_ID: true } })
+     * 
+    **/
+    findMany<T extends GA_ANKETA_SCORESFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SCORESFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GA_ANKETA_SCORESPayload<ExtArgs>, T, 'findMany'>>
+
+    /**
+     * Create a GA_ANKETA_SCORES.
+     * @param {GA_ANKETA_SCORESCreateArgs} args - Arguments to create a GA_ANKETA_SCORES.
+     * @example
+     * // Create one GA_ANKETA_SCORES
+     * const GA_ANKETA_SCORES = await prisma.gA_ANKETA_SCORES.create({
+     *   data: {
+     *     // ... data to create a GA_ANKETA_SCORES
+     *   }
+     * })
+     * 
+    **/
+    create<T extends GA_ANKETA_SCORESCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SCORESCreateArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SCORESClient<$Result.GetResult<Prisma.$GA_ANKETA_SCORESPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+
+    /**
+     * Create many GA_ANKETA_SCORES.
+     *     @param {GA_ANKETA_SCORESCreateManyArgs} args - Arguments to create many GA_ANKETA_SCORES.
+     *     @example
+     *     // Create many GA_ANKETA_SCORES
+     *     const gA_ANKETA_SCORES = await prisma.gA_ANKETA_SCORES.createMany({
+     *       data: {
+     *         // ... provide data here
+     *       }
+     *     })
+     *     
+    **/
+    createMany<T extends GA_ANKETA_SCORESCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SCORESCreateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a GA_ANKETA_SCORES.
+     * @param {GA_ANKETA_SCORESDeleteArgs} args - Arguments to delete one GA_ANKETA_SCORES.
+     * @example
+     * // Delete one GA_ANKETA_SCORES
+     * const GA_ANKETA_SCORES = await prisma.gA_ANKETA_SCORES.delete({
+     *   where: {
+     *     // ... filter to delete one GA_ANKETA_SCORES
+     *   }
+     * })
+     * 
+    **/
+    delete<T extends GA_ANKETA_SCORESDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SCORESDeleteArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SCORESClient<$Result.GetResult<Prisma.$GA_ANKETA_SCORESPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+
+    /**
+     * Update one GA_ANKETA_SCORES.
+     * @param {GA_ANKETA_SCORESUpdateArgs} args - Arguments to update one GA_ANKETA_SCORES.
+     * @example
+     * // Update one GA_ANKETA_SCORES
+     * const gA_ANKETA_SCORES = await prisma.gA_ANKETA_SCORES.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    update<T extends GA_ANKETA_SCORESUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SCORESUpdateArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SCORESClient<$Result.GetResult<Prisma.$GA_ANKETA_SCORESPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+
+    /**
+     * Delete zero or more GA_ANKETA_SCORES.
+     * @param {GA_ANKETA_SCORESDeleteManyArgs} args - Arguments to filter GA_ANKETA_SCORES to delete.
+     * @example
+     * // Delete a few GA_ANKETA_SCORES
+     * const { count } = await prisma.gA_ANKETA_SCORES.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+    **/
+    deleteMany<T extends GA_ANKETA_SCORESDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SCORESDeleteManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more GA_ANKETA_SCORES.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SCORESUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many GA_ANKETA_SCORES
+     * const gA_ANKETA_SCORES = await prisma.gA_ANKETA_SCORES.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    updateMany<T extends GA_ANKETA_SCORESUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SCORESUpdateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one GA_ANKETA_SCORES.
+     * @param {GA_ANKETA_SCORESUpsertArgs} args - Arguments to update or create a GA_ANKETA_SCORES.
+     * @example
+     * // Update or create a GA_ANKETA_SCORES
+     * const gA_ANKETA_SCORES = await prisma.gA_ANKETA_SCORES.upsert({
+     *   create: {
+     *     // ... data to create a GA_ANKETA_SCORES
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the GA_ANKETA_SCORES we want to update
+     *   }
+     * })
+    **/
+    upsert<T extends GA_ANKETA_SCORESUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SCORESUpsertArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SCORESClient<$Result.GetResult<Prisma.$GA_ANKETA_SCORESPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+
+    /**
+     * Count the number of GA_ANKETA_SCORES.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SCORESCountArgs} args - Arguments to filter GA_ANKETA_SCORES to count.
+     * @example
+     * // Count the number of GA_ANKETA_SCORES
+     * const count = await prisma.gA_ANKETA_SCORES.count({
+     *   where: {
+     *     // ... the filter for the GA_ANKETA_SCORES we want to count
+     *   }
+     * })
+    **/
+    count<T extends GA_ANKETA_SCORESCountArgs>(
+      args?: Subset<T, GA_ANKETA_SCORESCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], GA_ANKETA_SCORESCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a GA_ANKETA_SCORES.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SCORESAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends GA_ANKETA_SCORESAggregateArgs>(args: Subset<T, GA_ANKETA_SCORESAggregateArgs>): Prisma.PrismaPromise<GetGA_ANKETA_SCORESAggregateType<T>>
+
+    /**
+     * Group by GA_ANKETA_SCORES.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SCORESGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends GA_ANKETA_SCORESGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: GA_ANKETA_SCORESGroupByArgs['orderBy'] }
+        : { orderBy?: GA_ANKETA_SCORESGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, GA_ANKETA_SCORESGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetGA_ANKETA_SCORESGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the GA_ANKETA_SCORES model
+   */
+  readonly fields: GA_ANKETA_SCORESFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for GA_ANKETA_SCORES.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__GA_ANKETA_SCORESClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+
+
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+
+
+  /**
+   * Fields of the GA_ANKETA_SCORES model
+   */ 
+  interface GA_ANKETA_SCORESFieldRefs {
+    readonly ANS_WSU_ID: FieldRef<"GA_ANKETA_SCORES", 'BigInt'>
+    readonly ANS_SCORES: FieldRef<"GA_ANKETA_SCORES", 'Int'>
+    readonly ANS_DATETIME: FieldRef<"GA_ANKETA_SCORES", 'DateTime'>
+    readonly ANS_ISSHOW: FieldRef<"GA_ANKETA_SCORES", 'Boolean'>
+  }
+    
+
+  // Custom InputTypes
+
+  /**
+   * GA_ANKETA_SCORES findUnique
+   */
+  export type GA_ANKETA_SCORESFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SCORES
+     */
+    select?: GA_ANKETA_SCORESSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_SCORES to fetch.
+     */
+    where: GA_ANKETA_SCORESWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES findUniqueOrThrow
+   */
+  export type GA_ANKETA_SCORESFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SCORES
+     */
+    select?: GA_ANKETA_SCORESSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_SCORES to fetch.
+     */
+    where: GA_ANKETA_SCORESWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES findFirst
+   */
+  export type GA_ANKETA_SCORESFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SCORES
+     */
+    select?: GA_ANKETA_SCORESSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_SCORES to fetch.
+     */
+    where?: GA_ANKETA_SCORESWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_SCORES to fetch.
+     */
+    orderBy?: GA_ANKETA_SCORESOrderByWithRelationInput | GA_ANKETA_SCORESOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GA_ANKETA_SCORES.
+     */
+    cursor?: GA_ANKETA_SCORESWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_SCORES from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_SCORES.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GA_ANKETA_SCORES.
+     */
+    distinct?: GA_ANKETA_SCORESScalarFieldEnum | GA_ANKETA_SCORESScalarFieldEnum[]
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES findFirstOrThrow
+   */
+  export type GA_ANKETA_SCORESFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SCORES
+     */
+    select?: GA_ANKETA_SCORESSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_SCORES to fetch.
+     */
+    where?: GA_ANKETA_SCORESWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_SCORES to fetch.
+     */
+    orderBy?: GA_ANKETA_SCORESOrderByWithRelationInput | GA_ANKETA_SCORESOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GA_ANKETA_SCORES.
+     */
+    cursor?: GA_ANKETA_SCORESWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_SCORES from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_SCORES.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GA_ANKETA_SCORES.
+     */
+    distinct?: GA_ANKETA_SCORESScalarFieldEnum | GA_ANKETA_SCORESScalarFieldEnum[]
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES findMany
+   */
+  export type GA_ANKETA_SCORESFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SCORES
+     */
+    select?: GA_ANKETA_SCORESSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_SCORES to fetch.
+     */
+    where?: GA_ANKETA_SCORESWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_SCORES to fetch.
+     */
+    orderBy?: GA_ANKETA_SCORESOrderByWithRelationInput | GA_ANKETA_SCORESOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing GA_ANKETA_SCORES.
+     */
+    cursor?: GA_ANKETA_SCORESWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_SCORES from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_SCORES.
+     */
+    skip?: number
+    distinct?: GA_ANKETA_SCORESScalarFieldEnum | GA_ANKETA_SCORESScalarFieldEnum[]
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES create
+   */
+  export type GA_ANKETA_SCORESCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SCORES
+     */
+    select?: GA_ANKETA_SCORESSelect<ExtArgs> | null
+    /**
+     * The data needed to create a GA_ANKETA_SCORES.
+     */
+    data: XOR<GA_ANKETA_SCORESCreateInput, GA_ANKETA_SCORESUncheckedCreateInput>
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES createMany
+   */
+  export type GA_ANKETA_SCORESCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many GA_ANKETA_SCORES.
+     */
+    data: GA_ANKETA_SCORESCreateManyInput | GA_ANKETA_SCORESCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES update
+   */
+  export type GA_ANKETA_SCORESUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SCORES
+     */
+    select?: GA_ANKETA_SCORESSelect<ExtArgs> | null
+    /**
+     * The data needed to update a GA_ANKETA_SCORES.
+     */
+    data: XOR<GA_ANKETA_SCORESUpdateInput, GA_ANKETA_SCORESUncheckedUpdateInput>
+    /**
+     * Choose, which GA_ANKETA_SCORES to update.
+     */
+    where: GA_ANKETA_SCORESWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES updateMany
+   */
+  export type GA_ANKETA_SCORESUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update GA_ANKETA_SCORES.
+     */
+    data: XOR<GA_ANKETA_SCORESUpdateManyMutationInput, GA_ANKETA_SCORESUncheckedUpdateManyInput>
+    /**
+     * Filter which GA_ANKETA_SCORES to update
+     */
+    where?: GA_ANKETA_SCORESWhereInput
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES upsert
+   */
+  export type GA_ANKETA_SCORESUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SCORES
+     */
+    select?: GA_ANKETA_SCORESSelect<ExtArgs> | null
+    /**
+     * The filter to search for the GA_ANKETA_SCORES to update in case it exists.
+     */
+    where: GA_ANKETA_SCORESWhereUniqueInput
+    /**
+     * In case the GA_ANKETA_SCORES found by the `where` argument doesn't exist, create a new GA_ANKETA_SCORES with this data.
+     */
+    create: XOR<GA_ANKETA_SCORESCreateInput, GA_ANKETA_SCORESUncheckedCreateInput>
+    /**
+     * In case the GA_ANKETA_SCORES was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<GA_ANKETA_SCORESUpdateInput, GA_ANKETA_SCORESUncheckedUpdateInput>
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES delete
+   */
+  export type GA_ANKETA_SCORESDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SCORES
+     */
+    select?: GA_ANKETA_SCORESSelect<ExtArgs> | null
+    /**
+     * Filter which GA_ANKETA_SCORES to delete.
+     */
+    where: GA_ANKETA_SCORESWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES deleteMany
+   */
+  export type GA_ANKETA_SCORESDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GA_ANKETA_SCORES to delete
+     */
+    where?: GA_ANKETA_SCORESWhereInput
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES without action
+   */
+  export type GA_ANKETA_SCORESDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SCORES
+     */
+    select?: GA_ANKETA_SCORESSelect<ExtArgs> | null
+  }
+
+
+
+  /**
+   * Model GA_ANKETA_SCORES_HISTORY
+   */
+
+  export type AggregateGA_ANKETA_SCORES_HISTORY = {
+    _count: GA_ANKETA_SCORES_HISTORYCountAggregateOutputType | null
+    _avg: GA_ANKETA_SCORES_HISTORYAvgAggregateOutputType | null
+    _sum: GA_ANKETA_SCORES_HISTORYSumAggregateOutputType | null
+    _min: GA_ANKETA_SCORES_HISTORYMinAggregateOutputType | null
+    _max: GA_ANKETA_SCORES_HISTORYMaxAggregateOutputType | null
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYAvgAggregateOutputType = {
+    ASH_WSU_ID: number | null
+    ASH_SCORES: number | null
+    ASH_TYPE: number | null
+    ASH_SCORES_OLD: number | null
+    ASH_IZO_ID: number | null
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYSumAggregateOutputType = {
+    ASH_WSU_ID: bigint | null
+    ASH_SCORES: number | null
+    ASH_TYPE: number | null
+    ASH_SCORES_OLD: number | null
+    ASH_IZO_ID: bigint | null
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYMinAggregateOutputType = {
+    ASH_WSU_ID: bigint | null
+    ASH_SCORES: number | null
+    ASH_DATETIME: Date | null
+    ASH_DESC: string | null
+    ASH_TYPE: number | null
+    ASH_SCORES_OLD: number | null
+    ASH_EVENT_STATUS: boolean | null
+    ASH_DATETIME_UPDATE: Date | null
+    ASH_IZO_ID: bigint | null
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYMaxAggregateOutputType = {
+    ASH_WSU_ID: bigint | null
+    ASH_SCORES: number | null
+    ASH_DATETIME: Date | null
+    ASH_DESC: string | null
+    ASH_TYPE: number | null
+    ASH_SCORES_OLD: number | null
+    ASH_EVENT_STATUS: boolean | null
+    ASH_DATETIME_UPDATE: Date | null
+    ASH_IZO_ID: bigint | null
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYCountAggregateOutputType = {
+    ASH_WSU_ID: number
+    ASH_SCORES: number
+    ASH_DATETIME: number
+    ASH_DESC: number
+    ASH_TYPE: number
+    ASH_SCORES_OLD: number
+    ASH_EVENT_STATUS: number
+    ASH_DATETIME_UPDATE: number
+    ASH_IZO_ID: number
+    _all: number
+  }
+
+
+  export type GA_ANKETA_SCORES_HISTORYAvgAggregateInputType = {
+    ASH_WSU_ID?: true
+    ASH_SCORES?: true
+    ASH_TYPE?: true
+    ASH_SCORES_OLD?: true
+    ASH_IZO_ID?: true
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYSumAggregateInputType = {
+    ASH_WSU_ID?: true
+    ASH_SCORES?: true
+    ASH_TYPE?: true
+    ASH_SCORES_OLD?: true
+    ASH_IZO_ID?: true
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYMinAggregateInputType = {
+    ASH_WSU_ID?: true
+    ASH_SCORES?: true
+    ASH_DATETIME?: true
+    ASH_DESC?: true
+    ASH_TYPE?: true
+    ASH_SCORES_OLD?: true
+    ASH_EVENT_STATUS?: true
+    ASH_DATETIME_UPDATE?: true
+    ASH_IZO_ID?: true
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYMaxAggregateInputType = {
+    ASH_WSU_ID?: true
+    ASH_SCORES?: true
+    ASH_DATETIME?: true
+    ASH_DESC?: true
+    ASH_TYPE?: true
+    ASH_SCORES_OLD?: true
+    ASH_EVENT_STATUS?: true
+    ASH_DATETIME_UPDATE?: true
+    ASH_IZO_ID?: true
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYCountAggregateInputType = {
+    ASH_WSU_ID?: true
+    ASH_SCORES?: true
+    ASH_DATETIME?: true
+    ASH_DESC?: true
+    ASH_TYPE?: true
+    ASH_SCORES_OLD?: true
+    ASH_EVENT_STATUS?: true
+    ASH_DATETIME_UPDATE?: true
+    ASH_IZO_ID?: true
+    _all?: true
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GA_ANKETA_SCORES_HISTORY to aggregate.
+     */
+    where?: GA_ANKETA_SCORES_HISTORYWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_SCORES_HISTORIES to fetch.
+     */
+    orderBy?: GA_ANKETA_SCORES_HISTORYOrderByWithRelationInput | GA_ANKETA_SCORES_HISTORYOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: GA_ANKETA_SCORES_HISTORYWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_SCORES_HISTORIES from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_SCORES_HISTORIES.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned GA_ANKETA_SCORES_HISTORIES
+    **/
+    _count?: true | GA_ANKETA_SCORES_HISTORYCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: GA_ANKETA_SCORES_HISTORYAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: GA_ANKETA_SCORES_HISTORYSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: GA_ANKETA_SCORES_HISTORYMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: GA_ANKETA_SCORES_HISTORYMaxAggregateInputType
+  }
+
+  export type GetGA_ANKETA_SCORES_HISTORYAggregateType<T extends GA_ANKETA_SCORES_HISTORYAggregateArgs> = {
+        [P in keyof T & keyof AggregateGA_ANKETA_SCORES_HISTORY]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateGA_ANKETA_SCORES_HISTORY[P]>
+      : GetScalarType<T[P], AggregateGA_ANKETA_SCORES_HISTORY[P]>
+  }
+
+
+
+
+  export type GA_ANKETA_SCORES_HISTORYGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: GA_ANKETA_SCORES_HISTORYWhereInput
+    orderBy?: GA_ANKETA_SCORES_HISTORYOrderByWithAggregationInput | GA_ANKETA_SCORES_HISTORYOrderByWithAggregationInput[]
+    by: GA_ANKETA_SCORES_HISTORYScalarFieldEnum[] | GA_ANKETA_SCORES_HISTORYScalarFieldEnum
+    having?: GA_ANKETA_SCORES_HISTORYScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: GA_ANKETA_SCORES_HISTORYCountAggregateInputType | true
+    _avg?: GA_ANKETA_SCORES_HISTORYAvgAggregateInputType
+    _sum?: GA_ANKETA_SCORES_HISTORYSumAggregateInputType
+    _min?: GA_ANKETA_SCORES_HISTORYMinAggregateInputType
+    _max?: GA_ANKETA_SCORES_HISTORYMaxAggregateInputType
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYGroupByOutputType = {
+    ASH_WSU_ID: bigint
+    ASH_SCORES: number
+    ASH_DATETIME: Date
+    ASH_DESC: string
+    ASH_TYPE: number
+    ASH_SCORES_OLD: number
+    ASH_EVENT_STATUS: boolean
+    ASH_DATETIME_UPDATE: Date
+    ASH_IZO_ID: bigint
+    _count: GA_ANKETA_SCORES_HISTORYCountAggregateOutputType | null
+    _avg: GA_ANKETA_SCORES_HISTORYAvgAggregateOutputType | null
+    _sum: GA_ANKETA_SCORES_HISTORYSumAggregateOutputType | null
+    _min: GA_ANKETA_SCORES_HISTORYMinAggregateOutputType | null
+    _max: GA_ANKETA_SCORES_HISTORYMaxAggregateOutputType | null
+  }
+
+  type GetGA_ANKETA_SCORES_HISTORYGroupByPayload<T extends GA_ANKETA_SCORES_HISTORYGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<GA_ANKETA_SCORES_HISTORYGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof GA_ANKETA_SCORES_HISTORYGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], GA_ANKETA_SCORES_HISTORYGroupByOutputType[P]>
+            : GetScalarType<T[P], GA_ANKETA_SCORES_HISTORYGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type GA_ANKETA_SCORES_HISTORYSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    ASH_WSU_ID?: boolean
+    ASH_SCORES?: boolean
+    ASH_DATETIME?: boolean
+    ASH_DESC?: boolean
+    ASH_TYPE?: boolean
+    ASH_SCORES_OLD?: boolean
+    ASH_EVENT_STATUS?: boolean
+    ASH_DATETIME_UPDATE?: boolean
+    ASH_IZO_ID?: boolean
+  }, ExtArgs["result"]["gA_ANKETA_SCORES_HISTORY"]>
+
+  export type GA_ANKETA_SCORES_HISTORYSelectScalar = {
+    ASH_WSU_ID?: boolean
+    ASH_SCORES?: boolean
+    ASH_DATETIME?: boolean
+    ASH_DESC?: boolean
+    ASH_TYPE?: boolean
+    ASH_SCORES_OLD?: boolean
+    ASH_EVENT_STATUS?: boolean
+    ASH_DATETIME_UPDATE?: boolean
+    ASH_IZO_ID?: boolean
+  }
+
+
+  export type $GA_ANKETA_SCORES_HISTORYPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "GA_ANKETA_SCORES_HISTORY"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      ASH_WSU_ID: bigint
+      ASH_SCORES: number
+      ASH_DATETIME: Date
+      ASH_DESC: string
+      ASH_TYPE: number
+      ASH_SCORES_OLD: number
+      ASH_EVENT_STATUS: boolean
+      ASH_DATETIME_UPDATE: Date
+      ASH_IZO_ID: bigint
+    }, ExtArgs["result"]["gA_ANKETA_SCORES_HISTORY"]>
+    composites: {}
+  }
+
+
+  type GA_ANKETA_SCORES_HISTORYGetPayload<S extends boolean | null | undefined | GA_ANKETA_SCORES_HISTORYDefaultArgs> = $Result.GetResult<Prisma.$GA_ANKETA_SCORES_HISTORYPayload, S>
+
+  type GA_ANKETA_SCORES_HISTORYCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<GA_ANKETA_SCORES_HISTORYFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: GA_ANKETA_SCORES_HISTORYCountAggregateInputType | true
+    }
+
+  export interface GA_ANKETA_SCORES_HISTORYDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['GA_ANKETA_SCORES_HISTORY'], meta: { name: 'GA_ANKETA_SCORES_HISTORY' } }
+    /**
+     * Find zero or one GA_ANKETA_SCORES_HISTORY that matches the filter.
+     * @param {GA_ANKETA_SCORES_HISTORYFindUniqueArgs} args - Arguments to find a GA_ANKETA_SCORES_HISTORY
+     * @example
+     * // Get one GA_ANKETA_SCORES_HISTORY
+     * const gA_ANKETA_SCORES_HISTORY = await prisma.gA_ANKETA_SCORES_HISTORY.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUnique<T extends GA_ANKETA_SCORES_HISTORYFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SCORES_HISTORYFindUniqueArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SCORES_HISTORYClient<$Result.GetResult<Prisma.$GA_ANKETA_SCORES_HISTORYPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+
+    /**
+     * Find one GA_ANKETA_SCORES_HISTORY that matches the filter or throw an error  with `error.code='P2025'` 
+     *     if no matches were found.
+     * @param {GA_ANKETA_SCORES_HISTORYFindUniqueOrThrowArgs} args - Arguments to find a GA_ANKETA_SCORES_HISTORY
+     * @example
+     * // Get one GA_ANKETA_SCORES_HISTORY
+     * const gA_ANKETA_SCORES_HISTORY = await prisma.gA_ANKETA_SCORES_HISTORY.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUniqueOrThrow<T extends GA_ANKETA_SCORES_HISTORYFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SCORES_HISTORYFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SCORES_HISTORYClient<$Result.GetResult<Prisma.$GA_ANKETA_SCORES_HISTORYPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find the first GA_ANKETA_SCORES_HISTORY that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SCORES_HISTORYFindFirstArgs} args - Arguments to find a GA_ANKETA_SCORES_HISTORY
+     * @example
+     * // Get one GA_ANKETA_SCORES_HISTORY
+     * const gA_ANKETA_SCORES_HISTORY = await prisma.gA_ANKETA_SCORES_HISTORY.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirst<T extends GA_ANKETA_SCORES_HISTORYFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SCORES_HISTORYFindFirstArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SCORES_HISTORYClient<$Result.GetResult<Prisma.$GA_ANKETA_SCORES_HISTORYPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+
+    /**
+     * Find the first GA_ANKETA_SCORES_HISTORY that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SCORES_HISTORYFindFirstOrThrowArgs} args - Arguments to find a GA_ANKETA_SCORES_HISTORY
+     * @example
+     * // Get one GA_ANKETA_SCORES_HISTORY
+     * const gA_ANKETA_SCORES_HISTORY = await prisma.gA_ANKETA_SCORES_HISTORY.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirstOrThrow<T extends GA_ANKETA_SCORES_HISTORYFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SCORES_HISTORYFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SCORES_HISTORYClient<$Result.GetResult<Prisma.$GA_ANKETA_SCORES_HISTORYPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find zero or more GA_ANKETA_SCORES_HISTORIES that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SCORES_HISTORYFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all GA_ANKETA_SCORES_HISTORIES
+     * const gA_ANKETA_SCORES_HISTORIES = await prisma.gA_ANKETA_SCORES_HISTORY.findMany()
+     * 
+     * // Get first 10 GA_ANKETA_SCORES_HISTORIES
+     * const gA_ANKETA_SCORES_HISTORIES = await prisma.gA_ANKETA_SCORES_HISTORY.findMany({ take: 10 })
+     * 
+     * // Only select the `ASH_WSU_ID`
+     * const gA_ANKETA_SCORES_HISTORYWithASH_WSU_IDOnly = await prisma.gA_ANKETA_SCORES_HISTORY.findMany({ select: { ASH_WSU_ID: true } })
+     * 
+    **/
+    findMany<T extends GA_ANKETA_SCORES_HISTORYFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SCORES_HISTORYFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GA_ANKETA_SCORES_HISTORYPayload<ExtArgs>, T, 'findMany'>>
+
+    /**
+     * Create a GA_ANKETA_SCORES_HISTORY.
+     * @param {GA_ANKETA_SCORES_HISTORYCreateArgs} args - Arguments to create a GA_ANKETA_SCORES_HISTORY.
+     * @example
+     * // Create one GA_ANKETA_SCORES_HISTORY
+     * const GA_ANKETA_SCORES_HISTORY = await prisma.gA_ANKETA_SCORES_HISTORY.create({
+     *   data: {
+     *     // ... data to create a GA_ANKETA_SCORES_HISTORY
+     *   }
+     * })
+     * 
+    **/
+    create<T extends GA_ANKETA_SCORES_HISTORYCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SCORES_HISTORYCreateArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SCORES_HISTORYClient<$Result.GetResult<Prisma.$GA_ANKETA_SCORES_HISTORYPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+
+    /**
+     * Create many GA_ANKETA_SCORES_HISTORIES.
+     *     @param {GA_ANKETA_SCORES_HISTORYCreateManyArgs} args - Arguments to create many GA_ANKETA_SCORES_HISTORIES.
+     *     @example
+     *     // Create many GA_ANKETA_SCORES_HISTORIES
+     *     const gA_ANKETA_SCORES_HISTORY = await prisma.gA_ANKETA_SCORES_HISTORY.createMany({
+     *       data: {
+     *         // ... provide data here
+     *       }
+     *     })
+     *     
+    **/
+    createMany<T extends GA_ANKETA_SCORES_HISTORYCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SCORES_HISTORYCreateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a GA_ANKETA_SCORES_HISTORY.
+     * @param {GA_ANKETA_SCORES_HISTORYDeleteArgs} args - Arguments to delete one GA_ANKETA_SCORES_HISTORY.
+     * @example
+     * // Delete one GA_ANKETA_SCORES_HISTORY
+     * const GA_ANKETA_SCORES_HISTORY = await prisma.gA_ANKETA_SCORES_HISTORY.delete({
+     *   where: {
+     *     // ... filter to delete one GA_ANKETA_SCORES_HISTORY
+     *   }
+     * })
+     * 
+    **/
+    delete<T extends GA_ANKETA_SCORES_HISTORYDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SCORES_HISTORYDeleteArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SCORES_HISTORYClient<$Result.GetResult<Prisma.$GA_ANKETA_SCORES_HISTORYPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+
+    /**
+     * Update one GA_ANKETA_SCORES_HISTORY.
+     * @param {GA_ANKETA_SCORES_HISTORYUpdateArgs} args - Arguments to update one GA_ANKETA_SCORES_HISTORY.
+     * @example
+     * // Update one GA_ANKETA_SCORES_HISTORY
+     * const gA_ANKETA_SCORES_HISTORY = await prisma.gA_ANKETA_SCORES_HISTORY.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    update<T extends GA_ANKETA_SCORES_HISTORYUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SCORES_HISTORYUpdateArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SCORES_HISTORYClient<$Result.GetResult<Prisma.$GA_ANKETA_SCORES_HISTORYPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+
+    /**
+     * Delete zero or more GA_ANKETA_SCORES_HISTORIES.
+     * @param {GA_ANKETA_SCORES_HISTORYDeleteManyArgs} args - Arguments to filter GA_ANKETA_SCORES_HISTORIES to delete.
+     * @example
+     * // Delete a few GA_ANKETA_SCORES_HISTORIES
+     * const { count } = await prisma.gA_ANKETA_SCORES_HISTORY.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+    **/
+    deleteMany<T extends GA_ANKETA_SCORES_HISTORYDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SCORES_HISTORYDeleteManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more GA_ANKETA_SCORES_HISTORIES.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SCORES_HISTORYUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many GA_ANKETA_SCORES_HISTORIES
+     * const gA_ANKETA_SCORES_HISTORY = await prisma.gA_ANKETA_SCORES_HISTORY.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    updateMany<T extends GA_ANKETA_SCORES_HISTORYUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SCORES_HISTORYUpdateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one GA_ANKETA_SCORES_HISTORY.
+     * @param {GA_ANKETA_SCORES_HISTORYUpsertArgs} args - Arguments to update or create a GA_ANKETA_SCORES_HISTORY.
+     * @example
+     * // Update or create a GA_ANKETA_SCORES_HISTORY
+     * const gA_ANKETA_SCORES_HISTORY = await prisma.gA_ANKETA_SCORES_HISTORY.upsert({
+     *   create: {
+     *     // ... data to create a GA_ANKETA_SCORES_HISTORY
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the GA_ANKETA_SCORES_HISTORY we want to update
+     *   }
+     * })
+    **/
+    upsert<T extends GA_ANKETA_SCORES_HISTORYUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SCORES_HISTORYUpsertArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SCORES_HISTORYClient<$Result.GetResult<Prisma.$GA_ANKETA_SCORES_HISTORYPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+
+    /**
+     * Count the number of GA_ANKETA_SCORES_HISTORIES.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SCORES_HISTORYCountArgs} args - Arguments to filter GA_ANKETA_SCORES_HISTORIES to count.
+     * @example
+     * // Count the number of GA_ANKETA_SCORES_HISTORIES
+     * const count = await prisma.gA_ANKETA_SCORES_HISTORY.count({
+     *   where: {
+     *     // ... the filter for the GA_ANKETA_SCORES_HISTORIES we want to count
+     *   }
+     * })
+    **/
+    count<T extends GA_ANKETA_SCORES_HISTORYCountArgs>(
+      args?: Subset<T, GA_ANKETA_SCORES_HISTORYCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], GA_ANKETA_SCORES_HISTORYCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a GA_ANKETA_SCORES_HISTORY.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SCORES_HISTORYAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends GA_ANKETA_SCORES_HISTORYAggregateArgs>(args: Subset<T, GA_ANKETA_SCORES_HISTORYAggregateArgs>): Prisma.PrismaPromise<GetGA_ANKETA_SCORES_HISTORYAggregateType<T>>
+
+    /**
+     * Group by GA_ANKETA_SCORES_HISTORY.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SCORES_HISTORYGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends GA_ANKETA_SCORES_HISTORYGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: GA_ANKETA_SCORES_HISTORYGroupByArgs['orderBy'] }
+        : { orderBy?: GA_ANKETA_SCORES_HISTORYGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, GA_ANKETA_SCORES_HISTORYGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetGA_ANKETA_SCORES_HISTORYGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the GA_ANKETA_SCORES_HISTORY model
+   */
+  readonly fields: GA_ANKETA_SCORES_HISTORYFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for GA_ANKETA_SCORES_HISTORY.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__GA_ANKETA_SCORES_HISTORYClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+
+
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+
+
+  /**
+   * Fields of the GA_ANKETA_SCORES_HISTORY model
+   */ 
+  interface GA_ANKETA_SCORES_HISTORYFieldRefs {
+    readonly ASH_WSU_ID: FieldRef<"GA_ANKETA_SCORES_HISTORY", 'BigInt'>
+    readonly ASH_SCORES: FieldRef<"GA_ANKETA_SCORES_HISTORY", 'Int'>
+    readonly ASH_DATETIME: FieldRef<"GA_ANKETA_SCORES_HISTORY", 'DateTime'>
+    readonly ASH_DESC: FieldRef<"GA_ANKETA_SCORES_HISTORY", 'String'>
+    readonly ASH_TYPE: FieldRef<"GA_ANKETA_SCORES_HISTORY", 'Int'>
+    readonly ASH_SCORES_OLD: FieldRef<"GA_ANKETA_SCORES_HISTORY", 'Int'>
+    readonly ASH_EVENT_STATUS: FieldRef<"GA_ANKETA_SCORES_HISTORY", 'Boolean'>
+    readonly ASH_DATETIME_UPDATE: FieldRef<"GA_ANKETA_SCORES_HISTORY", 'DateTime'>
+    readonly ASH_IZO_ID: FieldRef<"GA_ANKETA_SCORES_HISTORY", 'BigInt'>
+  }
+    
+
+  // Custom InputTypes
+
+  /**
+   * GA_ANKETA_SCORES_HISTORY findUnique
+   */
+  export type GA_ANKETA_SCORES_HISTORYFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SCORES_HISTORY
+     */
+    select?: GA_ANKETA_SCORES_HISTORYSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_SCORES_HISTORY to fetch.
+     */
+    where: GA_ANKETA_SCORES_HISTORYWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES_HISTORY findUniqueOrThrow
+   */
+  export type GA_ANKETA_SCORES_HISTORYFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SCORES_HISTORY
+     */
+    select?: GA_ANKETA_SCORES_HISTORYSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_SCORES_HISTORY to fetch.
+     */
+    where: GA_ANKETA_SCORES_HISTORYWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES_HISTORY findFirst
+   */
+  export type GA_ANKETA_SCORES_HISTORYFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SCORES_HISTORY
+     */
+    select?: GA_ANKETA_SCORES_HISTORYSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_SCORES_HISTORY to fetch.
+     */
+    where?: GA_ANKETA_SCORES_HISTORYWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_SCORES_HISTORIES to fetch.
+     */
+    orderBy?: GA_ANKETA_SCORES_HISTORYOrderByWithRelationInput | GA_ANKETA_SCORES_HISTORYOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GA_ANKETA_SCORES_HISTORIES.
+     */
+    cursor?: GA_ANKETA_SCORES_HISTORYWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_SCORES_HISTORIES from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_SCORES_HISTORIES.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GA_ANKETA_SCORES_HISTORIES.
+     */
+    distinct?: GA_ANKETA_SCORES_HISTORYScalarFieldEnum | GA_ANKETA_SCORES_HISTORYScalarFieldEnum[]
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES_HISTORY findFirstOrThrow
+   */
+  export type GA_ANKETA_SCORES_HISTORYFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SCORES_HISTORY
+     */
+    select?: GA_ANKETA_SCORES_HISTORYSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_SCORES_HISTORY to fetch.
+     */
+    where?: GA_ANKETA_SCORES_HISTORYWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_SCORES_HISTORIES to fetch.
+     */
+    orderBy?: GA_ANKETA_SCORES_HISTORYOrderByWithRelationInput | GA_ANKETA_SCORES_HISTORYOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GA_ANKETA_SCORES_HISTORIES.
+     */
+    cursor?: GA_ANKETA_SCORES_HISTORYWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_SCORES_HISTORIES from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_SCORES_HISTORIES.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GA_ANKETA_SCORES_HISTORIES.
+     */
+    distinct?: GA_ANKETA_SCORES_HISTORYScalarFieldEnum | GA_ANKETA_SCORES_HISTORYScalarFieldEnum[]
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES_HISTORY findMany
+   */
+  export type GA_ANKETA_SCORES_HISTORYFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SCORES_HISTORY
+     */
+    select?: GA_ANKETA_SCORES_HISTORYSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_SCORES_HISTORIES to fetch.
+     */
+    where?: GA_ANKETA_SCORES_HISTORYWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_SCORES_HISTORIES to fetch.
+     */
+    orderBy?: GA_ANKETA_SCORES_HISTORYOrderByWithRelationInput | GA_ANKETA_SCORES_HISTORYOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing GA_ANKETA_SCORES_HISTORIES.
+     */
+    cursor?: GA_ANKETA_SCORES_HISTORYWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_SCORES_HISTORIES from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_SCORES_HISTORIES.
+     */
+    skip?: number
+    distinct?: GA_ANKETA_SCORES_HISTORYScalarFieldEnum | GA_ANKETA_SCORES_HISTORYScalarFieldEnum[]
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES_HISTORY create
+   */
+  export type GA_ANKETA_SCORES_HISTORYCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SCORES_HISTORY
+     */
+    select?: GA_ANKETA_SCORES_HISTORYSelect<ExtArgs> | null
+    /**
+     * The data needed to create a GA_ANKETA_SCORES_HISTORY.
+     */
+    data: XOR<GA_ANKETA_SCORES_HISTORYCreateInput, GA_ANKETA_SCORES_HISTORYUncheckedCreateInput>
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES_HISTORY createMany
+   */
+  export type GA_ANKETA_SCORES_HISTORYCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many GA_ANKETA_SCORES_HISTORIES.
+     */
+    data: GA_ANKETA_SCORES_HISTORYCreateManyInput | GA_ANKETA_SCORES_HISTORYCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES_HISTORY update
+   */
+  export type GA_ANKETA_SCORES_HISTORYUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SCORES_HISTORY
+     */
+    select?: GA_ANKETA_SCORES_HISTORYSelect<ExtArgs> | null
+    /**
+     * The data needed to update a GA_ANKETA_SCORES_HISTORY.
+     */
+    data: XOR<GA_ANKETA_SCORES_HISTORYUpdateInput, GA_ANKETA_SCORES_HISTORYUncheckedUpdateInput>
+    /**
+     * Choose, which GA_ANKETA_SCORES_HISTORY to update.
+     */
+    where: GA_ANKETA_SCORES_HISTORYWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES_HISTORY updateMany
+   */
+  export type GA_ANKETA_SCORES_HISTORYUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update GA_ANKETA_SCORES_HISTORIES.
+     */
+    data: XOR<GA_ANKETA_SCORES_HISTORYUpdateManyMutationInput, GA_ANKETA_SCORES_HISTORYUncheckedUpdateManyInput>
+    /**
+     * Filter which GA_ANKETA_SCORES_HISTORIES to update
+     */
+    where?: GA_ANKETA_SCORES_HISTORYWhereInput
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES_HISTORY upsert
+   */
+  export type GA_ANKETA_SCORES_HISTORYUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SCORES_HISTORY
+     */
+    select?: GA_ANKETA_SCORES_HISTORYSelect<ExtArgs> | null
+    /**
+     * The filter to search for the GA_ANKETA_SCORES_HISTORY to update in case it exists.
+     */
+    where: GA_ANKETA_SCORES_HISTORYWhereUniqueInput
+    /**
+     * In case the GA_ANKETA_SCORES_HISTORY found by the `where` argument doesn't exist, create a new GA_ANKETA_SCORES_HISTORY with this data.
+     */
+    create: XOR<GA_ANKETA_SCORES_HISTORYCreateInput, GA_ANKETA_SCORES_HISTORYUncheckedCreateInput>
+    /**
+     * In case the GA_ANKETA_SCORES_HISTORY was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<GA_ANKETA_SCORES_HISTORYUpdateInput, GA_ANKETA_SCORES_HISTORYUncheckedUpdateInput>
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES_HISTORY delete
+   */
+  export type GA_ANKETA_SCORES_HISTORYDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SCORES_HISTORY
+     */
+    select?: GA_ANKETA_SCORES_HISTORYSelect<ExtArgs> | null
+    /**
+     * Filter which GA_ANKETA_SCORES_HISTORY to delete.
+     */
+    where: GA_ANKETA_SCORES_HISTORYWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES_HISTORY deleteMany
+   */
+  export type GA_ANKETA_SCORES_HISTORYDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GA_ANKETA_SCORES_HISTORIES to delete
+     */
+    where?: GA_ANKETA_SCORES_HISTORYWhereInput
+  }
+
+
+  /**
+   * GA_ANKETA_SCORES_HISTORY without action
+   */
+  export type GA_ANKETA_SCORES_HISTORYDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SCORES_HISTORY
+     */
+    select?: GA_ANKETA_SCORES_HISTORYSelect<ExtArgs> | null
+  }
+
+
+
+  /**
+   * Model GA_ANKETA_SOREVNOVANIE
+   */
+
+  export type AggregateGA_ANKETA_SOREVNOVANIE = {
+    _count: GA_ANKETA_SOREVNOVANIECountAggregateOutputType | null
+    _avg: GA_ANKETA_SOREVNOVANIEAvgAggregateOutputType | null
+    _sum: GA_ANKETA_SOREVNOVANIESumAggregateOutputType | null
+    _min: GA_ANKETA_SOREVNOVANIEMinAggregateOutputType | null
+    _max: GA_ANKETA_SOREVNOVANIEMaxAggregateOutputType | null
+  }
+
+  export type GA_ANKETA_SOREVNOVANIEAvgAggregateOutputType = {
+    ASR_YEAR: number | null
+    ASR_MONTH: number | null
+    ASR_WSU_ID: number | null
+    ASR_SCORE: number | null
+  }
+
+  export type GA_ANKETA_SOREVNOVANIESumAggregateOutputType = {
+    ASR_YEAR: number | null
+    ASR_MONTH: number | null
+    ASR_WSU_ID: bigint | null
+    ASR_SCORE: number | null
+  }
+
+  export type GA_ANKETA_SOREVNOVANIEMinAggregateOutputType = {
+    ASR_YEAR: number | null
+    ASR_MONTH: number | null
+    ASR_WSU_ID: bigint | null
+    ASR_LOGIN: string | null
+    ASR_FIO: string | null
+    ASR_SCORE: number | null
+    ASR_DOLJNOST: string | null
+    ASR_RUKOVODITEL: boolean | null
+  }
+
+  export type GA_ANKETA_SOREVNOVANIEMaxAggregateOutputType = {
+    ASR_YEAR: number | null
+    ASR_MONTH: number | null
+    ASR_WSU_ID: bigint | null
+    ASR_LOGIN: string | null
+    ASR_FIO: string | null
+    ASR_SCORE: number | null
+    ASR_DOLJNOST: string | null
+    ASR_RUKOVODITEL: boolean | null
+  }
+
+  export type GA_ANKETA_SOREVNOVANIECountAggregateOutputType = {
+    ASR_YEAR: number
+    ASR_MONTH: number
+    ASR_WSU_ID: number
+    ASR_LOGIN: number
+    ASR_FIO: number
+    ASR_SCORE: number
+    ASR_DOLJNOST: number
+    ASR_RUKOVODITEL: number
+    _all: number
+  }
+
+
+  export type GA_ANKETA_SOREVNOVANIEAvgAggregateInputType = {
+    ASR_YEAR?: true
+    ASR_MONTH?: true
+    ASR_WSU_ID?: true
+    ASR_SCORE?: true
+  }
+
+  export type GA_ANKETA_SOREVNOVANIESumAggregateInputType = {
+    ASR_YEAR?: true
+    ASR_MONTH?: true
+    ASR_WSU_ID?: true
+    ASR_SCORE?: true
+  }
+
+  export type GA_ANKETA_SOREVNOVANIEMinAggregateInputType = {
+    ASR_YEAR?: true
+    ASR_MONTH?: true
+    ASR_WSU_ID?: true
+    ASR_LOGIN?: true
+    ASR_FIO?: true
+    ASR_SCORE?: true
+    ASR_DOLJNOST?: true
+    ASR_RUKOVODITEL?: true
+  }
+
+  export type GA_ANKETA_SOREVNOVANIEMaxAggregateInputType = {
+    ASR_YEAR?: true
+    ASR_MONTH?: true
+    ASR_WSU_ID?: true
+    ASR_LOGIN?: true
+    ASR_FIO?: true
+    ASR_SCORE?: true
+    ASR_DOLJNOST?: true
+    ASR_RUKOVODITEL?: true
+  }
+
+  export type GA_ANKETA_SOREVNOVANIECountAggregateInputType = {
+    ASR_YEAR?: true
+    ASR_MONTH?: true
+    ASR_WSU_ID?: true
+    ASR_LOGIN?: true
+    ASR_FIO?: true
+    ASR_SCORE?: true
+    ASR_DOLJNOST?: true
+    ASR_RUKOVODITEL?: true
+    _all?: true
+  }
+
+  export type GA_ANKETA_SOREVNOVANIEAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GA_ANKETA_SOREVNOVANIE to aggregate.
+     */
+    where?: GA_ANKETA_SOREVNOVANIEWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_SOREVNOVANIES to fetch.
+     */
+    orderBy?: GA_ANKETA_SOREVNOVANIEOrderByWithRelationInput | GA_ANKETA_SOREVNOVANIEOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: GA_ANKETA_SOREVNOVANIEWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_SOREVNOVANIES from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_SOREVNOVANIES.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned GA_ANKETA_SOREVNOVANIES
+    **/
+    _count?: true | GA_ANKETA_SOREVNOVANIECountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: GA_ANKETA_SOREVNOVANIEAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: GA_ANKETA_SOREVNOVANIESumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: GA_ANKETA_SOREVNOVANIEMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: GA_ANKETA_SOREVNOVANIEMaxAggregateInputType
+  }
+
+  export type GetGA_ANKETA_SOREVNOVANIEAggregateType<T extends GA_ANKETA_SOREVNOVANIEAggregateArgs> = {
+        [P in keyof T & keyof AggregateGA_ANKETA_SOREVNOVANIE]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateGA_ANKETA_SOREVNOVANIE[P]>
+      : GetScalarType<T[P], AggregateGA_ANKETA_SOREVNOVANIE[P]>
+  }
+
+
+
+
+  export type GA_ANKETA_SOREVNOVANIEGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: GA_ANKETA_SOREVNOVANIEWhereInput
+    orderBy?: GA_ANKETA_SOREVNOVANIEOrderByWithAggregationInput | GA_ANKETA_SOREVNOVANIEOrderByWithAggregationInput[]
+    by: GA_ANKETA_SOREVNOVANIEScalarFieldEnum[] | GA_ANKETA_SOREVNOVANIEScalarFieldEnum
+    having?: GA_ANKETA_SOREVNOVANIEScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: GA_ANKETA_SOREVNOVANIECountAggregateInputType | true
+    _avg?: GA_ANKETA_SOREVNOVANIEAvgAggregateInputType
+    _sum?: GA_ANKETA_SOREVNOVANIESumAggregateInputType
+    _min?: GA_ANKETA_SOREVNOVANIEMinAggregateInputType
+    _max?: GA_ANKETA_SOREVNOVANIEMaxAggregateInputType
+  }
+
+  export type GA_ANKETA_SOREVNOVANIEGroupByOutputType = {
+    ASR_YEAR: number
+    ASR_MONTH: number
+    ASR_WSU_ID: bigint
+    ASR_LOGIN: string
+    ASR_FIO: string
+    ASR_SCORE: number
+    ASR_DOLJNOST: string
+    ASR_RUKOVODITEL: boolean
+    _count: GA_ANKETA_SOREVNOVANIECountAggregateOutputType | null
+    _avg: GA_ANKETA_SOREVNOVANIEAvgAggregateOutputType | null
+    _sum: GA_ANKETA_SOREVNOVANIESumAggregateOutputType | null
+    _min: GA_ANKETA_SOREVNOVANIEMinAggregateOutputType | null
+    _max: GA_ANKETA_SOREVNOVANIEMaxAggregateOutputType | null
+  }
+
+  type GetGA_ANKETA_SOREVNOVANIEGroupByPayload<T extends GA_ANKETA_SOREVNOVANIEGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<GA_ANKETA_SOREVNOVANIEGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof GA_ANKETA_SOREVNOVANIEGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], GA_ANKETA_SOREVNOVANIEGroupByOutputType[P]>
+            : GetScalarType<T[P], GA_ANKETA_SOREVNOVANIEGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type GA_ANKETA_SOREVNOVANIESelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    ASR_YEAR?: boolean
+    ASR_MONTH?: boolean
+    ASR_WSU_ID?: boolean
+    ASR_LOGIN?: boolean
+    ASR_FIO?: boolean
+    ASR_SCORE?: boolean
+    ASR_DOLJNOST?: boolean
+    ASR_RUKOVODITEL?: boolean
+  }, ExtArgs["result"]["gA_ANKETA_SOREVNOVANIE"]>
+
+  export type GA_ANKETA_SOREVNOVANIESelectScalar = {
+    ASR_YEAR?: boolean
+    ASR_MONTH?: boolean
+    ASR_WSU_ID?: boolean
+    ASR_LOGIN?: boolean
+    ASR_FIO?: boolean
+    ASR_SCORE?: boolean
+    ASR_DOLJNOST?: boolean
+    ASR_RUKOVODITEL?: boolean
+  }
+
+
+  export type $GA_ANKETA_SOREVNOVANIEPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "GA_ANKETA_SOREVNOVANIE"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      ASR_YEAR: number
+      ASR_MONTH: number
+      ASR_WSU_ID: bigint
+      ASR_LOGIN: string
+      ASR_FIO: string
+      ASR_SCORE: number
+      ASR_DOLJNOST: string
+      ASR_RUKOVODITEL: boolean
+    }, ExtArgs["result"]["gA_ANKETA_SOREVNOVANIE"]>
+    composites: {}
+  }
+
+
+  type GA_ANKETA_SOREVNOVANIEGetPayload<S extends boolean | null | undefined | GA_ANKETA_SOREVNOVANIEDefaultArgs> = $Result.GetResult<Prisma.$GA_ANKETA_SOREVNOVANIEPayload, S>
+
+  type GA_ANKETA_SOREVNOVANIECountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<GA_ANKETA_SOREVNOVANIEFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: GA_ANKETA_SOREVNOVANIECountAggregateInputType | true
+    }
+
+  export interface GA_ANKETA_SOREVNOVANIEDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['GA_ANKETA_SOREVNOVANIE'], meta: { name: 'GA_ANKETA_SOREVNOVANIE' } }
+    /**
+     * Find zero or one GA_ANKETA_SOREVNOVANIE that matches the filter.
+     * @param {GA_ANKETA_SOREVNOVANIEFindUniqueArgs} args - Arguments to find a GA_ANKETA_SOREVNOVANIE
+     * @example
+     * // Get one GA_ANKETA_SOREVNOVANIE
+     * const gA_ANKETA_SOREVNOVANIE = await prisma.gA_ANKETA_SOREVNOVANIE.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUnique<T extends GA_ANKETA_SOREVNOVANIEFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SOREVNOVANIEFindUniqueArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SOREVNOVANIEClient<$Result.GetResult<Prisma.$GA_ANKETA_SOREVNOVANIEPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+
+    /**
+     * Find one GA_ANKETA_SOREVNOVANIE that matches the filter or throw an error  with `error.code='P2025'` 
+     *     if no matches were found.
+     * @param {GA_ANKETA_SOREVNOVANIEFindUniqueOrThrowArgs} args - Arguments to find a GA_ANKETA_SOREVNOVANIE
+     * @example
+     * // Get one GA_ANKETA_SOREVNOVANIE
+     * const gA_ANKETA_SOREVNOVANIE = await prisma.gA_ANKETA_SOREVNOVANIE.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUniqueOrThrow<T extends GA_ANKETA_SOREVNOVANIEFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SOREVNOVANIEFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SOREVNOVANIEClient<$Result.GetResult<Prisma.$GA_ANKETA_SOREVNOVANIEPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find the first GA_ANKETA_SOREVNOVANIE that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SOREVNOVANIEFindFirstArgs} args - Arguments to find a GA_ANKETA_SOREVNOVANIE
+     * @example
+     * // Get one GA_ANKETA_SOREVNOVANIE
+     * const gA_ANKETA_SOREVNOVANIE = await prisma.gA_ANKETA_SOREVNOVANIE.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirst<T extends GA_ANKETA_SOREVNOVANIEFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SOREVNOVANIEFindFirstArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SOREVNOVANIEClient<$Result.GetResult<Prisma.$GA_ANKETA_SOREVNOVANIEPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+
+    /**
+     * Find the first GA_ANKETA_SOREVNOVANIE that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SOREVNOVANIEFindFirstOrThrowArgs} args - Arguments to find a GA_ANKETA_SOREVNOVANIE
+     * @example
+     * // Get one GA_ANKETA_SOREVNOVANIE
+     * const gA_ANKETA_SOREVNOVANIE = await prisma.gA_ANKETA_SOREVNOVANIE.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirstOrThrow<T extends GA_ANKETA_SOREVNOVANIEFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SOREVNOVANIEFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SOREVNOVANIEClient<$Result.GetResult<Prisma.$GA_ANKETA_SOREVNOVANIEPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find zero or more GA_ANKETA_SOREVNOVANIES that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SOREVNOVANIEFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all GA_ANKETA_SOREVNOVANIES
+     * const gA_ANKETA_SOREVNOVANIES = await prisma.gA_ANKETA_SOREVNOVANIE.findMany()
+     * 
+     * // Get first 10 GA_ANKETA_SOREVNOVANIES
+     * const gA_ANKETA_SOREVNOVANIES = await prisma.gA_ANKETA_SOREVNOVANIE.findMany({ take: 10 })
+     * 
+     * // Only select the `ASR_YEAR`
+     * const gA_ANKETA_SOREVNOVANIEWithASR_YEAROnly = await prisma.gA_ANKETA_SOREVNOVANIE.findMany({ select: { ASR_YEAR: true } })
+     * 
+    **/
+    findMany<T extends GA_ANKETA_SOREVNOVANIEFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SOREVNOVANIEFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GA_ANKETA_SOREVNOVANIEPayload<ExtArgs>, T, 'findMany'>>
+
+    /**
+     * Create a GA_ANKETA_SOREVNOVANIE.
+     * @param {GA_ANKETA_SOREVNOVANIECreateArgs} args - Arguments to create a GA_ANKETA_SOREVNOVANIE.
+     * @example
+     * // Create one GA_ANKETA_SOREVNOVANIE
+     * const GA_ANKETA_SOREVNOVANIE = await prisma.gA_ANKETA_SOREVNOVANIE.create({
+     *   data: {
+     *     // ... data to create a GA_ANKETA_SOREVNOVANIE
+     *   }
+     * })
+     * 
+    **/
+    create<T extends GA_ANKETA_SOREVNOVANIECreateArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SOREVNOVANIECreateArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SOREVNOVANIEClient<$Result.GetResult<Prisma.$GA_ANKETA_SOREVNOVANIEPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+
+    /**
+     * Create many GA_ANKETA_SOREVNOVANIES.
+     *     @param {GA_ANKETA_SOREVNOVANIECreateManyArgs} args - Arguments to create many GA_ANKETA_SOREVNOVANIES.
+     *     @example
+     *     // Create many GA_ANKETA_SOREVNOVANIES
+     *     const gA_ANKETA_SOREVNOVANIE = await prisma.gA_ANKETA_SOREVNOVANIE.createMany({
+     *       data: {
+     *         // ... provide data here
+     *       }
+     *     })
+     *     
+    **/
+    createMany<T extends GA_ANKETA_SOREVNOVANIECreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SOREVNOVANIECreateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a GA_ANKETA_SOREVNOVANIE.
+     * @param {GA_ANKETA_SOREVNOVANIEDeleteArgs} args - Arguments to delete one GA_ANKETA_SOREVNOVANIE.
+     * @example
+     * // Delete one GA_ANKETA_SOREVNOVANIE
+     * const GA_ANKETA_SOREVNOVANIE = await prisma.gA_ANKETA_SOREVNOVANIE.delete({
+     *   where: {
+     *     // ... filter to delete one GA_ANKETA_SOREVNOVANIE
+     *   }
+     * })
+     * 
+    **/
+    delete<T extends GA_ANKETA_SOREVNOVANIEDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SOREVNOVANIEDeleteArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SOREVNOVANIEClient<$Result.GetResult<Prisma.$GA_ANKETA_SOREVNOVANIEPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+
+    /**
+     * Update one GA_ANKETA_SOREVNOVANIE.
+     * @param {GA_ANKETA_SOREVNOVANIEUpdateArgs} args - Arguments to update one GA_ANKETA_SOREVNOVANIE.
+     * @example
+     * // Update one GA_ANKETA_SOREVNOVANIE
+     * const gA_ANKETA_SOREVNOVANIE = await prisma.gA_ANKETA_SOREVNOVANIE.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    update<T extends GA_ANKETA_SOREVNOVANIEUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SOREVNOVANIEUpdateArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SOREVNOVANIEClient<$Result.GetResult<Prisma.$GA_ANKETA_SOREVNOVANIEPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+
+    /**
+     * Delete zero or more GA_ANKETA_SOREVNOVANIES.
+     * @param {GA_ANKETA_SOREVNOVANIEDeleteManyArgs} args - Arguments to filter GA_ANKETA_SOREVNOVANIES to delete.
+     * @example
+     * // Delete a few GA_ANKETA_SOREVNOVANIES
+     * const { count } = await prisma.gA_ANKETA_SOREVNOVANIE.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+    **/
+    deleteMany<T extends GA_ANKETA_SOREVNOVANIEDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SOREVNOVANIEDeleteManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more GA_ANKETA_SOREVNOVANIES.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SOREVNOVANIEUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many GA_ANKETA_SOREVNOVANIES
+     * const gA_ANKETA_SOREVNOVANIE = await prisma.gA_ANKETA_SOREVNOVANIE.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    updateMany<T extends GA_ANKETA_SOREVNOVANIEUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SOREVNOVANIEUpdateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one GA_ANKETA_SOREVNOVANIE.
+     * @param {GA_ANKETA_SOREVNOVANIEUpsertArgs} args - Arguments to update or create a GA_ANKETA_SOREVNOVANIE.
+     * @example
+     * // Update or create a GA_ANKETA_SOREVNOVANIE
+     * const gA_ANKETA_SOREVNOVANIE = await prisma.gA_ANKETA_SOREVNOVANIE.upsert({
+     *   create: {
+     *     // ... data to create a GA_ANKETA_SOREVNOVANIE
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the GA_ANKETA_SOREVNOVANIE we want to update
+     *   }
+     * })
+    **/
+    upsert<T extends GA_ANKETA_SOREVNOVANIEUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SOREVNOVANIEUpsertArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SOREVNOVANIEClient<$Result.GetResult<Prisma.$GA_ANKETA_SOREVNOVANIEPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+
+    /**
+     * Count the number of GA_ANKETA_SOREVNOVANIES.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SOREVNOVANIECountArgs} args - Arguments to filter GA_ANKETA_SOREVNOVANIES to count.
+     * @example
+     * // Count the number of GA_ANKETA_SOREVNOVANIES
+     * const count = await prisma.gA_ANKETA_SOREVNOVANIE.count({
+     *   where: {
+     *     // ... the filter for the GA_ANKETA_SOREVNOVANIES we want to count
+     *   }
+     * })
+    **/
+    count<T extends GA_ANKETA_SOREVNOVANIECountArgs>(
+      args?: Subset<T, GA_ANKETA_SOREVNOVANIECountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], GA_ANKETA_SOREVNOVANIECountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a GA_ANKETA_SOREVNOVANIE.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SOREVNOVANIEAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends GA_ANKETA_SOREVNOVANIEAggregateArgs>(args: Subset<T, GA_ANKETA_SOREVNOVANIEAggregateArgs>): Prisma.PrismaPromise<GetGA_ANKETA_SOREVNOVANIEAggregateType<T>>
+
+    /**
+     * Group by GA_ANKETA_SOREVNOVANIE.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SOREVNOVANIEGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends GA_ANKETA_SOREVNOVANIEGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: GA_ANKETA_SOREVNOVANIEGroupByArgs['orderBy'] }
+        : { orderBy?: GA_ANKETA_SOREVNOVANIEGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, GA_ANKETA_SOREVNOVANIEGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetGA_ANKETA_SOREVNOVANIEGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the GA_ANKETA_SOREVNOVANIE model
+   */
+  readonly fields: GA_ANKETA_SOREVNOVANIEFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for GA_ANKETA_SOREVNOVANIE.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__GA_ANKETA_SOREVNOVANIEClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+
+
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+
+
+  /**
+   * Fields of the GA_ANKETA_SOREVNOVANIE model
+   */ 
+  interface GA_ANKETA_SOREVNOVANIEFieldRefs {
+    readonly ASR_YEAR: FieldRef<"GA_ANKETA_SOREVNOVANIE", 'Int'>
+    readonly ASR_MONTH: FieldRef<"GA_ANKETA_SOREVNOVANIE", 'Int'>
+    readonly ASR_WSU_ID: FieldRef<"GA_ANKETA_SOREVNOVANIE", 'BigInt'>
+    readonly ASR_LOGIN: FieldRef<"GA_ANKETA_SOREVNOVANIE", 'String'>
+    readonly ASR_FIO: FieldRef<"GA_ANKETA_SOREVNOVANIE", 'String'>
+    readonly ASR_SCORE: FieldRef<"GA_ANKETA_SOREVNOVANIE", 'Int'>
+    readonly ASR_DOLJNOST: FieldRef<"GA_ANKETA_SOREVNOVANIE", 'String'>
+    readonly ASR_RUKOVODITEL: FieldRef<"GA_ANKETA_SOREVNOVANIE", 'Boolean'>
+  }
+    
+
+  // Custom InputTypes
+
+  /**
+   * GA_ANKETA_SOREVNOVANIE findUnique
+   */
+  export type GA_ANKETA_SOREVNOVANIEFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SOREVNOVANIE
+     */
+    select?: GA_ANKETA_SOREVNOVANIESelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_SOREVNOVANIE to fetch.
+     */
+    where: GA_ANKETA_SOREVNOVANIEWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_SOREVNOVANIE findUniqueOrThrow
+   */
+  export type GA_ANKETA_SOREVNOVANIEFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SOREVNOVANIE
+     */
+    select?: GA_ANKETA_SOREVNOVANIESelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_SOREVNOVANIE to fetch.
+     */
+    where: GA_ANKETA_SOREVNOVANIEWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_SOREVNOVANIE findFirst
+   */
+  export type GA_ANKETA_SOREVNOVANIEFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SOREVNOVANIE
+     */
+    select?: GA_ANKETA_SOREVNOVANIESelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_SOREVNOVANIE to fetch.
+     */
+    where?: GA_ANKETA_SOREVNOVANIEWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_SOREVNOVANIES to fetch.
+     */
+    orderBy?: GA_ANKETA_SOREVNOVANIEOrderByWithRelationInput | GA_ANKETA_SOREVNOVANIEOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GA_ANKETA_SOREVNOVANIES.
+     */
+    cursor?: GA_ANKETA_SOREVNOVANIEWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_SOREVNOVANIES from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_SOREVNOVANIES.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GA_ANKETA_SOREVNOVANIES.
+     */
+    distinct?: GA_ANKETA_SOREVNOVANIEScalarFieldEnum | GA_ANKETA_SOREVNOVANIEScalarFieldEnum[]
+  }
+
+
+  /**
+   * GA_ANKETA_SOREVNOVANIE findFirstOrThrow
+   */
+  export type GA_ANKETA_SOREVNOVANIEFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SOREVNOVANIE
+     */
+    select?: GA_ANKETA_SOREVNOVANIESelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_SOREVNOVANIE to fetch.
+     */
+    where?: GA_ANKETA_SOREVNOVANIEWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_SOREVNOVANIES to fetch.
+     */
+    orderBy?: GA_ANKETA_SOREVNOVANIEOrderByWithRelationInput | GA_ANKETA_SOREVNOVANIEOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GA_ANKETA_SOREVNOVANIES.
+     */
+    cursor?: GA_ANKETA_SOREVNOVANIEWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_SOREVNOVANIES from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_SOREVNOVANIES.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GA_ANKETA_SOREVNOVANIES.
+     */
+    distinct?: GA_ANKETA_SOREVNOVANIEScalarFieldEnum | GA_ANKETA_SOREVNOVANIEScalarFieldEnum[]
+  }
+
+
+  /**
+   * GA_ANKETA_SOREVNOVANIE findMany
+   */
+  export type GA_ANKETA_SOREVNOVANIEFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SOREVNOVANIE
+     */
+    select?: GA_ANKETA_SOREVNOVANIESelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_SOREVNOVANIES to fetch.
+     */
+    where?: GA_ANKETA_SOREVNOVANIEWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_SOREVNOVANIES to fetch.
+     */
+    orderBy?: GA_ANKETA_SOREVNOVANIEOrderByWithRelationInput | GA_ANKETA_SOREVNOVANIEOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing GA_ANKETA_SOREVNOVANIES.
+     */
+    cursor?: GA_ANKETA_SOREVNOVANIEWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_SOREVNOVANIES from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_SOREVNOVANIES.
+     */
+    skip?: number
+    distinct?: GA_ANKETA_SOREVNOVANIEScalarFieldEnum | GA_ANKETA_SOREVNOVANIEScalarFieldEnum[]
+  }
+
+
+  /**
+   * GA_ANKETA_SOREVNOVANIE create
+   */
+  export type GA_ANKETA_SOREVNOVANIECreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SOREVNOVANIE
+     */
+    select?: GA_ANKETA_SOREVNOVANIESelect<ExtArgs> | null
+    /**
+     * The data needed to create a GA_ANKETA_SOREVNOVANIE.
+     */
+    data: XOR<GA_ANKETA_SOREVNOVANIECreateInput, GA_ANKETA_SOREVNOVANIEUncheckedCreateInput>
+  }
+
+
+  /**
+   * GA_ANKETA_SOREVNOVANIE createMany
+   */
+  export type GA_ANKETA_SOREVNOVANIECreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many GA_ANKETA_SOREVNOVANIES.
+     */
+    data: GA_ANKETA_SOREVNOVANIECreateManyInput | GA_ANKETA_SOREVNOVANIECreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+
+  /**
+   * GA_ANKETA_SOREVNOVANIE update
+   */
+  export type GA_ANKETA_SOREVNOVANIEUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SOREVNOVANIE
+     */
+    select?: GA_ANKETA_SOREVNOVANIESelect<ExtArgs> | null
+    /**
+     * The data needed to update a GA_ANKETA_SOREVNOVANIE.
+     */
+    data: XOR<GA_ANKETA_SOREVNOVANIEUpdateInput, GA_ANKETA_SOREVNOVANIEUncheckedUpdateInput>
+    /**
+     * Choose, which GA_ANKETA_SOREVNOVANIE to update.
+     */
+    where: GA_ANKETA_SOREVNOVANIEWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_SOREVNOVANIE updateMany
+   */
+  export type GA_ANKETA_SOREVNOVANIEUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update GA_ANKETA_SOREVNOVANIES.
+     */
+    data: XOR<GA_ANKETA_SOREVNOVANIEUpdateManyMutationInput, GA_ANKETA_SOREVNOVANIEUncheckedUpdateManyInput>
+    /**
+     * Filter which GA_ANKETA_SOREVNOVANIES to update
+     */
+    where?: GA_ANKETA_SOREVNOVANIEWhereInput
+  }
+
+
+  /**
+   * GA_ANKETA_SOREVNOVANIE upsert
+   */
+  export type GA_ANKETA_SOREVNOVANIEUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SOREVNOVANIE
+     */
+    select?: GA_ANKETA_SOREVNOVANIESelect<ExtArgs> | null
+    /**
+     * The filter to search for the GA_ANKETA_SOREVNOVANIE to update in case it exists.
+     */
+    where: GA_ANKETA_SOREVNOVANIEWhereUniqueInput
+    /**
+     * In case the GA_ANKETA_SOREVNOVANIE found by the `where` argument doesn't exist, create a new GA_ANKETA_SOREVNOVANIE with this data.
+     */
+    create: XOR<GA_ANKETA_SOREVNOVANIECreateInput, GA_ANKETA_SOREVNOVANIEUncheckedCreateInput>
+    /**
+     * In case the GA_ANKETA_SOREVNOVANIE was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<GA_ANKETA_SOREVNOVANIEUpdateInput, GA_ANKETA_SOREVNOVANIEUncheckedUpdateInput>
+  }
+
+
+  /**
+   * GA_ANKETA_SOREVNOVANIE delete
+   */
+  export type GA_ANKETA_SOREVNOVANIEDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SOREVNOVANIE
+     */
+    select?: GA_ANKETA_SOREVNOVANIESelect<ExtArgs> | null
+    /**
+     * Filter which GA_ANKETA_SOREVNOVANIE to delete.
+     */
+    where: GA_ANKETA_SOREVNOVANIEWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_SOREVNOVANIE deleteMany
+   */
+  export type GA_ANKETA_SOREVNOVANIEDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GA_ANKETA_SOREVNOVANIES to delete
+     */
+    where?: GA_ANKETA_SOREVNOVANIEWhereInput
+  }
+
+
+  /**
+   * GA_ANKETA_SOREVNOVANIE without action
+   */
+  export type GA_ANKETA_SOREVNOVANIEDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SOREVNOVANIE
+     */
+    select?: GA_ANKETA_SOREVNOVANIESelect<ExtArgs> | null
+  }
+
+
+
+  /**
    * Model GA_WS_USERS
    */
 
@@ -5755,29 +9819,29 @@ export namespace Prisma {
 
   export type GA_WS_USERSGroupByOutputType = {
     WSU_ID: bigint
-    WSU_WSO_ID: number | null
-    WSU_EMAIL: string | null
-    WSU_NAME: string | null
-    WSU_FULL_NAME: string | null
-    WSU_PHONE: string | null
-    WSU_ADDRESS: string | null
-    WSU_PASSWD: string | null
-    WSU_ID_IN_DS: number | null
-    WSU_INN: string | null
-    WSU_PRICE_TYPE: number | null
-    WSU_GRP_ID: number | null
-    WSU_WS_ID: number | null
-    WSU_MOBILE: string | null
-    WSU_SHOW_SUP_ALIAS: boolean | null
-    WSU_IS_ZS: boolean | null
-    WSU_PASSWD_ENC: string | null
-    WSU_LOGIN_ENC: string | null
-    WSU_DATETIME_LAST_LOGIN: Date | null
-    WSU_START_PAGE: string | null
-    WSU_SALT: string | null
-    WSU_TEMP_TICKET: string | null
-    WSU_TEMP_TICKET_DATETIME: Date | null
-    WSU_DATETIME_CREATE: Date | null
+    WSU_WSO_ID: number
+    WSU_EMAIL: string
+    WSU_NAME: string
+    WSU_FULL_NAME: string
+    WSU_PHONE: string
+    WSU_ADDRESS: string
+    WSU_PASSWD: string
+    WSU_ID_IN_DS: number
+    WSU_INN: string
+    WSU_PRICE_TYPE: number
+    WSU_GRP_ID: number
+    WSU_WS_ID: number
+    WSU_MOBILE: string
+    WSU_SHOW_SUP_ALIAS: boolean
+    WSU_IS_ZS: boolean
+    WSU_PASSWD_ENC: string
+    WSU_LOGIN_ENC: string
+    WSU_DATETIME_LAST_LOGIN: Date
+    WSU_START_PAGE: string
+    WSU_SALT: string
+    WSU_TEMP_TICKET: string
+    WSU_TEMP_TICKET_DATETIME: Date
+    WSU_DATETIME_CREATE: Date
     _count: GA_WS_USERSCountAggregateOutputType | null
     _avg: GA_WS_USERSAvgAggregateOutputType | null
     _sum: GA_WS_USERSSumAggregateOutputType | null
@@ -5859,29 +9923,29 @@ export namespace Prisma {
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       WSU_ID: bigint
-      WSU_WSO_ID: number | null
-      WSU_EMAIL: string | null
-      WSU_NAME: string | null
-      WSU_FULL_NAME: string | null
-      WSU_PHONE: string | null
-      WSU_ADDRESS: string | null
-      WSU_PASSWD: string | null
-      WSU_ID_IN_DS: number | null
-      WSU_INN: string | null
-      WSU_PRICE_TYPE: number | null
-      WSU_GRP_ID: number | null
-      WSU_WS_ID: number | null
-      WSU_MOBILE: string | null
-      WSU_SHOW_SUP_ALIAS: boolean | null
-      WSU_IS_ZS: boolean | null
-      WSU_PASSWD_ENC: string | null
-      WSU_LOGIN_ENC: string | null
-      WSU_DATETIME_LAST_LOGIN: Date | null
-      WSU_START_PAGE: string | null
-      WSU_SALT: string | null
-      WSU_TEMP_TICKET: string | null
-      WSU_TEMP_TICKET_DATETIME: Date | null
-      WSU_DATETIME_CREATE: Date | null
+      WSU_WSO_ID: number
+      WSU_EMAIL: string
+      WSU_NAME: string
+      WSU_FULL_NAME: string
+      WSU_PHONE: string
+      WSU_ADDRESS: string
+      WSU_PASSWD: string
+      WSU_ID_IN_DS: number
+      WSU_INN: string
+      WSU_PRICE_TYPE: number
+      WSU_GRP_ID: number
+      WSU_WS_ID: number
+      WSU_MOBILE: string
+      WSU_SHOW_SUP_ALIAS: boolean
+      WSU_IS_ZS: boolean
+      WSU_PASSWD_ENC: string
+      WSU_LOGIN_ENC: string
+      WSU_DATETIME_LAST_LOGIN: Date
+      WSU_START_PAGE: string
+      WSU_SALT: string
+      WSU_TEMP_TICKET: string
+      WSU_TEMP_TICKET_DATETIME: Date
+      WSU_DATETIME_CREATE: Date
     }, ExtArgs["result"]["gA_WS_USERS"]>
     composites: {}
   }
@@ -6607,7 +10671,8 @@ export namespace Prisma {
     AAD_DOLGOTA: 'AAD_DOLGOTA',
     AAD_OBLAST: 'AAD_OBLAST',
     AAD_GOROD: 'AAD_GOROD',
-    AAD_ADDR: 'AAD_ADDR'
+    AAD_ADDR: 'AAD_ADDR',
+    AAD_POSTCODE: 'AAD_POSTCODE'
   };
 
   export type GA_ANKETA_ADDRScalarFieldEnum = (typeof GA_ANKETA_ADDRScalarFieldEnum)[keyof typeof GA_ANKETA_ADDRScalarFieldEnum]
@@ -6688,6 +10753,57 @@ export namespace Prisma {
   };
 
   export type GA_ANKETA_OBOROTScalarFieldEnum = (typeof GA_ANKETA_OBOROTScalarFieldEnum)[keyof typeof GA_ANKETA_OBOROTScalarFieldEnum]
+
+
+  export const GA_ANKETA_BRANDScalarFieldEnum: {
+    ABR_ABA_ID: 'ABR_ABA_ID',
+    ABR_STATUS: 'ABR_STATUS',
+    ABR_DATETIME: 'ABR_DATETIME',
+    ABR_HALF_STATUS: 'ABR_HALF_STATUS',
+    ABR_VYVESKA_STATUS: 'ABR_VYVESKA_STATUS',
+    ABR_KOROB_STATUS: 'ABR_KOROB_STATUS'
+  };
+
+  export type GA_ANKETA_BRANDScalarFieldEnum = (typeof GA_ANKETA_BRANDScalarFieldEnum)[keyof typeof GA_ANKETA_BRANDScalarFieldEnum]
+
+
+  export const GA_ANKETA_SCORESScalarFieldEnum: {
+    ANS_WSU_ID: 'ANS_WSU_ID',
+    ANS_SCORES: 'ANS_SCORES',
+    ANS_DATETIME: 'ANS_DATETIME',
+    ANS_ISSHOW: 'ANS_ISSHOW'
+  };
+
+  export type GA_ANKETA_SCORESScalarFieldEnum = (typeof GA_ANKETA_SCORESScalarFieldEnum)[keyof typeof GA_ANKETA_SCORESScalarFieldEnum]
+
+
+  export const GA_ANKETA_SCORES_HISTORYScalarFieldEnum: {
+    ASH_WSU_ID: 'ASH_WSU_ID',
+    ASH_SCORES: 'ASH_SCORES',
+    ASH_DATETIME: 'ASH_DATETIME',
+    ASH_DESC: 'ASH_DESC',
+    ASH_TYPE: 'ASH_TYPE',
+    ASH_SCORES_OLD: 'ASH_SCORES_OLD',
+    ASH_EVENT_STATUS: 'ASH_EVENT_STATUS',
+    ASH_DATETIME_UPDATE: 'ASH_DATETIME_UPDATE',
+    ASH_IZO_ID: 'ASH_IZO_ID'
+  };
+
+  export type GA_ANKETA_SCORES_HISTORYScalarFieldEnum = (typeof GA_ANKETA_SCORES_HISTORYScalarFieldEnum)[keyof typeof GA_ANKETA_SCORES_HISTORYScalarFieldEnum]
+
+
+  export const GA_ANKETA_SOREVNOVANIEScalarFieldEnum: {
+    ASR_YEAR: 'ASR_YEAR',
+    ASR_MONTH: 'ASR_MONTH',
+    ASR_WSU_ID: 'ASR_WSU_ID',
+    ASR_LOGIN: 'ASR_LOGIN',
+    ASR_FIO: 'ASR_FIO',
+    ASR_SCORE: 'ASR_SCORE',
+    ASR_DOLJNOST: 'ASR_DOLJNOST',
+    ASR_RUKOVODITEL: 'ASR_RUKOVODITEL'
+  };
+
+  export type GA_ANKETA_SOREVNOVANIEScalarFieldEnum = (typeof GA_ANKETA_SOREVNOVANIEScalarFieldEnum)[keyof typeof GA_ANKETA_SOREVNOVANIEScalarFieldEnum]
 
 
   export const GA_WS_USERSScalarFieldEnum: {
@@ -6839,6 +10955,7 @@ export namespace Prisma {
     AAD_OBLAST?: StringFilter<"GA_ANKETA_ADDR"> | string
     AAD_GOROD?: StringFilter<"GA_ANKETA_ADDR"> | string
     AAD_ADDR?: StringFilter<"GA_ANKETA_ADDR"> | string
+    AAD_POSTCODE?: StringFilter<"GA_ANKETA_ADDR"> | string
   }
 
   export type GA_ANKETA_ADDROrderByWithRelationInput = {
@@ -6848,6 +10965,7 @@ export namespace Prisma {
     AAD_OBLAST?: SortOrder
     AAD_GOROD?: SortOrder
     AAD_ADDR?: SortOrder
+    AAD_POSTCODE?: SortOrder
   }
 
   export type GA_ANKETA_ADDRWhereUniqueInput = Prisma.AtLeast<{
@@ -6860,6 +10978,7 @@ export namespace Prisma {
     AAD_OBLAST?: StringFilter<"GA_ANKETA_ADDR"> | string
     AAD_GOROD?: StringFilter<"GA_ANKETA_ADDR"> | string
     AAD_ADDR?: StringFilter<"GA_ANKETA_ADDR"> | string
+    AAD_POSTCODE?: StringFilter<"GA_ANKETA_ADDR"> | string
   }, "AAD_ABA_ID">
 
   export type GA_ANKETA_ADDROrderByWithAggregationInput = {
@@ -6869,6 +10988,7 @@ export namespace Prisma {
     AAD_OBLAST?: SortOrder
     AAD_GOROD?: SortOrder
     AAD_ADDR?: SortOrder
+    AAD_POSTCODE?: SortOrder
     _count?: GA_ANKETA_ADDRCountOrderByAggregateInput
     _avg?: GA_ANKETA_ADDRAvgOrderByAggregateInput
     _max?: GA_ANKETA_ADDRMaxOrderByAggregateInput
@@ -6886,6 +11006,7 @@ export namespace Prisma {
     AAD_OBLAST?: StringWithAggregatesFilter<"GA_ANKETA_ADDR"> | string
     AAD_GOROD?: StringWithAggregatesFilter<"GA_ANKETA_ADDR"> | string
     AAD_ADDR?: StringWithAggregatesFilter<"GA_ANKETA_ADDR"> | string
+    AAD_POSTCODE?: StringWithAggregatesFilter<"GA_ANKETA_ADDR"> | string
   }
 
   export type GA_ANKETA_BASEWhereInput = {
@@ -6895,7 +11016,7 @@ export namespace Prisma {
     ABA_WSU_ID?: BigIntFilter<"GA_ANKETA_BASE"> | bigint | number
     ABA_STO_NAME?: StringFilter<"GA_ANKETA_BASE"> | string
     ABA_STO_ID1?: StringFilter<"GA_ANKETA_BASE"> | string
-    ABA_REMZONA_QTY?: IntFilter<"GA_ANKETA_BASE"> | number
+    ABA_REMZONA_QTY?: IntNullableFilter<"GA_ANKETA_BASE"> | number | null
     ABA_ENABLED?: BoolFilter<"GA_ANKETA_BASE"> | boolean
     ABA_PHONE?: StringFilter<"GA_ANKETA_BASE"> | string
     ABA_INN?: StringFilter<"GA_ANKETA_BASE"> | string
@@ -6903,7 +11024,7 @@ export namespace Prisma {
     ABA_DATETIME_UPDATED?: DateTimeFilter<"GA_ANKETA_BASE"> | Date | string
     ABA_ID?: BigIntFilter<"GA_ANKETA_BASE"> | bigint | number
     ABA_DATETIME?: DateTimeFilter<"GA_ANKETA_BASE"> | Date | string
-    ABA_STO_ID2?: StringFilter<"GA_ANKETA_BASE"> | string
+    ABA_STO_ID2?: StringNullableFilter<"GA_ANKETA_BASE"> | string | null
     ABA_STO_NAME_FIND?: StringNullableFilter<"GA_ANKETA_BASE"> | string | null
     ABA_DESC?: StringNullableFilter<"GA_ANKETA_BASE"> | string | null
   }
@@ -6912,7 +11033,7 @@ export namespace Prisma {
     ABA_WSU_ID?: SortOrder
     ABA_STO_NAME?: SortOrder
     ABA_STO_ID1?: SortOrder
-    ABA_REMZONA_QTY?: SortOrder
+    ABA_REMZONA_QTY?: SortOrderInput | SortOrder
     ABA_ENABLED?: SortOrder
     ABA_PHONE?: SortOrder
     ABA_INN?: SortOrder
@@ -6920,7 +11041,7 @@ export namespace Prisma {
     ABA_DATETIME_UPDATED?: SortOrder
     ABA_ID?: SortOrder
     ABA_DATETIME?: SortOrder
-    ABA_STO_ID2?: SortOrder
+    ABA_STO_ID2?: SortOrderInput | SortOrder
     ABA_STO_NAME_FIND?: SortOrderInput | SortOrder
     ABA_DESC?: SortOrderInput | SortOrder
   }
@@ -6933,14 +11054,14 @@ export namespace Prisma {
     ABA_WSU_ID?: BigIntFilter<"GA_ANKETA_BASE"> | bigint | number
     ABA_STO_NAME?: StringFilter<"GA_ANKETA_BASE"> | string
     ABA_STO_ID1?: StringFilter<"GA_ANKETA_BASE"> | string
-    ABA_REMZONA_QTY?: IntFilter<"GA_ANKETA_BASE"> | number
+    ABA_REMZONA_QTY?: IntNullableFilter<"GA_ANKETA_BASE"> | number | null
     ABA_ENABLED?: BoolFilter<"GA_ANKETA_BASE"> | boolean
     ABA_PHONE?: StringFilter<"GA_ANKETA_BASE"> | string
     ABA_INN?: StringFilter<"GA_ANKETA_BASE"> | string
     ABA_DATETIME_CREATED?: DateTimeFilter<"GA_ANKETA_BASE"> | Date | string
     ABA_DATETIME_UPDATED?: DateTimeFilter<"GA_ANKETA_BASE"> | Date | string
     ABA_DATETIME?: DateTimeFilter<"GA_ANKETA_BASE"> | Date | string
-    ABA_STO_ID2?: StringFilter<"GA_ANKETA_BASE"> | string
+    ABA_STO_ID2?: StringNullableFilter<"GA_ANKETA_BASE"> | string | null
     ABA_STO_NAME_FIND?: StringNullableFilter<"GA_ANKETA_BASE"> | string | null
     ABA_DESC?: StringNullableFilter<"GA_ANKETA_BASE"> | string | null
   }, "ABA_ID">
@@ -6949,7 +11070,7 @@ export namespace Prisma {
     ABA_WSU_ID?: SortOrder
     ABA_STO_NAME?: SortOrder
     ABA_STO_ID1?: SortOrder
-    ABA_REMZONA_QTY?: SortOrder
+    ABA_REMZONA_QTY?: SortOrderInput | SortOrder
     ABA_ENABLED?: SortOrder
     ABA_PHONE?: SortOrder
     ABA_INN?: SortOrder
@@ -6957,7 +11078,7 @@ export namespace Prisma {
     ABA_DATETIME_UPDATED?: SortOrder
     ABA_ID?: SortOrder
     ABA_DATETIME?: SortOrder
-    ABA_STO_ID2?: SortOrder
+    ABA_STO_ID2?: SortOrderInput | SortOrder
     ABA_STO_NAME_FIND?: SortOrderInput | SortOrder
     ABA_DESC?: SortOrderInput | SortOrder
     _count?: GA_ANKETA_BASECountOrderByAggregateInput
@@ -6974,7 +11095,7 @@ export namespace Prisma {
     ABA_WSU_ID?: BigIntWithAggregatesFilter<"GA_ANKETA_BASE"> | bigint | number
     ABA_STO_NAME?: StringWithAggregatesFilter<"GA_ANKETA_BASE"> | string
     ABA_STO_ID1?: StringWithAggregatesFilter<"GA_ANKETA_BASE"> | string
-    ABA_REMZONA_QTY?: IntWithAggregatesFilter<"GA_ANKETA_BASE"> | number
+    ABA_REMZONA_QTY?: IntNullableWithAggregatesFilter<"GA_ANKETA_BASE"> | number | null
     ABA_ENABLED?: BoolWithAggregatesFilter<"GA_ANKETA_BASE"> | boolean
     ABA_PHONE?: StringWithAggregatesFilter<"GA_ANKETA_BASE"> | string
     ABA_INN?: StringWithAggregatesFilter<"GA_ANKETA_BASE"> | string
@@ -6982,7 +11103,7 @@ export namespace Prisma {
     ABA_DATETIME_UPDATED?: DateTimeWithAggregatesFilter<"GA_ANKETA_BASE"> | Date | string
     ABA_ID?: BigIntWithAggregatesFilter<"GA_ANKETA_BASE"> | bigint | number
     ABA_DATETIME?: DateTimeWithAggregatesFilter<"GA_ANKETA_BASE"> | Date | string
-    ABA_STO_ID2?: StringWithAggregatesFilter<"GA_ANKETA_BASE"> | string
+    ABA_STO_ID2?: StringNullableWithAggregatesFilter<"GA_ANKETA_BASE"> | string | null
     ABA_STO_NAME_FIND?: StringNullableWithAggregatesFilter<"GA_ANKETA_BASE"> | string | null
     ABA_DESC?: StringNullableWithAggregatesFilter<"GA_ANKETA_BASE"> | string | null
   }
@@ -7270,61 +11391,312 @@ export namespace Prisma {
     ABO_SCORES_PARTRA?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
   }
 
+  export type GA_ANKETA_BRANDWhereInput = {
+    AND?: GA_ANKETA_BRANDWhereInput | GA_ANKETA_BRANDWhereInput[]
+    OR?: GA_ANKETA_BRANDWhereInput[]
+    NOT?: GA_ANKETA_BRANDWhereInput | GA_ANKETA_BRANDWhereInput[]
+    ABR_ABA_ID?: BigIntFilter<"GA_ANKETA_BRAND"> | bigint | number
+    ABR_STATUS?: BoolFilter<"GA_ANKETA_BRAND"> | boolean
+    ABR_DATETIME?: DateTimeFilter<"GA_ANKETA_BRAND"> | Date | string
+    ABR_HALF_STATUS?: BoolFilter<"GA_ANKETA_BRAND"> | boolean
+    ABR_VYVESKA_STATUS?: BoolFilter<"GA_ANKETA_BRAND"> | boolean
+    ABR_KOROB_STATUS?: BoolFilter<"GA_ANKETA_BRAND"> | boolean
+  }
+
+  export type GA_ANKETA_BRANDOrderByWithRelationInput = {
+    ABR_ABA_ID?: SortOrder
+    ABR_STATUS?: SortOrder
+    ABR_DATETIME?: SortOrder
+    ABR_HALF_STATUS?: SortOrder
+    ABR_VYVESKA_STATUS?: SortOrder
+    ABR_KOROB_STATUS?: SortOrder
+  }
+
+  export type GA_ANKETA_BRANDWhereUniqueInput = Prisma.AtLeast<{
+    ABR_ABA_ID?: bigint | number
+    AND?: GA_ANKETA_BRANDWhereInput | GA_ANKETA_BRANDWhereInput[]
+    OR?: GA_ANKETA_BRANDWhereInput[]
+    NOT?: GA_ANKETA_BRANDWhereInput | GA_ANKETA_BRANDWhereInput[]
+    ABR_STATUS?: BoolFilter<"GA_ANKETA_BRAND"> | boolean
+    ABR_DATETIME?: DateTimeFilter<"GA_ANKETA_BRAND"> | Date | string
+    ABR_HALF_STATUS?: BoolFilter<"GA_ANKETA_BRAND"> | boolean
+    ABR_VYVESKA_STATUS?: BoolFilter<"GA_ANKETA_BRAND"> | boolean
+    ABR_KOROB_STATUS?: BoolFilter<"GA_ANKETA_BRAND"> | boolean
+  }, "ABR_ABA_ID">
+
+  export type GA_ANKETA_BRANDOrderByWithAggregationInput = {
+    ABR_ABA_ID?: SortOrder
+    ABR_STATUS?: SortOrder
+    ABR_DATETIME?: SortOrder
+    ABR_HALF_STATUS?: SortOrder
+    ABR_VYVESKA_STATUS?: SortOrder
+    ABR_KOROB_STATUS?: SortOrder
+    _count?: GA_ANKETA_BRANDCountOrderByAggregateInput
+    _avg?: GA_ANKETA_BRANDAvgOrderByAggregateInput
+    _max?: GA_ANKETA_BRANDMaxOrderByAggregateInput
+    _min?: GA_ANKETA_BRANDMinOrderByAggregateInput
+    _sum?: GA_ANKETA_BRANDSumOrderByAggregateInput
+  }
+
+  export type GA_ANKETA_BRANDScalarWhereWithAggregatesInput = {
+    AND?: GA_ANKETA_BRANDScalarWhereWithAggregatesInput | GA_ANKETA_BRANDScalarWhereWithAggregatesInput[]
+    OR?: GA_ANKETA_BRANDScalarWhereWithAggregatesInput[]
+    NOT?: GA_ANKETA_BRANDScalarWhereWithAggregatesInput | GA_ANKETA_BRANDScalarWhereWithAggregatesInput[]
+    ABR_ABA_ID?: BigIntWithAggregatesFilter<"GA_ANKETA_BRAND"> | bigint | number
+    ABR_STATUS?: BoolWithAggregatesFilter<"GA_ANKETA_BRAND"> | boolean
+    ABR_DATETIME?: DateTimeWithAggregatesFilter<"GA_ANKETA_BRAND"> | Date | string
+    ABR_HALF_STATUS?: BoolWithAggregatesFilter<"GA_ANKETA_BRAND"> | boolean
+    ABR_VYVESKA_STATUS?: BoolWithAggregatesFilter<"GA_ANKETA_BRAND"> | boolean
+    ABR_KOROB_STATUS?: BoolWithAggregatesFilter<"GA_ANKETA_BRAND"> | boolean
+  }
+
+  export type GA_ANKETA_SCORESWhereInput = {
+    AND?: GA_ANKETA_SCORESWhereInput | GA_ANKETA_SCORESWhereInput[]
+    OR?: GA_ANKETA_SCORESWhereInput[]
+    NOT?: GA_ANKETA_SCORESWhereInput | GA_ANKETA_SCORESWhereInput[]
+    ANS_WSU_ID?: BigIntFilter<"GA_ANKETA_SCORES"> | bigint | number
+    ANS_SCORES?: IntFilter<"GA_ANKETA_SCORES"> | number
+    ANS_DATETIME?: DateTimeFilter<"GA_ANKETA_SCORES"> | Date | string
+    ANS_ISSHOW?: BoolFilter<"GA_ANKETA_SCORES"> | boolean
+  }
+
+  export type GA_ANKETA_SCORESOrderByWithRelationInput = {
+    ANS_WSU_ID?: SortOrder
+    ANS_SCORES?: SortOrder
+    ANS_DATETIME?: SortOrder
+    ANS_ISSHOW?: SortOrder
+  }
+
+  export type GA_ANKETA_SCORESWhereUniqueInput = Prisma.AtLeast<{
+    ANS_WSU_ID?: bigint | number
+    AND?: GA_ANKETA_SCORESWhereInput | GA_ANKETA_SCORESWhereInput[]
+    OR?: GA_ANKETA_SCORESWhereInput[]
+    NOT?: GA_ANKETA_SCORESWhereInput | GA_ANKETA_SCORESWhereInput[]
+    ANS_SCORES?: IntFilter<"GA_ANKETA_SCORES"> | number
+    ANS_DATETIME?: DateTimeFilter<"GA_ANKETA_SCORES"> | Date | string
+    ANS_ISSHOW?: BoolFilter<"GA_ANKETA_SCORES"> | boolean
+  }, "ANS_WSU_ID">
+
+  export type GA_ANKETA_SCORESOrderByWithAggregationInput = {
+    ANS_WSU_ID?: SortOrder
+    ANS_SCORES?: SortOrder
+    ANS_DATETIME?: SortOrder
+    ANS_ISSHOW?: SortOrder
+    _count?: GA_ANKETA_SCORESCountOrderByAggregateInput
+    _avg?: GA_ANKETA_SCORESAvgOrderByAggregateInput
+    _max?: GA_ANKETA_SCORESMaxOrderByAggregateInput
+    _min?: GA_ANKETA_SCORESMinOrderByAggregateInput
+    _sum?: GA_ANKETA_SCORESSumOrderByAggregateInput
+  }
+
+  export type GA_ANKETA_SCORESScalarWhereWithAggregatesInput = {
+    AND?: GA_ANKETA_SCORESScalarWhereWithAggregatesInput | GA_ANKETA_SCORESScalarWhereWithAggregatesInput[]
+    OR?: GA_ANKETA_SCORESScalarWhereWithAggregatesInput[]
+    NOT?: GA_ANKETA_SCORESScalarWhereWithAggregatesInput | GA_ANKETA_SCORESScalarWhereWithAggregatesInput[]
+    ANS_WSU_ID?: BigIntWithAggregatesFilter<"GA_ANKETA_SCORES"> | bigint | number
+    ANS_SCORES?: IntWithAggregatesFilter<"GA_ANKETA_SCORES"> | number
+    ANS_DATETIME?: DateTimeWithAggregatesFilter<"GA_ANKETA_SCORES"> | Date | string
+    ANS_ISSHOW?: BoolWithAggregatesFilter<"GA_ANKETA_SCORES"> | boolean
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYWhereInput = {
+    AND?: GA_ANKETA_SCORES_HISTORYWhereInput | GA_ANKETA_SCORES_HISTORYWhereInput[]
+    OR?: GA_ANKETA_SCORES_HISTORYWhereInput[]
+    NOT?: GA_ANKETA_SCORES_HISTORYWhereInput | GA_ANKETA_SCORES_HISTORYWhereInput[]
+    ASH_WSU_ID?: BigIntFilter<"GA_ANKETA_SCORES_HISTORY"> | bigint | number
+    ASH_SCORES?: IntFilter<"GA_ANKETA_SCORES_HISTORY"> | number
+    ASH_DATETIME?: DateTimeFilter<"GA_ANKETA_SCORES_HISTORY"> | Date | string
+    ASH_DESC?: StringFilter<"GA_ANKETA_SCORES_HISTORY"> | string
+    ASH_TYPE?: IntFilter<"GA_ANKETA_SCORES_HISTORY"> | number
+    ASH_SCORES_OLD?: IntFilter<"GA_ANKETA_SCORES_HISTORY"> | number
+    ASH_EVENT_STATUS?: BoolFilter<"GA_ANKETA_SCORES_HISTORY"> | boolean
+    ASH_DATETIME_UPDATE?: DateTimeFilter<"GA_ANKETA_SCORES_HISTORY"> | Date | string
+    ASH_IZO_ID?: BigIntFilter<"GA_ANKETA_SCORES_HISTORY"> | bigint | number
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYOrderByWithRelationInput = {
+    ASH_WSU_ID?: SortOrder
+    ASH_SCORES?: SortOrder
+    ASH_DATETIME?: SortOrder
+    ASH_DESC?: SortOrder
+    ASH_TYPE?: SortOrder
+    ASH_SCORES_OLD?: SortOrder
+    ASH_EVENT_STATUS?: SortOrder
+    ASH_DATETIME_UPDATE?: SortOrder
+    ASH_IZO_ID?: SortOrder
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYWhereUniqueInput = Prisma.AtLeast<{
+    ASH_WSU_ID?: bigint | number
+    AND?: GA_ANKETA_SCORES_HISTORYWhereInput | GA_ANKETA_SCORES_HISTORYWhereInput[]
+    OR?: GA_ANKETA_SCORES_HISTORYWhereInput[]
+    NOT?: GA_ANKETA_SCORES_HISTORYWhereInput | GA_ANKETA_SCORES_HISTORYWhereInput[]
+    ASH_SCORES?: IntFilter<"GA_ANKETA_SCORES_HISTORY"> | number
+    ASH_DATETIME?: DateTimeFilter<"GA_ANKETA_SCORES_HISTORY"> | Date | string
+    ASH_DESC?: StringFilter<"GA_ANKETA_SCORES_HISTORY"> | string
+    ASH_TYPE?: IntFilter<"GA_ANKETA_SCORES_HISTORY"> | number
+    ASH_SCORES_OLD?: IntFilter<"GA_ANKETA_SCORES_HISTORY"> | number
+    ASH_EVENT_STATUS?: BoolFilter<"GA_ANKETA_SCORES_HISTORY"> | boolean
+    ASH_DATETIME_UPDATE?: DateTimeFilter<"GA_ANKETA_SCORES_HISTORY"> | Date | string
+    ASH_IZO_ID?: BigIntFilter<"GA_ANKETA_SCORES_HISTORY"> | bigint | number
+  }, "ASH_WSU_ID">
+
+  export type GA_ANKETA_SCORES_HISTORYOrderByWithAggregationInput = {
+    ASH_WSU_ID?: SortOrder
+    ASH_SCORES?: SortOrder
+    ASH_DATETIME?: SortOrder
+    ASH_DESC?: SortOrder
+    ASH_TYPE?: SortOrder
+    ASH_SCORES_OLD?: SortOrder
+    ASH_EVENT_STATUS?: SortOrder
+    ASH_DATETIME_UPDATE?: SortOrder
+    ASH_IZO_ID?: SortOrder
+    _count?: GA_ANKETA_SCORES_HISTORYCountOrderByAggregateInput
+    _avg?: GA_ANKETA_SCORES_HISTORYAvgOrderByAggregateInput
+    _max?: GA_ANKETA_SCORES_HISTORYMaxOrderByAggregateInput
+    _min?: GA_ANKETA_SCORES_HISTORYMinOrderByAggregateInput
+    _sum?: GA_ANKETA_SCORES_HISTORYSumOrderByAggregateInput
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYScalarWhereWithAggregatesInput = {
+    AND?: GA_ANKETA_SCORES_HISTORYScalarWhereWithAggregatesInput | GA_ANKETA_SCORES_HISTORYScalarWhereWithAggregatesInput[]
+    OR?: GA_ANKETA_SCORES_HISTORYScalarWhereWithAggregatesInput[]
+    NOT?: GA_ANKETA_SCORES_HISTORYScalarWhereWithAggregatesInput | GA_ANKETA_SCORES_HISTORYScalarWhereWithAggregatesInput[]
+    ASH_WSU_ID?: BigIntWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | bigint | number
+    ASH_SCORES?: IntWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | number
+    ASH_DATETIME?: DateTimeWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | Date | string
+    ASH_DESC?: StringWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | string
+    ASH_TYPE?: IntWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | number
+    ASH_SCORES_OLD?: IntWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | number
+    ASH_EVENT_STATUS?: BoolWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | boolean
+    ASH_DATETIME_UPDATE?: DateTimeWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | Date | string
+    ASH_IZO_ID?: BigIntWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | bigint | number
+  }
+
+  export type GA_ANKETA_SOREVNOVANIEWhereInput = {
+    AND?: GA_ANKETA_SOREVNOVANIEWhereInput | GA_ANKETA_SOREVNOVANIEWhereInput[]
+    OR?: GA_ANKETA_SOREVNOVANIEWhereInput[]
+    NOT?: GA_ANKETA_SOREVNOVANIEWhereInput | GA_ANKETA_SOREVNOVANIEWhereInput[]
+    ASR_YEAR?: IntFilter<"GA_ANKETA_SOREVNOVANIE"> | number
+    ASR_MONTH?: IntFilter<"GA_ANKETA_SOREVNOVANIE"> | number
+    ASR_WSU_ID?: BigIntFilter<"GA_ANKETA_SOREVNOVANIE"> | bigint | number
+    ASR_LOGIN?: StringFilter<"GA_ANKETA_SOREVNOVANIE"> | string
+    ASR_FIO?: StringFilter<"GA_ANKETA_SOREVNOVANIE"> | string
+    ASR_SCORE?: IntFilter<"GA_ANKETA_SOREVNOVANIE"> | number
+    ASR_DOLJNOST?: StringFilter<"GA_ANKETA_SOREVNOVANIE"> | string
+    ASR_RUKOVODITEL?: BoolFilter<"GA_ANKETA_SOREVNOVANIE"> | boolean
+  }
+
+  export type GA_ANKETA_SOREVNOVANIEOrderByWithRelationInput = {
+    ASR_YEAR?: SortOrder
+    ASR_MONTH?: SortOrder
+    ASR_WSU_ID?: SortOrder
+    ASR_LOGIN?: SortOrder
+    ASR_FIO?: SortOrder
+    ASR_SCORE?: SortOrder
+    ASR_DOLJNOST?: SortOrder
+    ASR_RUKOVODITEL?: SortOrder
+  }
+
+  export type GA_ANKETA_SOREVNOVANIEWhereUniqueInput = Prisma.AtLeast<{
+    ASR_WSU_ID?: bigint | number
+    AND?: GA_ANKETA_SOREVNOVANIEWhereInput | GA_ANKETA_SOREVNOVANIEWhereInput[]
+    OR?: GA_ANKETA_SOREVNOVANIEWhereInput[]
+    NOT?: GA_ANKETA_SOREVNOVANIEWhereInput | GA_ANKETA_SOREVNOVANIEWhereInput[]
+    ASR_YEAR?: IntFilter<"GA_ANKETA_SOREVNOVANIE"> | number
+    ASR_MONTH?: IntFilter<"GA_ANKETA_SOREVNOVANIE"> | number
+    ASR_LOGIN?: StringFilter<"GA_ANKETA_SOREVNOVANIE"> | string
+    ASR_FIO?: StringFilter<"GA_ANKETA_SOREVNOVANIE"> | string
+    ASR_SCORE?: IntFilter<"GA_ANKETA_SOREVNOVANIE"> | number
+    ASR_DOLJNOST?: StringFilter<"GA_ANKETA_SOREVNOVANIE"> | string
+    ASR_RUKOVODITEL?: BoolFilter<"GA_ANKETA_SOREVNOVANIE"> | boolean
+  }, "ASR_WSU_ID">
+
+  export type GA_ANKETA_SOREVNOVANIEOrderByWithAggregationInput = {
+    ASR_YEAR?: SortOrder
+    ASR_MONTH?: SortOrder
+    ASR_WSU_ID?: SortOrder
+    ASR_LOGIN?: SortOrder
+    ASR_FIO?: SortOrder
+    ASR_SCORE?: SortOrder
+    ASR_DOLJNOST?: SortOrder
+    ASR_RUKOVODITEL?: SortOrder
+    _count?: GA_ANKETA_SOREVNOVANIECountOrderByAggregateInput
+    _avg?: GA_ANKETA_SOREVNOVANIEAvgOrderByAggregateInput
+    _max?: GA_ANKETA_SOREVNOVANIEMaxOrderByAggregateInput
+    _min?: GA_ANKETA_SOREVNOVANIEMinOrderByAggregateInput
+    _sum?: GA_ANKETA_SOREVNOVANIESumOrderByAggregateInput
+  }
+
+  export type GA_ANKETA_SOREVNOVANIEScalarWhereWithAggregatesInput = {
+    AND?: GA_ANKETA_SOREVNOVANIEScalarWhereWithAggregatesInput | GA_ANKETA_SOREVNOVANIEScalarWhereWithAggregatesInput[]
+    OR?: GA_ANKETA_SOREVNOVANIEScalarWhereWithAggregatesInput[]
+    NOT?: GA_ANKETA_SOREVNOVANIEScalarWhereWithAggregatesInput | GA_ANKETA_SOREVNOVANIEScalarWhereWithAggregatesInput[]
+    ASR_YEAR?: IntWithAggregatesFilter<"GA_ANKETA_SOREVNOVANIE"> | number
+    ASR_MONTH?: IntWithAggregatesFilter<"GA_ANKETA_SOREVNOVANIE"> | number
+    ASR_WSU_ID?: BigIntWithAggregatesFilter<"GA_ANKETA_SOREVNOVANIE"> | bigint | number
+    ASR_LOGIN?: StringWithAggregatesFilter<"GA_ANKETA_SOREVNOVANIE"> | string
+    ASR_FIO?: StringWithAggregatesFilter<"GA_ANKETA_SOREVNOVANIE"> | string
+    ASR_SCORE?: IntWithAggregatesFilter<"GA_ANKETA_SOREVNOVANIE"> | number
+    ASR_DOLJNOST?: StringWithAggregatesFilter<"GA_ANKETA_SOREVNOVANIE"> | string
+    ASR_RUKOVODITEL?: BoolWithAggregatesFilter<"GA_ANKETA_SOREVNOVANIE"> | boolean
+  }
+
   export type GA_WS_USERSWhereInput = {
     AND?: GA_WS_USERSWhereInput | GA_WS_USERSWhereInput[]
     OR?: GA_WS_USERSWhereInput[]
     NOT?: GA_WS_USERSWhereInput | GA_WS_USERSWhereInput[]
     WSU_ID?: BigIntFilter<"GA_WS_USERS"> | bigint | number
-    WSU_WSO_ID?: IntNullableFilter<"GA_WS_USERS"> | number | null
-    WSU_EMAIL?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_NAME?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_FULL_NAME?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_PHONE?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_ADDRESS?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_PASSWD?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_ID_IN_DS?: IntNullableFilter<"GA_WS_USERS"> | number | null
-    WSU_INN?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_PRICE_TYPE?: IntNullableFilter<"GA_WS_USERS"> | number | null
-    WSU_GRP_ID?: IntNullableFilter<"GA_WS_USERS"> | number | null
-    WSU_WS_ID?: IntNullableFilter<"GA_WS_USERS"> | number | null
-    WSU_MOBILE?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_SHOW_SUP_ALIAS?: BoolNullableFilter<"GA_WS_USERS"> | boolean | null
-    WSU_IS_ZS?: BoolNullableFilter<"GA_WS_USERS"> | boolean | null
-    WSU_PASSWD_ENC?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_LOGIN_ENC?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_DATETIME_LAST_LOGIN?: DateTimeNullableFilter<"GA_WS_USERS"> | Date | string | null
-    WSU_START_PAGE?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_SALT?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_TEMP_TICKET?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_TEMP_TICKET_DATETIME?: DateTimeNullableFilter<"GA_WS_USERS"> | Date | string | null
-    WSU_DATETIME_CREATE?: DateTimeNullableFilter<"GA_WS_USERS"> | Date | string | null
+    WSU_WSO_ID?: IntFilter<"GA_WS_USERS"> | number
+    WSU_EMAIL?: StringFilter<"GA_WS_USERS"> | string
+    WSU_NAME?: StringFilter<"GA_WS_USERS"> | string
+    WSU_FULL_NAME?: StringFilter<"GA_WS_USERS"> | string
+    WSU_PHONE?: StringFilter<"GA_WS_USERS"> | string
+    WSU_ADDRESS?: StringFilter<"GA_WS_USERS"> | string
+    WSU_PASSWD?: StringFilter<"GA_WS_USERS"> | string
+    WSU_ID_IN_DS?: IntFilter<"GA_WS_USERS"> | number
+    WSU_INN?: StringFilter<"GA_WS_USERS"> | string
+    WSU_PRICE_TYPE?: IntFilter<"GA_WS_USERS"> | number
+    WSU_GRP_ID?: IntFilter<"GA_WS_USERS"> | number
+    WSU_WS_ID?: IntFilter<"GA_WS_USERS"> | number
+    WSU_MOBILE?: StringFilter<"GA_WS_USERS"> | string
+    WSU_SHOW_SUP_ALIAS?: BoolFilter<"GA_WS_USERS"> | boolean
+    WSU_IS_ZS?: BoolFilter<"GA_WS_USERS"> | boolean
+    WSU_PASSWD_ENC?: StringFilter<"GA_WS_USERS"> | string
+    WSU_LOGIN_ENC?: StringFilter<"GA_WS_USERS"> | string
+    WSU_DATETIME_LAST_LOGIN?: DateTimeFilter<"GA_WS_USERS"> | Date | string
+    WSU_START_PAGE?: StringFilter<"GA_WS_USERS"> | string
+    WSU_SALT?: StringFilter<"GA_WS_USERS"> | string
+    WSU_TEMP_TICKET?: StringFilter<"GA_WS_USERS"> | string
+    WSU_TEMP_TICKET_DATETIME?: DateTimeFilter<"GA_WS_USERS"> | Date | string
+    WSU_DATETIME_CREATE?: DateTimeFilter<"GA_WS_USERS"> | Date | string
   }
 
   export type GA_WS_USERSOrderByWithRelationInput = {
     WSU_ID?: SortOrder
-    WSU_WSO_ID?: SortOrderInput | SortOrder
-    WSU_EMAIL?: SortOrderInput | SortOrder
-    WSU_NAME?: SortOrderInput | SortOrder
-    WSU_FULL_NAME?: SortOrderInput | SortOrder
-    WSU_PHONE?: SortOrderInput | SortOrder
-    WSU_ADDRESS?: SortOrderInput | SortOrder
-    WSU_PASSWD?: SortOrderInput | SortOrder
-    WSU_ID_IN_DS?: SortOrderInput | SortOrder
-    WSU_INN?: SortOrderInput | SortOrder
-    WSU_PRICE_TYPE?: SortOrderInput | SortOrder
-    WSU_GRP_ID?: SortOrderInput | SortOrder
-    WSU_WS_ID?: SortOrderInput | SortOrder
-    WSU_MOBILE?: SortOrderInput | SortOrder
-    WSU_SHOW_SUP_ALIAS?: SortOrderInput | SortOrder
-    WSU_IS_ZS?: SortOrderInput | SortOrder
-    WSU_PASSWD_ENC?: SortOrderInput | SortOrder
-    WSU_LOGIN_ENC?: SortOrderInput | SortOrder
-    WSU_DATETIME_LAST_LOGIN?: SortOrderInput | SortOrder
-    WSU_START_PAGE?: SortOrderInput | SortOrder
-    WSU_SALT?: SortOrderInput | SortOrder
-    WSU_TEMP_TICKET?: SortOrderInput | SortOrder
-    WSU_TEMP_TICKET_DATETIME?: SortOrderInput | SortOrder
-    WSU_DATETIME_CREATE?: SortOrderInput | SortOrder
+    WSU_WSO_ID?: SortOrder
+    WSU_EMAIL?: SortOrder
+    WSU_NAME?: SortOrder
+    WSU_FULL_NAME?: SortOrder
+    WSU_PHONE?: SortOrder
+    WSU_ADDRESS?: SortOrder
+    WSU_PASSWD?: SortOrder
+    WSU_ID_IN_DS?: SortOrder
+    WSU_INN?: SortOrder
+    WSU_PRICE_TYPE?: SortOrder
+    WSU_GRP_ID?: SortOrder
+    WSU_WS_ID?: SortOrder
+    WSU_MOBILE?: SortOrder
+    WSU_SHOW_SUP_ALIAS?: SortOrder
+    WSU_IS_ZS?: SortOrder
+    WSU_PASSWD_ENC?: SortOrder
+    WSU_LOGIN_ENC?: SortOrder
+    WSU_DATETIME_LAST_LOGIN?: SortOrder
+    WSU_START_PAGE?: SortOrder
+    WSU_SALT?: SortOrder
+    WSU_TEMP_TICKET?: SortOrder
+    WSU_TEMP_TICKET_DATETIME?: SortOrder
+    WSU_DATETIME_CREATE?: SortOrder
   }
 
   export type GA_WS_USERSWhereUniqueInput = Prisma.AtLeast<{
@@ -7332,56 +11704,56 @@ export namespace Prisma {
     AND?: GA_WS_USERSWhereInput | GA_WS_USERSWhereInput[]
     OR?: GA_WS_USERSWhereInput[]
     NOT?: GA_WS_USERSWhereInput | GA_WS_USERSWhereInput[]
-    WSU_WSO_ID?: IntNullableFilter<"GA_WS_USERS"> | number | null
-    WSU_EMAIL?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_NAME?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_FULL_NAME?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_PHONE?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_ADDRESS?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_PASSWD?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_ID_IN_DS?: IntNullableFilter<"GA_WS_USERS"> | number | null
-    WSU_INN?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_PRICE_TYPE?: IntNullableFilter<"GA_WS_USERS"> | number | null
-    WSU_GRP_ID?: IntNullableFilter<"GA_WS_USERS"> | number | null
-    WSU_WS_ID?: IntNullableFilter<"GA_WS_USERS"> | number | null
-    WSU_MOBILE?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_SHOW_SUP_ALIAS?: BoolNullableFilter<"GA_WS_USERS"> | boolean | null
-    WSU_IS_ZS?: BoolNullableFilter<"GA_WS_USERS"> | boolean | null
-    WSU_PASSWD_ENC?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_LOGIN_ENC?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_DATETIME_LAST_LOGIN?: DateTimeNullableFilter<"GA_WS_USERS"> | Date | string | null
-    WSU_START_PAGE?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_SALT?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_TEMP_TICKET?: StringNullableFilter<"GA_WS_USERS"> | string | null
-    WSU_TEMP_TICKET_DATETIME?: DateTimeNullableFilter<"GA_WS_USERS"> | Date | string | null
-    WSU_DATETIME_CREATE?: DateTimeNullableFilter<"GA_WS_USERS"> | Date | string | null
+    WSU_WSO_ID?: IntFilter<"GA_WS_USERS"> | number
+    WSU_EMAIL?: StringFilter<"GA_WS_USERS"> | string
+    WSU_NAME?: StringFilter<"GA_WS_USERS"> | string
+    WSU_FULL_NAME?: StringFilter<"GA_WS_USERS"> | string
+    WSU_PHONE?: StringFilter<"GA_WS_USERS"> | string
+    WSU_ADDRESS?: StringFilter<"GA_WS_USERS"> | string
+    WSU_PASSWD?: StringFilter<"GA_WS_USERS"> | string
+    WSU_ID_IN_DS?: IntFilter<"GA_WS_USERS"> | number
+    WSU_INN?: StringFilter<"GA_WS_USERS"> | string
+    WSU_PRICE_TYPE?: IntFilter<"GA_WS_USERS"> | number
+    WSU_GRP_ID?: IntFilter<"GA_WS_USERS"> | number
+    WSU_WS_ID?: IntFilter<"GA_WS_USERS"> | number
+    WSU_MOBILE?: StringFilter<"GA_WS_USERS"> | string
+    WSU_SHOW_SUP_ALIAS?: BoolFilter<"GA_WS_USERS"> | boolean
+    WSU_IS_ZS?: BoolFilter<"GA_WS_USERS"> | boolean
+    WSU_PASSWD_ENC?: StringFilter<"GA_WS_USERS"> | string
+    WSU_LOGIN_ENC?: StringFilter<"GA_WS_USERS"> | string
+    WSU_DATETIME_LAST_LOGIN?: DateTimeFilter<"GA_WS_USERS"> | Date | string
+    WSU_START_PAGE?: StringFilter<"GA_WS_USERS"> | string
+    WSU_SALT?: StringFilter<"GA_WS_USERS"> | string
+    WSU_TEMP_TICKET?: StringFilter<"GA_WS_USERS"> | string
+    WSU_TEMP_TICKET_DATETIME?: DateTimeFilter<"GA_WS_USERS"> | Date | string
+    WSU_DATETIME_CREATE?: DateTimeFilter<"GA_WS_USERS"> | Date | string
   }, "WSU_ID">
 
   export type GA_WS_USERSOrderByWithAggregationInput = {
     WSU_ID?: SortOrder
-    WSU_WSO_ID?: SortOrderInput | SortOrder
-    WSU_EMAIL?: SortOrderInput | SortOrder
-    WSU_NAME?: SortOrderInput | SortOrder
-    WSU_FULL_NAME?: SortOrderInput | SortOrder
-    WSU_PHONE?: SortOrderInput | SortOrder
-    WSU_ADDRESS?: SortOrderInput | SortOrder
-    WSU_PASSWD?: SortOrderInput | SortOrder
-    WSU_ID_IN_DS?: SortOrderInput | SortOrder
-    WSU_INN?: SortOrderInput | SortOrder
-    WSU_PRICE_TYPE?: SortOrderInput | SortOrder
-    WSU_GRP_ID?: SortOrderInput | SortOrder
-    WSU_WS_ID?: SortOrderInput | SortOrder
-    WSU_MOBILE?: SortOrderInput | SortOrder
-    WSU_SHOW_SUP_ALIAS?: SortOrderInput | SortOrder
-    WSU_IS_ZS?: SortOrderInput | SortOrder
-    WSU_PASSWD_ENC?: SortOrderInput | SortOrder
-    WSU_LOGIN_ENC?: SortOrderInput | SortOrder
-    WSU_DATETIME_LAST_LOGIN?: SortOrderInput | SortOrder
-    WSU_START_PAGE?: SortOrderInput | SortOrder
-    WSU_SALT?: SortOrderInput | SortOrder
-    WSU_TEMP_TICKET?: SortOrderInput | SortOrder
-    WSU_TEMP_TICKET_DATETIME?: SortOrderInput | SortOrder
-    WSU_DATETIME_CREATE?: SortOrderInput | SortOrder
+    WSU_WSO_ID?: SortOrder
+    WSU_EMAIL?: SortOrder
+    WSU_NAME?: SortOrder
+    WSU_FULL_NAME?: SortOrder
+    WSU_PHONE?: SortOrder
+    WSU_ADDRESS?: SortOrder
+    WSU_PASSWD?: SortOrder
+    WSU_ID_IN_DS?: SortOrder
+    WSU_INN?: SortOrder
+    WSU_PRICE_TYPE?: SortOrder
+    WSU_GRP_ID?: SortOrder
+    WSU_WS_ID?: SortOrder
+    WSU_MOBILE?: SortOrder
+    WSU_SHOW_SUP_ALIAS?: SortOrder
+    WSU_IS_ZS?: SortOrder
+    WSU_PASSWD_ENC?: SortOrder
+    WSU_LOGIN_ENC?: SortOrder
+    WSU_DATETIME_LAST_LOGIN?: SortOrder
+    WSU_START_PAGE?: SortOrder
+    WSU_SALT?: SortOrder
+    WSU_TEMP_TICKET?: SortOrder
+    WSU_TEMP_TICKET_DATETIME?: SortOrder
+    WSU_DATETIME_CREATE?: SortOrder
     _count?: GA_WS_USERSCountOrderByAggregateInput
     _avg?: GA_WS_USERSAvgOrderByAggregateInput
     _max?: GA_WS_USERSMaxOrderByAggregateInput
@@ -7394,29 +11766,29 @@ export namespace Prisma {
     OR?: GA_WS_USERSScalarWhereWithAggregatesInput[]
     NOT?: GA_WS_USERSScalarWhereWithAggregatesInput | GA_WS_USERSScalarWhereWithAggregatesInput[]
     WSU_ID?: BigIntWithAggregatesFilter<"GA_WS_USERS"> | bigint | number
-    WSU_WSO_ID?: IntNullableWithAggregatesFilter<"GA_WS_USERS"> | number | null
-    WSU_EMAIL?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
-    WSU_NAME?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
-    WSU_FULL_NAME?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
-    WSU_PHONE?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
-    WSU_ADDRESS?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
-    WSU_PASSWD?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
-    WSU_ID_IN_DS?: IntNullableWithAggregatesFilter<"GA_WS_USERS"> | number | null
-    WSU_INN?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
-    WSU_PRICE_TYPE?: IntNullableWithAggregatesFilter<"GA_WS_USERS"> | number | null
-    WSU_GRP_ID?: IntNullableWithAggregatesFilter<"GA_WS_USERS"> | number | null
-    WSU_WS_ID?: IntNullableWithAggregatesFilter<"GA_WS_USERS"> | number | null
-    WSU_MOBILE?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
-    WSU_SHOW_SUP_ALIAS?: BoolNullableWithAggregatesFilter<"GA_WS_USERS"> | boolean | null
-    WSU_IS_ZS?: BoolNullableWithAggregatesFilter<"GA_WS_USERS"> | boolean | null
-    WSU_PASSWD_ENC?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
-    WSU_LOGIN_ENC?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
-    WSU_DATETIME_LAST_LOGIN?: DateTimeNullableWithAggregatesFilter<"GA_WS_USERS"> | Date | string | null
-    WSU_START_PAGE?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
-    WSU_SALT?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
-    WSU_TEMP_TICKET?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
-    WSU_TEMP_TICKET_DATETIME?: DateTimeNullableWithAggregatesFilter<"GA_WS_USERS"> | Date | string | null
-    WSU_DATETIME_CREATE?: DateTimeNullableWithAggregatesFilter<"GA_WS_USERS"> | Date | string | null
+    WSU_WSO_ID?: IntWithAggregatesFilter<"GA_WS_USERS"> | number
+    WSU_EMAIL?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
+    WSU_NAME?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
+    WSU_FULL_NAME?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
+    WSU_PHONE?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
+    WSU_ADDRESS?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
+    WSU_PASSWD?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
+    WSU_ID_IN_DS?: IntWithAggregatesFilter<"GA_WS_USERS"> | number
+    WSU_INN?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
+    WSU_PRICE_TYPE?: IntWithAggregatesFilter<"GA_WS_USERS"> | number
+    WSU_GRP_ID?: IntWithAggregatesFilter<"GA_WS_USERS"> | number
+    WSU_WS_ID?: IntWithAggregatesFilter<"GA_WS_USERS"> | number
+    WSU_MOBILE?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
+    WSU_SHOW_SUP_ALIAS?: BoolWithAggregatesFilter<"GA_WS_USERS"> | boolean
+    WSU_IS_ZS?: BoolWithAggregatesFilter<"GA_WS_USERS"> | boolean
+    WSU_PASSWD_ENC?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
+    WSU_LOGIN_ENC?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
+    WSU_DATETIME_LAST_LOGIN?: DateTimeWithAggregatesFilter<"GA_WS_USERS"> | Date | string
+    WSU_START_PAGE?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
+    WSU_SALT?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
+    WSU_TEMP_TICKET?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
+    WSU_TEMP_TICKET_DATETIME?: DateTimeWithAggregatesFilter<"GA_WS_USERS"> | Date | string
+    WSU_DATETIME_CREATE?: DateTimeWithAggregatesFilter<"GA_WS_USERS"> | Date | string
   }
 
   export type GA_ANKETA_ADDRCreateInput = {
@@ -7426,6 +11798,7 @@ export namespace Prisma {
     AAD_OBLAST: string
     AAD_GOROD: string
     AAD_ADDR: string
+    AAD_POSTCODE: string
   }
 
   export type GA_ANKETA_ADDRUncheckedCreateInput = {
@@ -7435,6 +11808,7 @@ export namespace Prisma {
     AAD_OBLAST: string
     AAD_GOROD: string
     AAD_ADDR: string
+    AAD_POSTCODE: string
   }
 
   export type GA_ANKETA_ADDRUpdateInput = {
@@ -7444,6 +11818,7 @@ export namespace Prisma {
     AAD_OBLAST?: StringFieldUpdateOperationsInput | string
     AAD_GOROD?: StringFieldUpdateOperationsInput | string
     AAD_ADDR?: StringFieldUpdateOperationsInput | string
+    AAD_POSTCODE?: StringFieldUpdateOperationsInput | string
   }
 
   export type GA_ANKETA_ADDRUncheckedUpdateInput = {
@@ -7453,6 +11828,7 @@ export namespace Prisma {
     AAD_OBLAST?: StringFieldUpdateOperationsInput | string
     AAD_GOROD?: StringFieldUpdateOperationsInput | string
     AAD_ADDR?: StringFieldUpdateOperationsInput | string
+    AAD_POSTCODE?: StringFieldUpdateOperationsInput | string
   }
 
   export type GA_ANKETA_ADDRCreateManyInput = {
@@ -7462,6 +11838,7 @@ export namespace Prisma {
     AAD_OBLAST: string
     AAD_GOROD: string
     AAD_ADDR: string
+    AAD_POSTCODE: string
   }
 
   export type GA_ANKETA_ADDRUpdateManyMutationInput = {
@@ -7471,6 +11848,7 @@ export namespace Prisma {
     AAD_OBLAST?: StringFieldUpdateOperationsInput | string
     AAD_GOROD?: StringFieldUpdateOperationsInput | string
     AAD_ADDR?: StringFieldUpdateOperationsInput | string
+    AAD_POSTCODE?: StringFieldUpdateOperationsInput | string
   }
 
   export type GA_ANKETA_ADDRUncheckedUpdateManyInput = {
@@ -7480,13 +11858,14 @@ export namespace Prisma {
     AAD_OBLAST?: StringFieldUpdateOperationsInput | string
     AAD_GOROD?: StringFieldUpdateOperationsInput | string
     AAD_ADDR?: StringFieldUpdateOperationsInput | string
+    AAD_POSTCODE?: StringFieldUpdateOperationsInput | string
   }
 
   export type GA_ANKETA_BASECreateInput = {
     ABA_WSU_ID?: bigint | number
     ABA_STO_NAME: string
     ABA_STO_ID1: string
-    ABA_REMZONA_QTY?: number
+    ABA_REMZONA_QTY?: number | null
     ABA_ENABLED?: boolean
     ABA_PHONE: string
     ABA_INN: string
@@ -7494,7 +11873,7 @@ export namespace Prisma {
     ABA_DATETIME_UPDATED: Date | string
     ABA_ID: bigint | number
     ABA_DATETIME: Date | string
-    ABA_STO_ID2: string
+    ABA_STO_ID2?: string | null
     ABA_STO_NAME_FIND?: string | null
     ABA_DESC?: string | null
   }
@@ -7503,7 +11882,7 @@ export namespace Prisma {
     ABA_WSU_ID?: bigint | number
     ABA_STO_NAME: string
     ABA_STO_ID1: string
-    ABA_REMZONA_QTY?: number
+    ABA_REMZONA_QTY?: number | null
     ABA_ENABLED?: boolean
     ABA_PHONE: string
     ABA_INN: string
@@ -7511,7 +11890,7 @@ export namespace Prisma {
     ABA_DATETIME_UPDATED: Date | string
     ABA_ID: bigint | number
     ABA_DATETIME: Date | string
-    ABA_STO_ID2: string
+    ABA_STO_ID2?: string | null
     ABA_STO_NAME_FIND?: string | null
     ABA_DESC?: string | null
   }
@@ -7520,7 +11899,7 @@ export namespace Prisma {
     ABA_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
     ABA_STO_NAME?: StringFieldUpdateOperationsInput | string
     ABA_STO_ID1?: StringFieldUpdateOperationsInput | string
-    ABA_REMZONA_QTY?: IntFieldUpdateOperationsInput | number
+    ABA_REMZONA_QTY?: NullableIntFieldUpdateOperationsInput | number | null
     ABA_ENABLED?: BoolFieldUpdateOperationsInput | boolean
     ABA_PHONE?: StringFieldUpdateOperationsInput | string
     ABA_INN?: StringFieldUpdateOperationsInput | string
@@ -7528,7 +11907,7 @@ export namespace Prisma {
     ABA_DATETIME_UPDATED?: DateTimeFieldUpdateOperationsInput | Date | string
     ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
     ABA_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ABA_STO_ID2?: StringFieldUpdateOperationsInput | string
+    ABA_STO_ID2?: NullableStringFieldUpdateOperationsInput | string | null
     ABA_STO_NAME_FIND?: NullableStringFieldUpdateOperationsInput | string | null
     ABA_DESC?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -7537,7 +11916,7 @@ export namespace Prisma {
     ABA_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
     ABA_STO_NAME?: StringFieldUpdateOperationsInput | string
     ABA_STO_ID1?: StringFieldUpdateOperationsInput | string
-    ABA_REMZONA_QTY?: IntFieldUpdateOperationsInput | number
+    ABA_REMZONA_QTY?: NullableIntFieldUpdateOperationsInput | number | null
     ABA_ENABLED?: BoolFieldUpdateOperationsInput | boolean
     ABA_PHONE?: StringFieldUpdateOperationsInput | string
     ABA_INN?: StringFieldUpdateOperationsInput | string
@@ -7545,7 +11924,7 @@ export namespace Prisma {
     ABA_DATETIME_UPDATED?: DateTimeFieldUpdateOperationsInput | Date | string
     ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
     ABA_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ABA_STO_ID2?: StringFieldUpdateOperationsInput | string
+    ABA_STO_ID2?: NullableStringFieldUpdateOperationsInput | string | null
     ABA_STO_NAME_FIND?: NullableStringFieldUpdateOperationsInput | string | null
     ABA_DESC?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -7554,7 +11933,7 @@ export namespace Prisma {
     ABA_WSU_ID?: bigint | number
     ABA_STO_NAME: string
     ABA_STO_ID1: string
-    ABA_REMZONA_QTY?: number
+    ABA_REMZONA_QTY?: number | null
     ABA_ENABLED?: boolean
     ABA_PHONE: string
     ABA_INN: string
@@ -7562,7 +11941,7 @@ export namespace Prisma {
     ABA_DATETIME_UPDATED: Date | string
     ABA_ID: bigint | number
     ABA_DATETIME: Date | string
-    ABA_STO_ID2: string
+    ABA_STO_ID2?: string | null
     ABA_STO_NAME_FIND?: string | null
     ABA_DESC?: string | null
   }
@@ -7571,7 +11950,7 @@ export namespace Prisma {
     ABA_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
     ABA_STO_NAME?: StringFieldUpdateOperationsInput | string
     ABA_STO_ID1?: StringFieldUpdateOperationsInput | string
-    ABA_REMZONA_QTY?: IntFieldUpdateOperationsInput | number
+    ABA_REMZONA_QTY?: NullableIntFieldUpdateOperationsInput | number | null
     ABA_ENABLED?: BoolFieldUpdateOperationsInput | boolean
     ABA_PHONE?: StringFieldUpdateOperationsInput | string
     ABA_INN?: StringFieldUpdateOperationsInput | string
@@ -7579,7 +11958,7 @@ export namespace Prisma {
     ABA_DATETIME_UPDATED?: DateTimeFieldUpdateOperationsInput | Date | string
     ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
     ABA_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ABA_STO_ID2?: StringFieldUpdateOperationsInput | string
+    ABA_STO_ID2?: NullableStringFieldUpdateOperationsInput | string | null
     ABA_STO_NAME_FIND?: NullableStringFieldUpdateOperationsInput | string | null
     ABA_DESC?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -7588,7 +11967,7 @@ export namespace Prisma {
     ABA_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
     ABA_STO_NAME?: StringFieldUpdateOperationsInput | string
     ABA_STO_ID1?: StringFieldUpdateOperationsInput | string
-    ABA_REMZONA_QTY?: IntFieldUpdateOperationsInput | number
+    ABA_REMZONA_QTY?: NullableIntFieldUpdateOperationsInput | number | null
     ABA_ENABLED?: BoolFieldUpdateOperationsInput | boolean
     ABA_PHONE?: StringFieldUpdateOperationsInput | string
     ABA_INN?: StringFieldUpdateOperationsInput | string
@@ -7596,7 +11975,7 @@ export namespace Prisma {
     ABA_DATETIME_UPDATED?: DateTimeFieldUpdateOperationsInput | Date | string
     ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
     ABA_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ABA_STO_ID2?: StringFieldUpdateOperationsInput | string
+    ABA_STO_ID2?: NullableStringFieldUpdateOperationsInput | string | null
     ABA_STO_NAME_FIND?: NullableStringFieldUpdateOperationsInput | string | null
     ABA_DESC?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -7958,193 +12337,466 @@ export namespace Prisma {
     ABO_SCORES_PARTRA?: FloatFieldUpdateOperationsInput | number
   }
 
+  export type GA_ANKETA_BRANDCreateInput = {
+    ABR_ABA_ID: bigint | number
+    ABR_STATUS: boolean
+    ABR_DATETIME: Date | string
+    ABR_HALF_STATUS?: boolean
+    ABR_VYVESKA_STATUS?: boolean
+    ABR_KOROB_STATUS?: boolean
+  }
+
+  export type GA_ANKETA_BRANDUncheckedCreateInput = {
+    ABR_ABA_ID: bigint | number
+    ABR_STATUS: boolean
+    ABR_DATETIME: Date | string
+    ABR_HALF_STATUS?: boolean
+    ABR_VYVESKA_STATUS?: boolean
+    ABR_KOROB_STATUS?: boolean
+  }
+
+  export type GA_ANKETA_BRANDUpdateInput = {
+    ABR_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ABR_STATUS?: BoolFieldUpdateOperationsInput | boolean
+    ABR_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
+    ABR_HALF_STATUS?: BoolFieldUpdateOperationsInput | boolean
+    ABR_VYVESKA_STATUS?: BoolFieldUpdateOperationsInput | boolean
+    ABR_KOROB_STATUS?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type GA_ANKETA_BRANDUncheckedUpdateInput = {
+    ABR_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ABR_STATUS?: BoolFieldUpdateOperationsInput | boolean
+    ABR_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
+    ABR_HALF_STATUS?: BoolFieldUpdateOperationsInput | boolean
+    ABR_VYVESKA_STATUS?: BoolFieldUpdateOperationsInput | boolean
+    ABR_KOROB_STATUS?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type GA_ANKETA_BRANDCreateManyInput = {
+    ABR_ABA_ID: bigint | number
+    ABR_STATUS: boolean
+    ABR_DATETIME: Date | string
+    ABR_HALF_STATUS?: boolean
+    ABR_VYVESKA_STATUS?: boolean
+    ABR_KOROB_STATUS?: boolean
+  }
+
+  export type GA_ANKETA_BRANDUpdateManyMutationInput = {
+    ABR_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ABR_STATUS?: BoolFieldUpdateOperationsInput | boolean
+    ABR_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
+    ABR_HALF_STATUS?: BoolFieldUpdateOperationsInput | boolean
+    ABR_VYVESKA_STATUS?: BoolFieldUpdateOperationsInput | boolean
+    ABR_KOROB_STATUS?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type GA_ANKETA_BRANDUncheckedUpdateManyInput = {
+    ABR_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ABR_STATUS?: BoolFieldUpdateOperationsInput | boolean
+    ABR_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
+    ABR_HALF_STATUS?: BoolFieldUpdateOperationsInput | boolean
+    ABR_VYVESKA_STATUS?: BoolFieldUpdateOperationsInput | boolean
+    ABR_KOROB_STATUS?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type GA_ANKETA_SCORESCreateInput = {
+    ANS_WSU_ID: bigint | number
+    ANS_SCORES: number
+    ANS_DATETIME: Date | string
+    ANS_ISSHOW?: boolean
+  }
+
+  export type GA_ANKETA_SCORESUncheckedCreateInput = {
+    ANS_WSU_ID: bigint | number
+    ANS_SCORES: number
+    ANS_DATETIME: Date | string
+    ANS_ISSHOW?: boolean
+  }
+
+  export type GA_ANKETA_SCORESUpdateInput = {
+    ANS_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ANS_SCORES?: IntFieldUpdateOperationsInput | number
+    ANS_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
+    ANS_ISSHOW?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type GA_ANKETA_SCORESUncheckedUpdateInput = {
+    ANS_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ANS_SCORES?: IntFieldUpdateOperationsInput | number
+    ANS_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
+    ANS_ISSHOW?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type GA_ANKETA_SCORESCreateManyInput = {
+    ANS_WSU_ID: bigint | number
+    ANS_SCORES: number
+    ANS_DATETIME: Date | string
+    ANS_ISSHOW?: boolean
+  }
+
+  export type GA_ANKETA_SCORESUpdateManyMutationInput = {
+    ANS_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ANS_SCORES?: IntFieldUpdateOperationsInput | number
+    ANS_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
+    ANS_ISSHOW?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type GA_ANKETA_SCORESUncheckedUpdateManyInput = {
+    ANS_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ANS_SCORES?: IntFieldUpdateOperationsInput | number
+    ANS_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
+    ANS_ISSHOW?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYCreateInput = {
+    ASH_WSU_ID: bigint | number
+    ASH_SCORES: number
+    ASH_DATETIME: Date | string
+    ASH_DESC: string
+    ASH_TYPE: number
+    ASH_SCORES_OLD?: number
+    ASH_EVENT_STATUS?: boolean
+    ASH_DATETIME_UPDATE: Date | string
+    ASH_IZO_ID?: bigint | number
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYUncheckedCreateInput = {
+    ASH_WSU_ID: bigint | number
+    ASH_SCORES: number
+    ASH_DATETIME: Date | string
+    ASH_DESC: string
+    ASH_TYPE: number
+    ASH_SCORES_OLD?: number
+    ASH_EVENT_STATUS?: boolean
+    ASH_DATETIME_UPDATE: Date | string
+    ASH_IZO_ID?: bigint | number
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYUpdateInput = {
+    ASH_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ASH_SCORES?: IntFieldUpdateOperationsInput | number
+    ASH_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
+    ASH_DESC?: StringFieldUpdateOperationsInput | string
+    ASH_TYPE?: IntFieldUpdateOperationsInput | number
+    ASH_SCORES_OLD?: IntFieldUpdateOperationsInput | number
+    ASH_EVENT_STATUS?: BoolFieldUpdateOperationsInput | boolean
+    ASH_DATETIME_UPDATE?: DateTimeFieldUpdateOperationsInput | Date | string
+    ASH_IZO_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYUncheckedUpdateInput = {
+    ASH_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ASH_SCORES?: IntFieldUpdateOperationsInput | number
+    ASH_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
+    ASH_DESC?: StringFieldUpdateOperationsInput | string
+    ASH_TYPE?: IntFieldUpdateOperationsInput | number
+    ASH_SCORES_OLD?: IntFieldUpdateOperationsInput | number
+    ASH_EVENT_STATUS?: BoolFieldUpdateOperationsInput | boolean
+    ASH_DATETIME_UPDATE?: DateTimeFieldUpdateOperationsInput | Date | string
+    ASH_IZO_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYCreateManyInput = {
+    ASH_WSU_ID: bigint | number
+    ASH_SCORES: number
+    ASH_DATETIME: Date | string
+    ASH_DESC: string
+    ASH_TYPE: number
+    ASH_SCORES_OLD?: number
+    ASH_EVENT_STATUS?: boolean
+    ASH_DATETIME_UPDATE: Date | string
+    ASH_IZO_ID?: bigint | number
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYUpdateManyMutationInput = {
+    ASH_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ASH_SCORES?: IntFieldUpdateOperationsInput | number
+    ASH_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
+    ASH_DESC?: StringFieldUpdateOperationsInput | string
+    ASH_TYPE?: IntFieldUpdateOperationsInput | number
+    ASH_SCORES_OLD?: IntFieldUpdateOperationsInput | number
+    ASH_EVENT_STATUS?: BoolFieldUpdateOperationsInput | boolean
+    ASH_DATETIME_UPDATE?: DateTimeFieldUpdateOperationsInput | Date | string
+    ASH_IZO_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYUncheckedUpdateManyInput = {
+    ASH_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ASH_SCORES?: IntFieldUpdateOperationsInput | number
+    ASH_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
+    ASH_DESC?: StringFieldUpdateOperationsInput | string
+    ASH_TYPE?: IntFieldUpdateOperationsInput | number
+    ASH_SCORES_OLD?: IntFieldUpdateOperationsInput | number
+    ASH_EVENT_STATUS?: BoolFieldUpdateOperationsInput | boolean
+    ASH_DATETIME_UPDATE?: DateTimeFieldUpdateOperationsInput | Date | string
+    ASH_IZO_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+  }
+
+  export type GA_ANKETA_SOREVNOVANIECreateInput = {
+    ASR_YEAR: number
+    ASR_MONTH: number
+    ASR_WSU_ID: bigint | number
+    ASR_LOGIN: string
+    ASR_FIO: string
+    ASR_SCORE: number
+    ASR_DOLJNOST: string
+    ASR_RUKOVODITEL?: boolean
+  }
+
+  export type GA_ANKETA_SOREVNOVANIEUncheckedCreateInput = {
+    ASR_YEAR: number
+    ASR_MONTH: number
+    ASR_WSU_ID: bigint | number
+    ASR_LOGIN: string
+    ASR_FIO: string
+    ASR_SCORE: number
+    ASR_DOLJNOST: string
+    ASR_RUKOVODITEL?: boolean
+  }
+
+  export type GA_ANKETA_SOREVNOVANIEUpdateInput = {
+    ASR_YEAR?: IntFieldUpdateOperationsInput | number
+    ASR_MONTH?: IntFieldUpdateOperationsInput | number
+    ASR_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ASR_LOGIN?: StringFieldUpdateOperationsInput | string
+    ASR_FIO?: StringFieldUpdateOperationsInput | string
+    ASR_SCORE?: IntFieldUpdateOperationsInput | number
+    ASR_DOLJNOST?: StringFieldUpdateOperationsInput | string
+    ASR_RUKOVODITEL?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type GA_ANKETA_SOREVNOVANIEUncheckedUpdateInput = {
+    ASR_YEAR?: IntFieldUpdateOperationsInput | number
+    ASR_MONTH?: IntFieldUpdateOperationsInput | number
+    ASR_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ASR_LOGIN?: StringFieldUpdateOperationsInput | string
+    ASR_FIO?: StringFieldUpdateOperationsInput | string
+    ASR_SCORE?: IntFieldUpdateOperationsInput | number
+    ASR_DOLJNOST?: StringFieldUpdateOperationsInput | string
+    ASR_RUKOVODITEL?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type GA_ANKETA_SOREVNOVANIECreateManyInput = {
+    ASR_YEAR: number
+    ASR_MONTH: number
+    ASR_WSU_ID: bigint | number
+    ASR_LOGIN: string
+    ASR_FIO: string
+    ASR_SCORE: number
+    ASR_DOLJNOST: string
+    ASR_RUKOVODITEL?: boolean
+  }
+
+  export type GA_ANKETA_SOREVNOVANIEUpdateManyMutationInput = {
+    ASR_YEAR?: IntFieldUpdateOperationsInput | number
+    ASR_MONTH?: IntFieldUpdateOperationsInput | number
+    ASR_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ASR_LOGIN?: StringFieldUpdateOperationsInput | string
+    ASR_FIO?: StringFieldUpdateOperationsInput | string
+    ASR_SCORE?: IntFieldUpdateOperationsInput | number
+    ASR_DOLJNOST?: StringFieldUpdateOperationsInput | string
+    ASR_RUKOVODITEL?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type GA_ANKETA_SOREVNOVANIEUncheckedUpdateManyInput = {
+    ASR_YEAR?: IntFieldUpdateOperationsInput | number
+    ASR_MONTH?: IntFieldUpdateOperationsInput | number
+    ASR_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ASR_LOGIN?: StringFieldUpdateOperationsInput | string
+    ASR_FIO?: StringFieldUpdateOperationsInput | string
+    ASR_SCORE?: IntFieldUpdateOperationsInput | number
+    ASR_DOLJNOST?: StringFieldUpdateOperationsInput | string
+    ASR_RUKOVODITEL?: BoolFieldUpdateOperationsInput | boolean
+  }
+
   export type GA_WS_USERSCreateInput = {
     WSU_ID: bigint | number
-    WSU_WSO_ID?: number | null
-    WSU_EMAIL?: string | null
-    WSU_NAME?: string | null
-    WSU_FULL_NAME?: string | null
-    WSU_PHONE?: string | null
-    WSU_ADDRESS?: string | null
-    WSU_PASSWD?: string | null
-    WSU_ID_IN_DS?: number | null
-    WSU_INN?: string | null
-    WSU_PRICE_TYPE?: number | null
-    WSU_GRP_ID?: number | null
-    WSU_WS_ID?: number | null
-    WSU_MOBILE?: string | null
-    WSU_SHOW_SUP_ALIAS?: boolean | null
-    WSU_IS_ZS?: boolean | null
-    WSU_PASSWD_ENC?: string | null
-    WSU_LOGIN_ENC?: string | null
-    WSU_DATETIME_LAST_LOGIN?: Date | string | null
-    WSU_START_PAGE?: string | null
-    WSU_SALT?: string | null
-    WSU_TEMP_TICKET?: string | null
-    WSU_TEMP_TICKET_DATETIME?: Date | string | null
-    WSU_DATETIME_CREATE?: Date | string | null
+    WSU_WSO_ID: number
+    WSU_EMAIL: string
+    WSU_NAME: string
+    WSU_FULL_NAME: string
+    WSU_PHONE: string
+    WSU_ADDRESS: string
+    WSU_PASSWD: string
+    WSU_ID_IN_DS: number
+    WSU_INN: string
+    WSU_PRICE_TYPE?: number
+    WSU_GRP_ID?: number
+    WSU_WS_ID?: number
+    WSU_MOBILE: string
+    WSU_SHOW_SUP_ALIAS?: boolean
+    WSU_IS_ZS?: boolean
+    WSU_PASSWD_ENC: string
+    WSU_LOGIN_ENC: string
+    WSU_DATETIME_LAST_LOGIN: Date | string
+    WSU_START_PAGE: string
+    WSU_SALT: string
+    WSU_TEMP_TICKET: string
+    WSU_TEMP_TICKET_DATETIME: Date | string
+    WSU_DATETIME_CREATE: Date | string
   }
 
   export type GA_WS_USERSUncheckedCreateInput = {
     WSU_ID: bigint | number
-    WSU_WSO_ID?: number | null
-    WSU_EMAIL?: string | null
-    WSU_NAME?: string | null
-    WSU_FULL_NAME?: string | null
-    WSU_PHONE?: string | null
-    WSU_ADDRESS?: string | null
-    WSU_PASSWD?: string | null
-    WSU_ID_IN_DS?: number | null
-    WSU_INN?: string | null
-    WSU_PRICE_TYPE?: number | null
-    WSU_GRP_ID?: number | null
-    WSU_WS_ID?: number | null
-    WSU_MOBILE?: string | null
-    WSU_SHOW_SUP_ALIAS?: boolean | null
-    WSU_IS_ZS?: boolean | null
-    WSU_PASSWD_ENC?: string | null
-    WSU_LOGIN_ENC?: string | null
-    WSU_DATETIME_LAST_LOGIN?: Date | string | null
-    WSU_START_PAGE?: string | null
-    WSU_SALT?: string | null
-    WSU_TEMP_TICKET?: string | null
-    WSU_TEMP_TICKET_DATETIME?: Date | string | null
-    WSU_DATETIME_CREATE?: Date | string | null
+    WSU_WSO_ID: number
+    WSU_EMAIL: string
+    WSU_NAME: string
+    WSU_FULL_NAME: string
+    WSU_PHONE: string
+    WSU_ADDRESS: string
+    WSU_PASSWD: string
+    WSU_ID_IN_DS: number
+    WSU_INN: string
+    WSU_PRICE_TYPE?: number
+    WSU_GRP_ID?: number
+    WSU_WS_ID?: number
+    WSU_MOBILE: string
+    WSU_SHOW_SUP_ALIAS?: boolean
+    WSU_IS_ZS?: boolean
+    WSU_PASSWD_ENC: string
+    WSU_LOGIN_ENC: string
+    WSU_DATETIME_LAST_LOGIN: Date | string
+    WSU_START_PAGE: string
+    WSU_SALT: string
+    WSU_TEMP_TICKET: string
+    WSU_TEMP_TICKET_DATETIME: Date | string
+    WSU_DATETIME_CREATE: Date | string
   }
 
   export type GA_WS_USERSUpdateInput = {
     WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    WSU_WSO_ID?: NullableIntFieldUpdateOperationsInput | number | null
-    WSU_EMAIL?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_NAME?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_FULL_NAME?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_PHONE?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_ADDRESS?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_PASSWD?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_ID_IN_DS?: NullableIntFieldUpdateOperationsInput | number | null
-    WSU_INN?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_PRICE_TYPE?: NullableIntFieldUpdateOperationsInput | number | null
-    WSU_GRP_ID?: NullableIntFieldUpdateOperationsInput | number | null
-    WSU_WS_ID?: NullableIntFieldUpdateOperationsInput | number | null
-    WSU_MOBILE?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_SHOW_SUP_ALIAS?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    WSU_IS_ZS?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    WSU_PASSWD_ENC?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_LOGIN_ENC?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_DATETIME_LAST_LOGIN?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    WSU_START_PAGE?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_SALT?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_TEMP_TICKET?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_TEMP_TICKET_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    WSU_DATETIME_CREATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    WSU_WSO_ID?: IntFieldUpdateOperationsInput | number
+    WSU_EMAIL?: StringFieldUpdateOperationsInput | string
+    WSU_NAME?: StringFieldUpdateOperationsInput | string
+    WSU_FULL_NAME?: StringFieldUpdateOperationsInput | string
+    WSU_PHONE?: StringFieldUpdateOperationsInput | string
+    WSU_ADDRESS?: StringFieldUpdateOperationsInput | string
+    WSU_PASSWD?: StringFieldUpdateOperationsInput | string
+    WSU_ID_IN_DS?: IntFieldUpdateOperationsInput | number
+    WSU_INN?: StringFieldUpdateOperationsInput | string
+    WSU_PRICE_TYPE?: IntFieldUpdateOperationsInput | number
+    WSU_GRP_ID?: IntFieldUpdateOperationsInput | number
+    WSU_WS_ID?: IntFieldUpdateOperationsInput | number
+    WSU_MOBILE?: StringFieldUpdateOperationsInput | string
+    WSU_SHOW_SUP_ALIAS?: BoolFieldUpdateOperationsInput | boolean
+    WSU_IS_ZS?: BoolFieldUpdateOperationsInput | boolean
+    WSU_PASSWD_ENC?: StringFieldUpdateOperationsInput | string
+    WSU_LOGIN_ENC?: StringFieldUpdateOperationsInput | string
+    WSU_DATETIME_LAST_LOGIN?: DateTimeFieldUpdateOperationsInput | Date | string
+    WSU_START_PAGE?: StringFieldUpdateOperationsInput | string
+    WSU_SALT?: StringFieldUpdateOperationsInput | string
+    WSU_TEMP_TICKET?: StringFieldUpdateOperationsInput | string
+    WSU_TEMP_TICKET_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
+    WSU_DATETIME_CREATE?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type GA_WS_USERSUncheckedUpdateInput = {
     WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    WSU_WSO_ID?: NullableIntFieldUpdateOperationsInput | number | null
-    WSU_EMAIL?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_NAME?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_FULL_NAME?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_PHONE?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_ADDRESS?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_PASSWD?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_ID_IN_DS?: NullableIntFieldUpdateOperationsInput | number | null
-    WSU_INN?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_PRICE_TYPE?: NullableIntFieldUpdateOperationsInput | number | null
-    WSU_GRP_ID?: NullableIntFieldUpdateOperationsInput | number | null
-    WSU_WS_ID?: NullableIntFieldUpdateOperationsInput | number | null
-    WSU_MOBILE?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_SHOW_SUP_ALIAS?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    WSU_IS_ZS?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    WSU_PASSWD_ENC?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_LOGIN_ENC?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_DATETIME_LAST_LOGIN?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    WSU_START_PAGE?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_SALT?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_TEMP_TICKET?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_TEMP_TICKET_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    WSU_DATETIME_CREATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    WSU_WSO_ID?: IntFieldUpdateOperationsInput | number
+    WSU_EMAIL?: StringFieldUpdateOperationsInput | string
+    WSU_NAME?: StringFieldUpdateOperationsInput | string
+    WSU_FULL_NAME?: StringFieldUpdateOperationsInput | string
+    WSU_PHONE?: StringFieldUpdateOperationsInput | string
+    WSU_ADDRESS?: StringFieldUpdateOperationsInput | string
+    WSU_PASSWD?: StringFieldUpdateOperationsInput | string
+    WSU_ID_IN_DS?: IntFieldUpdateOperationsInput | number
+    WSU_INN?: StringFieldUpdateOperationsInput | string
+    WSU_PRICE_TYPE?: IntFieldUpdateOperationsInput | number
+    WSU_GRP_ID?: IntFieldUpdateOperationsInput | number
+    WSU_WS_ID?: IntFieldUpdateOperationsInput | number
+    WSU_MOBILE?: StringFieldUpdateOperationsInput | string
+    WSU_SHOW_SUP_ALIAS?: BoolFieldUpdateOperationsInput | boolean
+    WSU_IS_ZS?: BoolFieldUpdateOperationsInput | boolean
+    WSU_PASSWD_ENC?: StringFieldUpdateOperationsInput | string
+    WSU_LOGIN_ENC?: StringFieldUpdateOperationsInput | string
+    WSU_DATETIME_LAST_LOGIN?: DateTimeFieldUpdateOperationsInput | Date | string
+    WSU_START_PAGE?: StringFieldUpdateOperationsInput | string
+    WSU_SALT?: StringFieldUpdateOperationsInput | string
+    WSU_TEMP_TICKET?: StringFieldUpdateOperationsInput | string
+    WSU_TEMP_TICKET_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
+    WSU_DATETIME_CREATE?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type GA_WS_USERSCreateManyInput = {
     WSU_ID: bigint | number
-    WSU_WSO_ID?: number | null
-    WSU_EMAIL?: string | null
-    WSU_NAME?: string | null
-    WSU_FULL_NAME?: string | null
-    WSU_PHONE?: string | null
-    WSU_ADDRESS?: string | null
-    WSU_PASSWD?: string | null
-    WSU_ID_IN_DS?: number | null
-    WSU_INN?: string | null
-    WSU_PRICE_TYPE?: number | null
-    WSU_GRP_ID?: number | null
-    WSU_WS_ID?: number | null
-    WSU_MOBILE?: string | null
-    WSU_SHOW_SUP_ALIAS?: boolean | null
-    WSU_IS_ZS?: boolean | null
-    WSU_PASSWD_ENC?: string | null
-    WSU_LOGIN_ENC?: string | null
-    WSU_DATETIME_LAST_LOGIN?: Date | string | null
-    WSU_START_PAGE?: string | null
-    WSU_SALT?: string | null
-    WSU_TEMP_TICKET?: string | null
-    WSU_TEMP_TICKET_DATETIME?: Date | string | null
-    WSU_DATETIME_CREATE?: Date | string | null
+    WSU_WSO_ID: number
+    WSU_EMAIL: string
+    WSU_NAME: string
+    WSU_FULL_NAME: string
+    WSU_PHONE: string
+    WSU_ADDRESS: string
+    WSU_PASSWD: string
+    WSU_ID_IN_DS: number
+    WSU_INN: string
+    WSU_PRICE_TYPE?: number
+    WSU_GRP_ID?: number
+    WSU_WS_ID?: number
+    WSU_MOBILE: string
+    WSU_SHOW_SUP_ALIAS?: boolean
+    WSU_IS_ZS?: boolean
+    WSU_PASSWD_ENC: string
+    WSU_LOGIN_ENC: string
+    WSU_DATETIME_LAST_LOGIN: Date | string
+    WSU_START_PAGE: string
+    WSU_SALT: string
+    WSU_TEMP_TICKET: string
+    WSU_TEMP_TICKET_DATETIME: Date | string
+    WSU_DATETIME_CREATE: Date | string
   }
 
   export type GA_WS_USERSUpdateManyMutationInput = {
     WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    WSU_WSO_ID?: NullableIntFieldUpdateOperationsInput | number | null
-    WSU_EMAIL?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_NAME?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_FULL_NAME?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_PHONE?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_ADDRESS?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_PASSWD?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_ID_IN_DS?: NullableIntFieldUpdateOperationsInput | number | null
-    WSU_INN?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_PRICE_TYPE?: NullableIntFieldUpdateOperationsInput | number | null
-    WSU_GRP_ID?: NullableIntFieldUpdateOperationsInput | number | null
-    WSU_WS_ID?: NullableIntFieldUpdateOperationsInput | number | null
-    WSU_MOBILE?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_SHOW_SUP_ALIAS?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    WSU_IS_ZS?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    WSU_PASSWD_ENC?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_LOGIN_ENC?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_DATETIME_LAST_LOGIN?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    WSU_START_PAGE?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_SALT?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_TEMP_TICKET?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_TEMP_TICKET_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    WSU_DATETIME_CREATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    WSU_WSO_ID?: IntFieldUpdateOperationsInput | number
+    WSU_EMAIL?: StringFieldUpdateOperationsInput | string
+    WSU_NAME?: StringFieldUpdateOperationsInput | string
+    WSU_FULL_NAME?: StringFieldUpdateOperationsInput | string
+    WSU_PHONE?: StringFieldUpdateOperationsInput | string
+    WSU_ADDRESS?: StringFieldUpdateOperationsInput | string
+    WSU_PASSWD?: StringFieldUpdateOperationsInput | string
+    WSU_ID_IN_DS?: IntFieldUpdateOperationsInput | number
+    WSU_INN?: StringFieldUpdateOperationsInput | string
+    WSU_PRICE_TYPE?: IntFieldUpdateOperationsInput | number
+    WSU_GRP_ID?: IntFieldUpdateOperationsInput | number
+    WSU_WS_ID?: IntFieldUpdateOperationsInput | number
+    WSU_MOBILE?: StringFieldUpdateOperationsInput | string
+    WSU_SHOW_SUP_ALIAS?: BoolFieldUpdateOperationsInput | boolean
+    WSU_IS_ZS?: BoolFieldUpdateOperationsInput | boolean
+    WSU_PASSWD_ENC?: StringFieldUpdateOperationsInput | string
+    WSU_LOGIN_ENC?: StringFieldUpdateOperationsInput | string
+    WSU_DATETIME_LAST_LOGIN?: DateTimeFieldUpdateOperationsInput | Date | string
+    WSU_START_PAGE?: StringFieldUpdateOperationsInput | string
+    WSU_SALT?: StringFieldUpdateOperationsInput | string
+    WSU_TEMP_TICKET?: StringFieldUpdateOperationsInput | string
+    WSU_TEMP_TICKET_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
+    WSU_DATETIME_CREATE?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type GA_WS_USERSUncheckedUpdateManyInput = {
     WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    WSU_WSO_ID?: NullableIntFieldUpdateOperationsInput | number | null
-    WSU_EMAIL?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_NAME?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_FULL_NAME?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_PHONE?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_ADDRESS?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_PASSWD?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_ID_IN_DS?: NullableIntFieldUpdateOperationsInput | number | null
-    WSU_INN?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_PRICE_TYPE?: NullableIntFieldUpdateOperationsInput | number | null
-    WSU_GRP_ID?: NullableIntFieldUpdateOperationsInput | number | null
-    WSU_WS_ID?: NullableIntFieldUpdateOperationsInput | number | null
-    WSU_MOBILE?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_SHOW_SUP_ALIAS?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    WSU_IS_ZS?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    WSU_PASSWD_ENC?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_LOGIN_ENC?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_DATETIME_LAST_LOGIN?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    WSU_START_PAGE?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_SALT?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_TEMP_TICKET?: NullableStringFieldUpdateOperationsInput | string | null
-    WSU_TEMP_TICKET_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    WSU_DATETIME_CREATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    WSU_WSO_ID?: IntFieldUpdateOperationsInput | number
+    WSU_EMAIL?: StringFieldUpdateOperationsInput | string
+    WSU_NAME?: StringFieldUpdateOperationsInput | string
+    WSU_FULL_NAME?: StringFieldUpdateOperationsInput | string
+    WSU_PHONE?: StringFieldUpdateOperationsInput | string
+    WSU_ADDRESS?: StringFieldUpdateOperationsInput | string
+    WSU_PASSWD?: StringFieldUpdateOperationsInput | string
+    WSU_ID_IN_DS?: IntFieldUpdateOperationsInput | number
+    WSU_INN?: StringFieldUpdateOperationsInput | string
+    WSU_PRICE_TYPE?: IntFieldUpdateOperationsInput | number
+    WSU_GRP_ID?: IntFieldUpdateOperationsInput | number
+    WSU_WS_ID?: IntFieldUpdateOperationsInput | number
+    WSU_MOBILE?: StringFieldUpdateOperationsInput | string
+    WSU_SHOW_SUP_ALIAS?: BoolFieldUpdateOperationsInput | boolean
+    WSU_IS_ZS?: BoolFieldUpdateOperationsInput | boolean
+    WSU_PASSWD_ENC?: StringFieldUpdateOperationsInput | string
+    WSU_LOGIN_ENC?: StringFieldUpdateOperationsInput | string
+    WSU_DATETIME_LAST_LOGIN?: DateTimeFieldUpdateOperationsInput | Date | string
+    WSU_START_PAGE?: StringFieldUpdateOperationsInput | string
+    WSU_SALT?: StringFieldUpdateOperationsInput | string
+    WSU_TEMP_TICKET?: StringFieldUpdateOperationsInput | string
+    WSU_TEMP_TICKET_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
+    WSU_DATETIME_CREATE?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type BigIntFilter<$PrismaModel = never> = {
@@ -8180,6 +12832,7 @@ export namespace Prisma {
     AAD_OBLAST?: SortOrder
     AAD_GOROD?: SortOrder
     AAD_ADDR?: SortOrder
+    AAD_POSTCODE?: SortOrder
   }
 
   export type GA_ANKETA_ADDRAvgOrderByAggregateInput = {
@@ -8193,6 +12846,7 @@ export namespace Prisma {
     AAD_OBLAST?: SortOrder
     AAD_GOROD?: SortOrder
     AAD_ADDR?: SortOrder
+    AAD_POSTCODE?: SortOrder
   }
 
   export type GA_ANKETA_ADDRMinOrderByAggregateInput = {
@@ -8202,6 +12856,7 @@ export namespace Prisma {
     AAD_OBLAST?: SortOrder
     AAD_GOROD?: SortOrder
     AAD_ADDR?: SortOrder
+    AAD_POSTCODE?: SortOrder
   }
 
   export type GA_ANKETA_ADDRSumOrderByAggregateInput = {
@@ -8242,15 +12897,15 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
-  export type IntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type BoolFilter<$PrismaModel = never> = {
@@ -8352,20 +13007,20 @@ export namespace Prisma {
     ABA_ID?: SortOrder
   }
 
-  export type IntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
   export type BoolWithAggregatesFilter<$PrismaModel = never> = {
@@ -8458,6 +13113,17 @@ export namespace Prisma {
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
     not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
+  export type IntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
   }
 
   export type GA_ANKETA_OBOROTCountOrderByAggregateInput = {
@@ -8674,31 +13340,185 @@ export namespace Prisma {
     _max?: NestedFloatFilter<$PrismaModel>
   }
 
-  export type IntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
   }
 
-  export type BoolNullableFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
-    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  export type GA_ANKETA_BRANDCountOrderByAggregateInput = {
+    ABR_ABA_ID?: SortOrder
+    ABR_STATUS?: SortOrder
+    ABR_DATETIME?: SortOrder
+    ABR_HALF_STATUS?: SortOrder
+    ABR_VYVESKA_STATUS?: SortOrder
+    ABR_KOROB_STATUS?: SortOrder
   }
 
-  export type DateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  export type GA_ANKETA_BRANDAvgOrderByAggregateInput = {
+    ABR_ABA_ID?: SortOrder
+  }
+
+  export type GA_ANKETA_BRANDMaxOrderByAggregateInput = {
+    ABR_ABA_ID?: SortOrder
+    ABR_STATUS?: SortOrder
+    ABR_DATETIME?: SortOrder
+    ABR_HALF_STATUS?: SortOrder
+    ABR_VYVESKA_STATUS?: SortOrder
+    ABR_KOROB_STATUS?: SortOrder
+  }
+
+  export type GA_ANKETA_BRANDMinOrderByAggregateInput = {
+    ABR_ABA_ID?: SortOrder
+    ABR_STATUS?: SortOrder
+    ABR_DATETIME?: SortOrder
+    ABR_HALF_STATUS?: SortOrder
+    ABR_VYVESKA_STATUS?: SortOrder
+    ABR_KOROB_STATUS?: SortOrder
+  }
+
+  export type GA_ANKETA_BRANDSumOrderByAggregateInput = {
+    ABR_ABA_ID?: SortOrder
+  }
+
+  export type GA_ANKETA_SCORESCountOrderByAggregateInput = {
+    ANS_WSU_ID?: SortOrder
+    ANS_SCORES?: SortOrder
+    ANS_DATETIME?: SortOrder
+    ANS_ISSHOW?: SortOrder
+  }
+
+  export type GA_ANKETA_SCORESAvgOrderByAggregateInput = {
+    ANS_WSU_ID?: SortOrder
+    ANS_SCORES?: SortOrder
+  }
+
+  export type GA_ANKETA_SCORESMaxOrderByAggregateInput = {
+    ANS_WSU_ID?: SortOrder
+    ANS_SCORES?: SortOrder
+    ANS_DATETIME?: SortOrder
+    ANS_ISSHOW?: SortOrder
+  }
+
+  export type GA_ANKETA_SCORESMinOrderByAggregateInput = {
+    ANS_WSU_ID?: SortOrder
+    ANS_SCORES?: SortOrder
+    ANS_DATETIME?: SortOrder
+    ANS_ISSHOW?: SortOrder
+  }
+
+  export type GA_ANKETA_SCORESSumOrderByAggregateInput = {
+    ANS_WSU_ID?: SortOrder
+    ANS_SCORES?: SortOrder
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYCountOrderByAggregateInput = {
+    ASH_WSU_ID?: SortOrder
+    ASH_SCORES?: SortOrder
+    ASH_DATETIME?: SortOrder
+    ASH_DESC?: SortOrder
+    ASH_TYPE?: SortOrder
+    ASH_SCORES_OLD?: SortOrder
+    ASH_EVENT_STATUS?: SortOrder
+    ASH_DATETIME_UPDATE?: SortOrder
+    ASH_IZO_ID?: SortOrder
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYAvgOrderByAggregateInput = {
+    ASH_WSU_ID?: SortOrder
+    ASH_SCORES?: SortOrder
+    ASH_TYPE?: SortOrder
+    ASH_SCORES_OLD?: SortOrder
+    ASH_IZO_ID?: SortOrder
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYMaxOrderByAggregateInput = {
+    ASH_WSU_ID?: SortOrder
+    ASH_SCORES?: SortOrder
+    ASH_DATETIME?: SortOrder
+    ASH_DESC?: SortOrder
+    ASH_TYPE?: SortOrder
+    ASH_SCORES_OLD?: SortOrder
+    ASH_EVENT_STATUS?: SortOrder
+    ASH_DATETIME_UPDATE?: SortOrder
+    ASH_IZO_ID?: SortOrder
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYMinOrderByAggregateInput = {
+    ASH_WSU_ID?: SortOrder
+    ASH_SCORES?: SortOrder
+    ASH_DATETIME?: SortOrder
+    ASH_DESC?: SortOrder
+    ASH_TYPE?: SortOrder
+    ASH_SCORES_OLD?: SortOrder
+    ASH_EVENT_STATUS?: SortOrder
+    ASH_DATETIME_UPDATE?: SortOrder
+    ASH_IZO_ID?: SortOrder
+  }
+
+  export type GA_ANKETA_SCORES_HISTORYSumOrderByAggregateInput = {
+    ASH_WSU_ID?: SortOrder
+    ASH_SCORES?: SortOrder
+    ASH_TYPE?: SortOrder
+    ASH_SCORES_OLD?: SortOrder
+    ASH_IZO_ID?: SortOrder
+  }
+
+  export type GA_ANKETA_SOREVNOVANIECountOrderByAggregateInput = {
+    ASR_YEAR?: SortOrder
+    ASR_MONTH?: SortOrder
+    ASR_WSU_ID?: SortOrder
+    ASR_LOGIN?: SortOrder
+    ASR_FIO?: SortOrder
+    ASR_SCORE?: SortOrder
+    ASR_DOLJNOST?: SortOrder
+    ASR_RUKOVODITEL?: SortOrder
+  }
+
+  export type GA_ANKETA_SOREVNOVANIEAvgOrderByAggregateInput = {
+    ASR_YEAR?: SortOrder
+    ASR_MONTH?: SortOrder
+    ASR_WSU_ID?: SortOrder
+    ASR_SCORE?: SortOrder
+  }
+
+  export type GA_ANKETA_SOREVNOVANIEMaxOrderByAggregateInput = {
+    ASR_YEAR?: SortOrder
+    ASR_MONTH?: SortOrder
+    ASR_WSU_ID?: SortOrder
+    ASR_LOGIN?: SortOrder
+    ASR_FIO?: SortOrder
+    ASR_SCORE?: SortOrder
+    ASR_DOLJNOST?: SortOrder
+    ASR_RUKOVODITEL?: SortOrder
+  }
+
+  export type GA_ANKETA_SOREVNOVANIEMinOrderByAggregateInput = {
+    ASR_YEAR?: SortOrder
+    ASR_MONTH?: SortOrder
+    ASR_WSU_ID?: SortOrder
+    ASR_LOGIN?: SortOrder
+    ASR_FIO?: SortOrder
+    ASR_SCORE?: SortOrder
+    ASR_DOLJNOST?: SortOrder
+    ASR_RUKOVODITEL?: SortOrder
+  }
+
+  export type GA_ANKETA_SOREVNOVANIESumOrderByAggregateInput = {
+    ASR_YEAR?: SortOrder
+    ASR_MONTH?: SortOrder
+    ASR_WSU_ID?: SortOrder
+    ASR_SCORE?: SortOrder
   }
 
   export type GA_WS_USERSCountOrderByAggregateInput = {
@@ -8800,44 +13620,6 @@ export namespace Prisma {
     WSU_WS_ID?: SortOrder
   }
 
-  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedIntNullableFilter<$PrismaModel>
-    _max?: NestedIntNullableFilter<$PrismaModel>
-  }
-
-  export type BoolNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
-    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedBoolNullableFilter<$PrismaModel>
-    _max?: NestedBoolNullableFilter<$PrismaModel>
-  }
-
-  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
-  }
-
   export type BigIntFieldUpdateOperationsInput = {
     set?: bigint | number
     increment?: bigint | number
@@ -8850,8 +13632,8 @@ export namespace Prisma {
     set?: string
   }
 
-  export type IntFieldUpdateOperationsInput = {
-    set?: number
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
     increment?: number
     decrement?: number
     multiply?: number
@@ -8878,20 +13660,12 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type NullableIntFieldUpdateOperationsInput = {
-    set?: number | null
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
     increment?: number
     decrement?: number
     multiply?: number
     divide?: number
-  }
-
-  export type NullableBoolFieldUpdateOperationsInput = {
-    set?: boolean | null
-  }
-
-  export type NullableDateTimeFieldUpdateOperationsInput = {
-    set?: Date | string | null
   }
 
   export type NestedBigIntFilter<$PrismaModel = never> = {
@@ -8974,6 +13748,17 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
   export type NestedBoolFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolFilter<$PrismaModel> | boolean
@@ -9004,20 +13789,31 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
-  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
@@ -9059,17 +13855,6 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
-  export type NestedIntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
-  }
-
   export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | FloatFieldRefInput<$PrismaModel>
     in?: number[] | ListFloatFieldRefInput<$PrismaModel>
@@ -9086,69 +13871,20 @@ export namespace Prisma {
     _max?: NestedFloatFilter<$PrismaModel>
   }
 
-  export type NestedBoolNullableFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
-    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
-  }
-
-  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
-  }
-
-  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedIntNullableFilter<$PrismaModel>
-    _max?: NestedIntNullableFilter<$PrismaModel>
-  }
-
-  export type NestedFloatNullableFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
-  }
-
-  export type NestedBoolNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
-    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedBoolNullableFilter<$PrismaModel>
-    _max?: NestedBoolNullableFilter<$PrismaModel>
-  }
-
-  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
   }
 
 
@@ -9172,6 +13908,22 @@ export namespace Prisma {
      * @deprecated Use GA_ANKETA_OBOROTDefaultArgs instead
      */
     export type GA_ANKETA_OBOROTArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = GA_ANKETA_OBOROTDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use GA_ANKETA_BRANDDefaultArgs instead
+     */
+    export type GA_ANKETA_BRANDArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = GA_ANKETA_BRANDDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use GA_ANKETA_SCORESDefaultArgs instead
+     */
+    export type GA_ANKETA_SCORESArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = GA_ANKETA_SCORESDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use GA_ANKETA_SCORES_HISTORYDefaultArgs instead
+     */
+    export type GA_ANKETA_SCORES_HISTORYArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = GA_ANKETA_SCORES_HISTORYDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use GA_ANKETA_SOREVNOVANIEDefaultArgs instead
+     */
+    export type GA_ANKETA_SOREVNOVANIEArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = GA_ANKETA_SOREVNOVANIEDefaultArgs<ExtArgs>
     /**
      * @deprecated Use GA_WS_USERSDefaultArgs instead
      */

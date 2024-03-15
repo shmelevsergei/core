@@ -1,7 +1,7 @@
 import { IAnketaOborotRepository } from '@/repository/anketaOborot.repository'
 import { cache } from 'react'
 
-const fetchAnketaOborotData = cache(
+const fetchAnketaOborot = cache(
     async ({
         startDate,
         endDate,
@@ -35,7 +35,7 @@ const fetchAnketaOborotData = cache(
     }
 )
 
-export const fetchOborot = async ({
+export const fetchDataOborot = async ({
     startDate,
     endDate,
 }: {
@@ -48,11 +48,11 @@ export const fetchOborot = async ({
             copyStartDate.setMonth(startDate.getMonth() - 1)
             const copyEndDate = new Date(endDate)
             copyEndDate.setMonth(endDate.getMonth() - 1)
-            const responseCurrentData = await fetchAnketaOborotData({
+            const responseCurrentData = await fetchAnketaOborot({
                 startDate,
                 endDate,
             })
-            const responsePrevData = await fetchAnketaOborotData({
+            const responsePrevData = await fetchAnketaOborot({
                 startDate: copyStartDate,
                 endDate: copyEndDate,
             })
@@ -107,6 +107,11 @@ export const fetchOborot = async ({
                 0
             )
 
+            const pointsToAwarded = currentData.reduce(
+                (acc, item) => acc + item.ABO_SCORES_MONTH_PLAN,
+                0
+            )
+
             const data = {
                 allMoney: allMoneyData,
                 prevAllMoney: prevAllMoneyData,
@@ -116,6 +121,7 @@ export const fetchOborot = async ({
                 prevPurchaseStoCount: prevPurchaseStoCountData,
                 allRemzonaQty: allRemzonaQtyData,
                 prevAllRemzonaQty: prevAllRemzonaQtyData,
+                pointsToAwarded,
             }
 
             return data
@@ -128,101 +134,3 @@ export const fetchOborot = async ({
         throw error
     }
 }
-
-// export async function oborotAll({
-//     startDate,
-//     endDate,
-// }: {
-//     startDate: Date | undefined
-//     endDate: Date | undefined
-// }) {
-//     const oborotData = await fetchAnketaOborotData({
-//         startDate,
-//         endDate,
-//     })
-
-//     const data: IAnketaOborotRepository[] = JSON.parse(oborotData)
-
-//     if (!data) return
-
-//     const result = data.reduce(
-//         (acc, current) => acc + current.ABO_OBOROT_ALL,
-//         0
-//     )
-
-//     return result
-// }
-
-// export async function purchaseStoMoney({
-//     startDate,
-//     endDate,
-// }: {
-//     startDate: Date | undefined
-//     endDate: Date | undefined
-// }) {
-//     const oborotData = await fetchAnketaOborotData({
-//         startDate,
-//         endDate,
-//     })
-
-//     const data: IAnketaOborotRepository[] = JSON.parse(oborotData)
-
-//     if (!data) return
-
-//     const result = data.filter((item) => item.ABO_OBOROT_ALL > 0)
-
-//     return result
-// }
-
-// export const oborotPurchaseStoCount = async ({
-//     startDate,
-//     endDate,
-// }: {
-//     startDate: Date | undefined
-//     endDate: Date | undefined
-// }) => {
-//     const oborotData = await fetchAnketaOborotData({
-//         startDate,
-//         endDate,
-//     })
-
-//     const data: IAnketaOborotRepository[] = JSON.parse(oborotData)
-
-//     const filterOborot = data.filter((item) => item.ABO_OBOROT_ALL > 0)
-
-//     const result = filterOborot.reduce(
-//         (acc, item) =>
-//             acc +
-//             item.ABO_COUNT_AE +
-//             item.ABO_COUNT_ARKONA +
-//             item.ABO_COUNT_AUTORUS +
-//             item.ABO_COUNT_ROSSKO,
-//         0
-//     )
-
-//     return result
-// }
-
-// export const oborotRemzonaQty = async ({
-//     startDate,
-//     endDate,
-// }: {
-//     startDate: Date | undefined
-//     endDate: Date | undefined
-// }) => {
-//     const oborotData = await fetchAnketaOborotData({
-//         startDate,
-//         endDate,
-//     })
-
-//     const data: IAnketaOborotRepository[] = JSON.parse(oborotData)
-
-//     const filterOborot = data.filter((item) => item.ABO_OBOROT_ALL > 0)
-
-//     const result = filterOborot.reduce(
-//         (acc, item) => acc + item.ABO_ABA_REMZONA_QTY,
-//         0
-//     )
-
-//     return result
-// }

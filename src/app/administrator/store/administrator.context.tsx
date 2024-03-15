@@ -1,4 +1,6 @@
 'use client'
+import { IBranding } from '@/types/administrator/branding'
+import { ICompetitions } from '@/types/administrator/competitions'
 import {
     createContext,
     SetStateAction,
@@ -24,6 +26,10 @@ type AdministratorStateType = {
     prevPurchaseStoCount: number
     allRemzonaQty: number
     prevAllRemzonaQty: number
+    branding: IBranding
+    competitions: ICompetitions
+    totalScores: number
+    pointsToAwarded: number
 }
 
 const AdministratorStateContext = createContext<{
@@ -67,6 +73,19 @@ export const AdministratorProvider: FC<IAdministratorStateProvider> = ({
             prevPurchaseStoCount: 0,
             allRemzonaQty: 0,
             prevAllRemzonaQty: 0,
+            branding: {
+                allBranded: 0,
+                boxBranded: 0,
+                partialBranded: 0,
+                posterBranded: 0,
+            },
+            competitions: {
+                masterConsultant: 0,
+                supervisor: 0,
+                totalParticipants: 0,
+            },
+            totalScores: 0,
+            pointsToAwarded: 0,
         }
     })
     return (

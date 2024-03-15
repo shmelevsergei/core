@@ -48,12 +48,12 @@ export const questionnaires = {
             text: 'Заявки (шт.)',
         },
         {
-            href: '/administrator/questionnaire/create-a-request/',
-            text: 'Создать заявку',
+            href: '',
+            text: 'Отклоненные (шт.)',
         },
         {
             href: '',
-            text: 'Отклоненные (шт.)',
+            text: 'Брендирование',
         },
         {
             href: '',

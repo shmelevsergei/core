@@ -3,14 +3,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import logo from '/public/logo-everycar.svg'
-import LinksSidebar from '@/components/sidebar/linksSadebar/LiksSidebar'
 
-import {
-    questionnaires,
-    dataSto,
-} from '@/components/sidebar/linksSidebarDistributor'
-
-const SidebarDistributor = () => {
+const SidebarSto = () => {
     return (
         <aside
             className={
@@ -33,22 +27,29 @@ const SidebarDistributor = () => {
                 <Link href={'/'} className={'text-base'}>
                     Главная
                 </Link>
-                <div className={'flex flex-col gap-4'}>
-                    <LinksSidebar links={questionnaires} />
-                    <Link href={''} className={'text-base'}>
-                        Визуализация
-                    </Link>
-                    <LinksSidebar links={dataSto} />
-                    <Link href={''} className={'text-base'}>
-                        Загрузить закупки
-                    </Link>
-                    <Link href={''} className={'text-base'}>
-                        Все СТО
-                    </Link>
-                </div>
+
+                <Link href={''} className={'text-base'}>
+                    Общая информация
+                </Link>
+
+                <Link href={''} className={'text-base'}>
+                    Детализация закупок
+                </Link>
+                <Link href={''} className={'text-base'}>
+                    Розыгрыш
+                </Link>
+                <Link href={''} className={'text-base'}>
+                    Соревнование
+                </Link>
+                <Link href={''} className={'text-base'}>
+                    Интернет-магазин
+                </Link>
+                <Link href={''} className={'text-base'}>
+                    СТО и сотрудники
+                </Link>
             </div>
         </aside>
     )
 }
 
-export default SidebarDistributor
+export default SidebarSto

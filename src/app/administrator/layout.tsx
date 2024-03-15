@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
         <AdministratorProvider>
-            <div className={'flex h-screen max-w-[1280px] mx-auto '}>
+            <div className={'flex max-w-[1280px] mx-auto h-screen'}>
                 <div>
                     <SidebarAdministrator />
                 </div>
 
-                <div className={'flex flex-col w-full'}>
+                <div className={'flex flex-col w-full h-full'}>
                     <Header />
                     {children}
                 </div>

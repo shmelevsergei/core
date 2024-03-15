@@ -17,7 +17,7 @@ const InfoPanel = () => {
     return (
         <div
             className={
-                'flex justify-between bg-[#FEFFFE] shadow-base mt-3 py-2 px-3 min-h-32'
+                'relative flex justify-between bg-[#FEFFFE] shadow-base mt-3 py-2 px-3 min-h-32 z-10'
             }
         >
             {!isLoading ? (
