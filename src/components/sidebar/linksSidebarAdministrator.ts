@@ -44,7 +44,7 @@ export const questionnaires = {
     linkButton: 'Анкеты',
     linksList: [
         {
-            href: '',
+            href: '/administrator/questionnaire/questionnaire-sent',
             text: 'Заявки (шт.)',
         },
         {

@@ -9,7 +9,11 @@ export const metadata: Metadata = {
     description: 'Личный кабинет администратора',
 }
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function AdministratorLayout({
+    children,
+}: {
+    children: React.ReactNode
+}) {
     return (
         <AdministratorProvider>
             <div className={'flex max-w-[1280px] mx-auto h-screen'}>

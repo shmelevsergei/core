@@ -1,22 +1,26 @@
 'use client'
-import React, { useEffect, useId, useRef, useState } from 'react'
+import React, { useId, useRef, useState } from 'react'
 import {
     AddressSuggestions,
     DaDataAddress,
     DaDataSuggestion,
 } from 'react-dadata'
-import { DADATA_API_KEY } from '@/server/lib/variables'
 import { Label } from '@/components/ui/label'
 import { useQuestionnaireState } from '@/app/distributor/questionnaire/store/questionnaire.context'
 
-const InputAreaSto = ({ name }: { name?: string }) => {
+const InputAreaSto = ({
+    name,
+    apiDaData,
+}: {
+    name?: string
+    apiDaData: string
+}) => {
     const areaRef = useRef<AddressSuggestions | null>(null)
     const [value, setValue] = useState<
         DaDataSuggestion<DaDataAddress> | undefined
     >()
     const { setState } = useQuestionnaireState()
 
-    const apiKey: string = DADATA_API_KEY
     const id = useId()
 
     const handleInputChange = (
@@ -55,7 +59,7 @@ const InputAreaSto = ({ name }: { name?: string }) => {
         <div className={`grid w-full max-w-sm items-center gap-1.5`}>
             <Label htmlFor={id}>Область</Label>
             <AddressSuggestions
-                token={apiKey}
+                token={apiDaData}
                 onChange={handleInputChange}
                 value={value}
                 uid={id}

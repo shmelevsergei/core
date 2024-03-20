@@ -1,14 +1,13 @@
-'use client'
 import React from 'react'
-import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
+import { deleteCookies } from '../form/cookiesAction'
+import { useRouter } from 'next/navigation'
 
 const LogoutButton = () => {
-    const redirect = useRouter()
-
-    const handleClick = () => {
-        localStorage.removeItem('login')
-        redirect.push('/')
+    const navigate = useRouter()
+    const handleClick = async () => {
+        await deleteCookies()
+        navigate.push('/')
     }
     return (
         <Button variant="outline" onClick={handleClick}>

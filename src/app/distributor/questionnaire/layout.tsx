@@ -1,7 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
-import Sidebar from '@/components/sidebar/SidebarAdministrator'
-import Header from '@/components/header/Header'
+import { QuestionnaireProvider } from './store/questionnaire.context'
 
 export const metadata: Metadata = {
     title: 'GROUPAUTO | EVERYCAR',
@@ -9,5 +8,9 @@ export const metadata: Metadata = {
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-    return <div className={'h-full p-4'}>{children}</div>
+    return (
+        <QuestionnaireProvider>
+            <div className={'h-full p-4'}>{children}</div>
+        </QuestionnaireProvider>
+    )
 }

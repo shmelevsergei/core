@@ -10,7 +10,7 @@ export async function GET() {
         const data = webshop.map(({ WSU_NAME, WSU_PASSWD }) => {
             if (WSU_NAME && WSU_PASSWD) {
                 return {
-                    name: WSU_NAME,
+                    login: WSU_NAME,
                     password: WSU_PASSWD,
                 }
             }

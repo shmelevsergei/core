@@ -1,34 +1,40 @@
-'use client'
 import Form from '@/components/form/Form'
-import { useRouter } from 'next/navigation'
-import { useEffect } from 'react'
+import { getCookies } from '@/components/form/cookiesAction'
+import DistributorLayout from './distributor/layout'
+import AdministratorLayout from './administrator/layout'
+import StoLayout from './sto/layout'
+import AdministratorPage from './administrator/page'
+import StoPage from './sto/page'
+import DistributorPage from './distributor/page'
 
 export interface IUserData {
     user: string
     status: string
 }
 
-function Home() {
-    const navigate = useRouter()
+async function Home() {
+    const userRole = await getCookies()
 
-    useEffect(() => {
-        const localData = localStorage.getItem('login')
-
-        if (!localData) {
-            return
-        }
-        const userStatus: IUserData = JSON.parse(localData)
-
-        if (userStatus.status === 'admin') {
-            navigate.push('/administrator')
-        }
-        if (userStatus.status === 'distributor') {
-            navigate.push('/distributor')
-        }
-        if (userStatus.status === 'sto') {
-            navigate.push('/sto')
-        }
-    })
+    switch (userRole?.role) {
+        case 'distributor':
+            return (
+                <DistributorLayout>
+                    <DistributorPage />
+                </DistributorLayout>
+            )
+        case 'admin':
+            return (
+                <AdministratorLayout>
+                    <AdministratorPage />
+                </AdministratorLayout>
+            )
+        case 'sto':
+            return (
+                <StoLayout>
+                    <StoPage />
+                </StoLayout>
+            )
+    }
 
     return (
         <main className="flex min-h-screen flex-col items-center justify-center p-24">

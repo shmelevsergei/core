@@ -7,6 +7,7 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL_PORTAL")
 }
+
 model Questionnaire {
   id                   Int                  @id @default(autoincrement())
   distributor          String
@@ -19,7 +20,7 @@ model Questionnaire {
   signatoryManager     SignatoryManager?
   confirmData          ConfirmData?
   status               Status
-  comment              String?              @db.Text
+  comment              String?               @db.Text
   created_date         DateTime
   updated_date         DateTime
 }
@@ -29,6 +30,7 @@ enum Status {
   accepted
   rejected
   sent
+  cart
 }
 
 model DistributorEmployee {
@@ -38,7 +40,7 @@ model DistributorEmployee {
   lastname        String
   phone           String
   email           String
-  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
+  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id], onDelete: Cascade)
   questionnaireId Int           @unique
 }
 
@@ -51,14 +53,14 @@ model DataSto {
   code_client_avtoevro String
   code_client_avtorus  String
   code_client_rossko   String
-  questionnaire        Questionnaire @relation(fields: [questionnaireId], references: [id])
+  questionnaire        Questionnaire @relation(fields: [questionnaireId], references: [id], onDelete: Cascade)
   questionnaireId      Int           @unique
 }
 
 model IInn {
   id              Int           @id @default(autoincrement())
   inn             String
-  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
+  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id], onDelete: Cascade)
   questionnaireId Int
 }
 
@@ -70,7 +72,7 @@ model Manager {
   phone    String
   email    String
 
-  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
+  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id], onDelete: Cascade)
   questionnaireId Int           @unique
 }
 
@@ -82,7 +84,7 @@ model SignatoryManager {
   phone    String
   email    String
 
-  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
+  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id], onDelete: Cascade)
   questionnaireId Int           @unique
 }
 
@@ -96,7 +98,7 @@ model Lifts {
   postElectronicDiagnostic Int
   postAdditionalEquipment  Int
 
-  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
+  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id], onDelete: Cascade)
   questionnaireId Int           @unique
 }
 
@@ -106,7 +108,7 @@ model ConfirmData {
   loginTwo String
   lifts    Int
 
-  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
+  questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id], onDelete: Cascade)
   questionnaireId Int           @unique
 }
 
@@ -114,16 +116,19 @@ model Images {
   id              Int           @id @default(autoincrement())
   path            String
   description     String
-  Questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id])
+  Questionnaire   Questionnaire @relation(fields: [questionnaireId], references: [id], onDelete: Cascade)
   questionnaireId Int
 }
+
 model User {
   id        Int      @id @default(autoincrement())
-  name      String
+  login String
+  name String?
   password  String
   role      Role     @default(sto)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
+  
 }
 
 enum Role {

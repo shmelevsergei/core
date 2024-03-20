@@ -3,14 +3,17 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import logo from '/public/logo-everycar.svg'
-import LinksSidebar from '@/components/sidebar/linksSadebar/LiksSidebar'
+import LinksSidebar from '@/components/sidebar/linksSadebar/LinksSidebar'
 
 import {
     questionnaires,
     dataSto,
 } from '@/components/sidebar/linksSidebarDistributor'
+import { getQuestionnaire } from '@/app/distributor/questionnaire/fetchAction'
 
-const SidebarDistributor = () => {
+const SidebarDistributor = async () => {
+    const questionnaireData = await getQuestionnaire()
+
     return (
         <aside
             className={
@@ -34,7 +37,10 @@ const SidebarDistributor = () => {
                     Главная
                 </Link>
                 <div className={'flex flex-col gap-4'}>
-                    <LinksSidebar links={questionnaires} />
+                    <LinksSidebar
+                        links={questionnaires}
+                        questionnaireData={questionnaireData}
+                    />
                     <Link href={''} className={'text-base'}>
                         Визуализация
                     </Link>

@@ -1,31 +1,37 @@
 export const questionnaires = {
     id: 'headingOne',
     activeElement: 'element1',
-    linkButton: 'Добавить анкету',
+    linkButton: 'Анкеты',
     linksList: [
         {
             href: '/distributor/questionnaire/create-a-request/',
             text: 'Добавить',
+            status: '',
         },
         {
-            href: '',
+            href: '/distributor/questionnaire/questionnaires-sent/',
             text: 'В очереди',
+            status: 'sent',
         },
         {
-            href: '',
+            href: '/distributor/questionnaire/questionnaires-accepted/',
             text: 'Согласовано',
+            status: 'accepted',
         },
         {
             href: '',
             text: 'Отклоненные',
+            status: 'rejected',
         },
         {
             href: '',
             text: 'Черновики',
+            status: 'draft',
         },
         {
             href: '',
             text: 'Корзина',
+            status: 'cart',
         },
     ],
 }

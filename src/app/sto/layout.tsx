@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: 'Личный кабинет СТО',
 }
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function StoLayout({ children }: { children: React.ReactNode }) {
     return (
         <StoProvider>
             <div className={'flex h-screen max-w-[1280px] mx-auto '}>

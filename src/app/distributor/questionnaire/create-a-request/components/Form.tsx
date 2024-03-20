@@ -12,24 +12,23 @@ import Comment from '@/app/distributor/questionnaire/create-a-request/components
 import Photo from '@/app/distributor/questionnaire/create-a-request/components/Photo/Photo'
 import { Button } from '@/components/ui/button'
 import { useQuestionnaireState } from '@/app/distributor/questionnaire/store/questionnaire.context'
-import { fetchDataDistributor } from '@/server/routs/portal_db/fetchQuestionnaire'
-import { IUploadQuestionnaire } from '@/types/questionnaire/create-a-request/questionnaire'
 import { toast } from '@/components/ui/use-toast'
+import { createQuestionnaire } from '../../fetchAction'
 
 const Form = () => {
     const { state } = useQuestionnaireState()
     const [isDisabled, setIsDisabled] = useState(false)
     const [isUpload, setIsUpload] = useState(false)
+    const [apiDaData, setApiDaData] = useState('')
 
     const fetchFormData = async () => {
-        const response = await fetchDataDistributor(state.questionnaire)
-        if (response) return await response.json()
+        return await createQuestionnaire(state.questionnaire)
     }
 
     const handleClick = async () => {
         setIsDisabled(true)
 
-        const fetchResult: IUploadQuestionnaire = await fetchFormData()
+        const fetchResult = await fetchFormData()
 
         if (fetchResult.success) {
             setIsUpload(true)
@@ -51,13 +50,20 @@ const Form = () => {
             })
         }
     }, [isUpload])
+
+    useEffect(() => {
+        const apiData = process.env.NEXT_PUBLIC_DADATA_API_KEY
+        if (!apiData) return
+
+        setApiDaData(apiData)
+    }, [])
     return (
         <form>
             <Distributor />
             <Separator className={cn('my-3 w-full')} />
             <DistributorEmployee />
             <Separator className={cn('my-3 w-full')} />
-            <DataSto />
+            <DataSto apiDaData={apiDaData} />
             <Separator className={cn('my-3 w-full')} />
             <ManagerDetails />
             <Separator className={cn('my-3 w-full')} />

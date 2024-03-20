@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import logo from '/public/logo-everycar.svg'
-import LinksSidebar from '@/components/sidebar/linksSadebar/LiksSidebar'
+import LinksSidebar from '@/components/sidebar/linksSadebar/LinksSidebar'
 
 import {
     reports,

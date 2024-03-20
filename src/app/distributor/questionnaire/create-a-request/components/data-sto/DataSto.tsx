@@ -10,7 +10,7 @@ import InputAreaSto from '@/app/distributor/questionnaire/create-a-request/compo
 import InputAddressSto from '@/app/distributor/questionnaire/create-a-request/components/data-sto/InputAddressSto'
 import { useQuestionnaireState } from '@/app/distributor/questionnaire/store/questionnaire.context'
 
-const DataSto = () => {
+const DataSto = ({ apiDaData }: { apiDaData: string }) => {
     const { state, setState } = useQuestionnaireState()
 
     const handleInputChange = (
@@ -41,9 +41,9 @@ const DataSto = () => {
                         label={'Название СТО'}
                         onChange={(e) => handleInputChange('name', e)}
                     />
-                    <InputCitySto />
-                    <InputAreaSto />
-                    <InputAddressSto />
+                    <InputCitySto apiDaData={apiDaData} />
+                    <InputAreaSto apiDaData={apiDaData} />
+                    <InputAddressSto apiDaData={apiDaData} />
                     <InputForm
                         id={'code-avtoevro-sto'}
                         placeholder={'Код клиента АВТО-ЕВРО'}

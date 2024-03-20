@@ -3,21 +3,13 @@ import React, { useState } from 'react'
 import { Label } from '../ui/label'
 import { Input } from '../ui/input'
 import { Button } from '../ui/button'
-import { IUserResponse } from '@/types/questionnaire/users/users'
-import { useRouter } from 'next/navigation'
-
-interface ResponseJson {
-    login: boolean
-    password: boolean
-    data: IUserResponse
-}
+import { loginAction } from './loginAction'
 
 const Form = () => {
     const [name, setName] = useState<string>('')
     const [password, setPassword] = useState<string>('')
     const [validPassword, setIsValidPassword] = useState('')
     const [validUsername, setIsValidUsername] = useState('')
-    const router = useRouter()
 
     const handleClick = async (e: any) => {
         e.preventDefault()
@@ -26,50 +18,16 @@ const Form = () => {
         setIsValidUsername('')
 
         try {
-            const data = {
-                name,
-                password,
-            }
+            const result = await loginAction(name, password)
 
-            const result = await fetch('/api/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            })
-
-            if (result.ok) {
-                const responseJson: ResponseJson = await result.json()
-
-                if (responseJson.login === false) {
+            if (result) {
+                if (result.login === false) {
                     setIsValidUsername('Пользователь с таким логином не найден')
-                } else if (responseJson.password === false) {
+                } else if (result.password === false) {
                     setIsValidPassword('Пароль введён не верно')
-                } else if (responseJson.data) {
-                    const { name, role } = responseJson.data
-
-                    const infoUser = {
-                        user: name,
-                        status: role,
-                    }
-                    localStorage.setItem('login', JSON.stringify(infoUser))
-                    if (infoUser.status === 'admin') {
-                        router.push('/administrator')
-                    }
-                    if (infoUser.status === 'distributor') {
-                        router.push('/distributor')
-                    }
-                    if (infoUser.status === 'sto') {
-                        router.push('/sto')
-                    }
                 }
             } else {
-                console.error(
-                    'Произошла ошибка:',
-                    result.status,
-                    result.statusText
-                )
+                console.error('Произошла ошибка:')
             }
         } catch (error) {
             console.log(error)

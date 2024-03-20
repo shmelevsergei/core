@@ -20,10 +20,14 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 export type GA_ANKETA_ADDR = $Result.DefaultSelection<Prisma.$GA_ANKETA_ADDRPayload>
 /**
  * Model GA_ANKETA_BASE
- * The underlying table does not contain a valid unique identifier and can therefore currently not  handled by Prisma Client.
  * The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
  */
 export type GA_ANKETA_BASE = $Result.DefaultSelection<Prisma.$GA_ANKETA_BASEPayload>
+/**
+ * Model GA_ANKETA_BRAND
+ * The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+ */
+export type GA_ANKETA_BRAND = $Result.DefaultSelection<Prisma.$GA_ANKETA_BRANDPayload>
 /**
  * Model GA_ANKETA_DOGOVOR
  * The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
@@ -34,11 +38,6 @@ export type GA_ANKETA_DOGOVOR = $Result.DefaultSelection<Prisma.$GA_ANKETA_DOGOV
  * The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
  */
 export type GA_ANKETA_OBOROT = $Result.DefaultSelection<Prisma.$GA_ANKETA_OBOROTPayload>
-/**
- * Model GA_ANKETA_BRAND
- * The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
- */
-export type GA_ANKETA_BRAND = $Result.DefaultSelection<Prisma.$GA_ANKETA_BRANDPayload>
 /**
  * Model GA_ANKETA_SCORES
  * The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
@@ -54,6 +53,11 @@ export type GA_ANKETA_SCORES_HISTORY = $Result.DefaultSelection<Prisma.$GA_ANKET
  * The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
  */
 export type GA_ANKETA_SOREVNOVANIE = $Result.DefaultSelection<Prisma.$GA_ANKETA_SOREVNOVANIEPayload>
+/**
+ * Model GA_ANKETA_SUP
+ * The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+ */
+export type GA_ANKETA_SUP = $Result.DefaultSelection<Prisma.$GA_ANKETA_SUPPayload>
 /**
  * Model GA_WS_USERS
  * The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
@@ -203,6 +207,16 @@ export class PrismaClient<
   get gA_ANKETA_BASE(): Prisma.GA_ANKETA_BASEDelegate<ExtArgs>;
 
   /**
+   * `prisma.gA_ANKETA_BRAND`: Exposes CRUD operations for the **GA_ANKETA_BRAND** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more GA_ANKETA_BRANDS
+    * const gA_ANKETA_BRANDS = await prisma.gA_ANKETA_BRAND.findMany()
+    * ```
+    */
+  get gA_ANKETA_BRAND(): Prisma.GA_ANKETA_BRANDDelegate<ExtArgs>;
+
+  /**
    * `prisma.gA_ANKETA_DOGOVOR`: Exposes CRUD operations for the **GA_ANKETA_DOGOVOR** model.
     * Example usage:
     * ```ts
@@ -221,16 +235,6 @@ export class PrismaClient<
     * ```
     */
   get gA_ANKETA_OBOROT(): Prisma.GA_ANKETA_OBOROTDelegate<ExtArgs>;
-
-  /**
-   * `prisma.gA_ANKETA_BRAND`: Exposes CRUD operations for the **GA_ANKETA_BRAND** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more GA_ANKETA_BRANDS
-    * const gA_ANKETA_BRANDS = await prisma.gA_ANKETA_BRAND.findMany()
-    * ```
-    */
-  get gA_ANKETA_BRAND(): Prisma.GA_ANKETA_BRANDDelegate<ExtArgs>;
 
   /**
    * `prisma.gA_ANKETA_SCORES`: Exposes CRUD operations for the **GA_ANKETA_SCORES** model.
@@ -261,6 +265,16 @@ export class PrismaClient<
     * ```
     */
   get gA_ANKETA_SOREVNOVANIE(): Prisma.GA_ANKETA_SOREVNOVANIEDelegate<ExtArgs>;
+
+  /**
+   * `prisma.gA_ANKETA_SUP`: Exposes CRUD operations for the **GA_ANKETA_SUP** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more GA_ANKETA_SUPS
+    * const gA_ANKETA_SUPS = await prisma.gA_ANKETA_SUP.findMany()
+    * ```
+    */
+  get gA_ANKETA_SUP(): Prisma.GA_ANKETA_SUPDelegate<ExtArgs>;
 
   /**
    * `prisma.gA_WS_USERS`: Exposes CRUD operations for the **GA_WS_USERS** model.
@@ -328,8 +342,8 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 5.10.2
-   * Query Engine version: 5a9203d0590c951969e85a7d07215503f4672eb9
+   * Prisma Client JS version: 5.11.0
+   * Query Engine version: efd2449663b3d73d637ea1fd226bafbcf45b3102
    */
   export type PrismaVersion = {
     client: string
@@ -743,12 +757,13 @@ export namespace Prisma {
   export const ModelName: {
     GA_ANKETA_ADDR: 'GA_ANKETA_ADDR',
     GA_ANKETA_BASE: 'GA_ANKETA_BASE',
+    GA_ANKETA_BRAND: 'GA_ANKETA_BRAND',
     GA_ANKETA_DOGOVOR: 'GA_ANKETA_DOGOVOR',
     GA_ANKETA_OBOROT: 'GA_ANKETA_OBOROT',
-    GA_ANKETA_BRAND: 'GA_ANKETA_BRAND',
     GA_ANKETA_SCORES: 'GA_ANKETA_SCORES',
     GA_ANKETA_SCORES_HISTORY: 'GA_ANKETA_SCORES_HISTORY',
     GA_ANKETA_SOREVNOVANIE: 'GA_ANKETA_SOREVNOVANIE',
+    GA_ANKETA_SUP: 'GA_ANKETA_SUP',
     GA_WS_USERS: 'GA_WS_USERS'
   };
 
@@ -766,7 +781,7 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     meta: {
-      modelProps: 'gA_ANKETA_ADDR' | 'gA_ANKETA_BASE' | 'gA_ANKETA_DOGOVOR' | 'gA_ANKETA_OBOROT' | 'gA_ANKETA_BRAND' | 'gA_ANKETA_SCORES' | 'gA_ANKETA_SCORES_HISTORY' | 'gA_ANKETA_SOREVNOVANIE' | 'gA_WS_USERS'
+      modelProps: 'gA_ANKETA_ADDR' | 'gA_ANKETA_BASE' | 'gA_ANKETA_BRAND' | 'gA_ANKETA_DOGOVOR' | 'gA_ANKETA_OBOROT' | 'gA_ANKETA_SCORES' | 'gA_ANKETA_SCORES_HISTORY' | 'gA_ANKETA_SOREVNOVANIE' | 'gA_ANKETA_SUP' | 'gA_WS_USERS'
       txIsolationLevel: Prisma.TransactionIsolationLevel
     },
     model: {
@@ -902,6 +917,72 @@ export namespace Prisma {
           }
         }
       }
+      GA_ANKETA_BRAND: {
+        payload: Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>
+        fields: Prisma.GA_ANKETA_BRANDFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.GA_ANKETA_BRANDFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.GA_ANKETA_BRANDFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload>
+          }
+          findFirst: {
+            args: Prisma.GA_ANKETA_BRANDFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.GA_ANKETA_BRANDFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload>
+          }
+          findMany: {
+            args: Prisma.GA_ANKETA_BRANDFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload>[]
+          }
+          create: {
+            args: Prisma.GA_ANKETA_BRANDCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload>
+          }
+          createMany: {
+            args: Prisma.GA_ANKETA_BRANDCreateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          delete: {
+            args: Prisma.GA_ANKETA_BRANDDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload>
+          }
+          update: {
+            args: Prisma.GA_ANKETA_BRANDUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload>
+          }
+          deleteMany: {
+            args: Prisma.GA_ANKETA_BRANDDeleteManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          updateMany: {
+            args: Prisma.GA_ANKETA_BRANDUpdateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          upsert: {
+            args: Prisma.GA_ANKETA_BRANDUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload>
+          }
+          aggregate: {
+            args: Prisma.GA_ANKETA_BRANDAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregateGA_ANKETA_BRAND>
+          }
+          groupBy: {
+            args: Prisma.GA_ANKETA_BRANDGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<GA_ANKETA_BRANDGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.GA_ANKETA_BRANDCountArgs<ExtArgs>,
+            result: $Utils.Optional<GA_ANKETA_BRANDCountAggregateOutputType> | number
+          }
+        }
+      }
       GA_ANKETA_DOGOVOR: {
         payload: Prisma.$GA_ANKETA_DOGOVORPayload<ExtArgs>
         fields: Prisma.GA_ANKETA_DOGOVORFieldRefs
@@ -1031,72 +1112,6 @@ export namespace Prisma {
           count: {
             args: Prisma.GA_ANKETA_OBOROTCountArgs<ExtArgs>,
             result: $Utils.Optional<GA_ANKETA_OBOROTCountAggregateOutputType> | number
-          }
-        }
-      }
-      GA_ANKETA_BRAND: {
-        payload: Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>
-        fields: Prisma.GA_ANKETA_BRANDFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.GA_ANKETA_BRANDFindUniqueArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.GA_ANKETA_BRANDFindUniqueOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload>
-          }
-          findFirst: {
-            args: Prisma.GA_ANKETA_BRANDFindFirstArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.GA_ANKETA_BRANDFindFirstOrThrowArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload>
-          }
-          findMany: {
-            args: Prisma.GA_ANKETA_BRANDFindManyArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload>[]
-          }
-          create: {
-            args: Prisma.GA_ANKETA_BRANDCreateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload>
-          }
-          createMany: {
-            args: Prisma.GA_ANKETA_BRANDCreateManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          delete: {
-            args: Prisma.GA_ANKETA_BRANDDeleteArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload>
-          }
-          update: {
-            args: Prisma.GA_ANKETA_BRANDUpdateArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload>
-          }
-          deleteMany: {
-            args: Prisma.GA_ANKETA_BRANDDeleteManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          updateMany: {
-            args: Prisma.GA_ANKETA_BRANDUpdateManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
-          upsert: {
-            args: Prisma.GA_ANKETA_BRANDUpsertArgs<ExtArgs>,
-            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_BRANDPayload>
-          }
-          aggregate: {
-            args: Prisma.GA_ANKETA_BRANDAggregateArgs<ExtArgs>,
-            result: $Utils.Optional<AggregateGA_ANKETA_BRAND>
-          }
-          groupBy: {
-            args: Prisma.GA_ANKETA_BRANDGroupByArgs<ExtArgs>,
-            result: $Utils.Optional<GA_ANKETA_BRANDGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.GA_ANKETA_BRANDCountArgs<ExtArgs>,
-            result: $Utils.Optional<GA_ANKETA_BRANDCountAggregateOutputType> | number
           }
         }
       }
@@ -1295,6 +1310,72 @@ export namespace Prisma {
           count: {
             args: Prisma.GA_ANKETA_SOREVNOVANIECountArgs<ExtArgs>,
             result: $Utils.Optional<GA_ANKETA_SOREVNOVANIECountAggregateOutputType> | number
+          }
+        }
+      }
+      GA_ANKETA_SUP: {
+        payload: Prisma.$GA_ANKETA_SUPPayload<ExtArgs>
+        fields: Prisma.GA_ANKETA_SUPFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.GA_ANKETA_SUPFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SUPPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.GA_ANKETA_SUPFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SUPPayload>
+          }
+          findFirst: {
+            args: Prisma.GA_ANKETA_SUPFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SUPPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.GA_ANKETA_SUPFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SUPPayload>
+          }
+          findMany: {
+            args: Prisma.GA_ANKETA_SUPFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SUPPayload>[]
+          }
+          create: {
+            args: Prisma.GA_ANKETA_SUPCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SUPPayload>
+          }
+          createMany: {
+            args: Prisma.GA_ANKETA_SUPCreateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          delete: {
+            args: Prisma.GA_ANKETA_SUPDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SUPPayload>
+          }
+          update: {
+            args: Prisma.GA_ANKETA_SUPUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SUPPayload>
+          }
+          deleteMany: {
+            args: Prisma.GA_ANKETA_SUPDeleteManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          updateMany: {
+            args: Prisma.GA_ANKETA_SUPUpdateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          upsert: {
+            args: Prisma.GA_ANKETA_SUPUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$GA_ANKETA_SUPPayload>
+          }
+          aggregate: {
+            args: Prisma.GA_ANKETA_SUPAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregateGA_ANKETA_SUP>
+          }
+          groupBy: {
+            args: Prisma.GA_ANKETA_SUPGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<GA_ANKETA_SUPGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.GA_ANKETA_SUPCountArgs<ExtArgs>,
+            result: $Utils.Optional<GA_ANKETA_SUPCountAggregateOutputType> | number
           }
         }
       }
@@ -1702,12 +1783,12 @@ export namespace Prisma {
 
   export type GA_ANKETA_ADDRGroupByOutputType = {
     AAD_ABA_ID: bigint
-    AAD_SHIROTA: string
-    AAD_DOLGOTA: string
-    AAD_OBLAST: string
-    AAD_GOROD: string
-    AAD_ADDR: string
-    AAD_POSTCODE: string
+    AAD_SHIROTA: string | null
+    AAD_DOLGOTA: string | null
+    AAD_OBLAST: string | null
+    AAD_GOROD: string | null
+    AAD_ADDR: string | null
+    AAD_POSTCODE: string | null
     _count: GA_ANKETA_ADDRCountAggregateOutputType | null
     _avg: GA_ANKETA_ADDRAvgAggregateOutputType | null
     _sum: GA_ANKETA_ADDRSumAggregateOutputType | null
@@ -1755,12 +1836,12 @@ export namespace Prisma {
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       AAD_ABA_ID: bigint
-      AAD_SHIROTA: string
-      AAD_DOLGOTA: string
-      AAD_OBLAST: string
-      AAD_GOROD: string
-      AAD_ADDR: string
-      AAD_POSTCODE: string
+      AAD_SHIROTA: string | null
+      AAD_DOLGOTA: string | null
+      AAD_OBLAST: string | null
+      AAD_GOROD: string | null
+      AAD_ADDR: string | null
+      AAD_POSTCODE: string | null
     }, ExtArgs["result"]["gA_ANKETA_ADDR"]>
     composites: {}
   }
@@ -2677,17 +2758,17 @@ export namespace Prisma {
   }
 
   export type GA_ANKETA_BASEGroupByOutputType = {
-    ABA_WSU_ID: bigint
-    ABA_STO_NAME: string
-    ABA_STO_ID1: string
+    ABA_WSU_ID: bigint | null
+    ABA_STO_NAME: string | null
+    ABA_STO_ID1: string | null
     ABA_REMZONA_QTY: number | null
-    ABA_ENABLED: boolean
-    ABA_PHONE: string
-    ABA_INN: string
-    ABA_DATETIME_CREATED: Date
-    ABA_DATETIME_UPDATED: Date
+    ABA_ENABLED: boolean | null
+    ABA_PHONE: string | null
+    ABA_INN: string | null
+    ABA_DATETIME_CREATED: Date | null
+    ABA_DATETIME_UPDATED: Date | null
     ABA_ID: bigint
-    ABA_DATETIME: Date
+    ABA_DATETIME: Date | null
     ABA_STO_ID2: string | null
     ABA_STO_NAME_FIND: string | null
     ABA_DESC: string | null
@@ -2751,17 +2832,17 @@ export namespace Prisma {
     name: "GA_ANKETA_BASE"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
-      ABA_WSU_ID: bigint
-      ABA_STO_NAME: string
-      ABA_STO_ID1: string
+      ABA_WSU_ID: bigint | null
+      ABA_STO_NAME: string | null
+      ABA_STO_ID1: string | null
       ABA_REMZONA_QTY: number | null
-      ABA_ENABLED: boolean
-      ABA_PHONE: string
-      ABA_INN: string
-      ABA_DATETIME_CREATED: Date
-      ABA_DATETIME_UPDATED: Date
+      ABA_ENABLED: boolean | null
+      ABA_PHONE: string | null
+      ABA_INN: string | null
+      ABA_DATETIME_CREATED: Date | null
+      ABA_DATETIME_UPDATED: Date | null
       ABA_ID: bigint
-      ABA_DATETIME: Date
+      ABA_DATETIME: Date | null
       ABA_STO_ID2: string | null
       ABA_STO_NAME_FIND: string | null
       ABA_DESC: string | null
@@ -3461,6 +3542,921 @@ export namespace Prisma {
 
 
   /**
+   * Model GA_ANKETA_BRAND
+   */
+
+  export type AggregateGA_ANKETA_BRAND = {
+    _count: GA_ANKETA_BRANDCountAggregateOutputType | null
+    _avg: GA_ANKETA_BRANDAvgAggregateOutputType | null
+    _sum: GA_ANKETA_BRANDSumAggregateOutputType | null
+    _min: GA_ANKETA_BRANDMinAggregateOutputType | null
+    _max: GA_ANKETA_BRANDMaxAggregateOutputType | null
+  }
+
+  export type GA_ANKETA_BRANDAvgAggregateOutputType = {
+    ABR_ABA_ID: number | null
+  }
+
+  export type GA_ANKETA_BRANDSumAggregateOutputType = {
+    ABR_ABA_ID: bigint | null
+  }
+
+  export type GA_ANKETA_BRANDMinAggregateOutputType = {
+    ABR_ABA_ID: bigint | null
+    ABR_STATUS: boolean | null
+    ABR_DATETIME: Date | null
+    ABR_HALF_STATUS: boolean | null
+    ABR_VYVESKA_STATUS: boolean | null
+    ABR_KOROB_STATUS: boolean | null
+  }
+
+  export type GA_ANKETA_BRANDMaxAggregateOutputType = {
+    ABR_ABA_ID: bigint | null
+    ABR_STATUS: boolean | null
+    ABR_DATETIME: Date | null
+    ABR_HALF_STATUS: boolean | null
+    ABR_VYVESKA_STATUS: boolean | null
+    ABR_KOROB_STATUS: boolean | null
+  }
+
+  export type GA_ANKETA_BRANDCountAggregateOutputType = {
+    ABR_ABA_ID: number
+    ABR_STATUS: number
+    ABR_DATETIME: number
+    ABR_HALF_STATUS: number
+    ABR_VYVESKA_STATUS: number
+    ABR_KOROB_STATUS: number
+    _all: number
+  }
+
+
+  export type GA_ANKETA_BRANDAvgAggregateInputType = {
+    ABR_ABA_ID?: true
+  }
+
+  export type GA_ANKETA_BRANDSumAggregateInputType = {
+    ABR_ABA_ID?: true
+  }
+
+  export type GA_ANKETA_BRANDMinAggregateInputType = {
+    ABR_ABA_ID?: true
+    ABR_STATUS?: true
+    ABR_DATETIME?: true
+    ABR_HALF_STATUS?: true
+    ABR_VYVESKA_STATUS?: true
+    ABR_KOROB_STATUS?: true
+  }
+
+  export type GA_ANKETA_BRANDMaxAggregateInputType = {
+    ABR_ABA_ID?: true
+    ABR_STATUS?: true
+    ABR_DATETIME?: true
+    ABR_HALF_STATUS?: true
+    ABR_VYVESKA_STATUS?: true
+    ABR_KOROB_STATUS?: true
+  }
+
+  export type GA_ANKETA_BRANDCountAggregateInputType = {
+    ABR_ABA_ID?: true
+    ABR_STATUS?: true
+    ABR_DATETIME?: true
+    ABR_HALF_STATUS?: true
+    ABR_VYVESKA_STATUS?: true
+    ABR_KOROB_STATUS?: true
+    _all?: true
+  }
+
+  export type GA_ANKETA_BRANDAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GA_ANKETA_BRAND to aggregate.
+     */
+    where?: GA_ANKETA_BRANDWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_BRANDS to fetch.
+     */
+    orderBy?: GA_ANKETA_BRANDOrderByWithRelationInput | GA_ANKETA_BRANDOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: GA_ANKETA_BRANDWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_BRANDS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_BRANDS.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned GA_ANKETA_BRANDS
+    **/
+    _count?: true | GA_ANKETA_BRANDCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: GA_ANKETA_BRANDAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: GA_ANKETA_BRANDSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: GA_ANKETA_BRANDMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: GA_ANKETA_BRANDMaxAggregateInputType
+  }
+
+  export type GetGA_ANKETA_BRANDAggregateType<T extends GA_ANKETA_BRANDAggregateArgs> = {
+        [P in keyof T & keyof AggregateGA_ANKETA_BRAND]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateGA_ANKETA_BRAND[P]>
+      : GetScalarType<T[P], AggregateGA_ANKETA_BRAND[P]>
+  }
+
+
+
+
+  export type GA_ANKETA_BRANDGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: GA_ANKETA_BRANDWhereInput
+    orderBy?: GA_ANKETA_BRANDOrderByWithAggregationInput | GA_ANKETA_BRANDOrderByWithAggregationInput[]
+    by: GA_ANKETA_BRANDScalarFieldEnum[] | GA_ANKETA_BRANDScalarFieldEnum
+    having?: GA_ANKETA_BRANDScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: GA_ANKETA_BRANDCountAggregateInputType | true
+    _avg?: GA_ANKETA_BRANDAvgAggregateInputType
+    _sum?: GA_ANKETA_BRANDSumAggregateInputType
+    _min?: GA_ANKETA_BRANDMinAggregateInputType
+    _max?: GA_ANKETA_BRANDMaxAggregateInputType
+  }
+
+  export type GA_ANKETA_BRANDGroupByOutputType = {
+    ABR_ABA_ID: bigint
+    ABR_STATUS: boolean | null
+    ABR_DATETIME: Date | null
+    ABR_HALF_STATUS: boolean | null
+    ABR_VYVESKA_STATUS: boolean | null
+    ABR_KOROB_STATUS: boolean | null
+    _count: GA_ANKETA_BRANDCountAggregateOutputType | null
+    _avg: GA_ANKETA_BRANDAvgAggregateOutputType | null
+    _sum: GA_ANKETA_BRANDSumAggregateOutputType | null
+    _min: GA_ANKETA_BRANDMinAggregateOutputType | null
+    _max: GA_ANKETA_BRANDMaxAggregateOutputType | null
+  }
+
+  type GetGA_ANKETA_BRANDGroupByPayload<T extends GA_ANKETA_BRANDGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<GA_ANKETA_BRANDGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof GA_ANKETA_BRANDGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], GA_ANKETA_BRANDGroupByOutputType[P]>
+            : GetScalarType<T[P], GA_ANKETA_BRANDGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type GA_ANKETA_BRANDSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    ABR_ABA_ID?: boolean
+    ABR_STATUS?: boolean
+    ABR_DATETIME?: boolean
+    ABR_HALF_STATUS?: boolean
+    ABR_VYVESKA_STATUS?: boolean
+    ABR_KOROB_STATUS?: boolean
+  }, ExtArgs["result"]["gA_ANKETA_BRAND"]>
+
+  export type GA_ANKETA_BRANDSelectScalar = {
+    ABR_ABA_ID?: boolean
+    ABR_STATUS?: boolean
+    ABR_DATETIME?: boolean
+    ABR_HALF_STATUS?: boolean
+    ABR_VYVESKA_STATUS?: boolean
+    ABR_KOROB_STATUS?: boolean
+  }
+
+
+  export type $GA_ANKETA_BRANDPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "GA_ANKETA_BRAND"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      ABR_ABA_ID: bigint
+      ABR_STATUS: boolean | null
+      ABR_DATETIME: Date | null
+      ABR_HALF_STATUS: boolean | null
+      ABR_VYVESKA_STATUS: boolean | null
+      ABR_KOROB_STATUS: boolean | null
+    }, ExtArgs["result"]["gA_ANKETA_BRAND"]>
+    composites: {}
+  }
+
+
+  type GA_ANKETA_BRANDGetPayload<S extends boolean | null | undefined | GA_ANKETA_BRANDDefaultArgs> = $Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload, S>
+
+  type GA_ANKETA_BRANDCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<GA_ANKETA_BRANDFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: GA_ANKETA_BRANDCountAggregateInputType | true
+    }
+
+  export interface GA_ANKETA_BRANDDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['GA_ANKETA_BRAND'], meta: { name: 'GA_ANKETA_BRAND' } }
+    /**
+     * Find zero or one GA_ANKETA_BRAND that matches the filter.
+     * @param {GA_ANKETA_BRANDFindUniqueArgs} args - Arguments to find a GA_ANKETA_BRAND
+     * @example
+     * // Get one GA_ANKETA_BRAND
+     * const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUnique<T extends GA_ANKETA_BRANDFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_BRANDFindUniqueArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+
+    /**
+     * Find one GA_ANKETA_BRAND that matches the filter or throw an error  with `error.code='P2025'` 
+     *     if no matches were found.
+     * @param {GA_ANKETA_BRANDFindUniqueOrThrowArgs} args - Arguments to find a GA_ANKETA_BRAND
+     * @example
+     * // Get one GA_ANKETA_BRAND
+     * const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUniqueOrThrow<T extends GA_ANKETA_BRANDFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_BRANDFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find the first GA_ANKETA_BRAND that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_BRANDFindFirstArgs} args - Arguments to find a GA_ANKETA_BRAND
+     * @example
+     * // Get one GA_ANKETA_BRAND
+     * const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirst<T extends GA_ANKETA_BRANDFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_BRANDFindFirstArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+
+    /**
+     * Find the first GA_ANKETA_BRAND that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_BRANDFindFirstOrThrowArgs} args - Arguments to find a GA_ANKETA_BRAND
+     * @example
+     * // Get one GA_ANKETA_BRAND
+     * const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirstOrThrow<T extends GA_ANKETA_BRANDFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_BRANDFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find zero or more GA_ANKETA_BRANDS that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_BRANDFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all GA_ANKETA_BRANDS
+     * const gA_ANKETA_BRANDS = await prisma.gA_ANKETA_BRAND.findMany()
+     * 
+     * // Get first 10 GA_ANKETA_BRANDS
+     * const gA_ANKETA_BRANDS = await prisma.gA_ANKETA_BRAND.findMany({ take: 10 })
+     * 
+     * // Only select the `ABR_ABA_ID`
+     * const gA_ANKETA_BRANDWithABR_ABA_IDOnly = await prisma.gA_ANKETA_BRAND.findMany({ select: { ABR_ABA_ID: true } })
+     * 
+    **/
+    findMany<T extends GA_ANKETA_BRANDFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_BRANDFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'findMany'>>
+
+    /**
+     * Create a GA_ANKETA_BRAND.
+     * @param {GA_ANKETA_BRANDCreateArgs} args - Arguments to create a GA_ANKETA_BRAND.
+     * @example
+     * // Create one GA_ANKETA_BRAND
+     * const GA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.create({
+     *   data: {
+     *     // ... data to create a GA_ANKETA_BRAND
+     *   }
+     * })
+     * 
+    **/
+    create<T extends GA_ANKETA_BRANDCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_BRANDCreateArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+
+    /**
+     * Create many GA_ANKETA_BRANDS.
+     *     @param {GA_ANKETA_BRANDCreateManyArgs} args - Arguments to create many GA_ANKETA_BRANDS.
+     *     @example
+     *     // Create many GA_ANKETA_BRANDS
+     *     const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.createMany({
+     *       data: {
+     *         // ... provide data here
+     *       }
+     *     })
+     *     
+    **/
+    createMany<T extends GA_ANKETA_BRANDCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_BRANDCreateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a GA_ANKETA_BRAND.
+     * @param {GA_ANKETA_BRANDDeleteArgs} args - Arguments to delete one GA_ANKETA_BRAND.
+     * @example
+     * // Delete one GA_ANKETA_BRAND
+     * const GA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.delete({
+     *   where: {
+     *     // ... filter to delete one GA_ANKETA_BRAND
+     *   }
+     * })
+     * 
+    **/
+    delete<T extends GA_ANKETA_BRANDDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_BRANDDeleteArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+
+    /**
+     * Update one GA_ANKETA_BRAND.
+     * @param {GA_ANKETA_BRANDUpdateArgs} args - Arguments to update one GA_ANKETA_BRAND.
+     * @example
+     * // Update one GA_ANKETA_BRAND
+     * const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    update<T extends GA_ANKETA_BRANDUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_BRANDUpdateArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+
+    /**
+     * Delete zero or more GA_ANKETA_BRANDS.
+     * @param {GA_ANKETA_BRANDDeleteManyArgs} args - Arguments to filter GA_ANKETA_BRANDS to delete.
+     * @example
+     * // Delete a few GA_ANKETA_BRANDS
+     * const { count } = await prisma.gA_ANKETA_BRAND.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+    **/
+    deleteMany<T extends GA_ANKETA_BRANDDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_BRANDDeleteManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more GA_ANKETA_BRANDS.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_BRANDUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many GA_ANKETA_BRANDS
+     * const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    updateMany<T extends GA_ANKETA_BRANDUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_BRANDUpdateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one GA_ANKETA_BRAND.
+     * @param {GA_ANKETA_BRANDUpsertArgs} args - Arguments to update or create a GA_ANKETA_BRAND.
+     * @example
+     * // Update or create a GA_ANKETA_BRAND
+     * const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.upsert({
+     *   create: {
+     *     // ... data to create a GA_ANKETA_BRAND
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the GA_ANKETA_BRAND we want to update
+     *   }
+     * })
+    **/
+    upsert<T extends GA_ANKETA_BRANDUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_BRANDUpsertArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+
+    /**
+     * Count the number of GA_ANKETA_BRANDS.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_BRANDCountArgs} args - Arguments to filter GA_ANKETA_BRANDS to count.
+     * @example
+     * // Count the number of GA_ANKETA_BRANDS
+     * const count = await prisma.gA_ANKETA_BRAND.count({
+     *   where: {
+     *     // ... the filter for the GA_ANKETA_BRANDS we want to count
+     *   }
+     * })
+    **/
+    count<T extends GA_ANKETA_BRANDCountArgs>(
+      args?: Subset<T, GA_ANKETA_BRANDCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], GA_ANKETA_BRANDCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a GA_ANKETA_BRAND.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_BRANDAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends GA_ANKETA_BRANDAggregateArgs>(args: Subset<T, GA_ANKETA_BRANDAggregateArgs>): Prisma.PrismaPromise<GetGA_ANKETA_BRANDAggregateType<T>>
+
+    /**
+     * Group by GA_ANKETA_BRAND.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_BRANDGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends GA_ANKETA_BRANDGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: GA_ANKETA_BRANDGroupByArgs['orderBy'] }
+        : { orderBy?: GA_ANKETA_BRANDGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, GA_ANKETA_BRANDGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetGA_ANKETA_BRANDGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the GA_ANKETA_BRAND model
+   */
+  readonly fields: GA_ANKETA_BRANDFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for GA_ANKETA_BRAND.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__GA_ANKETA_BRANDClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+
+
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+
+
+  /**
+   * Fields of the GA_ANKETA_BRAND model
+   */ 
+  interface GA_ANKETA_BRANDFieldRefs {
+    readonly ABR_ABA_ID: FieldRef<"GA_ANKETA_BRAND", 'BigInt'>
+    readonly ABR_STATUS: FieldRef<"GA_ANKETA_BRAND", 'Boolean'>
+    readonly ABR_DATETIME: FieldRef<"GA_ANKETA_BRAND", 'DateTime'>
+    readonly ABR_HALF_STATUS: FieldRef<"GA_ANKETA_BRAND", 'Boolean'>
+    readonly ABR_VYVESKA_STATUS: FieldRef<"GA_ANKETA_BRAND", 'Boolean'>
+    readonly ABR_KOROB_STATUS: FieldRef<"GA_ANKETA_BRAND", 'Boolean'>
+  }
+    
+
+  // Custom InputTypes
+
+  /**
+   * GA_ANKETA_BRAND findUnique
+   */
+  export type GA_ANKETA_BRANDFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_BRAND
+     */
+    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_BRAND to fetch.
+     */
+    where: GA_ANKETA_BRANDWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND findUniqueOrThrow
+   */
+  export type GA_ANKETA_BRANDFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_BRAND
+     */
+    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_BRAND to fetch.
+     */
+    where: GA_ANKETA_BRANDWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND findFirst
+   */
+  export type GA_ANKETA_BRANDFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_BRAND
+     */
+    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_BRAND to fetch.
+     */
+    where?: GA_ANKETA_BRANDWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_BRANDS to fetch.
+     */
+    orderBy?: GA_ANKETA_BRANDOrderByWithRelationInput | GA_ANKETA_BRANDOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GA_ANKETA_BRANDS.
+     */
+    cursor?: GA_ANKETA_BRANDWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_BRANDS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_BRANDS.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GA_ANKETA_BRANDS.
+     */
+    distinct?: GA_ANKETA_BRANDScalarFieldEnum | GA_ANKETA_BRANDScalarFieldEnum[]
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND findFirstOrThrow
+   */
+  export type GA_ANKETA_BRANDFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_BRAND
+     */
+    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_BRAND to fetch.
+     */
+    where?: GA_ANKETA_BRANDWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_BRANDS to fetch.
+     */
+    orderBy?: GA_ANKETA_BRANDOrderByWithRelationInput | GA_ANKETA_BRANDOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GA_ANKETA_BRANDS.
+     */
+    cursor?: GA_ANKETA_BRANDWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_BRANDS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_BRANDS.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GA_ANKETA_BRANDS.
+     */
+    distinct?: GA_ANKETA_BRANDScalarFieldEnum | GA_ANKETA_BRANDScalarFieldEnum[]
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND findMany
+   */
+  export type GA_ANKETA_BRANDFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_BRAND
+     */
+    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_BRANDS to fetch.
+     */
+    where?: GA_ANKETA_BRANDWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_BRANDS to fetch.
+     */
+    orderBy?: GA_ANKETA_BRANDOrderByWithRelationInput | GA_ANKETA_BRANDOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing GA_ANKETA_BRANDS.
+     */
+    cursor?: GA_ANKETA_BRANDWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_BRANDS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_BRANDS.
+     */
+    skip?: number
+    distinct?: GA_ANKETA_BRANDScalarFieldEnum | GA_ANKETA_BRANDScalarFieldEnum[]
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND create
+   */
+  export type GA_ANKETA_BRANDCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_BRAND
+     */
+    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
+    /**
+     * The data needed to create a GA_ANKETA_BRAND.
+     */
+    data: XOR<GA_ANKETA_BRANDCreateInput, GA_ANKETA_BRANDUncheckedCreateInput>
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND createMany
+   */
+  export type GA_ANKETA_BRANDCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many GA_ANKETA_BRANDS.
+     */
+    data: GA_ANKETA_BRANDCreateManyInput | GA_ANKETA_BRANDCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND update
+   */
+  export type GA_ANKETA_BRANDUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_BRAND
+     */
+    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
+    /**
+     * The data needed to update a GA_ANKETA_BRAND.
+     */
+    data: XOR<GA_ANKETA_BRANDUpdateInput, GA_ANKETA_BRANDUncheckedUpdateInput>
+    /**
+     * Choose, which GA_ANKETA_BRAND to update.
+     */
+    where: GA_ANKETA_BRANDWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND updateMany
+   */
+  export type GA_ANKETA_BRANDUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update GA_ANKETA_BRANDS.
+     */
+    data: XOR<GA_ANKETA_BRANDUpdateManyMutationInput, GA_ANKETA_BRANDUncheckedUpdateManyInput>
+    /**
+     * Filter which GA_ANKETA_BRANDS to update
+     */
+    where?: GA_ANKETA_BRANDWhereInput
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND upsert
+   */
+  export type GA_ANKETA_BRANDUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_BRAND
+     */
+    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
+    /**
+     * The filter to search for the GA_ANKETA_BRAND to update in case it exists.
+     */
+    where: GA_ANKETA_BRANDWhereUniqueInput
+    /**
+     * In case the GA_ANKETA_BRAND found by the `where` argument doesn't exist, create a new GA_ANKETA_BRAND with this data.
+     */
+    create: XOR<GA_ANKETA_BRANDCreateInput, GA_ANKETA_BRANDUncheckedCreateInput>
+    /**
+     * In case the GA_ANKETA_BRAND was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<GA_ANKETA_BRANDUpdateInput, GA_ANKETA_BRANDUncheckedUpdateInput>
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND delete
+   */
+  export type GA_ANKETA_BRANDDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_BRAND
+     */
+    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
+    /**
+     * Filter which GA_ANKETA_BRAND to delete.
+     */
+    where: GA_ANKETA_BRANDWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND deleteMany
+   */
+  export type GA_ANKETA_BRANDDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GA_ANKETA_BRANDS to delete
+     */
+    where?: GA_ANKETA_BRANDWhereInput
+  }
+
+
+  /**
+   * GA_ANKETA_BRAND without action
+   */
+  export type GA_ANKETA_BRANDDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_BRAND
+     */
+    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
+  }
+
+
+
+  /**
    * Model GA_ANKETA_DOGOVOR
    */
 
@@ -3645,13 +4641,13 @@ export namespace Prisma {
 
   export type GA_ANKETA_DOGOVORGroupByOutputType = {
     ADO_ABA_ID: bigint
-    ADO_NAME1: string
-    ADO_NAME2: string
-    ADO_NAME3: string
-    ADO_PHONE: string
-    ADO_EMAIL: string
-    ADO_DATETIME: Date
-    ADO_STATUS: boolean
+    ADO_NAME1: string | null
+    ADO_NAME2: string | null
+    ADO_NAME3: string | null
+    ADO_PHONE: string | null
+    ADO_EMAIL: string | null
+    ADO_DATETIME: Date | null
+    ADO_STATUS: boolean | null
     _count: GA_ANKETA_DOGOVORCountAggregateOutputType | null
     _avg: GA_ANKETA_DOGOVORAvgAggregateOutputType | null
     _sum: GA_ANKETA_DOGOVORSumAggregateOutputType | null
@@ -3701,13 +4697,13 @@ export namespace Prisma {
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       ADO_ABA_ID: bigint
-      ADO_NAME1: string
-      ADO_NAME2: string
-      ADO_NAME3: string
-      ADO_PHONE: string
-      ADO_EMAIL: string
-      ADO_DATETIME: Date
-      ADO_STATUS: boolean
+      ADO_NAME1: string | null
+      ADO_NAME2: string | null
+      ADO_NAME3: string | null
+      ADO_PHONE: string | null
+      ADO_EMAIL: string | null
+      ADO_DATETIME: Date | null
+      ADO_STATUS: boolean | null
     }, ExtArgs["result"]["gA_ANKETA_DOGOVOR"]>
     composites: {}
   }
@@ -4896,42 +5892,42 @@ export namespace Prisma {
 
   export type GA_ANKETA_OBOROTGroupByOutputType = {
     ABO_ABA_ID: bigint
-    ABO_DATETIME: Date
-    ABO_OBOROT_ALL: number
-    ABO_OBOROT_BRANDS_MONTH: number
-    ABO_OBOROT_AE: number
-    ABO_OBOROT_ROSSKO: number
-    ABO_OBOROT_ARKONA: number
-    ABO_OBOROT_AUTORUS: number
-    ABO_SCORES_MONTH_PLAN: number
-    ABO_SCORES_MONTH_FAKT: number
-    ABO_COUNT_ROSSKO: number
-    ABO_COUNT_AE: number
-    ABO_COUNT_ARKONA: number
-    ABO_COUNT_AUTORUS: number
-    ABO_OBOROT_BRANDS: number
-    ABO_OBOROT_BRAND_LOOK1: number
-    ABO_SCORES: number
-    ABO_OBOROT_BRAND_LOOK2: number
-    ABO_OBOROT_BRAND_LOOK2_ROSSKO: number
-    ABO_OBOROT_BRAND_LOOK2_AE: number
-    ABO_OBOROT_BRAND_LOOK2_ARKONA: number
-    ABO_OBOROT_BRAND_LOOK2_AUTORUS: number
-    ABO_OBOROT_BRANDS_MONTH_ROSSKO: number
-    ABO_OBOROT_BRANDS_MONTH_AE: number
-    ABO_OBOROT_BRANDS_MONTH_ARKONA: number
-    ABO_OBOROT_BRANDS_MONTH_AUTORUS: number
-    ABO_OBOROT_BRAND1: number
-    ABO_OBOROT_BRAND2: number
-    ABO_OBOROT_BRAND3: number
-    ABO_OBOROT_BRAND4: number
-    ABO_OBOROT_BRAND5: number
-    ABO_OBOROT_BRAND6: number
-    ABO_OBOROT_NEXT: number
-    ABO_SCORES_MONTH_PLAN_NEXT: number
-    ABO_ABA_REMZONA_QTY: number
-    ABO_OBOROT_PARTRA: number
-    ABO_SCORES_PARTRA: number
+    ABO_DATETIME: Date | null
+    ABO_OBOROT_ALL: number | null
+    ABO_OBOROT_BRANDS_MONTH: number | null
+    ABO_OBOROT_AE: number | null
+    ABO_OBOROT_ROSSKO: number | null
+    ABO_OBOROT_ARKONA: number | null
+    ABO_OBOROT_AUTORUS: number | null
+    ABO_SCORES_MONTH_PLAN: number | null
+    ABO_SCORES_MONTH_FAKT: number | null
+    ABO_COUNT_ROSSKO: number | null
+    ABO_COUNT_AE: number | null
+    ABO_COUNT_ARKONA: number | null
+    ABO_COUNT_AUTORUS: number | null
+    ABO_OBOROT_BRANDS: number | null
+    ABO_OBOROT_BRAND_LOOK1: number | null
+    ABO_SCORES: number | null
+    ABO_OBOROT_BRAND_LOOK2: number | null
+    ABO_OBOROT_BRAND_LOOK2_ROSSKO: number | null
+    ABO_OBOROT_BRAND_LOOK2_AE: number | null
+    ABO_OBOROT_BRAND_LOOK2_ARKONA: number | null
+    ABO_OBOROT_BRAND_LOOK2_AUTORUS: number | null
+    ABO_OBOROT_BRANDS_MONTH_ROSSKO: number | null
+    ABO_OBOROT_BRANDS_MONTH_AE: number | null
+    ABO_OBOROT_BRANDS_MONTH_ARKONA: number | null
+    ABO_OBOROT_BRANDS_MONTH_AUTORUS: number | null
+    ABO_OBOROT_BRAND1: number | null
+    ABO_OBOROT_BRAND2: number | null
+    ABO_OBOROT_BRAND3: number | null
+    ABO_OBOROT_BRAND4: number | null
+    ABO_OBOROT_BRAND5: number | null
+    ABO_OBOROT_BRAND6: number | null
+    ABO_OBOROT_NEXT: number | null
+    ABO_SCORES_MONTH_PLAN_NEXT: number | null
+    ABO_ABA_REMZONA_QTY: number | null
+    ABO_OBOROT_PARTRA: number | null
+    ABO_SCORES_PARTRA: number | null
     _count: GA_ANKETA_OBOROTCountAggregateOutputType | null
     _avg: GA_ANKETA_OBOROTAvgAggregateOutputType | null
     _sum: GA_ANKETA_OBOROTSumAggregateOutputType | null
@@ -5039,42 +6035,42 @@ export namespace Prisma {
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       ABO_ABA_ID: bigint
-      ABO_DATETIME: Date
-      ABO_OBOROT_ALL: number
-      ABO_OBOROT_BRANDS_MONTH: number
-      ABO_OBOROT_AE: number
-      ABO_OBOROT_ROSSKO: number
-      ABO_OBOROT_ARKONA: number
-      ABO_OBOROT_AUTORUS: number
-      ABO_SCORES_MONTH_PLAN: number
-      ABO_SCORES_MONTH_FAKT: number
-      ABO_COUNT_ROSSKO: number
-      ABO_COUNT_AE: number
-      ABO_COUNT_ARKONA: number
-      ABO_COUNT_AUTORUS: number
-      ABO_OBOROT_BRANDS: number
-      ABO_OBOROT_BRAND_LOOK1: number
-      ABO_SCORES: number
-      ABO_OBOROT_BRAND_LOOK2: number
-      ABO_OBOROT_BRAND_LOOK2_ROSSKO: number
-      ABO_OBOROT_BRAND_LOOK2_AE: number
-      ABO_OBOROT_BRAND_LOOK2_ARKONA: number
-      ABO_OBOROT_BRAND_LOOK2_AUTORUS: number
-      ABO_OBOROT_BRANDS_MONTH_ROSSKO: number
-      ABO_OBOROT_BRANDS_MONTH_AE: number
-      ABO_OBOROT_BRANDS_MONTH_ARKONA: number
-      ABO_OBOROT_BRANDS_MONTH_AUTORUS: number
-      ABO_OBOROT_BRAND1: number
-      ABO_OBOROT_BRAND2: number
-      ABO_OBOROT_BRAND3: number
-      ABO_OBOROT_BRAND4: number
-      ABO_OBOROT_BRAND5: number
-      ABO_OBOROT_BRAND6: number
-      ABO_OBOROT_NEXT: number
-      ABO_SCORES_MONTH_PLAN_NEXT: number
-      ABO_ABA_REMZONA_QTY: number
-      ABO_OBOROT_PARTRA: number
-      ABO_SCORES_PARTRA: number
+      ABO_DATETIME: Date | null
+      ABO_OBOROT_ALL: number | null
+      ABO_OBOROT_BRANDS_MONTH: number | null
+      ABO_OBOROT_AE: number | null
+      ABO_OBOROT_ROSSKO: number | null
+      ABO_OBOROT_ARKONA: number | null
+      ABO_OBOROT_AUTORUS: number | null
+      ABO_SCORES_MONTH_PLAN: number | null
+      ABO_SCORES_MONTH_FAKT: number | null
+      ABO_COUNT_ROSSKO: number | null
+      ABO_COUNT_AE: number | null
+      ABO_COUNT_ARKONA: number | null
+      ABO_COUNT_AUTORUS: number | null
+      ABO_OBOROT_BRANDS: number | null
+      ABO_OBOROT_BRAND_LOOK1: number | null
+      ABO_SCORES: number | null
+      ABO_OBOROT_BRAND_LOOK2: number | null
+      ABO_OBOROT_BRAND_LOOK2_ROSSKO: number | null
+      ABO_OBOROT_BRAND_LOOK2_AE: number | null
+      ABO_OBOROT_BRAND_LOOK2_ARKONA: number | null
+      ABO_OBOROT_BRAND_LOOK2_AUTORUS: number | null
+      ABO_OBOROT_BRANDS_MONTH_ROSSKO: number | null
+      ABO_OBOROT_BRANDS_MONTH_AE: number | null
+      ABO_OBOROT_BRANDS_MONTH_ARKONA: number | null
+      ABO_OBOROT_BRANDS_MONTH_AUTORUS: number | null
+      ABO_OBOROT_BRAND1: number | null
+      ABO_OBOROT_BRAND2: number | null
+      ABO_OBOROT_BRAND3: number | null
+      ABO_OBOROT_BRAND4: number | null
+      ABO_OBOROT_BRAND5: number | null
+      ABO_OBOROT_BRAND6: number | null
+      ABO_OBOROT_NEXT: number | null
+      ABO_SCORES_MONTH_PLAN_NEXT: number | null
+      ABO_ABA_REMZONA_QTY: number | null
+      ABO_OBOROT_PARTRA: number | null
+      ABO_SCORES_PARTRA: number | null
     }, ExtArgs["result"]["gA_ANKETA_OBOROT"]>
     composites: {}
   }
@@ -5794,921 +6790,6 @@ export namespace Prisma {
 
 
   /**
-   * Model GA_ANKETA_BRAND
-   */
-
-  export type AggregateGA_ANKETA_BRAND = {
-    _count: GA_ANKETA_BRANDCountAggregateOutputType | null
-    _avg: GA_ANKETA_BRANDAvgAggregateOutputType | null
-    _sum: GA_ANKETA_BRANDSumAggregateOutputType | null
-    _min: GA_ANKETA_BRANDMinAggregateOutputType | null
-    _max: GA_ANKETA_BRANDMaxAggregateOutputType | null
-  }
-
-  export type GA_ANKETA_BRANDAvgAggregateOutputType = {
-    ABR_ABA_ID: number | null
-  }
-
-  export type GA_ANKETA_BRANDSumAggregateOutputType = {
-    ABR_ABA_ID: bigint | null
-  }
-
-  export type GA_ANKETA_BRANDMinAggregateOutputType = {
-    ABR_ABA_ID: bigint | null
-    ABR_STATUS: boolean | null
-    ABR_DATETIME: Date | null
-    ABR_HALF_STATUS: boolean | null
-    ABR_VYVESKA_STATUS: boolean | null
-    ABR_KOROB_STATUS: boolean | null
-  }
-
-  export type GA_ANKETA_BRANDMaxAggregateOutputType = {
-    ABR_ABA_ID: bigint | null
-    ABR_STATUS: boolean | null
-    ABR_DATETIME: Date | null
-    ABR_HALF_STATUS: boolean | null
-    ABR_VYVESKA_STATUS: boolean | null
-    ABR_KOROB_STATUS: boolean | null
-  }
-
-  export type GA_ANKETA_BRANDCountAggregateOutputType = {
-    ABR_ABA_ID: number
-    ABR_STATUS: number
-    ABR_DATETIME: number
-    ABR_HALF_STATUS: number
-    ABR_VYVESKA_STATUS: number
-    ABR_KOROB_STATUS: number
-    _all: number
-  }
-
-
-  export type GA_ANKETA_BRANDAvgAggregateInputType = {
-    ABR_ABA_ID?: true
-  }
-
-  export type GA_ANKETA_BRANDSumAggregateInputType = {
-    ABR_ABA_ID?: true
-  }
-
-  export type GA_ANKETA_BRANDMinAggregateInputType = {
-    ABR_ABA_ID?: true
-    ABR_STATUS?: true
-    ABR_DATETIME?: true
-    ABR_HALF_STATUS?: true
-    ABR_VYVESKA_STATUS?: true
-    ABR_KOROB_STATUS?: true
-  }
-
-  export type GA_ANKETA_BRANDMaxAggregateInputType = {
-    ABR_ABA_ID?: true
-    ABR_STATUS?: true
-    ABR_DATETIME?: true
-    ABR_HALF_STATUS?: true
-    ABR_VYVESKA_STATUS?: true
-    ABR_KOROB_STATUS?: true
-  }
-
-  export type GA_ANKETA_BRANDCountAggregateInputType = {
-    ABR_ABA_ID?: true
-    ABR_STATUS?: true
-    ABR_DATETIME?: true
-    ABR_HALF_STATUS?: true
-    ABR_VYVESKA_STATUS?: true
-    ABR_KOROB_STATUS?: true
-    _all?: true
-  }
-
-  export type GA_ANKETA_BRANDAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which GA_ANKETA_BRAND to aggregate.
-     */
-    where?: GA_ANKETA_BRANDWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of GA_ANKETA_BRANDS to fetch.
-     */
-    orderBy?: GA_ANKETA_BRANDOrderByWithRelationInput | GA_ANKETA_BRANDOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: GA_ANKETA_BRANDWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` GA_ANKETA_BRANDS from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` GA_ANKETA_BRANDS.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned GA_ANKETA_BRANDS
-    **/
-    _count?: true | GA_ANKETA_BRANDCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to average
-    **/
-    _avg?: GA_ANKETA_BRANDAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: GA_ANKETA_BRANDSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: GA_ANKETA_BRANDMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: GA_ANKETA_BRANDMaxAggregateInputType
-  }
-
-  export type GetGA_ANKETA_BRANDAggregateType<T extends GA_ANKETA_BRANDAggregateArgs> = {
-        [P in keyof T & keyof AggregateGA_ANKETA_BRAND]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateGA_ANKETA_BRAND[P]>
-      : GetScalarType<T[P], AggregateGA_ANKETA_BRAND[P]>
-  }
-
-
-
-
-  export type GA_ANKETA_BRANDGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: GA_ANKETA_BRANDWhereInput
-    orderBy?: GA_ANKETA_BRANDOrderByWithAggregationInput | GA_ANKETA_BRANDOrderByWithAggregationInput[]
-    by: GA_ANKETA_BRANDScalarFieldEnum[] | GA_ANKETA_BRANDScalarFieldEnum
-    having?: GA_ANKETA_BRANDScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: GA_ANKETA_BRANDCountAggregateInputType | true
-    _avg?: GA_ANKETA_BRANDAvgAggregateInputType
-    _sum?: GA_ANKETA_BRANDSumAggregateInputType
-    _min?: GA_ANKETA_BRANDMinAggregateInputType
-    _max?: GA_ANKETA_BRANDMaxAggregateInputType
-  }
-
-  export type GA_ANKETA_BRANDGroupByOutputType = {
-    ABR_ABA_ID: bigint
-    ABR_STATUS: boolean
-    ABR_DATETIME: Date
-    ABR_HALF_STATUS: boolean
-    ABR_VYVESKA_STATUS: boolean
-    ABR_KOROB_STATUS: boolean
-    _count: GA_ANKETA_BRANDCountAggregateOutputType | null
-    _avg: GA_ANKETA_BRANDAvgAggregateOutputType | null
-    _sum: GA_ANKETA_BRANDSumAggregateOutputType | null
-    _min: GA_ANKETA_BRANDMinAggregateOutputType | null
-    _max: GA_ANKETA_BRANDMaxAggregateOutputType | null
-  }
-
-  type GetGA_ANKETA_BRANDGroupByPayload<T extends GA_ANKETA_BRANDGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<GA_ANKETA_BRANDGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof GA_ANKETA_BRANDGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], GA_ANKETA_BRANDGroupByOutputType[P]>
-            : GetScalarType<T[P], GA_ANKETA_BRANDGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type GA_ANKETA_BRANDSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    ABR_ABA_ID?: boolean
-    ABR_STATUS?: boolean
-    ABR_DATETIME?: boolean
-    ABR_HALF_STATUS?: boolean
-    ABR_VYVESKA_STATUS?: boolean
-    ABR_KOROB_STATUS?: boolean
-  }, ExtArgs["result"]["gA_ANKETA_BRAND"]>
-
-  export type GA_ANKETA_BRANDSelectScalar = {
-    ABR_ABA_ID?: boolean
-    ABR_STATUS?: boolean
-    ABR_DATETIME?: boolean
-    ABR_HALF_STATUS?: boolean
-    ABR_VYVESKA_STATUS?: boolean
-    ABR_KOROB_STATUS?: boolean
-  }
-
-
-  export type $GA_ANKETA_BRANDPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "GA_ANKETA_BRAND"
-    objects: {}
-    scalars: $Extensions.GetPayloadResult<{
-      ABR_ABA_ID: bigint
-      ABR_STATUS: boolean
-      ABR_DATETIME: Date
-      ABR_HALF_STATUS: boolean
-      ABR_VYVESKA_STATUS: boolean
-      ABR_KOROB_STATUS: boolean
-    }, ExtArgs["result"]["gA_ANKETA_BRAND"]>
-    composites: {}
-  }
-
-
-  type GA_ANKETA_BRANDGetPayload<S extends boolean | null | undefined | GA_ANKETA_BRANDDefaultArgs> = $Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload, S>
-
-  type GA_ANKETA_BRANDCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<GA_ANKETA_BRANDFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: GA_ANKETA_BRANDCountAggregateInputType | true
-    }
-
-  export interface GA_ANKETA_BRANDDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['GA_ANKETA_BRAND'], meta: { name: 'GA_ANKETA_BRAND' } }
-    /**
-     * Find zero or one GA_ANKETA_BRAND that matches the filter.
-     * @param {GA_ANKETA_BRANDFindUniqueArgs} args - Arguments to find a GA_ANKETA_BRAND
-     * @example
-     * // Get one GA_ANKETA_BRAND
-     * const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findUnique<T extends GA_ANKETA_BRANDFindUniqueArgs<ExtArgs>>(
-      args: SelectSubset<T, GA_ANKETA_BRANDFindUniqueArgs<ExtArgs>>
-    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
-
-    /**
-     * Find one GA_ANKETA_BRAND that matches the filter or throw an error  with `error.code='P2025'` 
-     *     if no matches were found.
-     * @param {GA_ANKETA_BRANDFindUniqueOrThrowArgs} args - Arguments to find a GA_ANKETA_BRAND
-     * @example
-     * // Get one GA_ANKETA_BRAND
-     * const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findUniqueOrThrow<T extends GA_ANKETA_BRANDFindUniqueOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, GA_ANKETA_BRANDFindUniqueOrThrowArgs<ExtArgs>>
-    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
-
-    /**
-     * Find the first GA_ANKETA_BRAND that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {GA_ANKETA_BRANDFindFirstArgs} args - Arguments to find a GA_ANKETA_BRAND
-     * @example
-     * // Get one GA_ANKETA_BRAND
-     * const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findFirst<T extends GA_ANKETA_BRANDFindFirstArgs<ExtArgs>>(
-      args?: SelectSubset<T, GA_ANKETA_BRANDFindFirstArgs<ExtArgs>>
-    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
-
-    /**
-     * Find the first GA_ANKETA_BRAND that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {GA_ANKETA_BRANDFindFirstOrThrowArgs} args - Arguments to find a GA_ANKETA_BRAND
-     * @example
-     * // Get one GA_ANKETA_BRAND
-     * const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-    **/
-    findFirstOrThrow<T extends GA_ANKETA_BRANDFindFirstOrThrowArgs<ExtArgs>>(
-      args?: SelectSubset<T, GA_ANKETA_BRANDFindFirstOrThrowArgs<ExtArgs>>
-    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
-
-    /**
-     * Find zero or more GA_ANKETA_BRANDS that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {GA_ANKETA_BRANDFindManyArgs=} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all GA_ANKETA_BRANDS
-     * const gA_ANKETA_BRANDS = await prisma.gA_ANKETA_BRAND.findMany()
-     * 
-     * // Get first 10 GA_ANKETA_BRANDS
-     * const gA_ANKETA_BRANDS = await prisma.gA_ANKETA_BRAND.findMany({ take: 10 })
-     * 
-     * // Only select the `ABR_ABA_ID`
-     * const gA_ANKETA_BRANDWithABR_ABA_IDOnly = await prisma.gA_ANKETA_BRAND.findMany({ select: { ABR_ABA_ID: true } })
-     * 
-    **/
-    findMany<T extends GA_ANKETA_BRANDFindManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, GA_ANKETA_BRANDFindManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'findMany'>>
-
-    /**
-     * Create a GA_ANKETA_BRAND.
-     * @param {GA_ANKETA_BRANDCreateArgs} args - Arguments to create a GA_ANKETA_BRAND.
-     * @example
-     * // Create one GA_ANKETA_BRAND
-     * const GA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.create({
-     *   data: {
-     *     // ... data to create a GA_ANKETA_BRAND
-     *   }
-     * })
-     * 
-    **/
-    create<T extends GA_ANKETA_BRANDCreateArgs<ExtArgs>>(
-      args: SelectSubset<T, GA_ANKETA_BRANDCreateArgs<ExtArgs>>
-    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
-
-    /**
-     * Create many GA_ANKETA_BRANDS.
-     *     @param {GA_ANKETA_BRANDCreateManyArgs} args - Arguments to create many GA_ANKETA_BRANDS.
-     *     @example
-     *     // Create many GA_ANKETA_BRANDS
-     *     const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
-     *     
-    **/
-    createMany<T extends GA_ANKETA_BRANDCreateManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, GA_ANKETA_BRANDCreateManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Delete a GA_ANKETA_BRAND.
-     * @param {GA_ANKETA_BRANDDeleteArgs} args - Arguments to delete one GA_ANKETA_BRAND.
-     * @example
-     * // Delete one GA_ANKETA_BRAND
-     * const GA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.delete({
-     *   where: {
-     *     // ... filter to delete one GA_ANKETA_BRAND
-     *   }
-     * })
-     * 
-    **/
-    delete<T extends GA_ANKETA_BRANDDeleteArgs<ExtArgs>>(
-      args: SelectSubset<T, GA_ANKETA_BRANDDeleteArgs<ExtArgs>>
-    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
-
-    /**
-     * Update one GA_ANKETA_BRAND.
-     * @param {GA_ANKETA_BRANDUpdateArgs} args - Arguments to update one GA_ANKETA_BRAND.
-     * @example
-     * // Update one GA_ANKETA_BRAND
-     * const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-    **/
-    update<T extends GA_ANKETA_BRANDUpdateArgs<ExtArgs>>(
-      args: SelectSubset<T, GA_ANKETA_BRANDUpdateArgs<ExtArgs>>
-    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
-
-    /**
-     * Delete zero or more GA_ANKETA_BRANDS.
-     * @param {GA_ANKETA_BRANDDeleteManyArgs} args - Arguments to filter GA_ANKETA_BRANDS to delete.
-     * @example
-     * // Delete a few GA_ANKETA_BRANDS
-     * const { count } = await prisma.gA_ANKETA_BRAND.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-    **/
-    deleteMany<T extends GA_ANKETA_BRANDDeleteManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, GA_ANKETA_BRANDDeleteManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more GA_ANKETA_BRANDS.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {GA_ANKETA_BRANDUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many GA_ANKETA_BRANDS
-     * const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-    **/
-    updateMany<T extends GA_ANKETA_BRANDUpdateManyArgs<ExtArgs>>(
-      args: SelectSubset<T, GA_ANKETA_BRANDUpdateManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create or update one GA_ANKETA_BRAND.
-     * @param {GA_ANKETA_BRANDUpsertArgs} args - Arguments to update or create a GA_ANKETA_BRAND.
-     * @example
-     * // Update or create a GA_ANKETA_BRAND
-     * const gA_ANKETA_BRAND = await prisma.gA_ANKETA_BRAND.upsert({
-     *   create: {
-     *     // ... data to create a GA_ANKETA_BRAND
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the GA_ANKETA_BRAND we want to update
-     *   }
-     * })
-    **/
-    upsert<T extends GA_ANKETA_BRANDUpsertArgs<ExtArgs>>(
-      args: SelectSubset<T, GA_ANKETA_BRANDUpsertArgs<ExtArgs>>
-    ): Prisma__GA_ANKETA_BRANDClient<$Result.GetResult<Prisma.$GA_ANKETA_BRANDPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
-
-    /**
-     * Count the number of GA_ANKETA_BRANDS.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {GA_ANKETA_BRANDCountArgs} args - Arguments to filter GA_ANKETA_BRANDS to count.
-     * @example
-     * // Count the number of GA_ANKETA_BRANDS
-     * const count = await prisma.gA_ANKETA_BRAND.count({
-     *   where: {
-     *     // ... the filter for the GA_ANKETA_BRANDS we want to count
-     *   }
-     * })
-    **/
-    count<T extends GA_ANKETA_BRANDCountArgs>(
-      args?: Subset<T, GA_ANKETA_BRANDCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], GA_ANKETA_BRANDCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a GA_ANKETA_BRAND.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {GA_ANKETA_BRANDAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends GA_ANKETA_BRANDAggregateArgs>(args: Subset<T, GA_ANKETA_BRANDAggregateArgs>): Prisma.PrismaPromise<GetGA_ANKETA_BRANDAggregateType<T>>
-
-    /**
-     * Group by GA_ANKETA_BRAND.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {GA_ANKETA_BRANDGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends GA_ANKETA_BRANDGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: GA_ANKETA_BRANDGroupByArgs['orderBy'] }
-        : { orderBy?: GA_ANKETA_BRANDGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, GA_ANKETA_BRANDGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetGA_ANKETA_BRANDGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the GA_ANKETA_BRAND model
-   */
-  readonly fields: GA_ANKETA_BRANDFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for GA_ANKETA_BRAND.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__GA_ANKETA_BRANDClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: 'PrismaPromise';
-
-
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
-  }
-
-
-
-  /**
-   * Fields of the GA_ANKETA_BRAND model
-   */ 
-  interface GA_ANKETA_BRANDFieldRefs {
-    readonly ABR_ABA_ID: FieldRef<"GA_ANKETA_BRAND", 'BigInt'>
-    readonly ABR_STATUS: FieldRef<"GA_ANKETA_BRAND", 'Boolean'>
-    readonly ABR_DATETIME: FieldRef<"GA_ANKETA_BRAND", 'DateTime'>
-    readonly ABR_HALF_STATUS: FieldRef<"GA_ANKETA_BRAND", 'Boolean'>
-    readonly ABR_VYVESKA_STATUS: FieldRef<"GA_ANKETA_BRAND", 'Boolean'>
-    readonly ABR_KOROB_STATUS: FieldRef<"GA_ANKETA_BRAND", 'Boolean'>
-  }
-    
-
-  // Custom InputTypes
-
-  /**
-   * GA_ANKETA_BRAND findUnique
-   */
-  export type GA_ANKETA_BRANDFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the GA_ANKETA_BRAND
-     */
-    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
-    /**
-     * Filter, which GA_ANKETA_BRAND to fetch.
-     */
-    where: GA_ANKETA_BRANDWhereUniqueInput
-  }
-
-
-  /**
-   * GA_ANKETA_BRAND findUniqueOrThrow
-   */
-  export type GA_ANKETA_BRANDFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the GA_ANKETA_BRAND
-     */
-    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
-    /**
-     * Filter, which GA_ANKETA_BRAND to fetch.
-     */
-    where: GA_ANKETA_BRANDWhereUniqueInput
-  }
-
-
-  /**
-   * GA_ANKETA_BRAND findFirst
-   */
-  export type GA_ANKETA_BRANDFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the GA_ANKETA_BRAND
-     */
-    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
-    /**
-     * Filter, which GA_ANKETA_BRAND to fetch.
-     */
-    where?: GA_ANKETA_BRANDWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of GA_ANKETA_BRANDS to fetch.
-     */
-    orderBy?: GA_ANKETA_BRANDOrderByWithRelationInput | GA_ANKETA_BRANDOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for GA_ANKETA_BRANDS.
-     */
-    cursor?: GA_ANKETA_BRANDWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` GA_ANKETA_BRANDS from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` GA_ANKETA_BRANDS.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of GA_ANKETA_BRANDS.
-     */
-    distinct?: GA_ANKETA_BRANDScalarFieldEnum | GA_ANKETA_BRANDScalarFieldEnum[]
-  }
-
-
-  /**
-   * GA_ANKETA_BRAND findFirstOrThrow
-   */
-  export type GA_ANKETA_BRANDFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the GA_ANKETA_BRAND
-     */
-    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
-    /**
-     * Filter, which GA_ANKETA_BRAND to fetch.
-     */
-    where?: GA_ANKETA_BRANDWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of GA_ANKETA_BRANDS to fetch.
-     */
-    orderBy?: GA_ANKETA_BRANDOrderByWithRelationInput | GA_ANKETA_BRANDOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for GA_ANKETA_BRANDS.
-     */
-    cursor?: GA_ANKETA_BRANDWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` GA_ANKETA_BRANDS from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` GA_ANKETA_BRANDS.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of GA_ANKETA_BRANDS.
-     */
-    distinct?: GA_ANKETA_BRANDScalarFieldEnum | GA_ANKETA_BRANDScalarFieldEnum[]
-  }
-
-
-  /**
-   * GA_ANKETA_BRAND findMany
-   */
-  export type GA_ANKETA_BRANDFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the GA_ANKETA_BRAND
-     */
-    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
-    /**
-     * Filter, which GA_ANKETA_BRANDS to fetch.
-     */
-    where?: GA_ANKETA_BRANDWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of GA_ANKETA_BRANDS to fetch.
-     */
-    orderBy?: GA_ANKETA_BRANDOrderByWithRelationInput | GA_ANKETA_BRANDOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing GA_ANKETA_BRANDS.
-     */
-    cursor?: GA_ANKETA_BRANDWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` GA_ANKETA_BRANDS from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` GA_ANKETA_BRANDS.
-     */
-    skip?: number
-    distinct?: GA_ANKETA_BRANDScalarFieldEnum | GA_ANKETA_BRANDScalarFieldEnum[]
-  }
-
-
-  /**
-   * GA_ANKETA_BRAND create
-   */
-  export type GA_ANKETA_BRANDCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the GA_ANKETA_BRAND
-     */
-    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
-    /**
-     * The data needed to create a GA_ANKETA_BRAND.
-     */
-    data: XOR<GA_ANKETA_BRANDCreateInput, GA_ANKETA_BRANDUncheckedCreateInput>
-  }
-
-
-  /**
-   * GA_ANKETA_BRAND createMany
-   */
-  export type GA_ANKETA_BRANDCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many GA_ANKETA_BRANDS.
-     */
-    data: GA_ANKETA_BRANDCreateManyInput | GA_ANKETA_BRANDCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-
-  /**
-   * GA_ANKETA_BRAND update
-   */
-  export type GA_ANKETA_BRANDUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the GA_ANKETA_BRAND
-     */
-    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
-    /**
-     * The data needed to update a GA_ANKETA_BRAND.
-     */
-    data: XOR<GA_ANKETA_BRANDUpdateInput, GA_ANKETA_BRANDUncheckedUpdateInput>
-    /**
-     * Choose, which GA_ANKETA_BRAND to update.
-     */
-    where: GA_ANKETA_BRANDWhereUniqueInput
-  }
-
-
-  /**
-   * GA_ANKETA_BRAND updateMany
-   */
-  export type GA_ANKETA_BRANDUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update GA_ANKETA_BRANDS.
-     */
-    data: XOR<GA_ANKETA_BRANDUpdateManyMutationInput, GA_ANKETA_BRANDUncheckedUpdateManyInput>
-    /**
-     * Filter which GA_ANKETA_BRANDS to update
-     */
-    where?: GA_ANKETA_BRANDWhereInput
-  }
-
-
-  /**
-   * GA_ANKETA_BRAND upsert
-   */
-  export type GA_ANKETA_BRANDUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the GA_ANKETA_BRAND
-     */
-    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
-    /**
-     * The filter to search for the GA_ANKETA_BRAND to update in case it exists.
-     */
-    where: GA_ANKETA_BRANDWhereUniqueInput
-    /**
-     * In case the GA_ANKETA_BRAND found by the `where` argument doesn't exist, create a new GA_ANKETA_BRAND with this data.
-     */
-    create: XOR<GA_ANKETA_BRANDCreateInput, GA_ANKETA_BRANDUncheckedCreateInput>
-    /**
-     * In case the GA_ANKETA_BRAND was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<GA_ANKETA_BRANDUpdateInput, GA_ANKETA_BRANDUncheckedUpdateInput>
-  }
-
-
-  /**
-   * GA_ANKETA_BRAND delete
-   */
-  export type GA_ANKETA_BRANDDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the GA_ANKETA_BRAND
-     */
-    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
-    /**
-     * Filter which GA_ANKETA_BRAND to delete.
-     */
-    where: GA_ANKETA_BRANDWhereUniqueInput
-  }
-
-
-  /**
-   * GA_ANKETA_BRAND deleteMany
-   */
-  export type GA_ANKETA_BRANDDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which GA_ANKETA_BRANDS to delete
-     */
-    where?: GA_ANKETA_BRANDWhereInput
-  }
-
-
-  /**
-   * GA_ANKETA_BRAND without action
-   */
-  export type GA_ANKETA_BRANDDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the GA_ANKETA_BRAND
-     */
-    select?: GA_ANKETA_BRANDSelect<ExtArgs> | null
-  }
-
-
-
-  /**
    * Model GA_ANKETA_SCORES
    */
 
@@ -6873,9 +6954,9 @@ export namespace Prisma {
 
   export type GA_ANKETA_SCORESGroupByOutputType = {
     ANS_WSU_ID: bigint
-    ANS_SCORES: number
-    ANS_DATETIME: Date
-    ANS_ISSHOW: boolean
+    ANS_SCORES: number | null
+    ANS_DATETIME: Date | null
+    ANS_ISSHOW: boolean | null
     _count: GA_ANKETA_SCORESCountAggregateOutputType | null
     _avg: GA_ANKETA_SCORESAvgAggregateOutputType | null
     _sum: GA_ANKETA_SCORESSumAggregateOutputType | null
@@ -6917,9 +6998,9 @@ export namespace Prisma {
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       ANS_WSU_ID: bigint
-      ANS_SCORES: number
-      ANS_DATETIME: Date
-      ANS_ISSHOW: boolean
+      ANS_SCORES: number | null
+      ANS_DATETIME: Date | null
+      ANS_ISSHOW: boolean | null
     }, ExtArgs["result"]["gA_ANKETA_SCORES"]>
     composites: {}
   }
@@ -7812,14 +7893,14 @@ export namespace Prisma {
 
   export type GA_ANKETA_SCORES_HISTORYGroupByOutputType = {
     ASH_WSU_ID: bigint
-    ASH_SCORES: number
-    ASH_DATETIME: Date
-    ASH_DESC: string
-    ASH_TYPE: number
-    ASH_SCORES_OLD: number
-    ASH_EVENT_STATUS: boolean
-    ASH_DATETIME_UPDATE: Date
-    ASH_IZO_ID: bigint
+    ASH_SCORES: number | null
+    ASH_DATETIME: Date | null
+    ASH_DESC: string | null
+    ASH_TYPE: number | null
+    ASH_SCORES_OLD: number | null
+    ASH_EVENT_STATUS: boolean | null
+    ASH_DATETIME_UPDATE: Date | null
+    ASH_IZO_ID: bigint | null
     _count: GA_ANKETA_SCORES_HISTORYCountAggregateOutputType | null
     _avg: GA_ANKETA_SCORES_HISTORYAvgAggregateOutputType | null
     _sum: GA_ANKETA_SCORES_HISTORYSumAggregateOutputType | null
@@ -7871,14 +7952,14 @@ export namespace Prisma {
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       ASH_WSU_ID: bigint
-      ASH_SCORES: number
-      ASH_DATETIME: Date
-      ASH_DESC: string
-      ASH_TYPE: number
-      ASH_SCORES_OLD: number
-      ASH_EVENT_STATUS: boolean
-      ASH_DATETIME_UPDATE: Date
-      ASH_IZO_ID: bigint
+      ASH_SCORES: number | null
+      ASH_DATETIME: Date | null
+      ASH_DESC: string | null
+      ASH_TYPE: number | null
+      ASH_SCORES_OLD: number | null
+      ASH_EVENT_STATUS: boolean | null
+      ASH_DATETIME_UPDATE: Date | null
+      ASH_IZO_ID: bigint | null
     }, ExtArgs["result"]["gA_ANKETA_SCORES_HISTORY"]>
     composites: {}
   }
@@ -8765,14 +8846,14 @@ export namespace Prisma {
   }
 
   export type GA_ANKETA_SOREVNOVANIEGroupByOutputType = {
-    ASR_YEAR: number
-    ASR_MONTH: number
+    ASR_YEAR: number | null
+    ASR_MONTH: number | null
     ASR_WSU_ID: bigint
-    ASR_LOGIN: string
-    ASR_FIO: string
-    ASR_SCORE: number
-    ASR_DOLJNOST: string
-    ASR_RUKOVODITEL: boolean
+    ASR_LOGIN: string | null
+    ASR_FIO: string | null
+    ASR_SCORE: number | null
+    ASR_DOLJNOST: string | null
+    ASR_RUKOVODITEL: boolean | null
     _count: GA_ANKETA_SOREVNOVANIECountAggregateOutputType | null
     _avg: GA_ANKETA_SOREVNOVANIEAvgAggregateOutputType | null
     _sum: GA_ANKETA_SOREVNOVANIESumAggregateOutputType | null
@@ -8821,14 +8902,14 @@ export namespace Prisma {
     name: "GA_ANKETA_SOREVNOVANIE"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
-      ASR_YEAR: number
-      ASR_MONTH: number
+      ASR_YEAR: number | null
+      ASR_MONTH: number | null
       ASR_WSU_ID: bigint
-      ASR_LOGIN: string
-      ASR_FIO: string
-      ASR_SCORE: number
-      ASR_DOLJNOST: string
-      ASR_RUKOVODITEL: boolean
+      ASR_LOGIN: string | null
+      ASR_FIO: string | null
+      ASR_SCORE: number | null
+      ASR_DOLJNOST: string | null
+      ASR_RUKOVODITEL: boolean | null
     }, ExtArgs["result"]["gA_ANKETA_SOREVNOVANIE"]>
     composites: {}
   }
@@ -9519,6 +9600,954 @@ export namespace Prisma {
 
 
   /**
+   * Model GA_ANKETA_SUP
+   */
+
+  export type AggregateGA_ANKETA_SUP = {
+    _count: GA_ANKETA_SUPCountAggregateOutputType | null
+    _avg: GA_ANKETA_SUPAvgAggregateOutputType | null
+    _sum: GA_ANKETA_SUPSumAggregateOutputType | null
+    _min: GA_ANKETA_SUPMinAggregateOutputType | null
+    _max: GA_ANKETA_SUPMaxAggregateOutputType | null
+  }
+
+  export type GA_ANKETA_SUPAvgAggregateOutputType = {
+    ADB_ABA_ID: number | null
+  }
+
+  export type GA_ANKETA_SUPSumAggregateOutputType = {
+    ADB_ABA_ID: bigint | null
+  }
+
+  export type GA_ANKETA_SUPMinAggregateOutputType = {
+    ADB_ABA_ID: bigint | null
+    ADB_SUP_NAME: string | null
+    ADB_MAN_NAME1: string | null
+    ADB_MAN_NAME2: string | null
+    ADB_MAN_NAME3: string | null
+    ADB_SUP_CODE_AE: string | null
+    ADB_SUP_CODE_AUTORUS: string | null
+    ADB_SUP_CODE_ROSSKO: string | null
+    ADB_SUP_CODE_ARKONA: string | null
+  }
+
+  export type GA_ANKETA_SUPMaxAggregateOutputType = {
+    ADB_ABA_ID: bigint | null
+    ADB_SUP_NAME: string | null
+    ADB_MAN_NAME1: string | null
+    ADB_MAN_NAME2: string | null
+    ADB_MAN_NAME3: string | null
+    ADB_SUP_CODE_AE: string | null
+    ADB_SUP_CODE_AUTORUS: string | null
+    ADB_SUP_CODE_ROSSKO: string | null
+    ADB_SUP_CODE_ARKONA: string | null
+  }
+
+  export type GA_ANKETA_SUPCountAggregateOutputType = {
+    ADB_ABA_ID: number
+    ADB_SUP_NAME: number
+    ADB_MAN_NAME1: number
+    ADB_MAN_NAME2: number
+    ADB_MAN_NAME3: number
+    ADB_SUP_CODE_AE: number
+    ADB_SUP_CODE_AUTORUS: number
+    ADB_SUP_CODE_ROSSKO: number
+    ADB_SUP_CODE_ARKONA: number
+    _all: number
+  }
+
+
+  export type GA_ANKETA_SUPAvgAggregateInputType = {
+    ADB_ABA_ID?: true
+  }
+
+  export type GA_ANKETA_SUPSumAggregateInputType = {
+    ADB_ABA_ID?: true
+  }
+
+  export type GA_ANKETA_SUPMinAggregateInputType = {
+    ADB_ABA_ID?: true
+    ADB_SUP_NAME?: true
+    ADB_MAN_NAME1?: true
+    ADB_MAN_NAME2?: true
+    ADB_MAN_NAME3?: true
+    ADB_SUP_CODE_AE?: true
+    ADB_SUP_CODE_AUTORUS?: true
+    ADB_SUP_CODE_ROSSKO?: true
+    ADB_SUP_CODE_ARKONA?: true
+  }
+
+  export type GA_ANKETA_SUPMaxAggregateInputType = {
+    ADB_ABA_ID?: true
+    ADB_SUP_NAME?: true
+    ADB_MAN_NAME1?: true
+    ADB_MAN_NAME2?: true
+    ADB_MAN_NAME3?: true
+    ADB_SUP_CODE_AE?: true
+    ADB_SUP_CODE_AUTORUS?: true
+    ADB_SUP_CODE_ROSSKO?: true
+    ADB_SUP_CODE_ARKONA?: true
+  }
+
+  export type GA_ANKETA_SUPCountAggregateInputType = {
+    ADB_ABA_ID?: true
+    ADB_SUP_NAME?: true
+    ADB_MAN_NAME1?: true
+    ADB_MAN_NAME2?: true
+    ADB_MAN_NAME3?: true
+    ADB_SUP_CODE_AE?: true
+    ADB_SUP_CODE_AUTORUS?: true
+    ADB_SUP_CODE_ROSSKO?: true
+    ADB_SUP_CODE_ARKONA?: true
+    _all?: true
+  }
+
+  export type GA_ANKETA_SUPAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GA_ANKETA_SUP to aggregate.
+     */
+    where?: GA_ANKETA_SUPWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_SUPS to fetch.
+     */
+    orderBy?: GA_ANKETA_SUPOrderByWithRelationInput | GA_ANKETA_SUPOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: GA_ANKETA_SUPWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_SUPS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_SUPS.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned GA_ANKETA_SUPS
+    **/
+    _count?: true | GA_ANKETA_SUPCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: GA_ANKETA_SUPAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: GA_ANKETA_SUPSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: GA_ANKETA_SUPMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: GA_ANKETA_SUPMaxAggregateInputType
+  }
+
+  export type GetGA_ANKETA_SUPAggregateType<T extends GA_ANKETA_SUPAggregateArgs> = {
+        [P in keyof T & keyof AggregateGA_ANKETA_SUP]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateGA_ANKETA_SUP[P]>
+      : GetScalarType<T[P], AggregateGA_ANKETA_SUP[P]>
+  }
+
+
+
+
+  export type GA_ANKETA_SUPGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: GA_ANKETA_SUPWhereInput
+    orderBy?: GA_ANKETA_SUPOrderByWithAggregationInput | GA_ANKETA_SUPOrderByWithAggregationInput[]
+    by: GA_ANKETA_SUPScalarFieldEnum[] | GA_ANKETA_SUPScalarFieldEnum
+    having?: GA_ANKETA_SUPScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: GA_ANKETA_SUPCountAggregateInputType | true
+    _avg?: GA_ANKETA_SUPAvgAggregateInputType
+    _sum?: GA_ANKETA_SUPSumAggregateInputType
+    _min?: GA_ANKETA_SUPMinAggregateInputType
+    _max?: GA_ANKETA_SUPMaxAggregateInputType
+  }
+
+  export type GA_ANKETA_SUPGroupByOutputType = {
+    ADB_ABA_ID: bigint
+    ADB_SUP_NAME: string | null
+    ADB_MAN_NAME1: string | null
+    ADB_MAN_NAME2: string | null
+    ADB_MAN_NAME3: string | null
+    ADB_SUP_CODE_AE: string | null
+    ADB_SUP_CODE_AUTORUS: string | null
+    ADB_SUP_CODE_ROSSKO: string | null
+    ADB_SUP_CODE_ARKONA: string | null
+    _count: GA_ANKETA_SUPCountAggregateOutputType | null
+    _avg: GA_ANKETA_SUPAvgAggregateOutputType | null
+    _sum: GA_ANKETA_SUPSumAggregateOutputType | null
+    _min: GA_ANKETA_SUPMinAggregateOutputType | null
+    _max: GA_ANKETA_SUPMaxAggregateOutputType | null
+  }
+
+  type GetGA_ANKETA_SUPGroupByPayload<T extends GA_ANKETA_SUPGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<GA_ANKETA_SUPGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof GA_ANKETA_SUPGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], GA_ANKETA_SUPGroupByOutputType[P]>
+            : GetScalarType<T[P], GA_ANKETA_SUPGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type GA_ANKETA_SUPSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    ADB_ABA_ID?: boolean
+    ADB_SUP_NAME?: boolean
+    ADB_MAN_NAME1?: boolean
+    ADB_MAN_NAME2?: boolean
+    ADB_MAN_NAME3?: boolean
+    ADB_SUP_CODE_AE?: boolean
+    ADB_SUP_CODE_AUTORUS?: boolean
+    ADB_SUP_CODE_ROSSKO?: boolean
+    ADB_SUP_CODE_ARKONA?: boolean
+  }, ExtArgs["result"]["gA_ANKETA_SUP"]>
+
+  export type GA_ANKETA_SUPSelectScalar = {
+    ADB_ABA_ID?: boolean
+    ADB_SUP_NAME?: boolean
+    ADB_MAN_NAME1?: boolean
+    ADB_MAN_NAME2?: boolean
+    ADB_MAN_NAME3?: boolean
+    ADB_SUP_CODE_AE?: boolean
+    ADB_SUP_CODE_AUTORUS?: boolean
+    ADB_SUP_CODE_ROSSKO?: boolean
+    ADB_SUP_CODE_ARKONA?: boolean
+  }
+
+
+  export type $GA_ANKETA_SUPPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "GA_ANKETA_SUP"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      ADB_ABA_ID: bigint
+      ADB_SUP_NAME: string | null
+      ADB_MAN_NAME1: string | null
+      ADB_MAN_NAME2: string | null
+      ADB_MAN_NAME3: string | null
+      ADB_SUP_CODE_AE: string | null
+      ADB_SUP_CODE_AUTORUS: string | null
+      ADB_SUP_CODE_ROSSKO: string | null
+      ADB_SUP_CODE_ARKONA: string | null
+    }, ExtArgs["result"]["gA_ANKETA_SUP"]>
+    composites: {}
+  }
+
+
+  type GA_ANKETA_SUPGetPayload<S extends boolean | null | undefined | GA_ANKETA_SUPDefaultArgs> = $Result.GetResult<Prisma.$GA_ANKETA_SUPPayload, S>
+
+  type GA_ANKETA_SUPCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<GA_ANKETA_SUPFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: GA_ANKETA_SUPCountAggregateInputType | true
+    }
+
+  export interface GA_ANKETA_SUPDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['GA_ANKETA_SUP'], meta: { name: 'GA_ANKETA_SUP' } }
+    /**
+     * Find zero or one GA_ANKETA_SUP that matches the filter.
+     * @param {GA_ANKETA_SUPFindUniqueArgs} args - Arguments to find a GA_ANKETA_SUP
+     * @example
+     * // Get one GA_ANKETA_SUP
+     * const gA_ANKETA_SUP = await prisma.gA_ANKETA_SUP.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUnique<T extends GA_ANKETA_SUPFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SUPFindUniqueArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SUPClient<$Result.GetResult<Prisma.$GA_ANKETA_SUPPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+
+    /**
+     * Find one GA_ANKETA_SUP that matches the filter or throw an error  with `error.code='P2025'` 
+     *     if no matches were found.
+     * @param {GA_ANKETA_SUPFindUniqueOrThrowArgs} args - Arguments to find a GA_ANKETA_SUP
+     * @example
+     * // Get one GA_ANKETA_SUP
+     * const gA_ANKETA_SUP = await prisma.gA_ANKETA_SUP.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUniqueOrThrow<T extends GA_ANKETA_SUPFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SUPFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SUPClient<$Result.GetResult<Prisma.$GA_ANKETA_SUPPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find the first GA_ANKETA_SUP that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SUPFindFirstArgs} args - Arguments to find a GA_ANKETA_SUP
+     * @example
+     * // Get one GA_ANKETA_SUP
+     * const gA_ANKETA_SUP = await prisma.gA_ANKETA_SUP.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirst<T extends GA_ANKETA_SUPFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SUPFindFirstArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SUPClient<$Result.GetResult<Prisma.$GA_ANKETA_SUPPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+
+    /**
+     * Find the first GA_ANKETA_SUP that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SUPFindFirstOrThrowArgs} args - Arguments to find a GA_ANKETA_SUP
+     * @example
+     * // Get one GA_ANKETA_SUP
+     * const gA_ANKETA_SUP = await prisma.gA_ANKETA_SUP.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirstOrThrow<T extends GA_ANKETA_SUPFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SUPFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SUPClient<$Result.GetResult<Prisma.$GA_ANKETA_SUPPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find zero or more GA_ANKETA_SUPS that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SUPFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all GA_ANKETA_SUPS
+     * const gA_ANKETA_SUPS = await prisma.gA_ANKETA_SUP.findMany()
+     * 
+     * // Get first 10 GA_ANKETA_SUPS
+     * const gA_ANKETA_SUPS = await prisma.gA_ANKETA_SUP.findMany({ take: 10 })
+     * 
+     * // Only select the `ADB_ABA_ID`
+     * const gA_ANKETA_SUPWithADB_ABA_IDOnly = await prisma.gA_ANKETA_SUP.findMany({ select: { ADB_ABA_ID: true } })
+     * 
+    **/
+    findMany<T extends GA_ANKETA_SUPFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SUPFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GA_ANKETA_SUPPayload<ExtArgs>, T, 'findMany'>>
+
+    /**
+     * Create a GA_ANKETA_SUP.
+     * @param {GA_ANKETA_SUPCreateArgs} args - Arguments to create a GA_ANKETA_SUP.
+     * @example
+     * // Create one GA_ANKETA_SUP
+     * const GA_ANKETA_SUP = await prisma.gA_ANKETA_SUP.create({
+     *   data: {
+     *     // ... data to create a GA_ANKETA_SUP
+     *   }
+     * })
+     * 
+    **/
+    create<T extends GA_ANKETA_SUPCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SUPCreateArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SUPClient<$Result.GetResult<Prisma.$GA_ANKETA_SUPPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+
+    /**
+     * Create many GA_ANKETA_SUPS.
+     *     @param {GA_ANKETA_SUPCreateManyArgs} args - Arguments to create many GA_ANKETA_SUPS.
+     *     @example
+     *     // Create many GA_ANKETA_SUPS
+     *     const gA_ANKETA_SUP = await prisma.gA_ANKETA_SUP.createMany({
+     *       data: {
+     *         // ... provide data here
+     *       }
+     *     })
+     *     
+    **/
+    createMany<T extends GA_ANKETA_SUPCreateManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SUPCreateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a GA_ANKETA_SUP.
+     * @param {GA_ANKETA_SUPDeleteArgs} args - Arguments to delete one GA_ANKETA_SUP.
+     * @example
+     * // Delete one GA_ANKETA_SUP
+     * const GA_ANKETA_SUP = await prisma.gA_ANKETA_SUP.delete({
+     *   where: {
+     *     // ... filter to delete one GA_ANKETA_SUP
+     *   }
+     * })
+     * 
+    **/
+    delete<T extends GA_ANKETA_SUPDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SUPDeleteArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SUPClient<$Result.GetResult<Prisma.$GA_ANKETA_SUPPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+
+    /**
+     * Update one GA_ANKETA_SUP.
+     * @param {GA_ANKETA_SUPUpdateArgs} args - Arguments to update one GA_ANKETA_SUP.
+     * @example
+     * // Update one GA_ANKETA_SUP
+     * const gA_ANKETA_SUP = await prisma.gA_ANKETA_SUP.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    update<T extends GA_ANKETA_SUPUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SUPUpdateArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SUPClient<$Result.GetResult<Prisma.$GA_ANKETA_SUPPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+
+    /**
+     * Delete zero or more GA_ANKETA_SUPS.
+     * @param {GA_ANKETA_SUPDeleteManyArgs} args - Arguments to filter GA_ANKETA_SUPS to delete.
+     * @example
+     * // Delete a few GA_ANKETA_SUPS
+     * const { count } = await prisma.gA_ANKETA_SUP.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+    **/
+    deleteMany<T extends GA_ANKETA_SUPDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, GA_ANKETA_SUPDeleteManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more GA_ANKETA_SUPS.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SUPUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many GA_ANKETA_SUPS
+     * const gA_ANKETA_SUP = await prisma.gA_ANKETA_SUP.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    updateMany<T extends GA_ANKETA_SUPUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SUPUpdateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one GA_ANKETA_SUP.
+     * @param {GA_ANKETA_SUPUpsertArgs} args - Arguments to update or create a GA_ANKETA_SUP.
+     * @example
+     * // Update or create a GA_ANKETA_SUP
+     * const gA_ANKETA_SUP = await prisma.gA_ANKETA_SUP.upsert({
+     *   create: {
+     *     // ... data to create a GA_ANKETA_SUP
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the GA_ANKETA_SUP we want to update
+     *   }
+     * })
+    **/
+    upsert<T extends GA_ANKETA_SUPUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, GA_ANKETA_SUPUpsertArgs<ExtArgs>>
+    ): Prisma__GA_ANKETA_SUPClient<$Result.GetResult<Prisma.$GA_ANKETA_SUPPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+
+    /**
+     * Count the number of GA_ANKETA_SUPS.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SUPCountArgs} args - Arguments to filter GA_ANKETA_SUPS to count.
+     * @example
+     * // Count the number of GA_ANKETA_SUPS
+     * const count = await prisma.gA_ANKETA_SUP.count({
+     *   where: {
+     *     // ... the filter for the GA_ANKETA_SUPS we want to count
+     *   }
+     * })
+    **/
+    count<T extends GA_ANKETA_SUPCountArgs>(
+      args?: Subset<T, GA_ANKETA_SUPCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], GA_ANKETA_SUPCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a GA_ANKETA_SUP.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SUPAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends GA_ANKETA_SUPAggregateArgs>(args: Subset<T, GA_ANKETA_SUPAggregateArgs>): Prisma.PrismaPromise<GetGA_ANKETA_SUPAggregateType<T>>
+
+    /**
+     * Group by GA_ANKETA_SUP.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GA_ANKETA_SUPGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends GA_ANKETA_SUPGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: GA_ANKETA_SUPGroupByArgs['orderBy'] }
+        : { orderBy?: GA_ANKETA_SUPGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, GA_ANKETA_SUPGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetGA_ANKETA_SUPGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the GA_ANKETA_SUP model
+   */
+  readonly fields: GA_ANKETA_SUPFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for GA_ANKETA_SUP.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__GA_ANKETA_SUPClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+
+
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+
+
+  /**
+   * Fields of the GA_ANKETA_SUP model
+   */ 
+  interface GA_ANKETA_SUPFieldRefs {
+    readonly ADB_ABA_ID: FieldRef<"GA_ANKETA_SUP", 'BigInt'>
+    readonly ADB_SUP_NAME: FieldRef<"GA_ANKETA_SUP", 'String'>
+    readonly ADB_MAN_NAME1: FieldRef<"GA_ANKETA_SUP", 'String'>
+    readonly ADB_MAN_NAME2: FieldRef<"GA_ANKETA_SUP", 'String'>
+    readonly ADB_MAN_NAME3: FieldRef<"GA_ANKETA_SUP", 'String'>
+    readonly ADB_SUP_CODE_AE: FieldRef<"GA_ANKETA_SUP", 'String'>
+    readonly ADB_SUP_CODE_AUTORUS: FieldRef<"GA_ANKETA_SUP", 'String'>
+    readonly ADB_SUP_CODE_ROSSKO: FieldRef<"GA_ANKETA_SUP", 'String'>
+    readonly ADB_SUP_CODE_ARKONA: FieldRef<"GA_ANKETA_SUP", 'String'>
+  }
+    
+
+  // Custom InputTypes
+
+  /**
+   * GA_ANKETA_SUP findUnique
+   */
+  export type GA_ANKETA_SUPFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SUP
+     */
+    select?: GA_ANKETA_SUPSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_SUP to fetch.
+     */
+    where: GA_ANKETA_SUPWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_SUP findUniqueOrThrow
+   */
+  export type GA_ANKETA_SUPFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SUP
+     */
+    select?: GA_ANKETA_SUPSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_SUP to fetch.
+     */
+    where: GA_ANKETA_SUPWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_SUP findFirst
+   */
+  export type GA_ANKETA_SUPFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SUP
+     */
+    select?: GA_ANKETA_SUPSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_SUP to fetch.
+     */
+    where?: GA_ANKETA_SUPWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_SUPS to fetch.
+     */
+    orderBy?: GA_ANKETA_SUPOrderByWithRelationInput | GA_ANKETA_SUPOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GA_ANKETA_SUPS.
+     */
+    cursor?: GA_ANKETA_SUPWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_SUPS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_SUPS.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GA_ANKETA_SUPS.
+     */
+    distinct?: GA_ANKETA_SUPScalarFieldEnum | GA_ANKETA_SUPScalarFieldEnum[]
+  }
+
+
+  /**
+   * GA_ANKETA_SUP findFirstOrThrow
+   */
+  export type GA_ANKETA_SUPFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SUP
+     */
+    select?: GA_ANKETA_SUPSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_SUP to fetch.
+     */
+    where?: GA_ANKETA_SUPWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_SUPS to fetch.
+     */
+    orderBy?: GA_ANKETA_SUPOrderByWithRelationInput | GA_ANKETA_SUPOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GA_ANKETA_SUPS.
+     */
+    cursor?: GA_ANKETA_SUPWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_SUPS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_SUPS.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GA_ANKETA_SUPS.
+     */
+    distinct?: GA_ANKETA_SUPScalarFieldEnum | GA_ANKETA_SUPScalarFieldEnum[]
+  }
+
+
+  /**
+   * GA_ANKETA_SUP findMany
+   */
+  export type GA_ANKETA_SUPFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SUP
+     */
+    select?: GA_ANKETA_SUPSelect<ExtArgs> | null
+    /**
+     * Filter, which GA_ANKETA_SUPS to fetch.
+     */
+    where?: GA_ANKETA_SUPWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GA_ANKETA_SUPS to fetch.
+     */
+    orderBy?: GA_ANKETA_SUPOrderByWithRelationInput | GA_ANKETA_SUPOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing GA_ANKETA_SUPS.
+     */
+    cursor?: GA_ANKETA_SUPWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GA_ANKETA_SUPS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GA_ANKETA_SUPS.
+     */
+    skip?: number
+    distinct?: GA_ANKETA_SUPScalarFieldEnum | GA_ANKETA_SUPScalarFieldEnum[]
+  }
+
+
+  /**
+   * GA_ANKETA_SUP create
+   */
+  export type GA_ANKETA_SUPCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SUP
+     */
+    select?: GA_ANKETA_SUPSelect<ExtArgs> | null
+    /**
+     * The data needed to create a GA_ANKETA_SUP.
+     */
+    data: XOR<GA_ANKETA_SUPCreateInput, GA_ANKETA_SUPUncheckedCreateInput>
+  }
+
+
+  /**
+   * GA_ANKETA_SUP createMany
+   */
+  export type GA_ANKETA_SUPCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many GA_ANKETA_SUPS.
+     */
+    data: GA_ANKETA_SUPCreateManyInput | GA_ANKETA_SUPCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+
+  /**
+   * GA_ANKETA_SUP update
+   */
+  export type GA_ANKETA_SUPUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SUP
+     */
+    select?: GA_ANKETA_SUPSelect<ExtArgs> | null
+    /**
+     * The data needed to update a GA_ANKETA_SUP.
+     */
+    data: XOR<GA_ANKETA_SUPUpdateInput, GA_ANKETA_SUPUncheckedUpdateInput>
+    /**
+     * Choose, which GA_ANKETA_SUP to update.
+     */
+    where: GA_ANKETA_SUPWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_SUP updateMany
+   */
+  export type GA_ANKETA_SUPUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update GA_ANKETA_SUPS.
+     */
+    data: XOR<GA_ANKETA_SUPUpdateManyMutationInput, GA_ANKETA_SUPUncheckedUpdateManyInput>
+    /**
+     * Filter which GA_ANKETA_SUPS to update
+     */
+    where?: GA_ANKETA_SUPWhereInput
+  }
+
+
+  /**
+   * GA_ANKETA_SUP upsert
+   */
+  export type GA_ANKETA_SUPUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SUP
+     */
+    select?: GA_ANKETA_SUPSelect<ExtArgs> | null
+    /**
+     * The filter to search for the GA_ANKETA_SUP to update in case it exists.
+     */
+    where: GA_ANKETA_SUPWhereUniqueInput
+    /**
+     * In case the GA_ANKETA_SUP found by the `where` argument doesn't exist, create a new GA_ANKETA_SUP with this data.
+     */
+    create: XOR<GA_ANKETA_SUPCreateInput, GA_ANKETA_SUPUncheckedCreateInput>
+    /**
+     * In case the GA_ANKETA_SUP was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<GA_ANKETA_SUPUpdateInput, GA_ANKETA_SUPUncheckedUpdateInput>
+  }
+
+
+  /**
+   * GA_ANKETA_SUP delete
+   */
+  export type GA_ANKETA_SUPDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SUP
+     */
+    select?: GA_ANKETA_SUPSelect<ExtArgs> | null
+    /**
+     * Filter which GA_ANKETA_SUP to delete.
+     */
+    where: GA_ANKETA_SUPWhereUniqueInput
+  }
+
+
+  /**
+   * GA_ANKETA_SUP deleteMany
+   */
+  export type GA_ANKETA_SUPDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GA_ANKETA_SUPS to delete
+     */
+    where?: GA_ANKETA_SUPWhereInput
+  }
+
+
+  /**
+   * GA_ANKETA_SUP without action
+   */
+  export type GA_ANKETA_SUPDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GA_ANKETA_SUP
+     */
+    select?: GA_ANKETA_SUPSelect<ExtArgs> | null
+  }
+
+
+
+  /**
    * Model GA_WS_USERS
    */
 
@@ -9531,8 +10560,8 @@ export namespace Prisma {
   }
 
   export type GA_WS_USERSAvgAggregateOutputType = {
-    WSU_ID: number | null
     WSU_WSO_ID: number | null
+    WSU_ID: number | null
     WSU_ID_IN_DS: number | null
     WSU_PRICE_TYPE: number | null
     WSU_GRP_ID: number | null
@@ -9540,8 +10569,8 @@ export namespace Prisma {
   }
 
   export type GA_WS_USERSSumAggregateOutputType = {
-    WSU_ID: bigint | null
     WSU_WSO_ID: number | null
+    WSU_ID: bigint | null
     WSU_ID_IN_DS: number | null
     WSU_PRICE_TYPE: number | null
     WSU_GRP_ID: number | null
@@ -9549,8 +10578,8 @@ export namespace Prisma {
   }
 
   export type GA_WS_USERSMinAggregateOutputType = {
-    WSU_ID: bigint | null
     WSU_WSO_ID: number | null
+    WSU_ID: bigint | null
     WSU_EMAIL: string | null
     WSU_NAME: string | null
     WSU_FULL_NAME: string | null
@@ -9576,8 +10605,8 @@ export namespace Prisma {
   }
 
   export type GA_WS_USERSMaxAggregateOutputType = {
-    WSU_ID: bigint | null
     WSU_WSO_ID: number | null
+    WSU_ID: bigint | null
     WSU_EMAIL: string | null
     WSU_NAME: string | null
     WSU_FULL_NAME: string | null
@@ -9603,8 +10632,8 @@ export namespace Prisma {
   }
 
   export type GA_WS_USERSCountAggregateOutputType = {
-    WSU_ID: number
     WSU_WSO_ID: number
+    WSU_ID: number
     WSU_EMAIL: number
     WSU_NAME: number
     WSU_FULL_NAME: number
@@ -9632,8 +10661,8 @@ export namespace Prisma {
 
 
   export type GA_WS_USERSAvgAggregateInputType = {
-    WSU_ID?: true
     WSU_WSO_ID?: true
+    WSU_ID?: true
     WSU_ID_IN_DS?: true
     WSU_PRICE_TYPE?: true
     WSU_GRP_ID?: true
@@ -9641,8 +10670,8 @@ export namespace Prisma {
   }
 
   export type GA_WS_USERSSumAggregateInputType = {
-    WSU_ID?: true
     WSU_WSO_ID?: true
+    WSU_ID?: true
     WSU_ID_IN_DS?: true
     WSU_PRICE_TYPE?: true
     WSU_GRP_ID?: true
@@ -9650,8 +10679,8 @@ export namespace Prisma {
   }
 
   export type GA_WS_USERSMinAggregateInputType = {
-    WSU_ID?: true
     WSU_WSO_ID?: true
+    WSU_ID?: true
     WSU_EMAIL?: true
     WSU_NAME?: true
     WSU_FULL_NAME?: true
@@ -9677,8 +10706,8 @@ export namespace Prisma {
   }
 
   export type GA_WS_USERSMaxAggregateInputType = {
-    WSU_ID?: true
     WSU_WSO_ID?: true
+    WSU_ID?: true
     WSU_EMAIL?: true
     WSU_NAME?: true
     WSU_FULL_NAME?: true
@@ -9704,8 +10733,8 @@ export namespace Prisma {
   }
 
   export type GA_WS_USERSCountAggregateInputType = {
-    WSU_ID?: true
     WSU_WSO_ID?: true
+    WSU_ID?: true
     WSU_EMAIL?: true
     WSU_NAME?: true
     WSU_FULL_NAME?: true
@@ -9818,30 +10847,30 @@ export namespace Prisma {
   }
 
   export type GA_WS_USERSGroupByOutputType = {
+    WSU_WSO_ID: number | null
     WSU_ID: bigint
-    WSU_WSO_ID: number
-    WSU_EMAIL: string
-    WSU_NAME: string
-    WSU_FULL_NAME: string
-    WSU_PHONE: string
-    WSU_ADDRESS: string
-    WSU_PASSWD: string
-    WSU_ID_IN_DS: number
-    WSU_INN: string
-    WSU_PRICE_TYPE: number
-    WSU_GRP_ID: number
-    WSU_WS_ID: number
-    WSU_MOBILE: string
-    WSU_SHOW_SUP_ALIAS: boolean
-    WSU_IS_ZS: boolean
-    WSU_PASSWD_ENC: string
-    WSU_LOGIN_ENC: string
-    WSU_DATETIME_LAST_LOGIN: Date
-    WSU_START_PAGE: string
-    WSU_SALT: string
-    WSU_TEMP_TICKET: string
-    WSU_TEMP_TICKET_DATETIME: Date
-    WSU_DATETIME_CREATE: Date
+    WSU_EMAIL: string | null
+    WSU_NAME: string | null
+    WSU_FULL_NAME: string | null
+    WSU_PHONE: string | null
+    WSU_ADDRESS: string | null
+    WSU_PASSWD: string | null
+    WSU_ID_IN_DS: number | null
+    WSU_INN: string | null
+    WSU_PRICE_TYPE: number | null
+    WSU_GRP_ID: number | null
+    WSU_WS_ID: number | null
+    WSU_MOBILE: string | null
+    WSU_SHOW_SUP_ALIAS: boolean | null
+    WSU_IS_ZS: boolean | null
+    WSU_PASSWD_ENC: string | null
+    WSU_LOGIN_ENC: string | null
+    WSU_DATETIME_LAST_LOGIN: Date | null
+    WSU_START_PAGE: string | null
+    WSU_SALT: string | null
+    WSU_TEMP_TICKET: string | null
+    WSU_TEMP_TICKET_DATETIME: Date | null
+    WSU_DATETIME_CREATE: Date | null
     _count: GA_WS_USERSCountAggregateOutputType | null
     _avg: GA_WS_USERSAvgAggregateOutputType | null
     _sum: GA_WS_USERSSumAggregateOutputType | null
@@ -9864,8 +10893,8 @@ export namespace Prisma {
 
 
   export type GA_WS_USERSSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    WSU_ID?: boolean
     WSU_WSO_ID?: boolean
+    WSU_ID?: boolean
     WSU_EMAIL?: boolean
     WSU_NAME?: boolean
     WSU_FULL_NAME?: boolean
@@ -9891,8 +10920,8 @@ export namespace Prisma {
   }, ExtArgs["result"]["gA_WS_USERS"]>
 
   export type GA_WS_USERSSelectScalar = {
-    WSU_ID?: boolean
     WSU_WSO_ID?: boolean
+    WSU_ID?: boolean
     WSU_EMAIL?: boolean
     WSU_NAME?: boolean
     WSU_FULL_NAME?: boolean
@@ -9922,30 +10951,30 @@ export namespace Prisma {
     name: "GA_WS_USERS"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
+      WSU_WSO_ID: number | null
       WSU_ID: bigint
-      WSU_WSO_ID: number
-      WSU_EMAIL: string
-      WSU_NAME: string
-      WSU_FULL_NAME: string
-      WSU_PHONE: string
-      WSU_ADDRESS: string
-      WSU_PASSWD: string
-      WSU_ID_IN_DS: number
-      WSU_INN: string
-      WSU_PRICE_TYPE: number
-      WSU_GRP_ID: number
-      WSU_WS_ID: number
-      WSU_MOBILE: string
-      WSU_SHOW_SUP_ALIAS: boolean
-      WSU_IS_ZS: boolean
-      WSU_PASSWD_ENC: string
-      WSU_LOGIN_ENC: string
-      WSU_DATETIME_LAST_LOGIN: Date
-      WSU_START_PAGE: string
-      WSU_SALT: string
-      WSU_TEMP_TICKET: string
-      WSU_TEMP_TICKET_DATETIME: Date
-      WSU_DATETIME_CREATE: Date
+      WSU_EMAIL: string | null
+      WSU_NAME: string | null
+      WSU_FULL_NAME: string | null
+      WSU_PHONE: string | null
+      WSU_ADDRESS: string | null
+      WSU_PASSWD: string | null
+      WSU_ID_IN_DS: number | null
+      WSU_INN: string | null
+      WSU_PRICE_TYPE: number | null
+      WSU_GRP_ID: number | null
+      WSU_WS_ID: number | null
+      WSU_MOBILE: string | null
+      WSU_SHOW_SUP_ALIAS: boolean | null
+      WSU_IS_ZS: boolean | null
+      WSU_PASSWD_ENC: string | null
+      WSU_LOGIN_ENC: string | null
+      WSU_DATETIME_LAST_LOGIN: Date | null
+      WSU_START_PAGE: string | null
+      WSU_SALT: string | null
+      WSU_TEMP_TICKET: string | null
+      WSU_TEMP_TICKET_DATETIME: Date | null
+      WSU_DATETIME_CREATE: Date | null
     }, ExtArgs["result"]["gA_WS_USERS"]>
     composites: {}
   }
@@ -10038,8 +11067,8 @@ export namespace Prisma {
      * // Get first 10 GA_WS_USERS
      * const gA_WS_USERS = await prisma.gA_WS_USERS.findMany({ take: 10 })
      * 
-     * // Only select the `WSU_ID`
-     * const gA_WS_USERSWithWSU_IDOnly = await prisma.gA_WS_USERS.findMany({ select: { WSU_ID: true } })
+     * // Only select the `WSU_WSO_ID`
+     * const gA_WS_USERSWithWSU_WSO_IDOnly = await prisma.gA_WS_USERS.findMany({ select: { WSU_WSO_ID: true } })
      * 
     **/
     findMany<T extends GA_WS_USERSFindManyArgs<ExtArgs>>(
@@ -10340,8 +11369,8 @@ export namespace Prisma {
    * Fields of the GA_WS_USERS model
    */ 
   interface GA_WS_USERSFieldRefs {
-    readonly WSU_ID: FieldRef<"GA_WS_USERS", 'BigInt'>
     readonly WSU_WSO_ID: FieldRef<"GA_WS_USERS", 'Int'>
+    readonly WSU_ID: FieldRef<"GA_WS_USERS", 'BigInt'>
     readonly WSU_EMAIL: FieldRef<"GA_WS_USERS", 'String'>
     readonly WSU_NAME: FieldRef<"GA_WS_USERS", 'String'>
     readonly WSU_FULL_NAME: FieldRef<"GA_WS_USERS", 'String'>
@@ -10698,6 +11727,18 @@ export namespace Prisma {
   export type GA_ANKETA_BASEScalarFieldEnum = (typeof GA_ANKETA_BASEScalarFieldEnum)[keyof typeof GA_ANKETA_BASEScalarFieldEnum]
 
 
+  export const GA_ANKETA_BRANDScalarFieldEnum: {
+    ABR_ABA_ID: 'ABR_ABA_ID',
+    ABR_STATUS: 'ABR_STATUS',
+    ABR_DATETIME: 'ABR_DATETIME',
+    ABR_HALF_STATUS: 'ABR_HALF_STATUS',
+    ABR_VYVESKA_STATUS: 'ABR_VYVESKA_STATUS',
+    ABR_KOROB_STATUS: 'ABR_KOROB_STATUS'
+  };
+
+  export type GA_ANKETA_BRANDScalarFieldEnum = (typeof GA_ANKETA_BRANDScalarFieldEnum)[keyof typeof GA_ANKETA_BRANDScalarFieldEnum]
+
+
   export const GA_ANKETA_DOGOVORScalarFieldEnum: {
     ADO_ABA_ID: 'ADO_ABA_ID',
     ADO_NAME1: 'ADO_NAME1',
@@ -10755,18 +11796,6 @@ export namespace Prisma {
   export type GA_ANKETA_OBOROTScalarFieldEnum = (typeof GA_ANKETA_OBOROTScalarFieldEnum)[keyof typeof GA_ANKETA_OBOROTScalarFieldEnum]
 
 
-  export const GA_ANKETA_BRANDScalarFieldEnum: {
-    ABR_ABA_ID: 'ABR_ABA_ID',
-    ABR_STATUS: 'ABR_STATUS',
-    ABR_DATETIME: 'ABR_DATETIME',
-    ABR_HALF_STATUS: 'ABR_HALF_STATUS',
-    ABR_VYVESKA_STATUS: 'ABR_VYVESKA_STATUS',
-    ABR_KOROB_STATUS: 'ABR_KOROB_STATUS'
-  };
-
-  export type GA_ANKETA_BRANDScalarFieldEnum = (typeof GA_ANKETA_BRANDScalarFieldEnum)[keyof typeof GA_ANKETA_BRANDScalarFieldEnum]
-
-
   export const GA_ANKETA_SCORESScalarFieldEnum: {
     ANS_WSU_ID: 'ANS_WSU_ID',
     ANS_SCORES: 'ANS_SCORES',
@@ -10806,9 +11835,24 @@ export namespace Prisma {
   export type GA_ANKETA_SOREVNOVANIEScalarFieldEnum = (typeof GA_ANKETA_SOREVNOVANIEScalarFieldEnum)[keyof typeof GA_ANKETA_SOREVNOVANIEScalarFieldEnum]
 
 
+  export const GA_ANKETA_SUPScalarFieldEnum: {
+    ADB_ABA_ID: 'ADB_ABA_ID',
+    ADB_SUP_NAME: 'ADB_SUP_NAME',
+    ADB_MAN_NAME1: 'ADB_MAN_NAME1',
+    ADB_MAN_NAME2: 'ADB_MAN_NAME2',
+    ADB_MAN_NAME3: 'ADB_MAN_NAME3',
+    ADB_SUP_CODE_AE: 'ADB_SUP_CODE_AE',
+    ADB_SUP_CODE_AUTORUS: 'ADB_SUP_CODE_AUTORUS',
+    ADB_SUP_CODE_ROSSKO: 'ADB_SUP_CODE_ROSSKO',
+    ADB_SUP_CODE_ARKONA: 'ADB_SUP_CODE_ARKONA'
+  };
+
+  export type GA_ANKETA_SUPScalarFieldEnum = (typeof GA_ANKETA_SUPScalarFieldEnum)[keyof typeof GA_ANKETA_SUPScalarFieldEnum]
+
+
   export const GA_WS_USERSScalarFieldEnum: {
-    WSU_ID: 'WSU_ID',
     WSU_WSO_ID: 'WSU_WSO_ID',
+    WSU_ID: 'WSU_ID',
     WSU_EMAIL: 'WSU_EMAIL',
     WSU_NAME: 'WSU_NAME',
     WSU_FULL_NAME: 'WSU_FULL_NAME',
@@ -10950,22 +11994,22 @@ export namespace Prisma {
     OR?: GA_ANKETA_ADDRWhereInput[]
     NOT?: GA_ANKETA_ADDRWhereInput | GA_ANKETA_ADDRWhereInput[]
     AAD_ABA_ID?: BigIntFilter<"GA_ANKETA_ADDR"> | bigint | number
-    AAD_SHIROTA?: StringFilter<"GA_ANKETA_ADDR"> | string
-    AAD_DOLGOTA?: StringFilter<"GA_ANKETA_ADDR"> | string
-    AAD_OBLAST?: StringFilter<"GA_ANKETA_ADDR"> | string
-    AAD_GOROD?: StringFilter<"GA_ANKETA_ADDR"> | string
-    AAD_ADDR?: StringFilter<"GA_ANKETA_ADDR"> | string
-    AAD_POSTCODE?: StringFilter<"GA_ANKETA_ADDR"> | string
+    AAD_SHIROTA?: StringNullableFilter<"GA_ANKETA_ADDR"> | string | null
+    AAD_DOLGOTA?: StringNullableFilter<"GA_ANKETA_ADDR"> | string | null
+    AAD_OBLAST?: StringNullableFilter<"GA_ANKETA_ADDR"> | string | null
+    AAD_GOROD?: StringNullableFilter<"GA_ANKETA_ADDR"> | string | null
+    AAD_ADDR?: StringNullableFilter<"GA_ANKETA_ADDR"> | string | null
+    AAD_POSTCODE?: StringNullableFilter<"GA_ANKETA_ADDR"> | string | null
   }
 
   export type GA_ANKETA_ADDROrderByWithRelationInput = {
     AAD_ABA_ID?: SortOrder
-    AAD_SHIROTA?: SortOrder
-    AAD_DOLGOTA?: SortOrder
-    AAD_OBLAST?: SortOrder
-    AAD_GOROD?: SortOrder
-    AAD_ADDR?: SortOrder
-    AAD_POSTCODE?: SortOrder
+    AAD_SHIROTA?: SortOrderInput | SortOrder
+    AAD_DOLGOTA?: SortOrderInput | SortOrder
+    AAD_OBLAST?: SortOrderInput | SortOrder
+    AAD_GOROD?: SortOrderInput | SortOrder
+    AAD_ADDR?: SortOrderInput | SortOrder
+    AAD_POSTCODE?: SortOrderInput | SortOrder
   }
 
   export type GA_ANKETA_ADDRWhereUniqueInput = Prisma.AtLeast<{
@@ -10973,22 +12017,22 @@ export namespace Prisma {
     AND?: GA_ANKETA_ADDRWhereInput | GA_ANKETA_ADDRWhereInput[]
     OR?: GA_ANKETA_ADDRWhereInput[]
     NOT?: GA_ANKETA_ADDRWhereInput | GA_ANKETA_ADDRWhereInput[]
-    AAD_SHIROTA?: StringFilter<"GA_ANKETA_ADDR"> | string
-    AAD_DOLGOTA?: StringFilter<"GA_ANKETA_ADDR"> | string
-    AAD_OBLAST?: StringFilter<"GA_ANKETA_ADDR"> | string
-    AAD_GOROD?: StringFilter<"GA_ANKETA_ADDR"> | string
-    AAD_ADDR?: StringFilter<"GA_ANKETA_ADDR"> | string
-    AAD_POSTCODE?: StringFilter<"GA_ANKETA_ADDR"> | string
+    AAD_SHIROTA?: StringNullableFilter<"GA_ANKETA_ADDR"> | string | null
+    AAD_DOLGOTA?: StringNullableFilter<"GA_ANKETA_ADDR"> | string | null
+    AAD_OBLAST?: StringNullableFilter<"GA_ANKETA_ADDR"> | string | null
+    AAD_GOROD?: StringNullableFilter<"GA_ANKETA_ADDR"> | string | null
+    AAD_ADDR?: StringNullableFilter<"GA_ANKETA_ADDR"> | string | null
+    AAD_POSTCODE?: StringNullableFilter<"GA_ANKETA_ADDR"> | string | null
   }, "AAD_ABA_ID">
 
   export type GA_ANKETA_ADDROrderByWithAggregationInput = {
     AAD_ABA_ID?: SortOrder
-    AAD_SHIROTA?: SortOrder
-    AAD_DOLGOTA?: SortOrder
-    AAD_OBLAST?: SortOrder
-    AAD_GOROD?: SortOrder
-    AAD_ADDR?: SortOrder
-    AAD_POSTCODE?: SortOrder
+    AAD_SHIROTA?: SortOrderInput | SortOrder
+    AAD_DOLGOTA?: SortOrderInput | SortOrder
+    AAD_OBLAST?: SortOrderInput | SortOrder
+    AAD_GOROD?: SortOrderInput | SortOrder
+    AAD_ADDR?: SortOrderInput | SortOrder
+    AAD_POSTCODE?: SortOrderInput | SortOrder
     _count?: GA_ANKETA_ADDRCountOrderByAggregateInput
     _avg?: GA_ANKETA_ADDRAvgOrderByAggregateInput
     _max?: GA_ANKETA_ADDRMaxOrderByAggregateInput
@@ -11001,46 +12045,46 @@ export namespace Prisma {
     OR?: GA_ANKETA_ADDRScalarWhereWithAggregatesInput[]
     NOT?: GA_ANKETA_ADDRScalarWhereWithAggregatesInput | GA_ANKETA_ADDRScalarWhereWithAggregatesInput[]
     AAD_ABA_ID?: BigIntWithAggregatesFilter<"GA_ANKETA_ADDR"> | bigint | number
-    AAD_SHIROTA?: StringWithAggregatesFilter<"GA_ANKETA_ADDR"> | string
-    AAD_DOLGOTA?: StringWithAggregatesFilter<"GA_ANKETA_ADDR"> | string
-    AAD_OBLAST?: StringWithAggregatesFilter<"GA_ANKETA_ADDR"> | string
-    AAD_GOROD?: StringWithAggregatesFilter<"GA_ANKETA_ADDR"> | string
-    AAD_ADDR?: StringWithAggregatesFilter<"GA_ANKETA_ADDR"> | string
-    AAD_POSTCODE?: StringWithAggregatesFilter<"GA_ANKETA_ADDR"> | string
+    AAD_SHIROTA?: StringNullableWithAggregatesFilter<"GA_ANKETA_ADDR"> | string | null
+    AAD_DOLGOTA?: StringNullableWithAggregatesFilter<"GA_ANKETA_ADDR"> | string | null
+    AAD_OBLAST?: StringNullableWithAggregatesFilter<"GA_ANKETA_ADDR"> | string | null
+    AAD_GOROD?: StringNullableWithAggregatesFilter<"GA_ANKETA_ADDR"> | string | null
+    AAD_ADDR?: StringNullableWithAggregatesFilter<"GA_ANKETA_ADDR"> | string | null
+    AAD_POSTCODE?: StringNullableWithAggregatesFilter<"GA_ANKETA_ADDR"> | string | null
   }
 
   export type GA_ANKETA_BASEWhereInput = {
     AND?: GA_ANKETA_BASEWhereInput | GA_ANKETA_BASEWhereInput[]
     OR?: GA_ANKETA_BASEWhereInput[]
     NOT?: GA_ANKETA_BASEWhereInput | GA_ANKETA_BASEWhereInput[]
-    ABA_WSU_ID?: BigIntFilter<"GA_ANKETA_BASE"> | bigint | number
-    ABA_STO_NAME?: StringFilter<"GA_ANKETA_BASE"> | string
-    ABA_STO_ID1?: StringFilter<"GA_ANKETA_BASE"> | string
+    ABA_WSU_ID?: BigIntNullableFilter<"GA_ANKETA_BASE"> | bigint | number | null
+    ABA_STO_NAME?: StringNullableFilter<"GA_ANKETA_BASE"> | string | null
+    ABA_STO_ID1?: StringNullableFilter<"GA_ANKETA_BASE"> | string | null
     ABA_REMZONA_QTY?: IntNullableFilter<"GA_ANKETA_BASE"> | number | null
-    ABA_ENABLED?: BoolFilter<"GA_ANKETA_BASE"> | boolean
-    ABA_PHONE?: StringFilter<"GA_ANKETA_BASE"> | string
-    ABA_INN?: StringFilter<"GA_ANKETA_BASE"> | string
-    ABA_DATETIME_CREATED?: DateTimeFilter<"GA_ANKETA_BASE"> | Date | string
-    ABA_DATETIME_UPDATED?: DateTimeFilter<"GA_ANKETA_BASE"> | Date | string
+    ABA_ENABLED?: BoolNullableFilter<"GA_ANKETA_BASE"> | boolean | null
+    ABA_PHONE?: StringNullableFilter<"GA_ANKETA_BASE"> | string | null
+    ABA_INN?: StringNullableFilter<"GA_ANKETA_BASE"> | string | null
+    ABA_DATETIME_CREATED?: DateTimeNullableFilter<"GA_ANKETA_BASE"> | Date | string | null
+    ABA_DATETIME_UPDATED?: DateTimeNullableFilter<"GA_ANKETA_BASE"> | Date | string | null
     ABA_ID?: BigIntFilter<"GA_ANKETA_BASE"> | bigint | number
-    ABA_DATETIME?: DateTimeFilter<"GA_ANKETA_BASE"> | Date | string
+    ABA_DATETIME?: DateTimeNullableFilter<"GA_ANKETA_BASE"> | Date | string | null
     ABA_STO_ID2?: StringNullableFilter<"GA_ANKETA_BASE"> | string | null
     ABA_STO_NAME_FIND?: StringNullableFilter<"GA_ANKETA_BASE"> | string | null
     ABA_DESC?: StringNullableFilter<"GA_ANKETA_BASE"> | string | null
   }
 
   export type GA_ANKETA_BASEOrderByWithRelationInput = {
-    ABA_WSU_ID?: SortOrder
-    ABA_STO_NAME?: SortOrder
-    ABA_STO_ID1?: SortOrder
+    ABA_WSU_ID?: SortOrderInput | SortOrder
+    ABA_STO_NAME?: SortOrderInput | SortOrder
+    ABA_STO_ID1?: SortOrderInput | SortOrder
     ABA_REMZONA_QTY?: SortOrderInput | SortOrder
-    ABA_ENABLED?: SortOrder
-    ABA_PHONE?: SortOrder
-    ABA_INN?: SortOrder
-    ABA_DATETIME_CREATED?: SortOrder
-    ABA_DATETIME_UPDATED?: SortOrder
+    ABA_ENABLED?: SortOrderInput | SortOrder
+    ABA_PHONE?: SortOrderInput | SortOrder
+    ABA_INN?: SortOrderInput | SortOrder
+    ABA_DATETIME_CREATED?: SortOrderInput | SortOrder
+    ABA_DATETIME_UPDATED?: SortOrderInput | SortOrder
     ABA_ID?: SortOrder
-    ABA_DATETIME?: SortOrder
+    ABA_DATETIME?: SortOrderInput | SortOrder
     ABA_STO_ID2?: SortOrderInput | SortOrder
     ABA_STO_NAME_FIND?: SortOrderInput | SortOrder
     ABA_DESC?: SortOrderInput | SortOrder
@@ -11051,33 +12095,33 @@ export namespace Prisma {
     AND?: GA_ANKETA_BASEWhereInput | GA_ANKETA_BASEWhereInput[]
     OR?: GA_ANKETA_BASEWhereInput[]
     NOT?: GA_ANKETA_BASEWhereInput | GA_ANKETA_BASEWhereInput[]
-    ABA_WSU_ID?: BigIntFilter<"GA_ANKETA_BASE"> | bigint | number
-    ABA_STO_NAME?: StringFilter<"GA_ANKETA_BASE"> | string
-    ABA_STO_ID1?: StringFilter<"GA_ANKETA_BASE"> | string
+    ABA_WSU_ID?: BigIntNullableFilter<"GA_ANKETA_BASE"> | bigint | number | null
+    ABA_STO_NAME?: StringNullableFilter<"GA_ANKETA_BASE"> | string | null
+    ABA_STO_ID1?: StringNullableFilter<"GA_ANKETA_BASE"> | string | null
     ABA_REMZONA_QTY?: IntNullableFilter<"GA_ANKETA_BASE"> | number | null
-    ABA_ENABLED?: BoolFilter<"GA_ANKETA_BASE"> | boolean
-    ABA_PHONE?: StringFilter<"GA_ANKETA_BASE"> | string
-    ABA_INN?: StringFilter<"GA_ANKETA_BASE"> | string
-    ABA_DATETIME_CREATED?: DateTimeFilter<"GA_ANKETA_BASE"> | Date | string
-    ABA_DATETIME_UPDATED?: DateTimeFilter<"GA_ANKETA_BASE"> | Date | string
-    ABA_DATETIME?: DateTimeFilter<"GA_ANKETA_BASE"> | Date | string
+    ABA_ENABLED?: BoolNullableFilter<"GA_ANKETA_BASE"> | boolean | null
+    ABA_PHONE?: StringNullableFilter<"GA_ANKETA_BASE"> | string | null
+    ABA_INN?: StringNullableFilter<"GA_ANKETA_BASE"> | string | null
+    ABA_DATETIME_CREATED?: DateTimeNullableFilter<"GA_ANKETA_BASE"> | Date | string | null
+    ABA_DATETIME_UPDATED?: DateTimeNullableFilter<"GA_ANKETA_BASE"> | Date | string | null
+    ABA_DATETIME?: DateTimeNullableFilter<"GA_ANKETA_BASE"> | Date | string | null
     ABA_STO_ID2?: StringNullableFilter<"GA_ANKETA_BASE"> | string | null
     ABA_STO_NAME_FIND?: StringNullableFilter<"GA_ANKETA_BASE"> | string | null
     ABA_DESC?: StringNullableFilter<"GA_ANKETA_BASE"> | string | null
   }, "ABA_ID">
 
   export type GA_ANKETA_BASEOrderByWithAggregationInput = {
-    ABA_WSU_ID?: SortOrder
-    ABA_STO_NAME?: SortOrder
-    ABA_STO_ID1?: SortOrder
+    ABA_WSU_ID?: SortOrderInput | SortOrder
+    ABA_STO_NAME?: SortOrderInput | SortOrder
+    ABA_STO_ID1?: SortOrderInput | SortOrder
     ABA_REMZONA_QTY?: SortOrderInput | SortOrder
-    ABA_ENABLED?: SortOrder
-    ABA_PHONE?: SortOrder
-    ABA_INN?: SortOrder
-    ABA_DATETIME_CREATED?: SortOrder
-    ABA_DATETIME_UPDATED?: SortOrder
+    ABA_ENABLED?: SortOrderInput | SortOrder
+    ABA_PHONE?: SortOrderInput | SortOrder
+    ABA_INN?: SortOrderInput | SortOrder
+    ABA_DATETIME_CREATED?: SortOrderInput | SortOrder
+    ABA_DATETIME_UPDATED?: SortOrderInput | SortOrder
     ABA_ID?: SortOrder
-    ABA_DATETIME?: SortOrder
+    ABA_DATETIME?: SortOrderInput | SortOrder
     ABA_STO_ID2?: SortOrderInput | SortOrder
     ABA_STO_NAME_FIND?: SortOrderInput | SortOrder
     ABA_DESC?: SortOrderInput | SortOrder
@@ -11092,303 +12136,20 @@ export namespace Prisma {
     AND?: GA_ANKETA_BASEScalarWhereWithAggregatesInput | GA_ANKETA_BASEScalarWhereWithAggregatesInput[]
     OR?: GA_ANKETA_BASEScalarWhereWithAggregatesInput[]
     NOT?: GA_ANKETA_BASEScalarWhereWithAggregatesInput | GA_ANKETA_BASEScalarWhereWithAggregatesInput[]
-    ABA_WSU_ID?: BigIntWithAggregatesFilter<"GA_ANKETA_BASE"> | bigint | number
-    ABA_STO_NAME?: StringWithAggregatesFilter<"GA_ANKETA_BASE"> | string
-    ABA_STO_ID1?: StringWithAggregatesFilter<"GA_ANKETA_BASE"> | string
+    ABA_WSU_ID?: BigIntNullableWithAggregatesFilter<"GA_ANKETA_BASE"> | bigint | number | null
+    ABA_STO_NAME?: StringNullableWithAggregatesFilter<"GA_ANKETA_BASE"> | string | null
+    ABA_STO_ID1?: StringNullableWithAggregatesFilter<"GA_ANKETA_BASE"> | string | null
     ABA_REMZONA_QTY?: IntNullableWithAggregatesFilter<"GA_ANKETA_BASE"> | number | null
-    ABA_ENABLED?: BoolWithAggregatesFilter<"GA_ANKETA_BASE"> | boolean
-    ABA_PHONE?: StringWithAggregatesFilter<"GA_ANKETA_BASE"> | string
-    ABA_INN?: StringWithAggregatesFilter<"GA_ANKETA_BASE"> | string
-    ABA_DATETIME_CREATED?: DateTimeWithAggregatesFilter<"GA_ANKETA_BASE"> | Date | string
-    ABA_DATETIME_UPDATED?: DateTimeWithAggregatesFilter<"GA_ANKETA_BASE"> | Date | string
+    ABA_ENABLED?: BoolNullableWithAggregatesFilter<"GA_ANKETA_BASE"> | boolean | null
+    ABA_PHONE?: StringNullableWithAggregatesFilter<"GA_ANKETA_BASE"> | string | null
+    ABA_INN?: StringNullableWithAggregatesFilter<"GA_ANKETA_BASE"> | string | null
+    ABA_DATETIME_CREATED?: DateTimeNullableWithAggregatesFilter<"GA_ANKETA_BASE"> | Date | string | null
+    ABA_DATETIME_UPDATED?: DateTimeNullableWithAggregatesFilter<"GA_ANKETA_BASE"> | Date | string | null
     ABA_ID?: BigIntWithAggregatesFilter<"GA_ANKETA_BASE"> | bigint | number
-    ABA_DATETIME?: DateTimeWithAggregatesFilter<"GA_ANKETA_BASE"> | Date | string
+    ABA_DATETIME?: DateTimeNullableWithAggregatesFilter<"GA_ANKETA_BASE"> | Date | string | null
     ABA_STO_ID2?: StringNullableWithAggregatesFilter<"GA_ANKETA_BASE"> | string | null
     ABA_STO_NAME_FIND?: StringNullableWithAggregatesFilter<"GA_ANKETA_BASE"> | string | null
     ABA_DESC?: StringNullableWithAggregatesFilter<"GA_ANKETA_BASE"> | string | null
-  }
-
-  export type GA_ANKETA_DOGOVORWhereInput = {
-    AND?: GA_ANKETA_DOGOVORWhereInput | GA_ANKETA_DOGOVORWhereInput[]
-    OR?: GA_ANKETA_DOGOVORWhereInput[]
-    NOT?: GA_ANKETA_DOGOVORWhereInput | GA_ANKETA_DOGOVORWhereInput[]
-    ADO_ABA_ID?: BigIntFilter<"GA_ANKETA_DOGOVOR"> | bigint | number
-    ADO_NAME1?: StringFilter<"GA_ANKETA_DOGOVOR"> | string
-    ADO_NAME2?: StringFilter<"GA_ANKETA_DOGOVOR"> | string
-    ADO_NAME3?: StringFilter<"GA_ANKETA_DOGOVOR"> | string
-    ADO_PHONE?: StringFilter<"GA_ANKETA_DOGOVOR"> | string
-    ADO_EMAIL?: StringFilter<"GA_ANKETA_DOGOVOR"> | string
-    ADO_DATETIME?: DateTimeFilter<"GA_ANKETA_DOGOVOR"> | Date | string
-    ADO_STATUS?: BoolFilter<"GA_ANKETA_DOGOVOR"> | boolean
-  }
-
-  export type GA_ANKETA_DOGOVOROrderByWithRelationInput = {
-    ADO_ABA_ID?: SortOrder
-    ADO_NAME1?: SortOrder
-    ADO_NAME2?: SortOrder
-    ADO_NAME3?: SortOrder
-    ADO_PHONE?: SortOrder
-    ADO_EMAIL?: SortOrder
-    ADO_DATETIME?: SortOrder
-    ADO_STATUS?: SortOrder
-  }
-
-  export type GA_ANKETA_DOGOVORWhereUniqueInput = Prisma.AtLeast<{
-    ADO_ABA_ID?: bigint | number
-    AND?: GA_ANKETA_DOGOVORWhereInput | GA_ANKETA_DOGOVORWhereInput[]
-    OR?: GA_ANKETA_DOGOVORWhereInput[]
-    NOT?: GA_ANKETA_DOGOVORWhereInput | GA_ANKETA_DOGOVORWhereInput[]
-    ADO_NAME1?: StringFilter<"GA_ANKETA_DOGOVOR"> | string
-    ADO_NAME2?: StringFilter<"GA_ANKETA_DOGOVOR"> | string
-    ADO_NAME3?: StringFilter<"GA_ANKETA_DOGOVOR"> | string
-    ADO_PHONE?: StringFilter<"GA_ANKETA_DOGOVOR"> | string
-    ADO_EMAIL?: StringFilter<"GA_ANKETA_DOGOVOR"> | string
-    ADO_DATETIME?: DateTimeFilter<"GA_ANKETA_DOGOVOR"> | Date | string
-    ADO_STATUS?: BoolFilter<"GA_ANKETA_DOGOVOR"> | boolean
-  }, "ADO_ABA_ID">
-
-  export type GA_ANKETA_DOGOVOROrderByWithAggregationInput = {
-    ADO_ABA_ID?: SortOrder
-    ADO_NAME1?: SortOrder
-    ADO_NAME2?: SortOrder
-    ADO_NAME3?: SortOrder
-    ADO_PHONE?: SortOrder
-    ADO_EMAIL?: SortOrder
-    ADO_DATETIME?: SortOrder
-    ADO_STATUS?: SortOrder
-    _count?: GA_ANKETA_DOGOVORCountOrderByAggregateInput
-    _avg?: GA_ANKETA_DOGOVORAvgOrderByAggregateInput
-    _max?: GA_ANKETA_DOGOVORMaxOrderByAggregateInput
-    _min?: GA_ANKETA_DOGOVORMinOrderByAggregateInput
-    _sum?: GA_ANKETA_DOGOVORSumOrderByAggregateInput
-  }
-
-  export type GA_ANKETA_DOGOVORScalarWhereWithAggregatesInput = {
-    AND?: GA_ANKETA_DOGOVORScalarWhereWithAggregatesInput | GA_ANKETA_DOGOVORScalarWhereWithAggregatesInput[]
-    OR?: GA_ANKETA_DOGOVORScalarWhereWithAggregatesInput[]
-    NOT?: GA_ANKETA_DOGOVORScalarWhereWithAggregatesInput | GA_ANKETA_DOGOVORScalarWhereWithAggregatesInput[]
-    ADO_ABA_ID?: BigIntWithAggregatesFilter<"GA_ANKETA_DOGOVOR"> | bigint | number
-    ADO_NAME1?: StringWithAggregatesFilter<"GA_ANKETA_DOGOVOR"> | string
-    ADO_NAME2?: StringWithAggregatesFilter<"GA_ANKETA_DOGOVOR"> | string
-    ADO_NAME3?: StringWithAggregatesFilter<"GA_ANKETA_DOGOVOR"> | string
-    ADO_PHONE?: StringWithAggregatesFilter<"GA_ANKETA_DOGOVOR"> | string
-    ADO_EMAIL?: StringWithAggregatesFilter<"GA_ANKETA_DOGOVOR"> | string
-    ADO_DATETIME?: DateTimeWithAggregatesFilter<"GA_ANKETA_DOGOVOR"> | Date | string
-    ADO_STATUS?: BoolWithAggregatesFilter<"GA_ANKETA_DOGOVOR"> | boolean
-  }
-
-  export type GA_ANKETA_OBOROTWhereInput = {
-    AND?: GA_ANKETA_OBOROTWhereInput | GA_ANKETA_OBOROTWhereInput[]
-    OR?: GA_ANKETA_OBOROTWhereInput[]
-    NOT?: GA_ANKETA_OBOROTWhereInput | GA_ANKETA_OBOROTWhereInput[]
-    ABO_ABA_ID?: BigIntFilter<"GA_ANKETA_OBOROT"> | bigint | number
-    ABO_DATETIME?: DateTimeFilter<"GA_ANKETA_OBOROT"> | Date | string
-    ABO_OBOROT_ALL?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRANDS_MONTH?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_AE?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_ROSSKO?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_ARKONA?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_AUTORUS?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_SCORES_MONTH_PLAN?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_SCORES_MONTH_FAKT?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_COUNT_ROSSKO?: IntFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_COUNT_AE?: IntFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_COUNT_ARKONA?: IntFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_COUNT_AUTORUS?: IntFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRANDS?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND_LOOK1?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_SCORES?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND_LOOK2?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND_LOOK2_ROSSKO?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND_LOOK2_AE?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND_LOOK2_ARKONA?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND_LOOK2_AUTORUS?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRANDS_MONTH_ROSSKO?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRANDS_MONTH_AE?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRANDS_MONTH_ARKONA?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRANDS_MONTH_AUTORUS?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND1?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND2?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND3?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND4?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND5?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND6?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_NEXT?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_SCORES_MONTH_PLAN_NEXT?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_ABA_REMZONA_QTY?: IntFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_PARTRA?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_SCORES_PARTRA?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-  }
-
-  export type GA_ANKETA_OBOROTOrderByWithRelationInput = {
-    ABO_ABA_ID?: SortOrder
-    ABO_DATETIME?: SortOrder
-    ABO_OBOROT_ALL?: SortOrder
-    ABO_OBOROT_BRANDS_MONTH?: SortOrder
-    ABO_OBOROT_AE?: SortOrder
-    ABO_OBOROT_ROSSKO?: SortOrder
-    ABO_OBOROT_ARKONA?: SortOrder
-    ABO_OBOROT_AUTORUS?: SortOrder
-    ABO_SCORES_MONTH_PLAN?: SortOrder
-    ABO_SCORES_MONTH_FAKT?: SortOrder
-    ABO_COUNT_ROSSKO?: SortOrder
-    ABO_COUNT_AE?: SortOrder
-    ABO_COUNT_ARKONA?: SortOrder
-    ABO_COUNT_AUTORUS?: SortOrder
-    ABO_OBOROT_BRANDS?: SortOrder
-    ABO_OBOROT_BRAND_LOOK1?: SortOrder
-    ABO_SCORES?: SortOrder
-    ABO_OBOROT_BRAND_LOOK2?: SortOrder
-    ABO_OBOROT_BRAND_LOOK2_ROSSKO?: SortOrder
-    ABO_OBOROT_BRAND_LOOK2_AE?: SortOrder
-    ABO_OBOROT_BRAND_LOOK2_ARKONA?: SortOrder
-    ABO_OBOROT_BRAND_LOOK2_AUTORUS?: SortOrder
-    ABO_OBOROT_BRANDS_MONTH_ROSSKO?: SortOrder
-    ABO_OBOROT_BRANDS_MONTH_AE?: SortOrder
-    ABO_OBOROT_BRANDS_MONTH_ARKONA?: SortOrder
-    ABO_OBOROT_BRANDS_MONTH_AUTORUS?: SortOrder
-    ABO_OBOROT_BRAND1?: SortOrder
-    ABO_OBOROT_BRAND2?: SortOrder
-    ABO_OBOROT_BRAND3?: SortOrder
-    ABO_OBOROT_BRAND4?: SortOrder
-    ABO_OBOROT_BRAND5?: SortOrder
-    ABO_OBOROT_BRAND6?: SortOrder
-    ABO_OBOROT_NEXT?: SortOrder
-    ABO_SCORES_MONTH_PLAN_NEXT?: SortOrder
-    ABO_ABA_REMZONA_QTY?: SortOrder
-    ABO_OBOROT_PARTRA?: SortOrder
-    ABO_SCORES_PARTRA?: SortOrder
-  }
-
-  export type GA_ANKETA_OBOROTWhereUniqueInput = Prisma.AtLeast<{
-    ABO_ABA_ID?: bigint | number
-    AND?: GA_ANKETA_OBOROTWhereInput | GA_ANKETA_OBOROTWhereInput[]
-    OR?: GA_ANKETA_OBOROTWhereInput[]
-    NOT?: GA_ANKETA_OBOROTWhereInput | GA_ANKETA_OBOROTWhereInput[]
-    ABO_DATETIME?: DateTimeFilter<"GA_ANKETA_OBOROT"> | Date | string
-    ABO_OBOROT_ALL?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRANDS_MONTH?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_AE?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_ROSSKO?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_ARKONA?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_AUTORUS?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_SCORES_MONTH_PLAN?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_SCORES_MONTH_FAKT?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_COUNT_ROSSKO?: IntFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_COUNT_AE?: IntFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_COUNT_ARKONA?: IntFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_COUNT_AUTORUS?: IntFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRANDS?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND_LOOK1?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_SCORES?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND_LOOK2?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND_LOOK2_ROSSKO?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND_LOOK2_AE?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND_LOOK2_ARKONA?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND_LOOK2_AUTORUS?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRANDS_MONTH_ROSSKO?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRANDS_MONTH_AE?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRANDS_MONTH_ARKONA?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRANDS_MONTH_AUTORUS?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND1?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND2?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND3?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND4?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND5?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND6?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_NEXT?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_SCORES_MONTH_PLAN_NEXT?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_ABA_REMZONA_QTY?: IntFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_PARTRA?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_SCORES_PARTRA?: FloatFilter<"GA_ANKETA_OBOROT"> | number
-  }, "ABO_ABA_ID">
-
-  export type GA_ANKETA_OBOROTOrderByWithAggregationInput = {
-    ABO_ABA_ID?: SortOrder
-    ABO_DATETIME?: SortOrder
-    ABO_OBOROT_ALL?: SortOrder
-    ABO_OBOROT_BRANDS_MONTH?: SortOrder
-    ABO_OBOROT_AE?: SortOrder
-    ABO_OBOROT_ROSSKO?: SortOrder
-    ABO_OBOROT_ARKONA?: SortOrder
-    ABO_OBOROT_AUTORUS?: SortOrder
-    ABO_SCORES_MONTH_PLAN?: SortOrder
-    ABO_SCORES_MONTH_FAKT?: SortOrder
-    ABO_COUNT_ROSSKO?: SortOrder
-    ABO_COUNT_AE?: SortOrder
-    ABO_COUNT_ARKONA?: SortOrder
-    ABO_COUNT_AUTORUS?: SortOrder
-    ABO_OBOROT_BRANDS?: SortOrder
-    ABO_OBOROT_BRAND_LOOK1?: SortOrder
-    ABO_SCORES?: SortOrder
-    ABO_OBOROT_BRAND_LOOK2?: SortOrder
-    ABO_OBOROT_BRAND_LOOK2_ROSSKO?: SortOrder
-    ABO_OBOROT_BRAND_LOOK2_AE?: SortOrder
-    ABO_OBOROT_BRAND_LOOK2_ARKONA?: SortOrder
-    ABO_OBOROT_BRAND_LOOK2_AUTORUS?: SortOrder
-    ABO_OBOROT_BRANDS_MONTH_ROSSKO?: SortOrder
-    ABO_OBOROT_BRANDS_MONTH_AE?: SortOrder
-    ABO_OBOROT_BRANDS_MONTH_ARKONA?: SortOrder
-    ABO_OBOROT_BRANDS_MONTH_AUTORUS?: SortOrder
-    ABO_OBOROT_BRAND1?: SortOrder
-    ABO_OBOROT_BRAND2?: SortOrder
-    ABO_OBOROT_BRAND3?: SortOrder
-    ABO_OBOROT_BRAND4?: SortOrder
-    ABO_OBOROT_BRAND5?: SortOrder
-    ABO_OBOROT_BRAND6?: SortOrder
-    ABO_OBOROT_NEXT?: SortOrder
-    ABO_SCORES_MONTH_PLAN_NEXT?: SortOrder
-    ABO_ABA_REMZONA_QTY?: SortOrder
-    ABO_OBOROT_PARTRA?: SortOrder
-    ABO_SCORES_PARTRA?: SortOrder
-    _count?: GA_ANKETA_OBOROTCountOrderByAggregateInput
-    _avg?: GA_ANKETA_OBOROTAvgOrderByAggregateInput
-    _max?: GA_ANKETA_OBOROTMaxOrderByAggregateInput
-    _min?: GA_ANKETA_OBOROTMinOrderByAggregateInput
-    _sum?: GA_ANKETA_OBOROTSumOrderByAggregateInput
-  }
-
-  export type GA_ANKETA_OBOROTScalarWhereWithAggregatesInput = {
-    AND?: GA_ANKETA_OBOROTScalarWhereWithAggregatesInput | GA_ANKETA_OBOROTScalarWhereWithAggregatesInput[]
-    OR?: GA_ANKETA_OBOROTScalarWhereWithAggregatesInput[]
-    NOT?: GA_ANKETA_OBOROTScalarWhereWithAggregatesInput | GA_ANKETA_OBOROTScalarWhereWithAggregatesInput[]
-    ABO_ABA_ID?: BigIntWithAggregatesFilter<"GA_ANKETA_OBOROT"> | bigint | number
-    ABO_DATETIME?: DateTimeWithAggregatesFilter<"GA_ANKETA_OBOROT"> | Date | string
-    ABO_OBOROT_ALL?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRANDS_MONTH?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_AE?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_ROSSKO?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_ARKONA?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_AUTORUS?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_SCORES_MONTH_PLAN?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_SCORES_MONTH_FAKT?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_COUNT_ROSSKO?: IntWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_COUNT_AE?: IntWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_COUNT_ARKONA?: IntWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_COUNT_AUTORUS?: IntWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRANDS?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND_LOOK1?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_SCORES?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND_LOOK2?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND_LOOK2_ROSSKO?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND_LOOK2_AE?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND_LOOK2_ARKONA?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND_LOOK2_AUTORUS?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRANDS_MONTH_ROSSKO?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRANDS_MONTH_AE?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRANDS_MONTH_ARKONA?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRANDS_MONTH_AUTORUS?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND1?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND2?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND3?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND4?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND5?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_BRAND6?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_NEXT?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_SCORES_MONTH_PLAN_NEXT?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_ABA_REMZONA_QTY?: IntWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_OBOROT_PARTRA?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
-    ABO_SCORES_PARTRA?: FloatWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number
   }
 
   export type GA_ANKETA_BRANDWhereInput = {
@@ -11396,20 +12157,20 @@ export namespace Prisma {
     OR?: GA_ANKETA_BRANDWhereInput[]
     NOT?: GA_ANKETA_BRANDWhereInput | GA_ANKETA_BRANDWhereInput[]
     ABR_ABA_ID?: BigIntFilter<"GA_ANKETA_BRAND"> | bigint | number
-    ABR_STATUS?: BoolFilter<"GA_ANKETA_BRAND"> | boolean
-    ABR_DATETIME?: DateTimeFilter<"GA_ANKETA_BRAND"> | Date | string
-    ABR_HALF_STATUS?: BoolFilter<"GA_ANKETA_BRAND"> | boolean
-    ABR_VYVESKA_STATUS?: BoolFilter<"GA_ANKETA_BRAND"> | boolean
-    ABR_KOROB_STATUS?: BoolFilter<"GA_ANKETA_BRAND"> | boolean
+    ABR_STATUS?: BoolNullableFilter<"GA_ANKETA_BRAND"> | boolean | null
+    ABR_DATETIME?: DateTimeNullableFilter<"GA_ANKETA_BRAND"> | Date | string | null
+    ABR_HALF_STATUS?: BoolNullableFilter<"GA_ANKETA_BRAND"> | boolean | null
+    ABR_VYVESKA_STATUS?: BoolNullableFilter<"GA_ANKETA_BRAND"> | boolean | null
+    ABR_KOROB_STATUS?: BoolNullableFilter<"GA_ANKETA_BRAND"> | boolean | null
   }
 
   export type GA_ANKETA_BRANDOrderByWithRelationInput = {
     ABR_ABA_ID?: SortOrder
-    ABR_STATUS?: SortOrder
-    ABR_DATETIME?: SortOrder
-    ABR_HALF_STATUS?: SortOrder
-    ABR_VYVESKA_STATUS?: SortOrder
-    ABR_KOROB_STATUS?: SortOrder
+    ABR_STATUS?: SortOrderInput | SortOrder
+    ABR_DATETIME?: SortOrderInput | SortOrder
+    ABR_HALF_STATUS?: SortOrderInput | SortOrder
+    ABR_VYVESKA_STATUS?: SortOrderInput | SortOrder
+    ABR_KOROB_STATUS?: SortOrderInput | SortOrder
   }
 
   export type GA_ANKETA_BRANDWhereUniqueInput = Prisma.AtLeast<{
@@ -11417,20 +12178,20 @@ export namespace Prisma {
     AND?: GA_ANKETA_BRANDWhereInput | GA_ANKETA_BRANDWhereInput[]
     OR?: GA_ANKETA_BRANDWhereInput[]
     NOT?: GA_ANKETA_BRANDWhereInput | GA_ANKETA_BRANDWhereInput[]
-    ABR_STATUS?: BoolFilter<"GA_ANKETA_BRAND"> | boolean
-    ABR_DATETIME?: DateTimeFilter<"GA_ANKETA_BRAND"> | Date | string
-    ABR_HALF_STATUS?: BoolFilter<"GA_ANKETA_BRAND"> | boolean
-    ABR_VYVESKA_STATUS?: BoolFilter<"GA_ANKETA_BRAND"> | boolean
-    ABR_KOROB_STATUS?: BoolFilter<"GA_ANKETA_BRAND"> | boolean
+    ABR_STATUS?: BoolNullableFilter<"GA_ANKETA_BRAND"> | boolean | null
+    ABR_DATETIME?: DateTimeNullableFilter<"GA_ANKETA_BRAND"> | Date | string | null
+    ABR_HALF_STATUS?: BoolNullableFilter<"GA_ANKETA_BRAND"> | boolean | null
+    ABR_VYVESKA_STATUS?: BoolNullableFilter<"GA_ANKETA_BRAND"> | boolean | null
+    ABR_KOROB_STATUS?: BoolNullableFilter<"GA_ANKETA_BRAND"> | boolean | null
   }, "ABR_ABA_ID">
 
   export type GA_ANKETA_BRANDOrderByWithAggregationInput = {
     ABR_ABA_ID?: SortOrder
-    ABR_STATUS?: SortOrder
-    ABR_DATETIME?: SortOrder
-    ABR_HALF_STATUS?: SortOrder
-    ABR_VYVESKA_STATUS?: SortOrder
-    ABR_KOROB_STATUS?: SortOrder
+    ABR_STATUS?: SortOrderInput | SortOrder
+    ABR_DATETIME?: SortOrderInput | SortOrder
+    ABR_HALF_STATUS?: SortOrderInput | SortOrder
+    ABR_VYVESKA_STATUS?: SortOrderInput | SortOrder
+    ABR_KOROB_STATUS?: SortOrderInput | SortOrder
     _count?: GA_ANKETA_BRANDCountOrderByAggregateInput
     _avg?: GA_ANKETA_BRANDAvgOrderByAggregateInput
     _max?: GA_ANKETA_BRANDMaxOrderByAggregateInput
@@ -11443,11 +12204,294 @@ export namespace Prisma {
     OR?: GA_ANKETA_BRANDScalarWhereWithAggregatesInput[]
     NOT?: GA_ANKETA_BRANDScalarWhereWithAggregatesInput | GA_ANKETA_BRANDScalarWhereWithAggregatesInput[]
     ABR_ABA_ID?: BigIntWithAggregatesFilter<"GA_ANKETA_BRAND"> | bigint | number
-    ABR_STATUS?: BoolWithAggregatesFilter<"GA_ANKETA_BRAND"> | boolean
-    ABR_DATETIME?: DateTimeWithAggregatesFilter<"GA_ANKETA_BRAND"> | Date | string
-    ABR_HALF_STATUS?: BoolWithAggregatesFilter<"GA_ANKETA_BRAND"> | boolean
-    ABR_VYVESKA_STATUS?: BoolWithAggregatesFilter<"GA_ANKETA_BRAND"> | boolean
-    ABR_KOROB_STATUS?: BoolWithAggregatesFilter<"GA_ANKETA_BRAND"> | boolean
+    ABR_STATUS?: BoolNullableWithAggregatesFilter<"GA_ANKETA_BRAND"> | boolean | null
+    ABR_DATETIME?: DateTimeNullableWithAggregatesFilter<"GA_ANKETA_BRAND"> | Date | string | null
+    ABR_HALF_STATUS?: BoolNullableWithAggregatesFilter<"GA_ANKETA_BRAND"> | boolean | null
+    ABR_VYVESKA_STATUS?: BoolNullableWithAggregatesFilter<"GA_ANKETA_BRAND"> | boolean | null
+    ABR_KOROB_STATUS?: BoolNullableWithAggregatesFilter<"GA_ANKETA_BRAND"> | boolean | null
+  }
+
+  export type GA_ANKETA_DOGOVORWhereInput = {
+    AND?: GA_ANKETA_DOGOVORWhereInput | GA_ANKETA_DOGOVORWhereInput[]
+    OR?: GA_ANKETA_DOGOVORWhereInput[]
+    NOT?: GA_ANKETA_DOGOVORWhereInput | GA_ANKETA_DOGOVORWhereInput[]
+    ADO_ABA_ID?: BigIntFilter<"GA_ANKETA_DOGOVOR"> | bigint | number
+    ADO_NAME1?: StringNullableFilter<"GA_ANKETA_DOGOVOR"> | string | null
+    ADO_NAME2?: StringNullableFilter<"GA_ANKETA_DOGOVOR"> | string | null
+    ADO_NAME3?: StringNullableFilter<"GA_ANKETA_DOGOVOR"> | string | null
+    ADO_PHONE?: StringNullableFilter<"GA_ANKETA_DOGOVOR"> | string | null
+    ADO_EMAIL?: StringNullableFilter<"GA_ANKETA_DOGOVOR"> | string | null
+    ADO_DATETIME?: DateTimeNullableFilter<"GA_ANKETA_DOGOVOR"> | Date | string | null
+    ADO_STATUS?: BoolNullableFilter<"GA_ANKETA_DOGOVOR"> | boolean | null
+  }
+
+  export type GA_ANKETA_DOGOVOROrderByWithRelationInput = {
+    ADO_ABA_ID?: SortOrder
+    ADO_NAME1?: SortOrderInput | SortOrder
+    ADO_NAME2?: SortOrderInput | SortOrder
+    ADO_NAME3?: SortOrderInput | SortOrder
+    ADO_PHONE?: SortOrderInput | SortOrder
+    ADO_EMAIL?: SortOrderInput | SortOrder
+    ADO_DATETIME?: SortOrderInput | SortOrder
+    ADO_STATUS?: SortOrderInput | SortOrder
+  }
+
+  export type GA_ANKETA_DOGOVORWhereUniqueInput = Prisma.AtLeast<{
+    ADO_ABA_ID?: bigint | number
+    AND?: GA_ANKETA_DOGOVORWhereInput | GA_ANKETA_DOGOVORWhereInput[]
+    OR?: GA_ANKETA_DOGOVORWhereInput[]
+    NOT?: GA_ANKETA_DOGOVORWhereInput | GA_ANKETA_DOGOVORWhereInput[]
+    ADO_NAME1?: StringNullableFilter<"GA_ANKETA_DOGOVOR"> | string | null
+    ADO_NAME2?: StringNullableFilter<"GA_ANKETA_DOGOVOR"> | string | null
+    ADO_NAME3?: StringNullableFilter<"GA_ANKETA_DOGOVOR"> | string | null
+    ADO_PHONE?: StringNullableFilter<"GA_ANKETA_DOGOVOR"> | string | null
+    ADO_EMAIL?: StringNullableFilter<"GA_ANKETA_DOGOVOR"> | string | null
+    ADO_DATETIME?: DateTimeNullableFilter<"GA_ANKETA_DOGOVOR"> | Date | string | null
+    ADO_STATUS?: BoolNullableFilter<"GA_ANKETA_DOGOVOR"> | boolean | null
+  }, "ADO_ABA_ID">
+
+  export type GA_ANKETA_DOGOVOROrderByWithAggregationInput = {
+    ADO_ABA_ID?: SortOrder
+    ADO_NAME1?: SortOrderInput | SortOrder
+    ADO_NAME2?: SortOrderInput | SortOrder
+    ADO_NAME3?: SortOrderInput | SortOrder
+    ADO_PHONE?: SortOrderInput | SortOrder
+    ADO_EMAIL?: SortOrderInput | SortOrder
+    ADO_DATETIME?: SortOrderInput | SortOrder
+    ADO_STATUS?: SortOrderInput | SortOrder
+    _count?: GA_ANKETA_DOGOVORCountOrderByAggregateInput
+    _avg?: GA_ANKETA_DOGOVORAvgOrderByAggregateInput
+    _max?: GA_ANKETA_DOGOVORMaxOrderByAggregateInput
+    _min?: GA_ANKETA_DOGOVORMinOrderByAggregateInput
+    _sum?: GA_ANKETA_DOGOVORSumOrderByAggregateInput
+  }
+
+  export type GA_ANKETA_DOGOVORScalarWhereWithAggregatesInput = {
+    AND?: GA_ANKETA_DOGOVORScalarWhereWithAggregatesInput | GA_ANKETA_DOGOVORScalarWhereWithAggregatesInput[]
+    OR?: GA_ANKETA_DOGOVORScalarWhereWithAggregatesInput[]
+    NOT?: GA_ANKETA_DOGOVORScalarWhereWithAggregatesInput | GA_ANKETA_DOGOVORScalarWhereWithAggregatesInput[]
+    ADO_ABA_ID?: BigIntWithAggregatesFilter<"GA_ANKETA_DOGOVOR"> | bigint | number
+    ADO_NAME1?: StringNullableWithAggregatesFilter<"GA_ANKETA_DOGOVOR"> | string | null
+    ADO_NAME2?: StringNullableWithAggregatesFilter<"GA_ANKETA_DOGOVOR"> | string | null
+    ADO_NAME3?: StringNullableWithAggregatesFilter<"GA_ANKETA_DOGOVOR"> | string | null
+    ADO_PHONE?: StringNullableWithAggregatesFilter<"GA_ANKETA_DOGOVOR"> | string | null
+    ADO_EMAIL?: StringNullableWithAggregatesFilter<"GA_ANKETA_DOGOVOR"> | string | null
+    ADO_DATETIME?: DateTimeNullableWithAggregatesFilter<"GA_ANKETA_DOGOVOR"> | Date | string | null
+    ADO_STATUS?: BoolNullableWithAggregatesFilter<"GA_ANKETA_DOGOVOR"> | boolean | null
+  }
+
+  export type GA_ANKETA_OBOROTWhereInput = {
+    AND?: GA_ANKETA_OBOROTWhereInput | GA_ANKETA_OBOROTWhereInput[]
+    OR?: GA_ANKETA_OBOROTWhereInput[]
+    NOT?: GA_ANKETA_OBOROTWhereInput | GA_ANKETA_OBOROTWhereInput[]
+    ABO_ABA_ID?: BigIntFilter<"GA_ANKETA_OBOROT"> | bigint | number
+    ABO_DATETIME?: DateTimeNullableFilter<"GA_ANKETA_OBOROT"> | Date | string | null
+    ABO_OBOROT_ALL?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRANDS_MONTH?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_AE?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_ROSSKO?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_ARKONA?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_AUTORUS?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_SCORES_MONTH_PLAN?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_SCORES_MONTH_FAKT?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_COUNT_ROSSKO?: IntNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_COUNT_AE?: IntNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_COUNT_ARKONA?: IntNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_COUNT_AUTORUS?: IntNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRANDS?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND_LOOK1?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_SCORES?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND_LOOK2?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND_LOOK2_ROSSKO?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND_LOOK2_AE?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND_LOOK2_ARKONA?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND_LOOK2_AUTORUS?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRANDS_MONTH_ROSSKO?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRANDS_MONTH_AE?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRANDS_MONTH_ARKONA?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRANDS_MONTH_AUTORUS?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND1?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND2?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND3?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND4?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND5?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND6?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_NEXT?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_SCORES_MONTH_PLAN_NEXT?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_ABA_REMZONA_QTY?: IntNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_PARTRA?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_SCORES_PARTRA?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+  }
+
+  export type GA_ANKETA_OBOROTOrderByWithRelationInput = {
+    ABO_ABA_ID?: SortOrder
+    ABO_DATETIME?: SortOrderInput | SortOrder
+    ABO_OBOROT_ALL?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRANDS_MONTH?: SortOrderInput | SortOrder
+    ABO_OBOROT_AE?: SortOrderInput | SortOrder
+    ABO_OBOROT_ROSSKO?: SortOrderInput | SortOrder
+    ABO_OBOROT_ARKONA?: SortOrderInput | SortOrder
+    ABO_OBOROT_AUTORUS?: SortOrderInput | SortOrder
+    ABO_SCORES_MONTH_PLAN?: SortOrderInput | SortOrder
+    ABO_SCORES_MONTH_FAKT?: SortOrderInput | SortOrder
+    ABO_COUNT_ROSSKO?: SortOrderInput | SortOrder
+    ABO_COUNT_AE?: SortOrderInput | SortOrder
+    ABO_COUNT_ARKONA?: SortOrderInput | SortOrder
+    ABO_COUNT_AUTORUS?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRANDS?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND_LOOK1?: SortOrderInput | SortOrder
+    ABO_SCORES?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND_LOOK2?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND_LOOK2_ROSSKO?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND_LOOK2_AE?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND_LOOK2_ARKONA?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND_LOOK2_AUTORUS?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRANDS_MONTH_ROSSKO?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRANDS_MONTH_AE?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRANDS_MONTH_ARKONA?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRANDS_MONTH_AUTORUS?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND1?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND2?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND3?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND4?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND5?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND6?: SortOrderInput | SortOrder
+    ABO_OBOROT_NEXT?: SortOrderInput | SortOrder
+    ABO_SCORES_MONTH_PLAN_NEXT?: SortOrderInput | SortOrder
+    ABO_ABA_REMZONA_QTY?: SortOrderInput | SortOrder
+    ABO_OBOROT_PARTRA?: SortOrderInput | SortOrder
+    ABO_SCORES_PARTRA?: SortOrderInput | SortOrder
+  }
+
+  export type GA_ANKETA_OBOROTWhereUniqueInput = Prisma.AtLeast<{
+    ABO_ABA_ID?: bigint | number
+    AND?: GA_ANKETA_OBOROTWhereInput | GA_ANKETA_OBOROTWhereInput[]
+    OR?: GA_ANKETA_OBOROTWhereInput[]
+    NOT?: GA_ANKETA_OBOROTWhereInput | GA_ANKETA_OBOROTWhereInput[]
+    ABO_DATETIME?: DateTimeNullableFilter<"GA_ANKETA_OBOROT"> | Date | string | null
+    ABO_OBOROT_ALL?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRANDS_MONTH?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_AE?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_ROSSKO?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_ARKONA?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_AUTORUS?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_SCORES_MONTH_PLAN?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_SCORES_MONTH_FAKT?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_COUNT_ROSSKO?: IntNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_COUNT_AE?: IntNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_COUNT_ARKONA?: IntNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_COUNT_AUTORUS?: IntNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRANDS?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND_LOOK1?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_SCORES?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND_LOOK2?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND_LOOK2_ROSSKO?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND_LOOK2_AE?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND_LOOK2_ARKONA?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND_LOOK2_AUTORUS?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRANDS_MONTH_ROSSKO?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRANDS_MONTH_AE?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRANDS_MONTH_ARKONA?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRANDS_MONTH_AUTORUS?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND1?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND2?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND3?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND4?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND5?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND6?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_NEXT?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_SCORES_MONTH_PLAN_NEXT?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_ABA_REMZONA_QTY?: IntNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_PARTRA?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_SCORES_PARTRA?: FloatNullableFilter<"GA_ANKETA_OBOROT"> | number | null
+  }, "ABO_ABA_ID">
+
+  export type GA_ANKETA_OBOROTOrderByWithAggregationInput = {
+    ABO_ABA_ID?: SortOrder
+    ABO_DATETIME?: SortOrderInput | SortOrder
+    ABO_OBOROT_ALL?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRANDS_MONTH?: SortOrderInput | SortOrder
+    ABO_OBOROT_AE?: SortOrderInput | SortOrder
+    ABO_OBOROT_ROSSKO?: SortOrderInput | SortOrder
+    ABO_OBOROT_ARKONA?: SortOrderInput | SortOrder
+    ABO_OBOROT_AUTORUS?: SortOrderInput | SortOrder
+    ABO_SCORES_MONTH_PLAN?: SortOrderInput | SortOrder
+    ABO_SCORES_MONTH_FAKT?: SortOrderInput | SortOrder
+    ABO_COUNT_ROSSKO?: SortOrderInput | SortOrder
+    ABO_COUNT_AE?: SortOrderInput | SortOrder
+    ABO_COUNT_ARKONA?: SortOrderInput | SortOrder
+    ABO_COUNT_AUTORUS?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRANDS?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND_LOOK1?: SortOrderInput | SortOrder
+    ABO_SCORES?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND_LOOK2?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND_LOOK2_ROSSKO?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND_LOOK2_AE?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND_LOOK2_ARKONA?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND_LOOK2_AUTORUS?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRANDS_MONTH_ROSSKO?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRANDS_MONTH_AE?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRANDS_MONTH_ARKONA?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRANDS_MONTH_AUTORUS?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND1?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND2?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND3?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND4?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND5?: SortOrderInput | SortOrder
+    ABO_OBOROT_BRAND6?: SortOrderInput | SortOrder
+    ABO_OBOROT_NEXT?: SortOrderInput | SortOrder
+    ABO_SCORES_MONTH_PLAN_NEXT?: SortOrderInput | SortOrder
+    ABO_ABA_REMZONA_QTY?: SortOrderInput | SortOrder
+    ABO_OBOROT_PARTRA?: SortOrderInput | SortOrder
+    ABO_SCORES_PARTRA?: SortOrderInput | SortOrder
+    _count?: GA_ANKETA_OBOROTCountOrderByAggregateInput
+    _avg?: GA_ANKETA_OBOROTAvgOrderByAggregateInput
+    _max?: GA_ANKETA_OBOROTMaxOrderByAggregateInput
+    _min?: GA_ANKETA_OBOROTMinOrderByAggregateInput
+    _sum?: GA_ANKETA_OBOROTSumOrderByAggregateInput
+  }
+
+  export type GA_ANKETA_OBOROTScalarWhereWithAggregatesInput = {
+    AND?: GA_ANKETA_OBOROTScalarWhereWithAggregatesInput | GA_ANKETA_OBOROTScalarWhereWithAggregatesInput[]
+    OR?: GA_ANKETA_OBOROTScalarWhereWithAggregatesInput[]
+    NOT?: GA_ANKETA_OBOROTScalarWhereWithAggregatesInput | GA_ANKETA_OBOROTScalarWhereWithAggregatesInput[]
+    ABO_ABA_ID?: BigIntWithAggregatesFilter<"GA_ANKETA_OBOROT"> | bigint | number
+    ABO_DATETIME?: DateTimeNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | Date | string | null
+    ABO_OBOROT_ALL?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRANDS_MONTH?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_AE?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_ROSSKO?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_ARKONA?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_AUTORUS?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_SCORES_MONTH_PLAN?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_SCORES_MONTH_FAKT?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_COUNT_ROSSKO?: IntNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_COUNT_AE?: IntNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_COUNT_ARKONA?: IntNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_COUNT_AUTORUS?: IntNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRANDS?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND_LOOK1?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_SCORES?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND_LOOK2?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND_LOOK2_ROSSKO?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND_LOOK2_AE?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND_LOOK2_ARKONA?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND_LOOK2_AUTORUS?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRANDS_MONTH_ROSSKO?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRANDS_MONTH_AE?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRANDS_MONTH_ARKONA?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRANDS_MONTH_AUTORUS?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND1?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND2?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND3?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND4?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND5?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_BRAND6?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_NEXT?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_SCORES_MONTH_PLAN_NEXT?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_ABA_REMZONA_QTY?: IntNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_OBOROT_PARTRA?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
+    ABO_SCORES_PARTRA?: FloatNullableWithAggregatesFilter<"GA_ANKETA_OBOROT"> | number | null
   }
 
   export type GA_ANKETA_SCORESWhereInput = {
@@ -11455,16 +12499,16 @@ export namespace Prisma {
     OR?: GA_ANKETA_SCORESWhereInput[]
     NOT?: GA_ANKETA_SCORESWhereInput | GA_ANKETA_SCORESWhereInput[]
     ANS_WSU_ID?: BigIntFilter<"GA_ANKETA_SCORES"> | bigint | number
-    ANS_SCORES?: IntFilter<"GA_ANKETA_SCORES"> | number
-    ANS_DATETIME?: DateTimeFilter<"GA_ANKETA_SCORES"> | Date | string
-    ANS_ISSHOW?: BoolFilter<"GA_ANKETA_SCORES"> | boolean
+    ANS_SCORES?: IntNullableFilter<"GA_ANKETA_SCORES"> | number | null
+    ANS_DATETIME?: DateTimeNullableFilter<"GA_ANKETA_SCORES"> | Date | string | null
+    ANS_ISSHOW?: BoolNullableFilter<"GA_ANKETA_SCORES"> | boolean | null
   }
 
   export type GA_ANKETA_SCORESOrderByWithRelationInput = {
     ANS_WSU_ID?: SortOrder
-    ANS_SCORES?: SortOrder
-    ANS_DATETIME?: SortOrder
-    ANS_ISSHOW?: SortOrder
+    ANS_SCORES?: SortOrderInput | SortOrder
+    ANS_DATETIME?: SortOrderInput | SortOrder
+    ANS_ISSHOW?: SortOrderInput | SortOrder
   }
 
   export type GA_ANKETA_SCORESWhereUniqueInput = Prisma.AtLeast<{
@@ -11472,16 +12516,16 @@ export namespace Prisma {
     AND?: GA_ANKETA_SCORESWhereInput | GA_ANKETA_SCORESWhereInput[]
     OR?: GA_ANKETA_SCORESWhereInput[]
     NOT?: GA_ANKETA_SCORESWhereInput | GA_ANKETA_SCORESWhereInput[]
-    ANS_SCORES?: IntFilter<"GA_ANKETA_SCORES"> | number
-    ANS_DATETIME?: DateTimeFilter<"GA_ANKETA_SCORES"> | Date | string
-    ANS_ISSHOW?: BoolFilter<"GA_ANKETA_SCORES"> | boolean
+    ANS_SCORES?: IntNullableFilter<"GA_ANKETA_SCORES"> | number | null
+    ANS_DATETIME?: DateTimeNullableFilter<"GA_ANKETA_SCORES"> | Date | string | null
+    ANS_ISSHOW?: BoolNullableFilter<"GA_ANKETA_SCORES"> | boolean | null
   }, "ANS_WSU_ID">
 
   export type GA_ANKETA_SCORESOrderByWithAggregationInput = {
     ANS_WSU_ID?: SortOrder
-    ANS_SCORES?: SortOrder
-    ANS_DATETIME?: SortOrder
-    ANS_ISSHOW?: SortOrder
+    ANS_SCORES?: SortOrderInput | SortOrder
+    ANS_DATETIME?: SortOrderInput | SortOrder
+    ANS_ISSHOW?: SortOrderInput | SortOrder
     _count?: GA_ANKETA_SCORESCountOrderByAggregateInput
     _avg?: GA_ANKETA_SCORESAvgOrderByAggregateInput
     _max?: GA_ANKETA_SCORESMaxOrderByAggregateInput
@@ -11494,9 +12538,9 @@ export namespace Prisma {
     OR?: GA_ANKETA_SCORESScalarWhereWithAggregatesInput[]
     NOT?: GA_ANKETA_SCORESScalarWhereWithAggregatesInput | GA_ANKETA_SCORESScalarWhereWithAggregatesInput[]
     ANS_WSU_ID?: BigIntWithAggregatesFilter<"GA_ANKETA_SCORES"> | bigint | number
-    ANS_SCORES?: IntWithAggregatesFilter<"GA_ANKETA_SCORES"> | number
-    ANS_DATETIME?: DateTimeWithAggregatesFilter<"GA_ANKETA_SCORES"> | Date | string
-    ANS_ISSHOW?: BoolWithAggregatesFilter<"GA_ANKETA_SCORES"> | boolean
+    ANS_SCORES?: IntNullableWithAggregatesFilter<"GA_ANKETA_SCORES"> | number | null
+    ANS_DATETIME?: DateTimeNullableWithAggregatesFilter<"GA_ANKETA_SCORES"> | Date | string | null
+    ANS_ISSHOW?: BoolNullableWithAggregatesFilter<"GA_ANKETA_SCORES"> | boolean | null
   }
 
   export type GA_ANKETA_SCORES_HISTORYWhereInput = {
@@ -11504,26 +12548,26 @@ export namespace Prisma {
     OR?: GA_ANKETA_SCORES_HISTORYWhereInput[]
     NOT?: GA_ANKETA_SCORES_HISTORYWhereInput | GA_ANKETA_SCORES_HISTORYWhereInput[]
     ASH_WSU_ID?: BigIntFilter<"GA_ANKETA_SCORES_HISTORY"> | bigint | number
-    ASH_SCORES?: IntFilter<"GA_ANKETA_SCORES_HISTORY"> | number
-    ASH_DATETIME?: DateTimeFilter<"GA_ANKETA_SCORES_HISTORY"> | Date | string
-    ASH_DESC?: StringFilter<"GA_ANKETA_SCORES_HISTORY"> | string
-    ASH_TYPE?: IntFilter<"GA_ANKETA_SCORES_HISTORY"> | number
-    ASH_SCORES_OLD?: IntFilter<"GA_ANKETA_SCORES_HISTORY"> | number
-    ASH_EVENT_STATUS?: BoolFilter<"GA_ANKETA_SCORES_HISTORY"> | boolean
-    ASH_DATETIME_UPDATE?: DateTimeFilter<"GA_ANKETA_SCORES_HISTORY"> | Date | string
-    ASH_IZO_ID?: BigIntFilter<"GA_ANKETA_SCORES_HISTORY"> | bigint | number
+    ASH_SCORES?: IntNullableFilter<"GA_ANKETA_SCORES_HISTORY"> | number | null
+    ASH_DATETIME?: DateTimeNullableFilter<"GA_ANKETA_SCORES_HISTORY"> | Date | string | null
+    ASH_DESC?: StringNullableFilter<"GA_ANKETA_SCORES_HISTORY"> | string | null
+    ASH_TYPE?: IntNullableFilter<"GA_ANKETA_SCORES_HISTORY"> | number | null
+    ASH_SCORES_OLD?: IntNullableFilter<"GA_ANKETA_SCORES_HISTORY"> | number | null
+    ASH_EVENT_STATUS?: BoolNullableFilter<"GA_ANKETA_SCORES_HISTORY"> | boolean | null
+    ASH_DATETIME_UPDATE?: DateTimeNullableFilter<"GA_ANKETA_SCORES_HISTORY"> | Date | string | null
+    ASH_IZO_ID?: BigIntNullableFilter<"GA_ANKETA_SCORES_HISTORY"> | bigint | number | null
   }
 
   export type GA_ANKETA_SCORES_HISTORYOrderByWithRelationInput = {
     ASH_WSU_ID?: SortOrder
-    ASH_SCORES?: SortOrder
-    ASH_DATETIME?: SortOrder
-    ASH_DESC?: SortOrder
-    ASH_TYPE?: SortOrder
-    ASH_SCORES_OLD?: SortOrder
-    ASH_EVENT_STATUS?: SortOrder
-    ASH_DATETIME_UPDATE?: SortOrder
-    ASH_IZO_ID?: SortOrder
+    ASH_SCORES?: SortOrderInput | SortOrder
+    ASH_DATETIME?: SortOrderInput | SortOrder
+    ASH_DESC?: SortOrderInput | SortOrder
+    ASH_TYPE?: SortOrderInput | SortOrder
+    ASH_SCORES_OLD?: SortOrderInput | SortOrder
+    ASH_EVENT_STATUS?: SortOrderInput | SortOrder
+    ASH_DATETIME_UPDATE?: SortOrderInput | SortOrder
+    ASH_IZO_ID?: SortOrderInput | SortOrder
   }
 
   export type GA_ANKETA_SCORES_HISTORYWhereUniqueInput = Prisma.AtLeast<{
@@ -11531,26 +12575,26 @@ export namespace Prisma {
     AND?: GA_ANKETA_SCORES_HISTORYWhereInput | GA_ANKETA_SCORES_HISTORYWhereInput[]
     OR?: GA_ANKETA_SCORES_HISTORYWhereInput[]
     NOT?: GA_ANKETA_SCORES_HISTORYWhereInput | GA_ANKETA_SCORES_HISTORYWhereInput[]
-    ASH_SCORES?: IntFilter<"GA_ANKETA_SCORES_HISTORY"> | number
-    ASH_DATETIME?: DateTimeFilter<"GA_ANKETA_SCORES_HISTORY"> | Date | string
-    ASH_DESC?: StringFilter<"GA_ANKETA_SCORES_HISTORY"> | string
-    ASH_TYPE?: IntFilter<"GA_ANKETA_SCORES_HISTORY"> | number
-    ASH_SCORES_OLD?: IntFilter<"GA_ANKETA_SCORES_HISTORY"> | number
-    ASH_EVENT_STATUS?: BoolFilter<"GA_ANKETA_SCORES_HISTORY"> | boolean
-    ASH_DATETIME_UPDATE?: DateTimeFilter<"GA_ANKETA_SCORES_HISTORY"> | Date | string
-    ASH_IZO_ID?: BigIntFilter<"GA_ANKETA_SCORES_HISTORY"> | bigint | number
+    ASH_SCORES?: IntNullableFilter<"GA_ANKETA_SCORES_HISTORY"> | number | null
+    ASH_DATETIME?: DateTimeNullableFilter<"GA_ANKETA_SCORES_HISTORY"> | Date | string | null
+    ASH_DESC?: StringNullableFilter<"GA_ANKETA_SCORES_HISTORY"> | string | null
+    ASH_TYPE?: IntNullableFilter<"GA_ANKETA_SCORES_HISTORY"> | number | null
+    ASH_SCORES_OLD?: IntNullableFilter<"GA_ANKETA_SCORES_HISTORY"> | number | null
+    ASH_EVENT_STATUS?: BoolNullableFilter<"GA_ANKETA_SCORES_HISTORY"> | boolean | null
+    ASH_DATETIME_UPDATE?: DateTimeNullableFilter<"GA_ANKETA_SCORES_HISTORY"> | Date | string | null
+    ASH_IZO_ID?: BigIntNullableFilter<"GA_ANKETA_SCORES_HISTORY"> | bigint | number | null
   }, "ASH_WSU_ID">
 
   export type GA_ANKETA_SCORES_HISTORYOrderByWithAggregationInput = {
     ASH_WSU_ID?: SortOrder
-    ASH_SCORES?: SortOrder
-    ASH_DATETIME?: SortOrder
-    ASH_DESC?: SortOrder
-    ASH_TYPE?: SortOrder
-    ASH_SCORES_OLD?: SortOrder
-    ASH_EVENT_STATUS?: SortOrder
-    ASH_DATETIME_UPDATE?: SortOrder
-    ASH_IZO_ID?: SortOrder
+    ASH_SCORES?: SortOrderInput | SortOrder
+    ASH_DATETIME?: SortOrderInput | SortOrder
+    ASH_DESC?: SortOrderInput | SortOrder
+    ASH_TYPE?: SortOrderInput | SortOrder
+    ASH_SCORES_OLD?: SortOrderInput | SortOrder
+    ASH_EVENT_STATUS?: SortOrderInput | SortOrder
+    ASH_DATETIME_UPDATE?: SortOrderInput | SortOrder
+    ASH_IZO_ID?: SortOrderInput | SortOrder
     _count?: GA_ANKETA_SCORES_HISTORYCountOrderByAggregateInput
     _avg?: GA_ANKETA_SCORES_HISTORYAvgOrderByAggregateInput
     _max?: GA_ANKETA_SCORES_HISTORYMaxOrderByAggregateInput
@@ -11563,39 +12607,39 @@ export namespace Prisma {
     OR?: GA_ANKETA_SCORES_HISTORYScalarWhereWithAggregatesInput[]
     NOT?: GA_ANKETA_SCORES_HISTORYScalarWhereWithAggregatesInput | GA_ANKETA_SCORES_HISTORYScalarWhereWithAggregatesInput[]
     ASH_WSU_ID?: BigIntWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | bigint | number
-    ASH_SCORES?: IntWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | number
-    ASH_DATETIME?: DateTimeWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | Date | string
-    ASH_DESC?: StringWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | string
-    ASH_TYPE?: IntWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | number
-    ASH_SCORES_OLD?: IntWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | number
-    ASH_EVENT_STATUS?: BoolWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | boolean
-    ASH_DATETIME_UPDATE?: DateTimeWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | Date | string
-    ASH_IZO_ID?: BigIntWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | bigint | number
+    ASH_SCORES?: IntNullableWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | number | null
+    ASH_DATETIME?: DateTimeNullableWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | Date | string | null
+    ASH_DESC?: StringNullableWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | string | null
+    ASH_TYPE?: IntNullableWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | number | null
+    ASH_SCORES_OLD?: IntNullableWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | number | null
+    ASH_EVENT_STATUS?: BoolNullableWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | boolean | null
+    ASH_DATETIME_UPDATE?: DateTimeNullableWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | Date | string | null
+    ASH_IZO_ID?: BigIntNullableWithAggregatesFilter<"GA_ANKETA_SCORES_HISTORY"> | bigint | number | null
   }
 
   export type GA_ANKETA_SOREVNOVANIEWhereInput = {
     AND?: GA_ANKETA_SOREVNOVANIEWhereInput | GA_ANKETA_SOREVNOVANIEWhereInput[]
     OR?: GA_ANKETA_SOREVNOVANIEWhereInput[]
     NOT?: GA_ANKETA_SOREVNOVANIEWhereInput | GA_ANKETA_SOREVNOVANIEWhereInput[]
-    ASR_YEAR?: IntFilter<"GA_ANKETA_SOREVNOVANIE"> | number
-    ASR_MONTH?: IntFilter<"GA_ANKETA_SOREVNOVANIE"> | number
+    ASR_YEAR?: IntNullableFilter<"GA_ANKETA_SOREVNOVANIE"> | number | null
+    ASR_MONTH?: IntNullableFilter<"GA_ANKETA_SOREVNOVANIE"> | number | null
     ASR_WSU_ID?: BigIntFilter<"GA_ANKETA_SOREVNOVANIE"> | bigint | number
-    ASR_LOGIN?: StringFilter<"GA_ANKETA_SOREVNOVANIE"> | string
-    ASR_FIO?: StringFilter<"GA_ANKETA_SOREVNOVANIE"> | string
-    ASR_SCORE?: IntFilter<"GA_ANKETA_SOREVNOVANIE"> | number
-    ASR_DOLJNOST?: StringFilter<"GA_ANKETA_SOREVNOVANIE"> | string
-    ASR_RUKOVODITEL?: BoolFilter<"GA_ANKETA_SOREVNOVANIE"> | boolean
+    ASR_LOGIN?: StringNullableFilter<"GA_ANKETA_SOREVNOVANIE"> | string | null
+    ASR_FIO?: StringNullableFilter<"GA_ANKETA_SOREVNOVANIE"> | string | null
+    ASR_SCORE?: IntNullableFilter<"GA_ANKETA_SOREVNOVANIE"> | number | null
+    ASR_DOLJNOST?: StringNullableFilter<"GA_ANKETA_SOREVNOVANIE"> | string | null
+    ASR_RUKOVODITEL?: BoolNullableFilter<"GA_ANKETA_SOREVNOVANIE"> | boolean | null
   }
 
   export type GA_ANKETA_SOREVNOVANIEOrderByWithRelationInput = {
-    ASR_YEAR?: SortOrder
-    ASR_MONTH?: SortOrder
+    ASR_YEAR?: SortOrderInput | SortOrder
+    ASR_MONTH?: SortOrderInput | SortOrder
     ASR_WSU_ID?: SortOrder
-    ASR_LOGIN?: SortOrder
-    ASR_FIO?: SortOrder
-    ASR_SCORE?: SortOrder
-    ASR_DOLJNOST?: SortOrder
-    ASR_RUKOVODITEL?: SortOrder
+    ASR_LOGIN?: SortOrderInput | SortOrder
+    ASR_FIO?: SortOrderInput | SortOrder
+    ASR_SCORE?: SortOrderInput | SortOrder
+    ASR_DOLJNOST?: SortOrderInput | SortOrder
+    ASR_RUKOVODITEL?: SortOrderInput | SortOrder
   }
 
   export type GA_ANKETA_SOREVNOVANIEWhereUniqueInput = Prisma.AtLeast<{
@@ -11603,24 +12647,24 @@ export namespace Prisma {
     AND?: GA_ANKETA_SOREVNOVANIEWhereInput | GA_ANKETA_SOREVNOVANIEWhereInput[]
     OR?: GA_ANKETA_SOREVNOVANIEWhereInput[]
     NOT?: GA_ANKETA_SOREVNOVANIEWhereInput | GA_ANKETA_SOREVNOVANIEWhereInput[]
-    ASR_YEAR?: IntFilter<"GA_ANKETA_SOREVNOVANIE"> | number
-    ASR_MONTH?: IntFilter<"GA_ANKETA_SOREVNOVANIE"> | number
-    ASR_LOGIN?: StringFilter<"GA_ANKETA_SOREVNOVANIE"> | string
-    ASR_FIO?: StringFilter<"GA_ANKETA_SOREVNOVANIE"> | string
-    ASR_SCORE?: IntFilter<"GA_ANKETA_SOREVNOVANIE"> | number
-    ASR_DOLJNOST?: StringFilter<"GA_ANKETA_SOREVNOVANIE"> | string
-    ASR_RUKOVODITEL?: BoolFilter<"GA_ANKETA_SOREVNOVANIE"> | boolean
+    ASR_YEAR?: IntNullableFilter<"GA_ANKETA_SOREVNOVANIE"> | number | null
+    ASR_MONTH?: IntNullableFilter<"GA_ANKETA_SOREVNOVANIE"> | number | null
+    ASR_LOGIN?: StringNullableFilter<"GA_ANKETA_SOREVNOVANIE"> | string | null
+    ASR_FIO?: StringNullableFilter<"GA_ANKETA_SOREVNOVANIE"> | string | null
+    ASR_SCORE?: IntNullableFilter<"GA_ANKETA_SOREVNOVANIE"> | number | null
+    ASR_DOLJNOST?: StringNullableFilter<"GA_ANKETA_SOREVNOVANIE"> | string | null
+    ASR_RUKOVODITEL?: BoolNullableFilter<"GA_ANKETA_SOREVNOVANIE"> | boolean | null
   }, "ASR_WSU_ID">
 
   export type GA_ANKETA_SOREVNOVANIEOrderByWithAggregationInput = {
-    ASR_YEAR?: SortOrder
-    ASR_MONTH?: SortOrder
+    ASR_YEAR?: SortOrderInput | SortOrder
+    ASR_MONTH?: SortOrderInput | SortOrder
     ASR_WSU_ID?: SortOrder
-    ASR_LOGIN?: SortOrder
-    ASR_FIO?: SortOrder
-    ASR_SCORE?: SortOrder
-    ASR_DOLJNOST?: SortOrder
-    ASR_RUKOVODITEL?: SortOrder
+    ASR_LOGIN?: SortOrderInput | SortOrder
+    ASR_FIO?: SortOrderInput | SortOrder
+    ASR_SCORE?: SortOrderInput | SortOrder
+    ASR_DOLJNOST?: SortOrderInput | SortOrder
+    ASR_RUKOVODITEL?: SortOrderInput | SortOrder
     _count?: GA_ANKETA_SOREVNOVANIECountOrderByAggregateInput
     _avg?: GA_ANKETA_SOREVNOVANIEAvgOrderByAggregateInput
     _max?: GA_ANKETA_SOREVNOVANIEMaxOrderByAggregateInput
@@ -11632,71 +12676,145 @@ export namespace Prisma {
     AND?: GA_ANKETA_SOREVNOVANIEScalarWhereWithAggregatesInput | GA_ANKETA_SOREVNOVANIEScalarWhereWithAggregatesInput[]
     OR?: GA_ANKETA_SOREVNOVANIEScalarWhereWithAggregatesInput[]
     NOT?: GA_ANKETA_SOREVNOVANIEScalarWhereWithAggregatesInput | GA_ANKETA_SOREVNOVANIEScalarWhereWithAggregatesInput[]
-    ASR_YEAR?: IntWithAggregatesFilter<"GA_ANKETA_SOREVNOVANIE"> | number
-    ASR_MONTH?: IntWithAggregatesFilter<"GA_ANKETA_SOREVNOVANIE"> | number
+    ASR_YEAR?: IntNullableWithAggregatesFilter<"GA_ANKETA_SOREVNOVANIE"> | number | null
+    ASR_MONTH?: IntNullableWithAggregatesFilter<"GA_ANKETA_SOREVNOVANIE"> | number | null
     ASR_WSU_ID?: BigIntWithAggregatesFilter<"GA_ANKETA_SOREVNOVANIE"> | bigint | number
-    ASR_LOGIN?: StringWithAggregatesFilter<"GA_ANKETA_SOREVNOVANIE"> | string
-    ASR_FIO?: StringWithAggregatesFilter<"GA_ANKETA_SOREVNOVANIE"> | string
-    ASR_SCORE?: IntWithAggregatesFilter<"GA_ANKETA_SOREVNOVANIE"> | number
-    ASR_DOLJNOST?: StringWithAggregatesFilter<"GA_ANKETA_SOREVNOVANIE"> | string
-    ASR_RUKOVODITEL?: BoolWithAggregatesFilter<"GA_ANKETA_SOREVNOVANIE"> | boolean
+    ASR_LOGIN?: StringNullableWithAggregatesFilter<"GA_ANKETA_SOREVNOVANIE"> | string | null
+    ASR_FIO?: StringNullableWithAggregatesFilter<"GA_ANKETA_SOREVNOVANIE"> | string | null
+    ASR_SCORE?: IntNullableWithAggregatesFilter<"GA_ANKETA_SOREVNOVANIE"> | number | null
+    ASR_DOLJNOST?: StringNullableWithAggregatesFilter<"GA_ANKETA_SOREVNOVANIE"> | string | null
+    ASR_RUKOVODITEL?: BoolNullableWithAggregatesFilter<"GA_ANKETA_SOREVNOVANIE"> | boolean | null
+  }
+
+  export type GA_ANKETA_SUPWhereInput = {
+    AND?: GA_ANKETA_SUPWhereInput | GA_ANKETA_SUPWhereInput[]
+    OR?: GA_ANKETA_SUPWhereInput[]
+    NOT?: GA_ANKETA_SUPWhereInput | GA_ANKETA_SUPWhereInput[]
+    ADB_ABA_ID?: BigIntFilter<"GA_ANKETA_SUP"> | bigint | number
+    ADB_SUP_NAME?: StringNullableFilter<"GA_ANKETA_SUP"> | string | null
+    ADB_MAN_NAME1?: StringNullableFilter<"GA_ANKETA_SUP"> | string | null
+    ADB_MAN_NAME2?: StringNullableFilter<"GA_ANKETA_SUP"> | string | null
+    ADB_MAN_NAME3?: StringNullableFilter<"GA_ANKETA_SUP"> | string | null
+    ADB_SUP_CODE_AE?: StringNullableFilter<"GA_ANKETA_SUP"> | string | null
+    ADB_SUP_CODE_AUTORUS?: StringNullableFilter<"GA_ANKETA_SUP"> | string | null
+    ADB_SUP_CODE_ROSSKO?: StringNullableFilter<"GA_ANKETA_SUP"> | string | null
+    ADB_SUP_CODE_ARKONA?: StringNullableFilter<"GA_ANKETA_SUP"> | string | null
+  }
+
+  export type GA_ANKETA_SUPOrderByWithRelationInput = {
+    ADB_ABA_ID?: SortOrder
+    ADB_SUP_NAME?: SortOrderInput | SortOrder
+    ADB_MAN_NAME1?: SortOrderInput | SortOrder
+    ADB_MAN_NAME2?: SortOrderInput | SortOrder
+    ADB_MAN_NAME3?: SortOrderInput | SortOrder
+    ADB_SUP_CODE_AE?: SortOrderInput | SortOrder
+    ADB_SUP_CODE_AUTORUS?: SortOrderInput | SortOrder
+    ADB_SUP_CODE_ROSSKO?: SortOrderInput | SortOrder
+    ADB_SUP_CODE_ARKONA?: SortOrderInput | SortOrder
+  }
+
+  export type GA_ANKETA_SUPWhereUniqueInput = Prisma.AtLeast<{
+    ADB_ABA_ID?: bigint | number
+    AND?: GA_ANKETA_SUPWhereInput | GA_ANKETA_SUPWhereInput[]
+    OR?: GA_ANKETA_SUPWhereInput[]
+    NOT?: GA_ANKETA_SUPWhereInput | GA_ANKETA_SUPWhereInput[]
+    ADB_SUP_NAME?: StringNullableFilter<"GA_ANKETA_SUP"> | string | null
+    ADB_MAN_NAME1?: StringNullableFilter<"GA_ANKETA_SUP"> | string | null
+    ADB_MAN_NAME2?: StringNullableFilter<"GA_ANKETA_SUP"> | string | null
+    ADB_MAN_NAME3?: StringNullableFilter<"GA_ANKETA_SUP"> | string | null
+    ADB_SUP_CODE_AE?: StringNullableFilter<"GA_ANKETA_SUP"> | string | null
+    ADB_SUP_CODE_AUTORUS?: StringNullableFilter<"GA_ANKETA_SUP"> | string | null
+    ADB_SUP_CODE_ROSSKO?: StringNullableFilter<"GA_ANKETA_SUP"> | string | null
+    ADB_SUP_CODE_ARKONA?: StringNullableFilter<"GA_ANKETA_SUP"> | string | null
+  }, "ADB_ABA_ID">
+
+  export type GA_ANKETA_SUPOrderByWithAggregationInput = {
+    ADB_ABA_ID?: SortOrder
+    ADB_SUP_NAME?: SortOrderInput | SortOrder
+    ADB_MAN_NAME1?: SortOrderInput | SortOrder
+    ADB_MAN_NAME2?: SortOrderInput | SortOrder
+    ADB_MAN_NAME3?: SortOrderInput | SortOrder
+    ADB_SUP_CODE_AE?: SortOrderInput | SortOrder
+    ADB_SUP_CODE_AUTORUS?: SortOrderInput | SortOrder
+    ADB_SUP_CODE_ROSSKO?: SortOrderInput | SortOrder
+    ADB_SUP_CODE_ARKONA?: SortOrderInput | SortOrder
+    _count?: GA_ANKETA_SUPCountOrderByAggregateInput
+    _avg?: GA_ANKETA_SUPAvgOrderByAggregateInput
+    _max?: GA_ANKETA_SUPMaxOrderByAggregateInput
+    _min?: GA_ANKETA_SUPMinOrderByAggregateInput
+    _sum?: GA_ANKETA_SUPSumOrderByAggregateInput
+  }
+
+  export type GA_ANKETA_SUPScalarWhereWithAggregatesInput = {
+    AND?: GA_ANKETA_SUPScalarWhereWithAggregatesInput | GA_ANKETA_SUPScalarWhereWithAggregatesInput[]
+    OR?: GA_ANKETA_SUPScalarWhereWithAggregatesInput[]
+    NOT?: GA_ANKETA_SUPScalarWhereWithAggregatesInput | GA_ANKETA_SUPScalarWhereWithAggregatesInput[]
+    ADB_ABA_ID?: BigIntWithAggregatesFilter<"GA_ANKETA_SUP"> | bigint | number
+    ADB_SUP_NAME?: StringNullableWithAggregatesFilter<"GA_ANKETA_SUP"> | string | null
+    ADB_MAN_NAME1?: StringNullableWithAggregatesFilter<"GA_ANKETA_SUP"> | string | null
+    ADB_MAN_NAME2?: StringNullableWithAggregatesFilter<"GA_ANKETA_SUP"> | string | null
+    ADB_MAN_NAME3?: StringNullableWithAggregatesFilter<"GA_ANKETA_SUP"> | string | null
+    ADB_SUP_CODE_AE?: StringNullableWithAggregatesFilter<"GA_ANKETA_SUP"> | string | null
+    ADB_SUP_CODE_AUTORUS?: StringNullableWithAggregatesFilter<"GA_ANKETA_SUP"> | string | null
+    ADB_SUP_CODE_ROSSKO?: StringNullableWithAggregatesFilter<"GA_ANKETA_SUP"> | string | null
+    ADB_SUP_CODE_ARKONA?: StringNullableWithAggregatesFilter<"GA_ANKETA_SUP"> | string | null
   }
 
   export type GA_WS_USERSWhereInput = {
     AND?: GA_WS_USERSWhereInput | GA_WS_USERSWhereInput[]
     OR?: GA_WS_USERSWhereInput[]
     NOT?: GA_WS_USERSWhereInput | GA_WS_USERSWhereInput[]
+    WSU_WSO_ID?: IntNullableFilter<"GA_WS_USERS"> | number | null
     WSU_ID?: BigIntFilter<"GA_WS_USERS"> | bigint | number
-    WSU_WSO_ID?: IntFilter<"GA_WS_USERS"> | number
-    WSU_EMAIL?: StringFilter<"GA_WS_USERS"> | string
-    WSU_NAME?: StringFilter<"GA_WS_USERS"> | string
-    WSU_FULL_NAME?: StringFilter<"GA_WS_USERS"> | string
-    WSU_PHONE?: StringFilter<"GA_WS_USERS"> | string
-    WSU_ADDRESS?: StringFilter<"GA_WS_USERS"> | string
-    WSU_PASSWD?: StringFilter<"GA_WS_USERS"> | string
-    WSU_ID_IN_DS?: IntFilter<"GA_WS_USERS"> | number
-    WSU_INN?: StringFilter<"GA_WS_USERS"> | string
-    WSU_PRICE_TYPE?: IntFilter<"GA_WS_USERS"> | number
-    WSU_GRP_ID?: IntFilter<"GA_WS_USERS"> | number
-    WSU_WS_ID?: IntFilter<"GA_WS_USERS"> | number
-    WSU_MOBILE?: StringFilter<"GA_WS_USERS"> | string
-    WSU_SHOW_SUP_ALIAS?: BoolFilter<"GA_WS_USERS"> | boolean
-    WSU_IS_ZS?: BoolFilter<"GA_WS_USERS"> | boolean
-    WSU_PASSWD_ENC?: StringFilter<"GA_WS_USERS"> | string
-    WSU_LOGIN_ENC?: StringFilter<"GA_WS_USERS"> | string
-    WSU_DATETIME_LAST_LOGIN?: DateTimeFilter<"GA_WS_USERS"> | Date | string
-    WSU_START_PAGE?: StringFilter<"GA_WS_USERS"> | string
-    WSU_SALT?: StringFilter<"GA_WS_USERS"> | string
-    WSU_TEMP_TICKET?: StringFilter<"GA_WS_USERS"> | string
-    WSU_TEMP_TICKET_DATETIME?: DateTimeFilter<"GA_WS_USERS"> | Date | string
-    WSU_DATETIME_CREATE?: DateTimeFilter<"GA_WS_USERS"> | Date | string
+    WSU_EMAIL?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_NAME?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_FULL_NAME?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_PHONE?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_ADDRESS?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_PASSWD?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_ID_IN_DS?: IntNullableFilter<"GA_WS_USERS"> | number | null
+    WSU_INN?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_PRICE_TYPE?: IntNullableFilter<"GA_WS_USERS"> | number | null
+    WSU_GRP_ID?: IntNullableFilter<"GA_WS_USERS"> | number | null
+    WSU_WS_ID?: IntNullableFilter<"GA_WS_USERS"> | number | null
+    WSU_MOBILE?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_SHOW_SUP_ALIAS?: BoolNullableFilter<"GA_WS_USERS"> | boolean | null
+    WSU_IS_ZS?: BoolNullableFilter<"GA_WS_USERS"> | boolean | null
+    WSU_PASSWD_ENC?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_LOGIN_ENC?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_DATETIME_LAST_LOGIN?: DateTimeNullableFilter<"GA_WS_USERS"> | Date | string | null
+    WSU_START_PAGE?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_SALT?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_TEMP_TICKET?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_TEMP_TICKET_DATETIME?: DateTimeNullableFilter<"GA_WS_USERS"> | Date | string | null
+    WSU_DATETIME_CREATE?: DateTimeNullableFilter<"GA_WS_USERS"> | Date | string | null
   }
 
   export type GA_WS_USERSOrderByWithRelationInput = {
+    WSU_WSO_ID?: SortOrderInput | SortOrder
     WSU_ID?: SortOrder
-    WSU_WSO_ID?: SortOrder
-    WSU_EMAIL?: SortOrder
-    WSU_NAME?: SortOrder
-    WSU_FULL_NAME?: SortOrder
-    WSU_PHONE?: SortOrder
-    WSU_ADDRESS?: SortOrder
-    WSU_PASSWD?: SortOrder
-    WSU_ID_IN_DS?: SortOrder
-    WSU_INN?: SortOrder
-    WSU_PRICE_TYPE?: SortOrder
-    WSU_GRP_ID?: SortOrder
-    WSU_WS_ID?: SortOrder
-    WSU_MOBILE?: SortOrder
-    WSU_SHOW_SUP_ALIAS?: SortOrder
-    WSU_IS_ZS?: SortOrder
-    WSU_PASSWD_ENC?: SortOrder
-    WSU_LOGIN_ENC?: SortOrder
-    WSU_DATETIME_LAST_LOGIN?: SortOrder
-    WSU_START_PAGE?: SortOrder
-    WSU_SALT?: SortOrder
-    WSU_TEMP_TICKET?: SortOrder
-    WSU_TEMP_TICKET_DATETIME?: SortOrder
-    WSU_DATETIME_CREATE?: SortOrder
+    WSU_EMAIL?: SortOrderInput | SortOrder
+    WSU_NAME?: SortOrderInput | SortOrder
+    WSU_FULL_NAME?: SortOrderInput | SortOrder
+    WSU_PHONE?: SortOrderInput | SortOrder
+    WSU_ADDRESS?: SortOrderInput | SortOrder
+    WSU_PASSWD?: SortOrderInput | SortOrder
+    WSU_ID_IN_DS?: SortOrderInput | SortOrder
+    WSU_INN?: SortOrderInput | SortOrder
+    WSU_PRICE_TYPE?: SortOrderInput | SortOrder
+    WSU_GRP_ID?: SortOrderInput | SortOrder
+    WSU_WS_ID?: SortOrderInput | SortOrder
+    WSU_MOBILE?: SortOrderInput | SortOrder
+    WSU_SHOW_SUP_ALIAS?: SortOrderInput | SortOrder
+    WSU_IS_ZS?: SortOrderInput | SortOrder
+    WSU_PASSWD_ENC?: SortOrderInput | SortOrder
+    WSU_LOGIN_ENC?: SortOrderInput | SortOrder
+    WSU_DATETIME_LAST_LOGIN?: SortOrderInput | SortOrder
+    WSU_START_PAGE?: SortOrderInput | SortOrder
+    WSU_SALT?: SortOrderInput | SortOrder
+    WSU_TEMP_TICKET?: SortOrderInput | SortOrder
+    WSU_TEMP_TICKET_DATETIME?: SortOrderInput | SortOrder
+    WSU_DATETIME_CREATE?: SortOrderInput | SortOrder
   }
 
   export type GA_WS_USERSWhereUniqueInput = Prisma.AtLeast<{
@@ -11704,56 +12822,56 @@ export namespace Prisma {
     AND?: GA_WS_USERSWhereInput | GA_WS_USERSWhereInput[]
     OR?: GA_WS_USERSWhereInput[]
     NOT?: GA_WS_USERSWhereInput | GA_WS_USERSWhereInput[]
-    WSU_WSO_ID?: IntFilter<"GA_WS_USERS"> | number
-    WSU_EMAIL?: StringFilter<"GA_WS_USERS"> | string
-    WSU_NAME?: StringFilter<"GA_WS_USERS"> | string
-    WSU_FULL_NAME?: StringFilter<"GA_WS_USERS"> | string
-    WSU_PHONE?: StringFilter<"GA_WS_USERS"> | string
-    WSU_ADDRESS?: StringFilter<"GA_WS_USERS"> | string
-    WSU_PASSWD?: StringFilter<"GA_WS_USERS"> | string
-    WSU_ID_IN_DS?: IntFilter<"GA_WS_USERS"> | number
-    WSU_INN?: StringFilter<"GA_WS_USERS"> | string
-    WSU_PRICE_TYPE?: IntFilter<"GA_WS_USERS"> | number
-    WSU_GRP_ID?: IntFilter<"GA_WS_USERS"> | number
-    WSU_WS_ID?: IntFilter<"GA_WS_USERS"> | number
-    WSU_MOBILE?: StringFilter<"GA_WS_USERS"> | string
-    WSU_SHOW_SUP_ALIAS?: BoolFilter<"GA_WS_USERS"> | boolean
-    WSU_IS_ZS?: BoolFilter<"GA_WS_USERS"> | boolean
-    WSU_PASSWD_ENC?: StringFilter<"GA_WS_USERS"> | string
-    WSU_LOGIN_ENC?: StringFilter<"GA_WS_USERS"> | string
-    WSU_DATETIME_LAST_LOGIN?: DateTimeFilter<"GA_WS_USERS"> | Date | string
-    WSU_START_PAGE?: StringFilter<"GA_WS_USERS"> | string
-    WSU_SALT?: StringFilter<"GA_WS_USERS"> | string
-    WSU_TEMP_TICKET?: StringFilter<"GA_WS_USERS"> | string
-    WSU_TEMP_TICKET_DATETIME?: DateTimeFilter<"GA_WS_USERS"> | Date | string
-    WSU_DATETIME_CREATE?: DateTimeFilter<"GA_WS_USERS"> | Date | string
+    WSU_WSO_ID?: IntNullableFilter<"GA_WS_USERS"> | number | null
+    WSU_EMAIL?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_NAME?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_FULL_NAME?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_PHONE?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_ADDRESS?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_PASSWD?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_ID_IN_DS?: IntNullableFilter<"GA_WS_USERS"> | number | null
+    WSU_INN?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_PRICE_TYPE?: IntNullableFilter<"GA_WS_USERS"> | number | null
+    WSU_GRP_ID?: IntNullableFilter<"GA_WS_USERS"> | number | null
+    WSU_WS_ID?: IntNullableFilter<"GA_WS_USERS"> | number | null
+    WSU_MOBILE?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_SHOW_SUP_ALIAS?: BoolNullableFilter<"GA_WS_USERS"> | boolean | null
+    WSU_IS_ZS?: BoolNullableFilter<"GA_WS_USERS"> | boolean | null
+    WSU_PASSWD_ENC?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_LOGIN_ENC?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_DATETIME_LAST_LOGIN?: DateTimeNullableFilter<"GA_WS_USERS"> | Date | string | null
+    WSU_START_PAGE?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_SALT?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_TEMP_TICKET?: StringNullableFilter<"GA_WS_USERS"> | string | null
+    WSU_TEMP_TICKET_DATETIME?: DateTimeNullableFilter<"GA_WS_USERS"> | Date | string | null
+    WSU_DATETIME_CREATE?: DateTimeNullableFilter<"GA_WS_USERS"> | Date | string | null
   }, "WSU_ID">
 
   export type GA_WS_USERSOrderByWithAggregationInput = {
+    WSU_WSO_ID?: SortOrderInput | SortOrder
     WSU_ID?: SortOrder
-    WSU_WSO_ID?: SortOrder
-    WSU_EMAIL?: SortOrder
-    WSU_NAME?: SortOrder
-    WSU_FULL_NAME?: SortOrder
-    WSU_PHONE?: SortOrder
-    WSU_ADDRESS?: SortOrder
-    WSU_PASSWD?: SortOrder
-    WSU_ID_IN_DS?: SortOrder
-    WSU_INN?: SortOrder
-    WSU_PRICE_TYPE?: SortOrder
-    WSU_GRP_ID?: SortOrder
-    WSU_WS_ID?: SortOrder
-    WSU_MOBILE?: SortOrder
-    WSU_SHOW_SUP_ALIAS?: SortOrder
-    WSU_IS_ZS?: SortOrder
-    WSU_PASSWD_ENC?: SortOrder
-    WSU_LOGIN_ENC?: SortOrder
-    WSU_DATETIME_LAST_LOGIN?: SortOrder
-    WSU_START_PAGE?: SortOrder
-    WSU_SALT?: SortOrder
-    WSU_TEMP_TICKET?: SortOrder
-    WSU_TEMP_TICKET_DATETIME?: SortOrder
-    WSU_DATETIME_CREATE?: SortOrder
+    WSU_EMAIL?: SortOrderInput | SortOrder
+    WSU_NAME?: SortOrderInput | SortOrder
+    WSU_FULL_NAME?: SortOrderInput | SortOrder
+    WSU_PHONE?: SortOrderInput | SortOrder
+    WSU_ADDRESS?: SortOrderInput | SortOrder
+    WSU_PASSWD?: SortOrderInput | SortOrder
+    WSU_ID_IN_DS?: SortOrderInput | SortOrder
+    WSU_INN?: SortOrderInput | SortOrder
+    WSU_PRICE_TYPE?: SortOrderInput | SortOrder
+    WSU_GRP_ID?: SortOrderInput | SortOrder
+    WSU_WS_ID?: SortOrderInput | SortOrder
+    WSU_MOBILE?: SortOrderInput | SortOrder
+    WSU_SHOW_SUP_ALIAS?: SortOrderInput | SortOrder
+    WSU_IS_ZS?: SortOrderInput | SortOrder
+    WSU_PASSWD_ENC?: SortOrderInput | SortOrder
+    WSU_LOGIN_ENC?: SortOrderInput | SortOrder
+    WSU_DATETIME_LAST_LOGIN?: SortOrderInput | SortOrder
+    WSU_START_PAGE?: SortOrderInput | SortOrder
+    WSU_SALT?: SortOrderInput | SortOrder
+    WSU_TEMP_TICKET?: SortOrderInput | SortOrder
+    WSU_TEMP_TICKET_DATETIME?: SortOrderInput | SortOrder
+    WSU_DATETIME_CREATE?: SortOrderInput | SortOrder
     _count?: GA_WS_USERSCountOrderByAggregateInput
     _avg?: GA_WS_USERSAvgOrderByAggregateInput
     _max?: GA_WS_USERSMaxOrderByAggregateInput
@@ -11765,1038 +12883,1122 @@ export namespace Prisma {
     AND?: GA_WS_USERSScalarWhereWithAggregatesInput | GA_WS_USERSScalarWhereWithAggregatesInput[]
     OR?: GA_WS_USERSScalarWhereWithAggregatesInput[]
     NOT?: GA_WS_USERSScalarWhereWithAggregatesInput | GA_WS_USERSScalarWhereWithAggregatesInput[]
+    WSU_WSO_ID?: IntNullableWithAggregatesFilter<"GA_WS_USERS"> | number | null
     WSU_ID?: BigIntWithAggregatesFilter<"GA_WS_USERS"> | bigint | number
-    WSU_WSO_ID?: IntWithAggregatesFilter<"GA_WS_USERS"> | number
-    WSU_EMAIL?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
-    WSU_NAME?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
-    WSU_FULL_NAME?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
-    WSU_PHONE?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
-    WSU_ADDRESS?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
-    WSU_PASSWD?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
-    WSU_ID_IN_DS?: IntWithAggregatesFilter<"GA_WS_USERS"> | number
-    WSU_INN?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
-    WSU_PRICE_TYPE?: IntWithAggregatesFilter<"GA_WS_USERS"> | number
-    WSU_GRP_ID?: IntWithAggregatesFilter<"GA_WS_USERS"> | number
-    WSU_WS_ID?: IntWithAggregatesFilter<"GA_WS_USERS"> | number
-    WSU_MOBILE?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
-    WSU_SHOW_SUP_ALIAS?: BoolWithAggregatesFilter<"GA_WS_USERS"> | boolean
-    WSU_IS_ZS?: BoolWithAggregatesFilter<"GA_WS_USERS"> | boolean
-    WSU_PASSWD_ENC?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
-    WSU_LOGIN_ENC?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
-    WSU_DATETIME_LAST_LOGIN?: DateTimeWithAggregatesFilter<"GA_WS_USERS"> | Date | string
-    WSU_START_PAGE?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
-    WSU_SALT?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
-    WSU_TEMP_TICKET?: StringWithAggregatesFilter<"GA_WS_USERS"> | string
-    WSU_TEMP_TICKET_DATETIME?: DateTimeWithAggregatesFilter<"GA_WS_USERS"> | Date | string
-    WSU_DATETIME_CREATE?: DateTimeWithAggregatesFilter<"GA_WS_USERS"> | Date | string
+    WSU_EMAIL?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
+    WSU_NAME?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
+    WSU_FULL_NAME?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
+    WSU_PHONE?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
+    WSU_ADDRESS?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
+    WSU_PASSWD?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
+    WSU_ID_IN_DS?: IntNullableWithAggregatesFilter<"GA_WS_USERS"> | number | null
+    WSU_INN?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
+    WSU_PRICE_TYPE?: IntNullableWithAggregatesFilter<"GA_WS_USERS"> | number | null
+    WSU_GRP_ID?: IntNullableWithAggregatesFilter<"GA_WS_USERS"> | number | null
+    WSU_WS_ID?: IntNullableWithAggregatesFilter<"GA_WS_USERS"> | number | null
+    WSU_MOBILE?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
+    WSU_SHOW_SUP_ALIAS?: BoolNullableWithAggregatesFilter<"GA_WS_USERS"> | boolean | null
+    WSU_IS_ZS?: BoolNullableWithAggregatesFilter<"GA_WS_USERS"> | boolean | null
+    WSU_PASSWD_ENC?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
+    WSU_LOGIN_ENC?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
+    WSU_DATETIME_LAST_LOGIN?: DateTimeNullableWithAggregatesFilter<"GA_WS_USERS"> | Date | string | null
+    WSU_START_PAGE?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
+    WSU_SALT?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
+    WSU_TEMP_TICKET?: StringNullableWithAggregatesFilter<"GA_WS_USERS"> | string | null
+    WSU_TEMP_TICKET_DATETIME?: DateTimeNullableWithAggregatesFilter<"GA_WS_USERS"> | Date | string | null
+    WSU_DATETIME_CREATE?: DateTimeNullableWithAggregatesFilter<"GA_WS_USERS"> | Date | string | null
   }
 
   export type GA_ANKETA_ADDRCreateInput = {
     AAD_ABA_ID: bigint | number
-    AAD_SHIROTA: string
-    AAD_DOLGOTA: string
-    AAD_OBLAST: string
-    AAD_GOROD: string
-    AAD_ADDR: string
-    AAD_POSTCODE: string
+    AAD_SHIROTA?: string | null
+    AAD_DOLGOTA?: string | null
+    AAD_OBLAST?: string | null
+    AAD_GOROD?: string | null
+    AAD_ADDR?: string | null
+    AAD_POSTCODE?: string | null
   }
 
   export type GA_ANKETA_ADDRUncheckedCreateInput = {
     AAD_ABA_ID: bigint | number
-    AAD_SHIROTA: string
-    AAD_DOLGOTA: string
-    AAD_OBLAST: string
-    AAD_GOROD: string
-    AAD_ADDR: string
-    AAD_POSTCODE: string
+    AAD_SHIROTA?: string | null
+    AAD_DOLGOTA?: string | null
+    AAD_OBLAST?: string | null
+    AAD_GOROD?: string | null
+    AAD_ADDR?: string | null
+    AAD_POSTCODE?: string | null
   }
 
   export type GA_ANKETA_ADDRUpdateInput = {
     AAD_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    AAD_SHIROTA?: StringFieldUpdateOperationsInput | string
-    AAD_DOLGOTA?: StringFieldUpdateOperationsInput | string
-    AAD_OBLAST?: StringFieldUpdateOperationsInput | string
-    AAD_GOROD?: StringFieldUpdateOperationsInput | string
-    AAD_ADDR?: StringFieldUpdateOperationsInput | string
-    AAD_POSTCODE?: StringFieldUpdateOperationsInput | string
+    AAD_SHIROTA?: NullableStringFieldUpdateOperationsInput | string | null
+    AAD_DOLGOTA?: NullableStringFieldUpdateOperationsInput | string | null
+    AAD_OBLAST?: NullableStringFieldUpdateOperationsInput | string | null
+    AAD_GOROD?: NullableStringFieldUpdateOperationsInput | string | null
+    AAD_ADDR?: NullableStringFieldUpdateOperationsInput | string | null
+    AAD_POSTCODE?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type GA_ANKETA_ADDRUncheckedUpdateInput = {
     AAD_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    AAD_SHIROTA?: StringFieldUpdateOperationsInput | string
-    AAD_DOLGOTA?: StringFieldUpdateOperationsInput | string
-    AAD_OBLAST?: StringFieldUpdateOperationsInput | string
-    AAD_GOROD?: StringFieldUpdateOperationsInput | string
-    AAD_ADDR?: StringFieldUpdateOperationsInput | string
-    AAD_POSTCODE?: StringFieldUpdateOperationsInput | string
+    AAD_SHIROTA?: NullableStringFieldUpdateOperationsInput | string | null
+    AAD_DOLGOTA?: NullableStringFieldUpdateOperationsInput | string | null
+    AAD_OBLAST?: NullableStringFieldUpdateOperationsInput | string | null
+    AAD_GOROD?: NullableStringFieldUpdateOperationsInput | string | null
+    AAD_ADDR?: NullableStringFieldUpdateOperationsInput | string | null
+    AAD_POSTCODE?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type GA_ANKETA_ADDRCreateManyInput = {
     AAD_ABA_ID: bigint | number
-    AAD_SHIROTA: string
-    AAD_DOLGOTA: string
-    AAD_OBLAST: string
-    AAD_GOROD: string
-    AAD_ADDR: string
-    AAD_POSTCODE: string
+    AAD_SHIROTA?: string | null
+    AAD_DOLGOTA?: string | null
+    AAD_OBLAST?: string | null
+    AAD_GOROD?: string | null
+    AAD_ADDR?: string | null
+    AAD_POSTCODE?: string | null
   }
 
   export type GA_ANKETA_ADDRUpdateManyMutationInput = {
     AAD_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    AAD_SHIROTA?: StringFieldUpdateOperationsInput | string
-    AAD_DOLGOTA?: StringFieldUpdateOperationsInput | string
-    AAD_OBLAST?: StringFieldUpdateOperationsInput | string
-    AAD_GOROD?: StringFieldUpdateOperationsInput | string
-    AAD_ADDR?: StringFieldUpdateOperationsInput | string
-    AAD_POSTCODE?: StringFieldUpdateOperationsInput | string
+    AAD_SHIROTA?: NullableStringFieldUpdateOperationsInput | string | null
+    AAD_DOLGOTA?: NullableStringFieldUpdateOperationsInput | string | null
+    AAD_OBLAST?: NullableStringFieldUpdateOperationsInput | string | null
+    AAD_GOROD?: NullableStringFieldUpdateOperationsInput | string | null
+    AAD_ADDR?: NullableStringFieldUpdateOperationsInput | string | null
+    AAD_POSTCODE?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type GA_ANKETA_ADDRUncheckedUpdateManyInput = {
     AAD_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    AAD_SHIROTA?: StringFieldUpdateOperationsInput | string
-    AAD_DOLGOTA?: StringFieldUpdateOperationsInput | string
-    AAD_OBLAST?: StringFieldUpdateOperationsInput | string
-    AAD_GOROD?: StringFieldUpdateOperationsInput | string
-    AAD_ADDR?: StringFieldUpdateOperationsInput | string
-    AAD_POSTCODE?: StringFieldUpdateOperationsInput | string
+    AAD_SHIROTA?: NullableStringFieldUpdateOperationsInput | string | null
+    AAD_DOLGOTA?: NullableStringFieldUpdateOperationsInput | string | null
+    AAD_OBLAST?: NullableStringFieldUpdateOperationsInput | string | null
+    AAD_GOROD?: NullableStringFieldUpdateOperationsInput | string | null
+    AAD_ADDR?: NullableStringFieldUpdateOperationsInput | string | null
+    AAD_POSTCODE?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type GA_ANKETA_BASECreateInput = {
-    ABA_WSU_ID?: bigint | number
-    ABA_STO_NAME: string
-    ABA_STO_ID1: string
+    ABA_WSU_ID?: bigint | number | null
+    ABA_STO_NAME?: string | null
+    ABA_STO_ID1?: string | null
     ABA_REMZONA_QTY?: number | null
-    ABA_ENABLED?: boolean
-    ABA_PHONE: string
-    ABA_INN: string
-    ABA_DATETIME_CREATED: Date | string
-    ABA_DATETIME_UPDATED: Date | string
+    ABA_ENABLED?: boolean | null
+    ABA_PHONE?: string | null
+    ABA_INN?: string | null
+    ABA_DATETIME_CREATED?: Date | string | null
+    ABA_DATETIME_UPDATED?: Date | string | null
     ABA_ID: bigint | number
-    ABA_DATETIME: Date | string
+    ABA_DATETIME?: Date | string | null
     ABA_STO_ID2?: string | null
     ABA_STO_NAME_FIND?: string | null
     ABA_DESC?: string | null
   }
 
   export type GA_ANKETA_BASEUncheckedCreateInput = {
-    ABA_WSU_ID?: bigint | number
-    ABA_STO_NAME: string
-    ABA_STO_ID1: string
+    ABA_WSU_ID?: bigint | number | null
+    ABA_STO_NAME?: string | null
+    ABA_STO_ID1?: string | null
     ABA_REMZONA_QTY?: number | null
-    ABA_ENABLED?: boolean
-    ABA_PHONE: string
-    ABA_INN: string
-    ABA_DATETIME_CREATED: Date | string
-    ABA_DATETIME_UPDATED: Date | string
+    ABA_ENABLED?: boolean | null
+    ABA_PHONE?: string | null
+    ABA_INN?: string | null
+    ABA_DATETIME_CREATED?: Date | string | null
+    ABA_DATETIME_UPDATED?: Date | string | null
     ABA_ID: bigint | number
-    ABA_DATETIME: Date | string
+    ABA_DATETIME?: Date | string | null
     ABA_STO_ID2?: string | null
     ABA_STO_NAME_FIND?: string | null
     ABA_DESC?: string | null
   }
 
   export type GA_ANKETA_BASEUpdateInput = {
-    ABA_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ABA_STO_NAME?: StringFieldUpdateOperationsInput | string
-    ABA_STO_ID1?: StringFieldUpdateOperationsInput | string
+    ABA_WSU_ID?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    ABA_STO_NAME?: NullableStringFieldUpdateOperationsInput | string | null
+    ABA_STO_ID1?: NullableStringFieldUpdateOperationsInput | string | null
     ABA_REMZONA_QTY?: NullableIntFieldUpdateOperationsInput | number | null
-    ABA_ENABLED?: BoolFieldUpdateOperationsInput | boolean
-    ABA_PHONE?: StringFieldUpdateOperationsInput | string
-    ABA_INN?: StringFieldUpdateOperationsInput | string
-    ABA_DATETIME_CREATED?: DateTimeFieldUpdateOperationsInput | Date | string
-    ABA_DATETIME_UPDATED?: DateTimeFieldUpdateOperationsInput | Date | string
+    ABA_ENABLED?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ABA_PHONE?: NullableStringFieldUpdateOperationsInput | string | null
+    ABA_INN?: NullableStringFieldUpdateOperationsInput | string | null
+    ABA_DATETIME_CREATED?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ABA_DATETIME_UPDATED?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ABA_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
+    ABA_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     ABA_STO_ID2?: NullableStringFieldUpdateOperationsInput | string | null
     ABA_STO_NAME_FIND?: NullableStringFieldUpdateOperationsInput | string | null
     ABA_DESC?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type GA_ANKETA_BASEUncheckedUpdateInput = {
-    ABA_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ABA_STO_NAME?: StringFieldUpdateOperationsInput | string
-    ABA_STO_ID1?: StringFieldUpdateOperationsInput | string
+    ABA_WSU_ID?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    ABA_STO_NAME?: NullableStringFieldUpdateOperationsInput | string | null
+    ABA_STO_ID1?: NullableStringFieldUpdateOperationsInput | string | null
     ABA_REMZONA_QTY?: NullableIntFieldUpdateOperationsInput | number | null
-    ABA_ENABLED?: BoolFieldUpdateOperationsInput | boolean
-    ABA_PHONE?: StringFieldUpdateOperationsInput | string
-    ABA_INN?: StringFieldUpdateOperationsInput | string
-    ABA_DATETIME_CREATED?: DateTimeFieldUpdateOperationsInput | Date | string
-    ABA_DATETIME_UPDATED?: DateTimeFieldUpdateOperationsInput | Date | string
+    ABA_ENABLED?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ABA_PHONE?: NullableStringFieldUpdateOperationsInput | string | null
+    ABA_INN?: NullableStringFieldUpdateOperationsInput | string | null
+    ABA_DATETIME_CREATED?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ABA_DATETIME_UPDATED?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ABA_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
+    ABA_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     ABA_STO_ID2?: NullableStringFieldUpdateOperationsInput | string | null
     ABA_STO_NAME_FIND?: NullableStringFieldUpdateOperationsInput | string | null
     ABA_DESC?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type GA_ANKETA_BASECreateManyInput = {
-    ABA_WSU_ID?: bigint | number
-    ABA_STO_NAME: string
-    ABA_STO_ID1: string
+    ABA_WSU_ID?: bigint | number | null
+    ABA_STO_NAME?: string | null
+    ABA_STO_ID1?: string | null
     ABA_REMZONA_QTY?: number | null
-    ABA_ENABLED?: boolean
-    ABA_PHONE: string
-    ABA_INN: string
-    ABA_DATETIME_CREATED: Date | string
-    ABA_DATETIME_UPDATED: Date | string
+    ABA_ENABLED?: boolean | null
+    ABA_PHONE?: string | null
+    ABA_INN?: string | null
+    ABA_DATETIME_CREATED?: Date | string | null
+    ABA_DATETIME_UPDATED?: Date | string | null
     ABA_ID: bigint | number
-    ABA_DATETIME: Date | string
+    ABA_DATETIME?: Date | string | null
     ABA_STO_ID2?: string | null
     ABA_STO_NAME_FIND?: string | null
     ABA_DESC?: string | null
   }
 
   export type GA_ANKETA_BASEUpdateManyMutationInput = {
-    ABA_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ABA_STO_NAME?: StringFieldUpdateOperationsInput | string
-    ABA_STO_ID1?: StringFieldUpdateOperationsInput | string
+    ABA_WSU_ID?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    ABA_STO_NAME?: NullableStringFieldUpdateOperationsInput | string | null
+    ABA_STO_ID1?: NullableStringFieldUpdateOperationsInput | string | null
     ABA_REMZONA_QTY?: NullableIntFieldUpdateOperationsInput | number | null
-    ABA_ENABLED?: BoolFieldUpdateOperationsInput | boolean
-    ABA_PHONE?: StringFieldUpdateOperationsInput | string
-    ABA_INN?: StringFieldUpdateOperationsInput | string
-    ABA_DATETIME_CREATED?: DateTimeFieldUpdateOperationsInput | Date | string
-    ABA_DATETIME_UPDATED?: DateTimeFieldUpdateOperationsInput | Date | string
+    ABA_ENABLED?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ABA_PHONE?: NullableStringFieldUpdateOperationsInput | string | null
+    ABA_INN?: NullableStringFieldUpdateOperationsInput | string | null
+    ABA_DATETIME_CREATED?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ABA_DATETIME_UPDATED?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ABA_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
+    ABA_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     ABA_STO_ID2?: NullableStringFieldUpdateOperationsInput | string | null
     ABA_STO_NAME_FIND?: NullableStringFieldUpdateOperationsInput | string | null
     ABA_DESC?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type GA_ANKETA_BASEUncheckedUpdateManyInput = {
-    ABA_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ABA_STO_NAME?: StringFieldUpdateOperationsInput | string
-    ABA_STO_ID1?: StringFieldUpdateOperationsInput | string
+    ABA_WSU_ID?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+    ABA_STO_NAME?: NullableStringFieldUpdateOperationsInput | string | null
+    ABA_STO_ID1?: NullableStringFieldUpdateOperationsInput | string | null
     ABA_REMZONA_QTY?: NullableIntFieldUpdateOperationsInput | number | null
-    ABA_ENABLED?: BoolFieldUpdateOperationsInput | boolean
-    ABA_PHONE?: StringFieldUpdateOperationsInput | string
-    ABA_INN?: StringFieldUpdateOperationsInput | string
-    ABA_DATETIME_CREATED?: DateTimeFieldUpdateOperationsInput | Date | string
-    ABA_DATETIME_UPDATED?: DateTimeFieldUpdateOperationsInput | Date | string
+    ABA_ENABLED?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ABA_PHONE?: NullableStringFieldUpdateOperationsInput | string | null
+    ABA_INN?: NullableStringFieldUpdateOperationsInput | string | null
+    ABA_DATETIME_CREATED?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ABA_DATETIME_UPDATED?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ABA_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
+    ABA_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     ABA_STO_ID2?: NullableStringFieldUpdateOperationsInput | string | null
     ABA_STO_NAME_FIND?: NullableStringFieldUpdateOperationsInput | string | null
     ABA_DESC?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
-  export type GA_ANKETA_DOGOVORCreateInput = {
-    ADO_ABA_ID: bigint | number
-    ADO_NAME1: string
-    ADO_NAME2: string
-    ADO_NAME3: string
-    ADO_PHONE: string
-    ADO_EMAIL: string
-    ADO_DATETIME: Date | string
-    ADO_STATUS: boolean
-  }
-
-  export type GA_ANKETA_DOGOVORUncheckedCreateInput = {
-    ADO_ABA_ID: bigint | number
-    ADO_NAME1: string
-    ADO_NAME2: string
-    ADO_NAME3: string
-    ADO_PHONE: string
-    ADO_EMAIL: string
-    ADO_DATETIME: Date | string
-    ADO_STATUS: boolean
-  }
-
-  export type GA_ANKETA_DOGOVORUpdateInput = {
-    ADO_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ADO_NAME1?: StringFieldUpdateOperationsInput | string
-    ADO_NAME2?: StringFieldUpdateOperationsInput | string
-    ADO_NAME3?: StringFieldUpdateOperationsInput | string
-    ADO_PHONE?: StringFieldUpdateOperationsInput | string
-    ADO_EMAIL?: StringFieldUpdateOperationsInput | string
-    ADO_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ADO_STATUS?: BoolFieldUpdateOperationsInput | boolean
-  }
-
-  export type GA_ANKETA_DOGOVORUncheckedUpdateInput = {
-    ADO_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ADO_NAME1?: StringFieldUpdateOperationsInput | string
-    ADO_NAME2?: StringFieldUpdateOperationsInput | string
-    ADO_NAME3?: StringFieldUpdateOperationsInput | string
-    ADO_PHONE?: StringFieldUpdateOperationsInput | string
-    ADO_EMAIL?: StringFieldUpdateOperationsInput | string
-    ADO_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ADO_STATUS?: BoolFieldUpdateOperationsInput | boolean
-  }
-
-  export type GA_ANKETA_DOGOVORCreateManyInput = {
-    ADO_ABA_ID: bigint | number
-    ADO_NAME1: string
-    ADO_NAME2: string
-    ADO_NAME3: string
-    ADO_PHONE: string
-    ADO_EMAIL: string
-    ADO_DATETIME: Date | string
-    ADO_STATUS: boolean
-  }
-
-  export type GA_ANKETA_DOGOVORUpdateManyMutationInput = {
-    ADO_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ADO_NAME1?: StringFieldUpdateOperationsInput | string
-    ADO_NAME2?: StringFieldUpdateOperationsInput | string
-    ADO_NAME3?: StringFieldUpdateOperationsInput | string
-    ADO_PHONE?: StringFieldUpdateOperationsInput | string
-    ADO_EMAIL?: StringFieldUpdateOperationsInput | string
-    ADO_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ADO_STATUS?: BoolFieldUpdateOperationsInput | boolean
-  }
-
-  export type GA_ANKETA_DOGOVORUncheckedUpdateManyInput = {
-    ADO_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ADO_NAME1?: StringFieldUpdateOperationsInput | string
-    ADO_NAME2?: StringFieldUpdateOperationsInput | string
-    ADO_NAME3?: StringFieldUpdateOperationsInput | string
-    ADO_PHONE?: StringFieldUpdateOperationsInput | string
-    ADO_EMAIL?: StringFieldUpdateOperationsInput | string
-    ADO_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ADO_STATUS?: BoolFieldUpdateOperationsInput | boolean
-  }
-
-  export type GA_ANKETA_OBOROTCreateInput = {
-    ABO_ABA_ID: bigint | number
-    ABO_DATETIME: Date | string
-    ABO_OBOROT_ALL: number
-    ABO_OBOROT_BRANDS_MONTH: number
-    ABO_OBOROT_AE: number
-    ABO_OBOROT_ROSSKO: number
-    ABO_OBOROT_ARKONA: number
-    ABO_OBOROT_AUTORUS: number
-    ABO_SCORES_MONTH_PLAN: number
-    ABO_SCORES_MONTH_FAKT: number
-    ABO_COUNT_ROSSKO: number
-    ABO_COUNT_AE: number
-    ABO_COUNT_ARKONA: number
-    ABO_COUNT_AUTORUS: number
-    ABO_OBOROT_BRANDS: number
-    ABO_OBOROT_BRAND_LOOK1: number
-    ABO_SCORES: number
-    ABO_OBOROT_BRAND_LOOK2: number
-    ABO_OBOROT_BRAND_LOOK2_ROSSKO: number
-    ABO_OBOROT_BRAND_LOOK2_AE: number
-    ABO_OBOROT_BRAND_LOOK2_ARKONA: number
-    ABO_OBOROT_BRAND_LOOK2_AUTORUS: number
-    ABO_OBOROT_BRANDS_MONTH_ROSSKO: number
-    ABO_OBOROT_BRANDS_MONTH_AE: number
-    ABO_OBOROT_BRANDS_MONTH_ARKONA: number
-    ABO_OBOROT_BRANDS_MONTH_AUTORUS: number
-    ABO_OBOROT_BRAND1?: number
-    ABO_OBOROT_BRAND2?: number
-    ABO_OBOROT_BRAND3?: number
-    ABO_OBOROT_BRAND4?: number
-    ABO_OBOROT_BRAND5?: number
-    ABO_OBOROT_BRAND6?: number
-    ABO_OBOROT_NEXT?: number
-    ABO_SCORES_MONTH_PLAN_NEXT?: number
-    ABO_ABA_REMZONA_QTY: number
-    ABO_OBOROT_PARTRA?: number
-    ABO_SCORES_PARTRA?: number
-  }
-
-  export type GA_ANKETA_OBOROTUncheckedCreateInput = {
-    ABO_ABA_ID: bigint | number
-    ABO_DATETIME: Date | string
-    ABO_OBOROT_ALL: number
-    ABO_OBOROT_BRANDS_MONTH: number
-    ABO_OBOROT_AE: number
-    ABO_OBOROT_ROSSKO: number
-    ABO_OBOROT_ARKONA: number
-    ABO_OBOROT_AUTORUS: number
-    ABO_SCORES_MONTH_PLAN: number
-    ABO_SCORES_MONTH_FAKT: number
-    ABO_COUNT_ROSSKO: number
-    ABO_COUNT_AE: number
-    ABO_COUNT_ARKONA: number
-    ABO_COUNT_AUTORUS: number
-    ABO_OBOROT_BRANDS: number
-    ABO_OBOROT_BRAND_LOOK1: number
-    ABO_SCORES: number
-    ABO_OBOROT_BRAND_LOOK2: number
-    ABO_OBOROT_BRAND_LOOK2_ROSSKO: number
-    ABO_OBOROT_BRAND_LOOK2_AE: number
-    ABO_OBOROT_BRAND_LOOK2_ARKONA: number
-    ABO_OBOROT_BRAND_LOOK2_AUTORUS: number
-    ABO_OBOROT_BRANDS_MONTH_ROSSKO: number
-    ABO_OBOROT_BRANDS_MONTH_AE: number
-    ABO_OBOROT_BRANDS_MONTH_ARKONA: number
-    ABO_OBOROT_BRANDS_MONTH_AUTORUS: number
-    ABO_OBOROT_BRAND1?: number
-    ABO_OBOROT_BRAND2?: number
-    ABO_OBOROT_BRAND3?: number
-    ABO_OBOROT_BRAND4?: number
-    ABO_OBOROT_BRAND5?: number
-    ABO_OBOROT_BRAND6?: number
-    ABO_OBOROT_NEXT?: number
-    ABO_SCORES_MONTH_PLAN_NEXT?: number
-    ABO_ABA_REMZONA_QTY: number
-    ABO_OBOROT_PARTRA?: number
-    ABO_SCORES_PARTRA?: number
-  }
-
-  export type GA_ANKETA_OBOROTUpdateInput = {
-    ABO_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ABO_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ABO_OBOROT_ALL?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS_MONTH?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_AE?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_ROSSKO?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_ARKONA?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_AUTORUS?: FloatFieldUpdateOperationsInput | number
-    ABO_SCORES_MONTH_PLAN?: FloatFieldUpdateOperationsInput | number
-    ABO_SCORES_MONTH_FAKT?: FloatFieldUpdateOperationsInput | number
-    ABO_COUNT_ROSSKO?: IntFieldUpdateOperationsInput | number
-    ABO_COUNT_AE?: IntFieldUpdateOperationsInput | number
-    ABO_COUNT_ARKONA?: IntFieldUpdateOperationsInput | number
-    ABO_COUNT_AUTORUS?: IntFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK1?: FloatFieldUpdateOperationsInput | number
-    ABO_SCORES?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK2?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK2_ROSSKO?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK2_AE?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK2_ARKONA?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK2_AUTORUS?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS_MONTH_ROSSKO?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS_MONTH_AE?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS_MONTH_ARKONA?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS_MONTH_AUTORUS?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND1?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND2?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND3?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND4?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND5?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND6?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_NEXT?: FloatFieldUpdateOperationsInput | number
-    ABO_SCORES_MONTH_PLAN_NEXT?: FloatFieldUpdateOperationsInput | number
-    ABO_ABA_REMZONA_QTY?: IntFieldUpdateOperationsInput | number
-    ABO_OBOROT_PARTRA?: FloatFieldUpdateOperationsInput | number
-    ABO_SCORES_PARTRA?: FloatFieldUpdateOperationsInput | number
-  }
-
-  export type GA_ANKETA_OBOROTUncheckedUpdateInput = {
-    ABO_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ABO_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ABO_OBOROT_ALL?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS_MONTH?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_AE?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_ROSSKO?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_ARKONA?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_AUTORUS?: FloatFieldUpdateOperationsInput | number
-    ABO_SCORES_MONTH_PLAN?: FloatFieldUpdateOperationsInput | number
-    ABO_SCORES_MONTH_FAKT?: FloatFieldUpdateOperationsInput | number
-    ABO_COUNT_ROSSKO?: IntFieldUpdateOperationsInput | number
-    ABO_COUNT_AE?: IntFieldUpdateOperationsInput | number
-    ABO_COUNT_ARKONA?: IntFieldUpdateOperationsInput | number
-    ABO_COUNT_AUTORUS?: IntFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK1?: FloatFieldUpdateOperationsInput | number
-    ABO_SCORES?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK2?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK2_ROSSKO?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK2_AE?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK2_ARKONA?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK2_AUTORUS?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS_MONTH_ROSSKO?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS_MONTH_AE?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS_MONTH_ARKONA?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS_MONTH_AUTORUS?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND1?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND2?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND3?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND4?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND5?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND6?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_NEXT?: FloatFieldUpdateOperationsInput | number
-    ABO_SCORES_MONTH_PLAN_NEXT?: FloatFieldUpdateOperationsInput | number
-    ABO_ABA_REMZONA_QTY?: IntFieldUpdateOperationsInput | number
-    ABO_OBOROT_PARTRA?: FloatFieldUpdateOperationsInput | number
-    ABO_SCORES_PARTRA?: FloatFieldUpdateOperationsInput | number
-  }
-
-  export type GA_ANKETA_OBOROTCreateManyInput = {
-    ABO_ABA_ID: bigint | number
-    ABO_DATETIME: Date | string
-    ABO_OBOROT_ALL: number
-    ABO_OBOROT_BRANDS_MONTH: number
-    ABO_OBOROT_AE: number
-    ABO_OBOROT_ROSSKO: number
-    ABO_OBOROT_ARKONA: number
-    ABO_OBOROT_AUTORUS: number
-    ABO_SCORES_MONTH_PLAN: number
-    ABO_SCORES_MONTH_FAKT: number
-    ABO_COUNT_ROSSKO: number
-    ABO_COUNT_AE: number
-    ABO_COUNT_ARKONA: number
-    ABO_COUNT_AUTORUS: number
-    ABO_OBOROT_BRANDS: number
-    ABO_OBOROT_BRAND_LOOK1: number
-    ABO_SCORES: number
-    ABO_OBOROT_BRAND_LOOK2: number
-    ABO_OBOROT_BRAND_LOOK2_ROSSKO: number
-    ABO_OBOROT_BRAND_LOOK2_AE: number
-    ABO_OBOROT_BRAND_LOOK2_ARKONA: number
-    ABO_OBOROT_BRAND_LOOK2_AUTORUS: number
-    ABO_OBOROT_BRANDS_MONTH_ROSSKO: number
-    ABO_OBOROT_BRANDS_MONTH_AE: number
-    ABO_OBOROT_BRANDS_MONTH_ARKONA: number
-    ABO_OBOROT_BRANDS_MONTH_AUTORUS: number
-    ABO_OBOROT_BRAND1?: number
-    ABO_OBOROT_BRAND2?: number
-    ABO_OBOROT_BRAND3?: number
-    ABO_OBOROT_BRAND4?: number
-    ABO_OBOROT_BRAND5?: number
-    ABO_OBOROT_BRAND6?: number
-    ABO_OBOROT_NEXT?: number
-    ABO_SCORES_MONTH_PLAN_NEXT?: number
-    ABO_ABA_REMZONA_QTY: number
-    ABO_OBOROT_PARTRA?: number
-    ABO_SCORES_PARTRA?: number
-  }
-
-  export type GA_ANKETA_OBOROTUpdateManyMutationInput = {
-    ABO_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ABO_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ABO_OBOROT_ALL?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS_MONTH?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_AE?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_ROSSKO?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_ARKONA?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_AUTORUS?: FloatFieldUpdateOperationsInput | number
-    ABO_SCORES_MONTH_PLAN?: FloatFieldUpdateOperationsInput | number
-    ABO_SCORES_MONTH_FAKT?: FloatFieldUpdateOperationsInput | number
-    ABO_COUNT_ROSSKO?: IntFieldUpdateOperationsInput | number
-    ABO_COUNT_AE?: IntFieldUpdateOperationsInput | number
-    ABO_COUNT_ARKONA?: IntFieldUpdateOperationsInput | number
-    ABO_COUNT_AUTORUS?: IntFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK1?: FloatFieldUpdateOperationsInput | number
-    ABO_SCORES?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK2?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK2_ROSSKO?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK2_AE?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK2_ARKONA?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK2_AUTORUS?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS_MONTH_ROSSKO?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS_MONTH_AE?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS_MONTH_ARKONA?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS_MONTH_AUTORUS?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND1?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND2?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND3?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND4?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND5?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND6?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_NEXT?: FloatFieldUpdateOperationsInput | number
-    ABO_SCORES_MONTH_PLAN_NEXT?: FloatFieldUpdateOperationsInput | number
-    ABO_ABA_REMZONA_QTY?: IntFieldUpdateOperationsInput | number
-    ABO_OBOROT_PARTRA?: FloatFieldUpdateOperationsInput | number
-    ABO_SCORES_PARTRA?: FloatFieldUpdateOperationsInput | number
-  }
-
-  export type GA_ANKETA_OBOROTUncheckedUpdateManyInput = {
-    ABO_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ABO_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ABO_OBOROT_ALL?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS_MONTH?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_AE?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_ROSSKO?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_ARKONA?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_AUTORUS?: FloatFieldUpdateOperationsInput | number
-    ABO_SCORES_MONTH_PLAN?: FloatFieldUpdateOperationsInput | number
-    ABO_SCORES_MONTH_FAKT?: FloatFieldUpdateOperationsInput | number
-    ABO_COUNT_ROSSKO?: IntFieldUpdateOperationsInput | number
-    ABO_COUNT_AE?: IntFieldUpdateOperationsInput | number
-    ABO_COUNT_ARKONA?: IntFieldUpdateOperationsInput | number
-    ABO_COUNT_AUTORUS?: IntFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK1?: FloatFieldUpdateOperationsInput | number
-    ABO_SCORES?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK2?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK2_ROSSKO?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK2_AE?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK2_ARKONA?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND_LOOK2_AUTORUS?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS_MONTH_ROSSKO?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS_MONTH_AE?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS_MONTH_ARKONA?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRANDS_MONTH_AUTORUS?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND1?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND2?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND3?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND4?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND5?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_BRAND6?: FloatFieldUpdateOperationsInput | number
-    ABO_OBOROT_NEXT?: FloatFieldUpdateOperationsInput | number
-    ABO_SCORES_MONTH_PLAN_NEXT?: FloatFieldUpdateOperationsInput | number
-    ABO_ABA_REMZONA_QTY?: IntFieldUpdateOperationsInput | number
-    ABO_OBOROT_PARTRA?: FloatFieldUpdateOperationsInput | number
-    ABO_SCORES_PARTRA?: FloatFieldUpdateOperationsInput | number
-  }
-
   export type GA_ANKETA_BRANDCreateInput = {
     ABR_ABA_ID: bigint | number
-    ABR_STATUS: boolean
-    ABR_DATETIME: Date | string
-    ABR_HALF_STATUS?: boolean
-    ABR_VYVESKA_STATUS?: boolean
-    ABR_KOROB_STATUS?: boolean
+    ABR_STATUS?: boolean | null
+    ABR_DATETIME?: Date | string | null
+    ABR_HALF_STATUS?: boolean | null
+    ABR_VYVESKA_STATUS?: boolean | null
+    ABR_KOROB_STATUS?: boolean | null
   }
 
   export type GA_ANKETA_BRANDUncheckedCreateInput = {
     ABR_ABA_ID: bigint | number
-    ABR_STATUS: boolean
-    ABR_DATETIME: Date | string
-    ABR_HALF_STATUS?: boolean
-    ABR_VYVESKA_STATUS?: boolean
-    ABR_KOROB_STATUS?: boolean
+    ABR_STATUS?: boolean | null
+    ABR_DATETIME?: Date | string | null
+    ABR_HALF_STATUS?: boolean | null
+    ABR_VYVESKA_STATUS?: boolean | null
+    ABR_KOROB_STATUS?: boolean | null
   }
 
   export type GA_ANKETA_BRANDUpdateInput = {
     ABR_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ABR_STATUS?: BoolFieldUpdateOperationsInput | boolean
-    ABR_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ABR_HALF_STATUS?: BoolFieldUpdateOperationsInput | boolean
-    ABR_VYVESKA_STATUS?: BoolFieldUpdateOperationsInput | boolean
-    ABR_KOROB_STATUS?: BoolFieldUpdateOperationsInput | boolean
+    ABR_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ABR_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ABR_HALF_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ABR_VYVESKA_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ABR_KOROB_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type GA_ANKETA_BRANDUncheckedUpdateInput = {
     ABR_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ABR_STATUS?: BoolFieldUpdateOperationsInput | boolean
-    ABR_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ABR_HALF_STATUS?: BoolFieldUpdateOperationsInput | boolean
-    ABR_VYVESKA_STATUS?: BoolFieldUpdateOperationsInput | boolean
-    ABR_KOROB_STATUS?: BoolFieldUpdateOperationsInput | boolean
+    ABR_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ABR_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ABR_HALF_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ABR_VYVESKA_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ABR_KOROB_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type GA_ANKETA_BRANDCreateManyInput = {
     ABR_ABA_ID: bigint | number
-    ABR_STATUS: boolean
-    ABR_DATETIME: Date | string
-    ABR_HALF_STATUS?: boolean
-    ABR_VYVESKA_STATUS?: boolean
-    ABR_KOROB_STATUS?: boolean
+    ABR_STATUS?: boolean | null
+    ABR_DATETIME?: Date | string | null
+    ABR_HALF_STATUS?: boolean | null
+    ABR_VYVESKA_STATUS?: boolean | null
+    ABR_KOROB_STATUS?: boolean | null
   }
 
   export type GA_ANKETA_BRANDUpdateManyMutationInput = {
     ABR_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ABR_STATUS?: BoolFieldUpdateOperationsInput | boolean
-    ABR_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ABR_HALF_STATUS?: BoolFieldUpdateOperationsInput | boolean
-    ABR_VYVESKA_STATUS?: BoolFieldUpdateOperationsInput | boolean
-    ABR_KOROB_STATUS?: BoolFieldUpdateOperationsInput | boolean
+    ABR_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ABR_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ABR_HALF_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ABR_VYVESKA_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ABR_KOROB_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type GA_ANKETA_BRANDUncheckedUpdateManyInput = {
     ABR_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ABR_STATUS?: BoolFieldUpdateOperationsInput | boolean
-    ABR_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ABR_HALF_STATUS?: BoolFieldUpdateOperationsInput | boolean
-    ABR_VYVESKA_STATUS?: BoolFieldUpdateOperationsInput | boolean
-    ABR_KOROB_STATUS?: BoolFieldUpdateOperationsInput | boolean
+    ABR_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ABR_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ABR_HALF_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ABR_VYVESKA_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ABR_KOROB_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+  }
+
+  export type GA_ANKETA_DOGOVORCreateInput = {
+    ADO_ABA_ID: bigint | number
+    ADO_NAME1?: string | null
+    ADO_NAME2?: string | null
+    ADO_NAME3?: string | null
+    ADO_PHONE?: string | null
+    ADO_EMAIL?: string | null
+    ADO_DATETIME?: Date | string | null
+    ADO_STATUS?: boolean | null
+  }
+
+  export type GA_ANKETA_DOGOVORUncheckedCreateInput = {
+    ADO_ABA_ID: bigint | number
+    ADO_NAME1?: string | null
+    ADO_NAME2?: string | null
+    ADO_NAME3?: string | null
+    ADO_PHONE?: string | null
+    ADO_EMAIL?: string | null
+    ADO_DATETIME?: Date | string | null
+    ADO_STATUS?: boolean | null
+  }
+
+  export type GA_ANKETA_DOGOVORUpdateInput = {
+    ADO_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ADO_NAME1?: NullableStringFieldUpdateOperationsInput | string | null
+    ADO_NAME2?: NullableStringFieldUpdateOperationsInput | string | null
+    ADO_NAME3?: NullableStringFieldUpdateOperationsInput | string | null
+    ADO_PHONE?: NullableStringFieldUpdateOperationsInput | string | null
+    ADO_EMAIL?: NullableStringFieldUpdateOperationsInput | string | null
+    ADO_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ADO_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+  }
+
+  export type GA_ANKETA_DOGOVORUncheckedUpdateInput = {
+    ADO_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ADO_NAME1?: NullableStringFieldUpdateOperationsInput | string | null
+    ADO_NAME2?: NullableStringFieldUpdateOperationsInput | string | null
+    ADO_NAME3?: NullableStringFieldUpdateOperationsInput | string | null
+    ADO_PHONE?: NullableStringFieldUpdateOperationsInput | string | null
+    ADO_EMAIL?: NullableStringFieldUpdateOperationsInput | string | null
+    ADO_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ADO_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+  }
+
+  export type GA_ANKETA_DOGOVORCreateManyInput = {
+    ADO_ABA_ID: bigint | number
+    ADO_NAME1?: string | null
+    ADO_NAME2?: string | null
+    ADO_NAME3?: string | null
+    ADO_PHONE?: string | null
+    ADO_EMAIL?: string | null
+    ADO_DATETIME?: Date | string | null
+    ADO_STATUS?: boolean | null
+  }
+
+  export type GA_ANKETA_DOGOVORUpdateManyMutationInput = {
+    ADO_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ADO_NAME1?: NullableStringFieldUpdateOperationsInput | string | null
+    ADO_NAME2?: NullableStringFieldUpdateOperationsInput | string | null
+    ADO_NAME3?: NullableStringFieldUpdateOperationsInput | string | null
+    ADO_PHONE?: NullableStringFieldUpdateOperationsInput | string | null
+    ADO_EMAIL?: NullableStringFieldUpdateOperationsInput | string | null
+    ADO_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ADO_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+  }
+
+  export type GA_ANKETA_DOGOVORUncheckedUpdateManyInput = {
+    ADO_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ADO_NAME1?: NullableStringFieldUpdateOperationsInput | string | null
+    ADO_NAME2?: NullableStringFieldUpdateOperationsInput | string | null
+    ADO_NAME3?: NullableStringFieldUpdateOperationsInput | string | null
+    ADO_PHONE?: NullableStringFieldUpdateOperationsInput | string | null
+    ADO_EMAIL?: NullableStringFieldUpdateOperationsInput | string | null
+    ADO_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ADO_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+  }
+
+  export type GA_ANKETA_OBOROTCreateInput = {
+    ABO_ABA_ID: bigint | number
+    ABO_DATETIME?: Date | string | null
+    ABO_OBOROT_ALL?: number | null
+    ABO_OBOROT_BRANDS_MONTH?: number | null
+    ABO_OBOROT_AE?: number | null
+    ABO_OBOROT_ROSSKO?: number | null
+    ABO_OBOROT_ARKONA?: number | null
+    ABO_OBOROT_AUTORUS?: number | null
+    ABO_SCORES_MONTH_PLAN?: number | null
+    ABO_SCORES_MONTH_FAKT?: number | null
+    ABO_COUNT_ROSSKO?: number | null
+    ABO_COUNT_AE?: number | null
+    ABO_COUNT_ARKONA?: number | null
+    ABO_COUNT_AUTORUS?: number | null
+    ABO_OBOROT_BRANDS?: number | null
+    ABO_OBOROT_BRAND_LOOK1?: number | null
+    ABO_SCORES?: number | null
+    ABO_OBOROT_BRAND_LOOK2?: number | null
+    ABO_OBOROT_BRAND_LOOK2_ROSSKO?: number | null
+    ABO_OBOROT_BRAND_LOOK2_AE?: number | null
+    ABO_OBOROT_BRAND_LOOK2_ARKONA?: number | null
+    ABO_OBOROT_BRAND_LOOK2_AUTORUS?: number | null
+    ABO_OBOROT_BRANDS_MONTH_ROSSKO?: number | null
+    ABO_OBOROT_BRANDS_MONTH_AE?: number | null
+    ABO_OBOROT_BRANDS_MONTH_ARKONA?: number | null
+    ABO_OBOROT_BRANDS_MONTH_AUTORUS?: number | null
+    ABO_OBOROT_BRAND1?: number | null
+    ABO_OBOROT_BRAND2?: number | null
+    ABO_OBOROT_BRAND3?: number | null
+    ABO_OBOROT_BRAND4?: number | null
+    ABO_OBOROT_BRAND5?: number | null
+    ABO_OBOROT_BRAND6?: number | null
+    ABO_OBOROT_NEXT?: number | null
+    ABO_SCORES_MONTH_PLAN_NEXT?: number | null
+    ABO_ABA_REMZONA_QTY?: number | null
+    ABO_OBOROT_PARTRA?: number | null
+    ABO_SCORES_PARTRA?: number | null
+  }
+
+  export type GA_ANKETA_OBOROTUncheckedCreateInput = {
+    ABO_ABA_ID: bigint | number
+    ABO_DATETIME?: Date | string | null
+    ABO_OBOROT_ALL?: number | null
+    ABO_OBOROT_BRANDS_MONTH?: number | null
+    ABO_OBOROT_AE?: number | null
+    ABO_OBOROT_ROSSKO?: number | null
+    ABO_OBOROT_ARKONA?: number | null
+    ABO_OBOROT_AUTORUS?: number | null
+    ABO_SCORES_MONTH_PLAN?: number | null
+    ABO_SCORES_MONTH_FAKT?: number | null
+    ABO_COUNT_ROSSKO?: number | null
+    ABO_COUNT_AE?: number | null
+    ABO_COUNT_ARKONA?: number | null
+    ABO_COUNT_AUTORUS?: number | null
+    ABO_OBOROT_BRANDS?: number | null
+    ABO_OBOROT_BRAND_LOOK1?: number | null
+    ABO_SCORES?: number | null
+    ABO_OBOROT_BRAND_LOOK2?: number | null
+    ABO_OBOROT_BRAND_LOOK2_ROSSKO?: number | null
+    ABO_OBOROT_BRAND_LOOK2_AE?: number | null
+    ABO_OBOROT_BRAND_LOOK2_ARKONA?: number | null
+    ABO_OBOROT_BRAND_LOOK2_AUTORUS?: number | null
+    ABO_OBOROT_BRANDS_MONTH_ROSSKO?: number | null
+    ABO_OBOROT_BRANDS_MONTH_AE?: number | null
+    ABO_OBOROT_BRANDS_MONTH_ARKONA?: number | null
+    ABO_OBOROT_BRANDS_MONTH_AUTORUS?: number | null
+    ABO_OBOROT_BRAND1?: number | null
+    ABO_OBOROT_BRAND2?: number | null
+    ABO_OBOROT_BRAND3?: number | null
+    ABO_OBOROT_BRAND4?: number | null
+    ABO_OBOROT_BRAND5?: number | null
+    ABO_OBOROT_BRAND6?: number | null
+    ABO_OBOROT_NEXT?: number | null
+    ABO_SCORES_MONTH_PLAN_NEXT?: number | null
+    ABO_ABA_REMZONA_QTY?: number | null
+    ABO_OBOROT_PARTRA?: number | null
+    ABO_SCORES_PARTRA?: number | null
+  }
+
+  export type GA_ANKETA_OBOROTUpdateInput = {
+    ABO_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ABO_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ABO_OBOROT_ALL?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS_MONTH?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_AE?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_ROSSKO?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_ARKONA?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_AUTORUS?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_SCORES_MONTH_PLAN?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_SCORES_MONTH_FAKT?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_COUNT_ROSSKO?: NullableIntFieldUpdateOperationsInput | number | null
+    ABO_COUNT_AE?: NullableIntFieldUpdateOperationsInput | number | null
+    ABO_COUNT_ARKONA?: NullableIntFieldUpdateOperationsInput | number | null
+    ABO_COUNT_AUTORUS?: NullableIntFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK1?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_SCORES?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK2?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK2_ROSSKO?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK2_AE?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK2_ARKONA?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK2_AUTORUS?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS_MONTH_ROSSKO?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS_MONTH_AE?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS_MONTH_ARKONA?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS_MONTH_AUTORUS?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND1?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND2?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND3?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND4?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND5?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND6?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_NEXT?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_SCORES_MONTH_PLAN_NEXT?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_ABA_REMZONA_QTY?: NullableIntFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_PARTRA?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_SCORES_PARTRA?: NullableFloatFieldUpdateOperationsInput | number | null
+  }
+
+  export type GA_ANKETA_OBOROTUncheckedUpdateInput = {
+    ABO_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ABO_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ABO_OBOROT_ALL?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS_MONTH?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_AE?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_ROSSKO?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_ARKONA?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_AUTORUS?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_SCORES_MONTH_PLAN?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_SCORES_MONTH_FAKT?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_COUNT_ROSSKO?: NullableIntFieldUpdateOperationsInput | number | null
+    ABO_COUNT_AE?: NullableIntFieldUpdateOperationsInput | number | null
+    ABO_COUNT_ARKONA?: NullableIntFieldUpdateOperationsInput | number | null
+    ABO_COUNT_AUTORUS?: NullableIntFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK1?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_SCORES?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK2?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK2_ROSSKO?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK2_AE?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK2_ARKONA?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK2_AUTORUS?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS_MONTH_ROSSKO?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS_MONTH_AE?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS_MONTH_ARKONA?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS_MONTH_AUTORUS?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND1?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND2?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND3?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND4?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND5?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND6?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_NEXT?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_SCORES_MONTH_PLAN_NEXT?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_ABA_REMZONA_QTY?: NullableIntFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_PARTRA?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_SCORES_PARTRA?: NullableFloatFieldUpdateOperationsInput | number | null
+  }
+
+  export type GA_ANKETA_OBOROTCreateManyInput = {
+    ABO_ABA_ID: bigint | number
+    ABO_DATETIME?: Date | string | null
+    ABO_OBOROT_ALL?: number | null
+    ABO_OBOROT_BRANDS_MONTH?: number | null
+    ABO_OBOROT_AE?: number | null
+    ABO_OBOROT_ROSSKO?: number | null
+    ABO_OBOROT_ARKONA?: number | null
+    ABO_OBOROT_AUTORUS?: number | null
+    ABO_SCORES_MONTH_PLAN?: number | null
+    ABO_SCORES_MONTH_FAKT?: number | null
+    ABO_COUNT_ROSSKO?: number | null
+    ABO_COUNT_AE?: number | null
+    ABO_COUNT_ARKONA?: number | null
+    ABO_COUNT_AUTORUS?: number | null
+    ABO_OBOROT_BRANDS?: number | null
+    ABO_OBOROT_BRAND_LOOK1?: number | null
+    ABO_SCORES?: number | null
+    ABO_OBOROT_BRAND_LOOK2?: number | null
+    ABO_OBOROT_BRAND_LOOK2_ROSSKO?: number | null
+    ABO_OBOROT_BRAND_LOOK2_AE?: number | null
+    ABO_OBOROT_BRAND_LOOK2_ARKONA?: number | null
+    ABO_OBOROT_BRAND_LOOK2_AUTORUS?: number | null
+    ABO_OBOROT_BRANDS_MONTH_ROSSKO?: number | null
+    ABO_OBOROT_BRANDS_MONTH_AE?: number | null
+    ABO_OBOROT_BRANDS_MONTH_ARKONA?: number | null
+    ABO_OBOROT_BRANDS_MONTH_AUTORUS?: number | null
+    ABO_OBOROT_BRAND1?: number | null
+    ABO_OBOROT_BRAND2?: number | null
+    ABO_OBOROT_BRAND3?: number | null
+    ABO_OBOROT_BRAND4?: number | null
+    ABO_OBOROT_BRAND5?: number | null
+    ABO_OBOROT_BRAND6?: number | null
+    ABO_OBOROT_NEXT?: number | null
+    ABO_SCORES_MONTH_PLAN_NEXT?: number | null
+    ABO_ABA_REMZONA_QTY?: number | null
+    ABO_OBOROT_PARTRA?: number | null
+    ABO_SCORES_PARTRA?: number | null
+  }
+
+  export type GA_ANKETA_OBOROTUpdateManyMutationInput = {
+    ABO_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ABO_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ABO_OBOROT_ALL?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS_MONTH?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_AE?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_ROSSKO?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_ARKONA?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_AUTORUS?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_SCORES_MONTH_PLAN?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_SCORES_MONTH_FAKT?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_COUNT_ROSSKO?: NullableIntFieldUpdateOperationsInput | number | null
+    ABO_COUNT_AE?: NullableIntFieldUpdateOperationsInput | number | null
+    ABO_COUNT_ARKONA?: NullableIntFieldUpdateOperationsInput | number | null
+    ABO_COUNT_AUTORUS?: NullableIntFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK1?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_SCORES?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK2?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK2_ROSSKO?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK2_AE?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK2_ARKONA?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK2_AUTORUS?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS_MONTH_ROSSKO?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS_MONTH_AE?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS_MONTH_ARKONA?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS_MONTH_AUTORUS?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND1?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND2?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND3?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND4?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND5?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND6?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_NEXT?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_SCORES_MONTH_PLAN_NEXT?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_ABA_REMZONA_QTY?: NullableIntFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_PARTRA?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_SCORES_PARTRA?: NullableFloatFieldUpdateOperationsInput | number | null
+  }
+
+  export type GA_ANKETA_OBOROTUncheckedUpdateManyInput = {
+    ABO_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ABO_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ABO_OBOROT_ALL?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS_MONTH?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_AE?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_ROSSKO?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_ARKONA?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_AUTORUS?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_SCORES_MONTH_PLAN?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_SCORES_MONTH_FAKT?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_COUNT_ROSSKO?: NullableIntFieldUpdateOperationsInput | number | null
+    ABO_COUNT_AE?: NullableIntFieldUpdateOperationsInput | number | null
+    ABO_COUNT_ARKONA?: NullableIntFieldUpdateOperationsInput | number | null
+    ABO_COUNT_AUTORUS?: NullableIntFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK1?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_SCORES?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK2?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK2_ROSSKO?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK2_AE?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK2_ARKONA?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND_LOOK2_AUTORUS?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS_MONTH_ROSSKO?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS_MONTH_AE?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS_MONTH_ARKONA?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRANDS_MONTH_AUTORUS?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND1?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND2?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND3?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND4?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND5?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_BRAND6?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_NEXT?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_SCORES_MONTH_PLAN_NEXT?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_ABA_REMZONA_QTY?: NullableIntFieldUpdateOperationsInput | number | null
+    ABO_OBOROT_PARTRA?: NullableFloatFieldUpdateOperationsInput | number | null
+    ABO_SCORES_PARTRA?: NullableFloatFieldUpdateOperationsInput | number | null
   }
 
   export type GA_ANKETA_SCORESCreateInput = {
     ANS_WSU_ID: bigint | number
-    ANS_SCORES: number
-    ANS_DATETIME: Date | string
-    ANS_ISSHOW?: boolean
+    ANS_SCORES?: number | null
+    ANS_DATETIME?: Date | string | null
+    ANS_ISSHOW?: boolean | null
   }
 
   export type GA_ANKETA_SCORESUncheckedCreateInput = {
     ANS_WSU_ID: bigint | number
-    ANS_SCORES: number
-    ANS_DATETIME: Date | string
-    ANS_ISSHOW?: boolean
+    ANS_SCORES?: number | null
+    ANS_DATETIME?: Date | string | null
+    ANS_ISSHOW?: boolean | null
   }
 
   export type GA_ANKETA_SCORESUpdateInput = {
     ANS_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ANS_SCORES?: IntFieldUpdateOperationsInput | number
-    ANS_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ANS_ISSHOW?: BoolFieldUpdateOperationsInput | boolean
+    ANS_SCORES?: NullableIntFieldUpdateOperationsInput | number | null
+    ANS_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ANS_ISSHOW?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type GA_ANKETA_SCORESUncheckedUpdateInput = {
     ANS_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ANS_SCORES?: IntFieldUpdateOperationsInput | number
-    ANS_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ANS_ISSHOW?: BoolFieldUpdateOperationsInput | boolean
+    ANS_SCORES?: NullableIntFieldUpdateOperationsInput | number | null
+    ANS_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ANS_ISSHOW?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type GA_ANKETA_SCORESCreateManyInput = {
     ANS_WSU_ID: bigint | number
-    ANS_SCORES: number
-    ANS_DATETIME: Date | string
-    ANS_ISSHOW?: boolean
+    ANS_SCORES?: number | null
+    ANS_DATETIME?: Date | string | null
+    ANS_ISSHOW?: boolean | null
   }
 
   export type GA_ANKETA_SCORESUpdateManyMutationInput = {
     ANS_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ANS_SCORES?: IntFieldUpdateOperationsInput | number
-    ANS_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ANS_ISSHOW?: BoolFieldUpdateOperationsInput | boolean
+    ANS_SCORES?: NullableIntFieldUpdateOperationsInput | number | null
+    ANS_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ANS_ISSHOW?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type GA_ANKETA_SCORESUncheckedUpdateManyInput = {
     ANS_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ANS_SCORES?: IntFieldUpdateOperationsInput | number
-    ANS_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ANS_ISSHOW?: BoolFieldUpdateOperationsInput | boolean
+    ANS_SCORES?: NullableIntFieldUpdateOperationsInput | number | null
+    ANS_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ANS_ISSHOW?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type GA_ANKETA_SCORES_HISTORYCreateInput = {
     ASH_WSU_ID: bigint | number
-    ASH_SCORES: number
-    ASH_DATETIME: Date | string
-    ASH_DESC: string
-    ASH_TYPE: number
-    ASH_SCORES_OLD?: number
-    ASH_EVENT_STATUS?: boolean
-    ASH_DATETIME_UPDATE: Date | string
-    ASH_IZO_ID?: bigint | number
+    ASH_SCORES?: number | null
+    ASH_DATETIME?: Date | string | null
+    ASH_DESC?: string | null
+    ASH_TYPE?: number | null
+    ASH_SCORES_OLD?: number | null
+    ASH_EVENT_STATUS?: boolean | null
+    ASH_DATETIME_UPDATE?: Date | string | null
+    ASH_IZO_ID?: bigint | number | null
   }
 
   export type GA_ANKETA_SCORES_HISTORYUncheckedCreateInput = {
     ASH_WSU_ID: bigint | number
-    ASH_SCORES: number
-    ASH_DATETIME: Date | string
-    ASH_DESC: string
-    ASH_TYPE: number
-    ASH_SCORES_OLD?: number
-    ASH_EVENT_STATUS?: boolean
-    ASH_DATETIME_UPDATE: Date | string
-    ASH_IZO_ID?: bigint | number
+    ASH_SCORES?: number | null
+    ASH_DATETIME?: Date | string | null
+    ASH_DESC?: string | null
+    ASH_TYPE?: number | null
+    ASH_SCORES_OLD?: number | null
+    ASH_EVENT_STATUS?: boolean | null
+    ASH_DATETIME_UPDATE?: Date | string | null
+    ASH_IZO_ID?: bigint | number | null
   }
 
   export type GA_ANKETA_SCORES_HISTORYUpdateInput = {
     ASH_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ASH_SCORES?: IntFieldUpdateOperationsInput | number
-    ASH_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ASH_DESC?: StringFieldUpdateOperationsInput | string
-    ASH_TYPE?: IntFieldUpdateOperationsInput | number
-    ASH_SCORES_OLD?: IntFieldUpdateOperationsInput | number
-    ASH_EVENT_STATUS?: BoolFieldUpdateOperationsInput | boolean
-    ASH_DATETIME_UPDATE?: DateTimeFieldUpdateOperationsInput | Date | string
-    ASH_IZO_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ASH_SCORES?: NullableIntFieldUpdateOperationsInput | number | null
+    ASH_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ASH_DESC?: NullableStringFieldUpdateOperationsInput | string | null
+    ASH_TYPE?: NullableIntFieldUpdateOperationsInput | number | null
+    ASH_SCORES_OLD?: NullableIntFieldUpdateOperationsInput | number | null
+    ASH_EVENT_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ASH_DATETIME_UPDATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ASH_IZO_ID?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
   }
 
   export type GA_ANKETA_SCORES_HISTORYUncheckedUpdateInput = {
     ASH_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ASH_SCORES?: IntFieldUpdateOperationsInput | number
-    ASH_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ASH_DESC?: StringFieldUpdateOperationsInput | string
-    ASH_TYPE?: IntFieldUpdateOperationsInput | number
-    ASH_SCORES_OLD?: IntFieldUpdateOperationsInput | number
-    ASH_EVENT_STATUS?: BoolFieldUpdateOperationsInput | boolean
-    ASH_DATETIME_UPDATE?: DateTimeFieldUpdateOperationsInput | Date | string
-    ASH_IZO_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ASH_SCORES?: NullableIntFieldUpdateOperationsInput | number | null
+    ASH_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ASH_DESC?: NullableStringFieldUpdateOperationsInput | string | null
+    ASH_TYPE?: NullableIntFieldUpdateOperationsInput | number | null
+    ASH_SCORES_OLD?: NullableIntFieldUpdateOperationsInput | number | null
+    ASH_EVENT_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ASH_DATETIME_UPDATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ASH_IZO_ID?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
   }
 
   export type GA_ANKETA_SCORES_HISTORYCreateManyInput = {
     ASH_WSU_ID: bigint | number
-    ASH_SCORES: number
-    ASH_DATETIME: Date | string
-    ASH_DESC: string
-    ASH_TYPE: number
-    ASH_SCORES_OLD?: number
-    ASH_EVENT_STATUS?: boolean
-    ASH_DATETIME_UPDATE: Date | string
-    ASH_IZO_ID?: bigint | number
+    ASH_SCORES?: number | null
+    ASH_DATETIME?: Date | string | null
+    ASH_DESC?: string | null
+    ASH_TYPE?: number | null
+    ASH_SCORES_OLD?: number | null
+    ASH_EVENT_STATUS?: boolean | null
+    ASH_DATETIME_UPDATE?: Date | string | null
+    ASH_IZO_ID?: bigint | number | null
   }
 
   export type GA_ANKETA_SCORES_HISTORYUpdateManyMutationInput = {
     ASH_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ASH_SCORES?: IntFieldUpdateOperationsInput | number
-    ASH_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ASH_DESC?: StringFieldUpdateOperationsInput | string
-    ASH_TYPE?: IntFieldUpdateOperationsInput | number
-    ASH_SCORES_OLD?: IntFieldUpdateOperationsInput | number
-    ASH_EVENT_STATUS?: BoolFieldUpdateOperationsInput | boolean
-    ASH_DATETIME_UPDATE?: DateTimeFieldUpdateOperationsInput | Date | string
-    ASH_IZO_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ASH_SCORES?: NullableIntFieldUpdateOperationsInput | number | null
+    ASH_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ASH_DESC?: NullableStringFieldUpdateOperationsInput | string | null
+    ASH_TYPE?: NullableIntFieldUpdateOperationsInput | number | null
+    ASH_SCORES_OLD?: NullableIntFieldUpdateOperationsInput | number | null
+    ASH_EVENT_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ASH_DATETIME_UPDATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ASH_IZO_ID?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
   }
 
   export type GA_ANKETA_SCORES_HISTORYUncheckedUpdateManyInput = {
     ASH_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ASH_SCORES?: IntFieldUpdateOperationsInput | number
-    ASH_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    ASH_DESC?: StringFieldUpdateOperationsInput | string
-    ASH_TYPE?: IntFieldUpdateOperationsInput | number
-    ASH_SCORES_OLD?: IntFieldUpdateOperationsInput | number
-    ASH_EVENT_STATUS?: BoolFieldUpdateOperationsInput | boolean
-    ASH_DATETIME_UPDATE?: DateTimeFieldUpdateOperationsInput | Date | string
-    ASH_IZO_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ASH_SCORES?: NullableIntFieldUpdateOperationsInput | number | null
+    ASH_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ASH_DESC?: NullableStringFieldUpdateOperationsInput | string | null
+    ASH_TYPE?: NullableIntFieldUpdateOperationsInput | number | null
+    ASH_SCORES_OLD?: NullableIntFieldUpdateOperationsInput | number | null
+    ASH_EVENT_STATUS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ASH_DATETIME_UPDATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ASH_IZO_ID?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
   }
 
   export type GA_ANKETA_SOREVNOVANIECreateInput = {
-    ASR_YEAR: number
-    ASR_MONTH: number
+    ASR_YEAR?: number | null
+    ASR_MONTH?: number | null
     ASR_WSU_ID: bigint | number
-    ASR_LOGIN: string
-    ASR_FIO: string
-    ASR_SCORE: number
-    ASR_DOLJNOST: string
-    ASR_RUKOVODITEL?: boolean
+    ASR_LOGIN?: string | null
+    ASR_FIO?: string | null
+    ASR_SCORE?: number | null
+    ASR_DOLJNOST?: string | null
+    ASR_RUKOVODITEL?: boolean | null
   }
 
   export type GA_ANKETA_SOREVNOVANIEUncheckedCreateInput = {
-    ASR_YEAR: number
-    ASR_MONTH: number
+    ASR_YEAR?: number | null
+    ASR_MONTH?: number | null
     ASR_WSU_ID: bigint | number
-    ASR_LOGIN: string
-    ASR_FIO: string
-    ASR_SCORE: number
-    ASR_DOLJNOST: string
-    ASR_RUKOVODITEL?: boolean
+    ASR_LOGIN?: string | null
+    ASR_FIO?: string | null
+    ASR_SCORE?: number | null
+    ASR_DOLJNOST?: string | null
+    ASR_RUKOVODITEL?: boolean | null
   }
 
   export type GA_ANKETA_SOREVNOVANIEUpdateInput = {
-    ASR_YEAR?: IntFieldUpdateOperationsInput | number
-    ASR_MONTH?: IntFieldUpdateOperationsInput | number
+    ASR_YEAR?: NullableIntFieldUpdateOperationsInput | number | null
+    ASR_MONTH?: NullableIntFieldUpdateOperationsInput | number | null
     ASR_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ASR_LOGIN?: StringFieldUpdateOperationsInput | string
-    ASR_FIO?: StringFieldUpdateOperationsInput | string
-    ASR_SCORE?: IntFieldUpdateOperationsInput | number
-    ASR_DOLJNOST?: StringFieldUpdateOperationsInput | string
-    ASR_RUKOVODITEL?: BoolFieldUpdateOperationsInput | boolean
+    ASR_LOGIN?: NullableStringFieldUpdateOperationsInput | string | null
+    ASR_FIO?: NullableStringFieldUpdateOperationsInput | string | null
+    ASR_SCORE?: NullableIntFieldUpdateOperationsInput | number | null
+    ASR_DOLJNOST?: NullableStringFieldUpdateOperationsInput | string | null
+    ASR_RUKOVODITEL?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type GA_ANKETA_SOREVNOVANIEUncheckedUpdateInput = {
-    ASR_YEAR?: IntFieldUpdateOperationsInput | number
-    ASR_MONTH?: IntFieldUpdateOperationsInput | number
+    ASR_YEAR?: NullableIntFieldUpdateOperationsInput | number | null
+    ASR_MONTH?: NullableIntFieldUpdateOperationsInput | number | null
     ASR_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ASR_LOGIN?: StringFieldUpdateOperationsInput | string
-    ASR_FIO?: StringFieldUpdateOperationsInput | string
-    ASR_SCORE?: IntFieldUpdateOperationsInput | number
-    ASR_DOLJNOST?: StringFieldUpdateOperationsInput | string
-    ASR_RUKOVODITEL?: BoolFieldUpdateOperationsInput | boolean
+    ASR_LOGIN?: NullableStringFieldUpdateOperationsInput | string | null
+    ASR_FIO?: NullableStringFieldUpdateOperationsInput | string | null
+    ASR_SCORE?: NullableIntFieldUpdateOperationsInput | number | null
+    ASR_DOLJNOST?: NullableStringFieldUpdateOperationsInput | string | null
+    ASR_RUKOVODITEL?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type GA_ANKETA_SOREVNOVANIECreateManyInput = {
-    ASR_YEAR: number
-    ASR_MONTH: number
+    ASR_YEAR?: number | null
+    ASR_MONTH?: number | null
     ASR_WSU_ID: bigint | number
-    ASR_LOGIN: string
-    ASR_FIO: string
-    ASR_SCORE: number
-    ASR_DOLJNOST: string
-    ASR_RUKOVODITEL?: boolean
+    ASR_LOGIN?: string | null
+    ASR_FIO?: string | null
+    ASR_SCORE?: number | null
+    ASR_DOLJNOST?: string | null
+    ASR_RUKOVODITEL?: boolean | null
   }
 
   export type GA_ANKETA_SOREVNOVANIEUpdateManyMutationInput = {
-    ASR_YEAR?: IntFieldUpdateOperationsInput | number
-    ASR_MONTH?: IntFieldUpdateOperationsInput | number
+    ASR_YEAR?: NullableIntFieldUpdateOperationsInput | number | null
+    ASR_MONTH?: NullableIntFieldUpdateOperationsInput | number | null
     ASR_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ASR_LOGIN?: StringFieldUpdateOperationsInput | string
-    ASR_FIO?: StringFieldUpdateOperationsInput | string
-    ASR_SCORE?: IntFieldUpdateOperationsInput | number
-    ASR_DOLJNOST?: StringFieldUpdateOperationsInput | string
-    ASR_RUKOVODITEL?: BoolFieldUpdateOperationsInput | boolean
+    ASR_LOGIN?: NullableStringFieldUpdateOperationsInput | string | null
+    ASR_FIO?: NullableStringFieldUpdateOperationsInput | string | null
+    ASR_SCORE?: NullableIntFieldUpdateOperationsInput | number | null
+    ASR_DOLJNOST?: NullableStringFieldUpdateOperationsInput | string | null
+    ASR_RUKOVODITEL?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type GA_ANKETA_SOREVNOVANIEUncheckedUpdateManyInput = {
-    ASR_YEAR?: IntFieldUpdateOperationsInput | number
-    ASR_MONTH?: IntFieldUpdateOperationsInput | number
+    ASR_YEAR?: NullableIntFieldUpdateOperationsInput | number | null
+    ASR_MONTH?: NullableIntFieldUpdateOperationsInput | number | null
     ASR_WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    ASR_LOGIN?: StringFieldUpdateOperationsInput | string
-    ASR_FIO?: StringFieldUpdateOperationsInput | string
-    ASR_SCORE?: IntFieldUpdateOperationsInput | number
-    ASR_DOLJNOST?: StringFieldUpdateOperationsInput | string
-    ASR_RUKOVODITEL?: BoolFieldUpdateOperationsInput | boolean
+    ASR_LOGIN?: NullableStringFieldUpdateOperationsInput | string | null
+    ASR_FIO?: NullableStringFieldUpdateOperationsInput | string | null
+    ASR_SCORE?: NullableIntFieldUpdateOperationsInput | number | null
+    ASR_DOLJNOST?: NullableStringFieldUpdateOperationsInput | string | null
+    ASR_RUKOVODITEL?: NullableBoolFieldUpdateOperationsInput | boolean | null
+  }
+
+  export type GA_ANKETA_SUPCreateInput = {
+    ADB_ABA_ID: bigint | number
+    ADB_SUP_NAME?: string | null
+    ADB_MAN_NAME1?: string | null
+    ADB_MAN_NAME2?: string | null
+    ADB_MAN_NAME3?: string | null
+    ADB_SUP_CODE_AE?: string | null
+    ADB_SUP_CODE_AUTORUS?: string | null
+    ADB_SUP_CODE_ROSSKO?: string | null
+    ADB_SUP_CODE_ARKONA?: string | null
+  }
+
+  export type GA_ANKETA_SUPUncheckedCreateInput = {
+    ADB_ABA_ID: bigint | number
+    ADB_SUP_NAME?: string | null
+    ADB_MAN_NAME1?: string | null
+    ADB_MAN_NAME2?: string | null
+    ADB_MAN_NAME3?: string | null
+    ADB_SUP_CODE_AE?: string | null
+    ADB_SUP_CODE_AUTORUS?: string | null
+    ADB_SUP_CODE_ROSSKO?: string | null
+    ADB_SUP_CODE_ARKONA?: string | null
+  }
+
+  export type GA_ANKETA_SUPUpdateInput = {
+    ADB_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ADB_SUP_NAME?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_MAN_NAME1?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_MAN_NAME2?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_MAN_NAME3?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_SUP_CODE_AE?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_SUP_CODE_AUTORUS?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_SUP_CODE_ROSSKO?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_SUP_CODE_ARKONA?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type GA_ANKETA_SUPUncheckedUpdateInput = {
+    ADB_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ADB_SUP_NAME?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_MAN_NAME1?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_MAN_NAME2?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_MAN_NAME3?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_SUP_CODE_AE?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_SUP_CODE_AUTORUS?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_SUP_CODE_ROSSKO?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_SUP_CODE_ARKONA?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type GA_ANKETA_SUPCreateManyInput = {
+    ADB_ABA_ID: bigint | number
+    ADB_SUP_NAME?: string | null
+    ADB_MAN_NAME1?: string | null
+    ADB_MAN_NAME2?: string | null
+    ADB_MAN_NAME3?: string | null
+    ADB_SUP_CODE_AE?: string | null
+    ADB_SUP_CODE_AUTORUS?: string | null
+    ADB_SUP_CODE_ROSSKO?: string | null
+    ADB_SUP_CODE_ARKONA?: string | null
+  }
+
+  export type GA_ANKETA_SUPUpdateManyMutationInput = {
+    ADB_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ADB_SUP_NAME?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_MAN_NAME1?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_MAN_NAME2?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_MAN_NAME3?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_SUP_CODE_AE?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_SUP_CODE_AUTORUS?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_SUP_CODE_ROSSKO?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_SUP_CODE_ARKONA?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type GA_ANKETA_SUPUncheckedUpdateManyInput = {
+    ADB_ABA_ID?: BigIntFieldUpdateOperationsInput | bigint | number
+    ADB_SUP_NAME?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_MAN_NAME1?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_MAN_NAME2?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_MAN_NAME3?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_SUP_CODE_AE?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_SUP_CODE_AUTORUS?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_SUP_CODE_ROSSKO?: NullableStringFieldUpdateOperationsInput | string | null
+    ADB_SUP_CODE_ARKONA?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type GA_WS_USERSCreateInput = {
+    WSU_WSO_ID?: number | null
     WSU_ID: bigint | number
-    WSU_WSO_ID: number
-    WSU_EMAIL: string
-    WSU_NAME: string
-    WSU_FULL_NAME: string
-    WSU_PHONE: string
-    WSU_ADDRESS: string
-    WSU_PASSWD: string
-    WSU_ID_IN_DS: number
-    WSU_INN: string
-    WSU_PRICE_TYPE?: number
-    WSU_GRP_ID?: number
-    WSU_WS_ID?: number
-    WSU_MOBILE: string
-    WSU_SHOW_SUP_ALIAS?: boolean
-    WSU_IS_ZS?: boolean
-    WSU_PASSWD_ENC: string
-    WSU_LOGIN_ENC: string
-    WSU_DATETIME_LAST_LOGIN: Date | string
-    WSU_START_PAGE: string
-    WSU_SALT: string
-    WSU_TEMP_TICKET: string
-    WSU_TEMP_TICKET_DATETIME: Date | string
-    WSU_DATETIME_CREATE: Date | string
+    WSU_EMAIL?: string | null
+    WSU_NAME?: string | null
+    WSU_FULL_NAME?: string | null
+    WSU_PHONE?: string | null
+    WSU_ADDRESS?: string | null
+    WSU_PASSWD?: string | null
+    WSU_ID_IN_DS?: number | null
+    WSU_INN?: string | null
+    WSU_PRICE_TYPE?: number | null
+    WSU_GRP_ID?: number | null
+    WSU_WS_ID?: number | null
+    WSU_MOBILE?: string | null
+    WSU_SHOW_SUP_ALIAS?: boolean | null
+    WSU_IS_ZS?: boolean | null
+    WSU_PASSWD_ENC?: string | null
+    WSU_LOGIN_ENC?: string | null
+    WSU_DATETIME_LAST_LOGIN?: Date | string | null
+    WSU_START_PAGE?: string | null
+    WSU_SALT?: string | null
+    WSU_TEMP_TICKET?: string | null
+    WSU_TEMP_TICKET_DATETIME?: Date | string | null
+    WSU_DATETIME_CREATE?: Date | string | null
   }
 
   export type GA_WS_USERSUncheckedCreateInput = {
+    WSU_WSO_ID?: number | null
     WSU_ID: bigint | number
-    WSU_WSO_ID: number
-    WSU_EMAIL: string
-    WSU_NAME: string
-    WSU_FULL_NAME: string
-    WSU_PHONE: string
-    WSU_ADDRESS: string
-    WSU_PASSWD: string
-    WSU_ID_IN_DS: number
-    WSU_INN: string
-    WSU_PRICE_TYPE?: number
-    WSU_GRP_ID?: number
-    WSU_WS_ID?: number
-    WSU_MOBILE: string
-    WSU_SHOW_SUP_ALIAS?: boolean
-    WSU_IS_ZS?: boolean
-    WSU_PASSWD_ENC: string
-    WSU_LOGIN_ENC: string
-    WSU_DATETIME_LAST_LOGIN: Date | string
-    WSU_START_PAGE: string
-    WSU_SALT: string
-    WSU_TEMP_TICKET: string
-    WSU_TEMP_TICKET_DATETIME: Date | string
-    WSU_DATETIME_CREATE: Date | string
+    WSU_EMAIL?: string | null
+    WSU_NAME?: string | null
+    WSU_FULL_NAME?: string | null
+    WSU_PHONE?: string | null
+    WSU_ADDRESS?: string | null
+    WSU_PASSWD?: string | null
+    WSU_ID_IN_DS?: number | null
+    WSU_INN?: string | null
+    WSU_PRICE_TYPE?: number | null
+    WSU_GRP_ID?: number | null
+    WSU_WS_ID?: number | null
+    WSU_MOBILE?: string | null
+    WSU_SHOW_SUP_ALIAS?: boolean | null
+    WSU_IS_ZS?: boolean | null
+    WSU_PASSWD_ENC?: string | null
+    WSU_LOGIN_ENC?: string | null
+    WSU_DATETIME_LAST_LOGIN?: Date | string | null
+    WSU_START_PAGE?: string | null
+    WSU_SALT?: string | null
+    WSU_TEMP_TICKET?: string | null
+    WSU_TEMP_TICKET_DATETIME?: Date | string | null
+    WSU_DATETIME_CREATE?: Date | string | null
   }
 
   export type GA_WS_USERSUpdateInput = {
+    WSU_WSO_ID?: NullableIntFieldUpdateOperationsInput | number | null
     WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    WSU_WSO_ID?: IntFieldUpdateOperationsInput | number
-    WSU_EMAIL?: StringFieldUpdateOperationsInput | string
-    WSU_NAME?: StringFieldUpdateOperationsInput | string
-    WSU_FULL_NAME?: StringFieldUpdateOperationsInput | string
-    WSU_PHONE?: StringFieldUpdateOperationsInput | string
-    WSU_ADDRESS?: StringFieldUpdateOperationsInput | string
-    WSU_PASSWD?: StringFieldUpdateOperationsInput | string
-    WSU_ID_IN_DS?: IntFieldUpdateOperationsInput | number
-    WSU_INN?: StringFieldUpdateOperationsInput | string
-    WSU_PRICE_TYPE?: IntFieldUpdateOperationsInput | number
-    WSU_GRP_ID?: IntFieldUpdateOperationsInput | number
-    WSU_WS_ID?: IntFieldUpdateOperationsInput | number
-    WSU_MOBILE?: StringFieldUpdateOperationsInput | string
-    WSU_SHOW_SUP_ALIAS?: BoolFieldUpdateOperationsInput | boolean
-    WSU_IS_ZS?: BoolFieldUpdateOperationsInput | boolean
-    WSU_PASSWD_ENC?: StringFieldUpdateOperationsInput | string
-    WSU_LOGIN_ENC?: StringFieldUpdateOperationsInput | string
-    WSU_DATETIME_LAST_LOGIN?: DateTimeFieldUpdateOperationsInput | Date | string
-    WSU_START_PAGE?: StringFieldUpdateOperationsInput | string
-    WSU_SALT?: StringFieldUpdateOperationsInput | string
-    WSU_TEMP_TICKET?: StringFieldUpdateOperationsInput | string
-    WSU_TEMP_TICKET_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    WSU_DATETIME_CREATE?: DateTimeFieldUpdateOperationsInput | Date | string
+    WSU_EMAIL?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_NAME?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_FULL_NAME?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_PHONE?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_ADDRESS?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_PASSWD?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_ID_IN_DS?: NullableIntFieldUpdateOperationsInput | number | null
+    WSU_INN?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_PRICE_TYPE?: NullableIntFieldUpdateOperationsInput | number | null
+    WSU_GRP_ID?: NullableIntFieldUpdateOperationsInput | number | null
+    WSU_WS_ID?: NullableIntFieldUpdateOperationsInput | number | null
+    WSU_MOBILE?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_SHOW_SUP_ALIAS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    WSU_IS_ZS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    WSU_PASSWD_ENC?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_LOGIN_ENC?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_DATETIME_LAST_LOGIN?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    WSU_START_PAGE?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_SALT?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_TEMP_TICKET?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_TEMP_TICKET_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    WSU_DATETIME_CREATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type GA_WS_USERSUncheckedUpdateInput = {
+    WSU_WSO_ID?: NullableIntFieldUpdateOperationsInput | number | null
     WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    WSU_WSO_ID?: IntFieldUpdateOperationsInput | number
-    WSU_EMAIL?: StringFieldUpdateOperationsInput | string
-    WSU_NAME?: StringFieldUpdateOperationsInput | string
-    WSU_FULL_NAME?: StringFieldUpdateOperationsInput | string
-    WSU_PHONE?: StringFieldUpdateOperationsInput | string
-    WSU_ADDRESS?: StringFieldUpdateOperationsInput | string
-    WSU_PASSWD?: StringFieldUpdateOperationsInput | string
-    WSU_ID_IN_DS?: IntFieldUpdateOperationsInput | number
-    WSU_INN?: StringFieldUpdateOperationsInput | string
-    WSU_PRICE_TYPE?: IntFieldUpdateOperationsInput | number
-    WSU_GRP_ID?: IntFieldUpdateOperationsInput | number
-    WSU_WS_ID?: IntFieldUpdateOperationsInput | number
-    WSU_MOBILE?: StringFieldUpdateOperationsInput | string
-    WSU_SHOW_SUP_ALIAS?: BoolFieldUpdateOperationsInput | boolean
-    WSU_IS_ZS?: BoolFieldUpdateOperationsInput | boolean
-    WSU_PASSWD_ENC?: StringFieldUpdateOperationsInput | string
-    WSU_LOGIN_ENC?: StringFieldUpdateOperationsInput | string
-    WSU_DATETIME_LAST_LOGIN?: DateTimeFieldUpdateOperationsInput | Date | string
-    WSU_START_PAGE?: StringFieldUpdateOperationsInput | string
-    WSU_SALT?: StringFieldUpdateOperationsInput | string
-    WSU_TEMP_TICKET?: StringFieldUpdateOperationsInput | string
-    WSU_TEMP_TICKET_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    WSU_DATETIME_CREATE?: DateTimeFieldUpdateOperationsInput | Date | string
+    WSU_EMAIL?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_NAME?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_FULL_NAME?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_PHONE?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_ADDRESS?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_PASSWD?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_ID_IN_DS?: NullableIntFieldUpdateOperationsInput | number | null
+    WSU_INN?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_PRICE_TYPE?: NullableIntFieldUpdateOperationsInput | number | null
+    WSU_GRP_ID?: NullableIntFieldUpdateOperationsInput | number | null
+    WSU_WS_ID?: NullableIntFieldUpdateOperationsInput | number | null
+    WSU_MOBILE?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_SHOW_SUP_ALIAS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    WSU_IS_ZS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    WSU_PASSWD_ENC?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_LOGIN_ENC?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_DATETIME_LAST_LOGIN?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    WSU_START_PAGE?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_SALT?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_TEMP_TICKET?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_TEMP_TICKET_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    WSU_DATETIME_CREATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type GA_WS_USERSCreateManyInput = {
+    WSU_WSO_ID?: number | null
     WSU_ID: bigint | number
-    WSU_WSO_ID: number
-    WSU_EMAIL: string
-    WSU_NAME: string
-    WSU_FULL_NAME: string
-    WSU_PHONE: string
-    WSU_ADDRESS: string
-    WSU_PASSWD: string
-    WSU_ID_IN_DS: number
-    WSU_INN: string
-    WSU_PRICE_TYPE?: number
-    WSU_GRP_ID?: number
-    WSU_WS_ID?: number
-    WSU_MOBILE: string
-    WSU_SHOW_SUP_ALIAS?: boolean
-    WSU_IS_ZS?: boolean
-    WSU_PASSWD_ENC: string
-    WSU_LOGIN_ENC: string
-    WSU_DATETIME_LAST_LOGIN: Date | string
-    WSU_START_PAGE: string
-    WSU_SALT: string
-    WSU_TEMP_TICKET: string
-    WSU_TEMP_TICKET_DATETIME: Date | string
-    WSU_DATETIME_CREATE: Date | string
+    WSU_EMAIL?: string | null
+    WSU_NAME?: string | null
+    WSU_FULL_NAME?: string | null
+    WSU_PHONE?: string | null
+    WSU_ADDRESS?: string | null
+    WSU_PASSWD?: string | null
+    WSU_ID_IN_DS?: number | null
+    WSU_INN?: string | null
+    WSU_PRICE_TYPE?: number | null
+    WSU_GRP_ID?: number | null
+    WSU_WS_ID?: number | null
+    WSU_MOBILE?: string | null
+    WSU_SHOW_SUP_ALIAS?: boolean | null
+    WSU_IS_ZS?: boolean | null
+    WSU_PASSWD_ENC?: string | null
+    WSU_LOGIN_ENC?: string | null
+    WSU_DATETIME_LAST_LOGIN?: Date | string | null
+    WSU_START_PAGE?: string | null
+    WSU_SALT?: string | null
+    WSU_TEMP_TICKET?: string | null
+    WSU_TEMP_TICKET_DATETIME?: Date | string | null
+    WSU_DATETIME_CREATE?: Date | string | null
   }
 
   export type GA_WS_USERSUpdateManyMutationInput = {
+    WSU_WSO_ID?: NullableIntFieldUpdateOperationsInput | number | null
     WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    WSU_WSO_ID?: IntFieldUpdateOperationsInput | number
-    WSU_EMAIL?: StringFieldUpdateOperationsInput | string
-    WSU_NAME?: StringFieldUpdateOperationsInput | string
-    WSU_FULL_NAME?: StringFieldUpdateOperationsInput | string
-    WSU_PHONE?: StringFieldUpdateOperationsInput | string
-    WSU_ADDRESS?: StringFieldUpdateOperationsInput | string
-    WSU_PASSWD?: StringFieldUpdateOperationsInput | string
-    WSU_ID_IN_DS?: IntFieldUpdateOperationsInput | number
-    WSU_INN?: StringFieldUpdateOperationsInput | string
-    WSU_PRICE_TYPE?: IntFieldUpdateOperationsInput | number
-    WSU_GRP_ID?: IntFieldUpdateOperationsInput | number
-    WSU_WS_ID?: IntFieldUpdateOperationsInput | number
-    WSU_MOBILE?: StringFieldUpdateOperationsInput | string
-    WSU_SHOW_SUP_ALIAS?: BoolFieldUpdateOperationsInput | boolean
-    WSU_IS_ZS?: BoolFieldUpdateOperationsInput | boolean
-    WSU_PASSWD_ENC?: StringFieldUpdateOperationsInput | string
-    WSU_LOGIN_ENC?: StringFieldUpdateOperationsInput | string
-    WSU_DATETIME_LAST_LOGIN?: DateTimeFieldUpdateOperationsInput | Date | string
-    WSU_START_PAGE?: StringFieldUpdateOperationsInput | string
-    WSU_SALT?: StringFieldUpdateOperationsInput | string
-    WSU_TEMP_TICKET?: StringFieldUpdateOperationsInput | string
-    WSU_TEMP_TICKET_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    WSU_DATETIME_CREATE?: DateTimeFieldUpdateOperationsInput | Date | string
+    WSU_EMAIL?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_NAME?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_FULL_NAME?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_PHONE?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_ADDRESS?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_PASSWD?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_ID_IN_DS?: NullableIntFieldUpdateOperationsInput | number | null
+    WSU_INN?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_PRICE_TYPE?: NullableIntFieldUpdateOperationsInput | number | null
+    WSU_GRP_ID?: NullableIntFieldUpdateOperationsInput | number | null
+    WSU_WS_ID?: NullableIntFieldUpdateOperationsInput | number | null
+    WSU_MOBILE?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_SHOW_SUP_ALIAS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    WSU_IS_ZS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    WSU_PASSWD_ENC?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_LOGIN_ENC?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_DATETIME_LAST_LOGIN?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    WSU_START_PAGE?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_SALT?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_TEMP_TICKET?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_TEMP_TICKET_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    WSU_DATETIME_CREATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type GA_WS_USERSUncheckedUpdateManyInput = {
+    WSU_WSO_ID?: NullableIntFieldUpdateOperationsInput | number | null
     WSU_ID?: BigIntFieldUpdateOperationsInput | bigint | number
-    WSU_WSO_ID?: IntFieldUpdateOperationsInput | number
-    WSU_EMAIL?: StringFieldUpdateOperationsInput | string
-    WSU_NAME?: StringFieldUpdateOperationsInput | string
-    WSU_FULL_NAME?: StringFieldUpdateOperationsInput | string
-    WSU_PHONE?: StringFieldUpdateOperationsInput | string
-    WSU_ADDRESS?: StringFieldUpdateOperationsInput | string
-    WSU_PASSWD?: StringFieldUpdateOperationsInput | string
-    WSU_ID_IN_DS?: IntFieldUpdateOperationsInput | number
-    WSU_INN?: StringFieldUpdateOperationsInput | string
-    WSU_PRICE_TYPE?: IntFieldUpdateOperationsInput | number
-    WSU_GRP_ID?: IntFieldUpdateOperationsInput | number
-    WSU_WS_ID?: IntFieldUpdateOperationsInput | number
-    WSU_MOBILE?: StringFieldUpdateOperationsInput | string
-    WSU_SHOW_SUP_ALIAS?: BoolFieldUpdateOperationsInput | boolean
-    WSU_IS_ZS?: BoolFieldUpdateOperationsInput | boolean
-    WSU_PASSWD_ENC?: StringFieldUpdateOperationsInput | string
-    WSU_LOGIN_ENC?: StringFieldUpdateOperationsInput | string
-    WSU_DATETIME_LAST_LOGIN?: DateTimeFieldUpdateOperationsInput | Date | string
-    WSU_START_PAGE?: StringFieldUpdateOperationsInput | string
-    WSU_SALT?: StringFieldUpdateOperationsInput | string
-    WSU_TEMP_TICKET?: StringFieldUpdateOperationsInput | string
-    WSU_TEMP_TICKET_DATETIME?: DateTimeFieldUpdateOperationsInput | Date | string
-    WSU_DATETIME_CREATE?: DateTimeFieldUpdateOperationsInput | Date | string
+    WSU_EMAIL?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_NAME?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_FULL_NAME?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_PHONE?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_ADDRESS?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_PASSWD?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_ID_IN_DS?: NullableIntFieldUpdateOperationsInput | number | null
+    WSU_INN?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_PRICE_TYPE?: NullableIntFieldUpdateOperationsInput | number | null
+    WSU_GRP_ID?: NullableIntFieldUpdateOperationsInput | number | null
+    WSU_WS_ID?: NullableIntFieldUpdateOperationsInput | number | null
+    WSU_MOBILE?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_SHOW_SUP_ALIAS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    WSU_IS_ZS?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    WSU_PASSWD_ENC?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_LOGIN_ENC?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_DATETIME_LAST_LOGIN?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    WSU_START_PAGE?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_SALT?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_TEMP_TICKET?: NullableStringFieldUpdateOperationsInput | string | null
+    WSU_TEMP_TICKET_DATETIME?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    WSU_DATETIME_CREATE?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
   export type BigIntFilter<$PrismaModel = never> = {
@@ -12810,10 +14012,10 @@ export namespace Prisma {
     not?: NestedBigIntFilter<$PrismaModel> | bigint | number
   }
 
-  export type StringFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[] | ListStringFieldRefInput<$PrismaModel>
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -12822,7 +14024,12 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     mode?: QueryMode
-    not?: NestedStringFilter<$PrismaModel> | string
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
   }
 
   export type GA_ANKETA_ADDRCountOrderByAggregateInput = {
@@ -12879,10 +14086,10 @@ export namespace Prisma {
     _max?: NestedBigIntFilter<$PrismaModel>
   }
 
-  export type StringWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[] | ListStringFieldRefInput<$PrismaModel>
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -12891,10 +14098,21 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     mode?: QueryMode
-    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedStringFilter<$PrismaModel>
-    _max?: NestedStringFilter<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type BigIntNullableFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntNullableFilter<$PrismaModel> | bigint | number | null
   }
 
   export type IntNullableFilter<$PrismaModel = never> = {
@@ -12908,40 +14126,20 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
-  export type BoolFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolFilter<$PrismaModel> | boolean
+  export type BoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
   }
 
-  export type DateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+  export type DateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
     lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
-  }
-
-  export type StringNullableFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    mode?: QueryMode
-    not?: NestedStringNullableFilter<$PrismaModel> | string | null
-  }
-
-  export type SortOrderInput = {
-    sort: SortOrder
-    nulls?: NullsOrder
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
   export type GA_ANKETA_BASECountOrderByAggregateInput = {
@@ -13007,6 +14205,22 @@ export namespace Prisma {
     ABA_ID?: SortOrder
   }
 
+  export type BigIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntNullableWithAggregatesFilter<$PrismaModel> | bigint | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedBigIntNullableFilter<$PrismaModel>
+    _min?: NestedBigIntNullableFilter<$PrismaModel>
+    _max?: NestedBigIntNullableFilter<$PrismaModel>
+  }
+
   export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
     in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
@@ -13023,44 +14237,61 @@ export namespace Prisma {
     _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
-  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedBoolFilter<$PrismaModel>
-    _max?: NestedBoolFilter<$PrismaModel>
+  export type BoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
   }
 
-  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
     lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
-  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    mode?: QueryMode
-    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedStringNullableFilter<$PrismaModel>
-    _max?: NestedStringNullableFilter<$PrismaModel>
+  export type GA_ANKETA_BRANDCountOrderByAggregateInput = {
+    ABR_ABA_ID?: SortOrder
+    ABR_STATUS?: SortOrder
+    ABR_DATETIME?: SortOrder
+    ABR_HALF_STATUS?: SortOrder
+    ABR_VYVESKA_STATUS?: SortOrder
+    ABR_KOROB_STATUS?: SortOrder
+  }
+
+  export type GA_ANKETA_BRANDAvgOrderByAggregateInput = {
+    ABR_ABA_ID?: SortOrder
+  }
+
+  export type GA_ANKETA_BRANDMaxOrderByAggregateInput = {
+    ABR_ABA_ID?: SortOrder
+    ABR_STATUS?: SortOrder
+    ABR_DATETIME?: SortOrder
+    ABR_HALF_STATUS?: SortOrder
+    ABR_VYVESKA_STATUS?: SortOrder
+    ABR_KOROB_STATUS?: SortOrder
+  }
+
+  export type GA_ANKETA_BRANDMinOrderByAggregateInput = {
+    ABR_ABA_ID?: SortOrder
+    ABR_STATUS?: SortOrder
+    ABR_DATETIME?: SortOrder
+    ABR_HALF_STATUS?: SortOrder
+    ABR_VYVESKA_STATUS?: SortOrder
+    ABR_KOROB_STATUS?: SortOrder
+  }
+
+  export type GA_ANKETA_BRANDSumOrderByAggregateInput = {
+    ABR_ABA_ID?: SortOrder
   }
 
   export type GA_ANKETA_DOGOVORCountOrderByAggregateInput = {
@@ -13104,26 +14335,15 @@ export namespace Prisma {
     ADO_ABA_ID?: SortOrder
   }
 
-  export type FloatFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+  export type FloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
     lt?: number | FloatFieldRefInput<$PrismaModel>
     lte?: number | FloatFieldRefInput<$PrismaModel>
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatFilter<$PrismaModel> | number
-  }
-
-  export type IntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
   export type GA_ANKETA_OBOROTCountOrderByAggregateInput = {
@@ -13324,71 +14544,20 @@ export namespace Prisma {
     ABO_SCORES_PARTRA?: SortOrder
   }
 
-  export type FloatWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+  export type FloatNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
     lt?: number | FloatFieldRefInput<$PrismaModel>
     lte?: number | FloatFieldRefInput<$PrismaModel>
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedFloatFilter<$PrismaModel>
-    _min?: NestedFloatFilter<$PrismaModel>
-    _max?: NestedFloatFilter<$PrismaModel>
-  }
-
-  export type IntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
-  }
-
-  export type GA_ANKETA_BRANDCountOrderByAggregateInput = {
-    ABR_ABA_ID?: SortOrder
-    ABR_STATUS?: SortOrder
-    ABR_DATETIME?: SortOrder
-    ABR_HALF_STATUS?: SortOrder
-    ABR_VYVESKA_STATUS?: SortOrder
-    ABR_KOROB_STATUS?: SortOrder
-  }
-
-  export type GA_ANKETA_BRANDAvgOrderByAggregateInput = {
-    ABR_ABA_ID?: SortOrder
-  }
-
-  export type GA_ANKETA_BRANDMaxOrderByAggregateInput = {
-    ABR_ABA_ID?: SortOrder
-    ABR_STATUS?: SortOrder
-    ABR_DATETIME?: SortOrder
-    ABR_HALF_STATUS?: SortOrder
-    ABR_VYVESKA_STATUS?: SortOrder
-    ABR_KOROB_STATUS?: SortOrder
-  }
-
-  export type GA_ANKETA_BRANDMinOrderByAggregateInput = {
-    ABR_ABA_ID?: SortOrder
-    ABR_STATUS?: SortOrder
-    ABR_DATETIME?: SortOrder
-    ABR_HALF_STATUS?: SortOrder
-    ABR_VYVESKA_STATUS?: SortOrder
-    ABR_KOROB_STATUS?: SortOrder
-  }
-
-  export type GA_ANKETA_BRANDSumOrderByAggregateInput = {
-    ABR_ABA_ID?: SortOrder
+    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedFloatNullableFilter<$PrismaModel>
+    _min?: NestedFloatNullableFilter<$PrismaModel>
+    _max?: NestedFloatNullableFilter<$PrismaModel>
   }
 
   export type GA_ANKETA_SCORESCountOrderByAggregateInput = {
@@ -13521,9 +14690,53 @@ export namespace Prisma {
     ASR_SCORE?: SortOrder
   }
 
+  export type GA_ANKETA_SUPCountOrderByAggregateInput = {
+    ADB_ABA_ID?: SortOrder
+    ADB_SUP_NAME?: SortOrder
+    ADB_MAN_NAME1?: SortOrder
+    ADB_MAN_NAME2?: SortOrder
+    ADB_MAN_NAME3?: SortOrder
+    ADB_SUP_CODE_AE?: SortOrder
+    ADB_SUP_CODE_AUTORUS?: SortOrder
+    ADB_SUP_CODE_ROSSKO?: SortOrder
+    ADB_SUP_CODE_ARKONA?: SortOrder
+  }
+
+  export type GA_ANKETA_SUPAvgOrderByAggregateInput = {
+    ADB_ABA_ID?: SortOrder
+  }
+
+  export type GA_ANKETA_SUPMaxOrderByAggregateInput = {
+    ADB_ABA_ID?: SortOrder
+    ADB_SUP_NAME?: SortOrder
+    ADB_MAN_NAME1?: SortOrder
+    ADB_MAN_NAME2?: SortOrder
+    ADB_MAN_NAME3?: SortOrder
+    ADB_SUP_CODE_AE?: SortOrder
+    ADB_SUP_CODE_AUTORUS?: SortOrder
+    ADB_SUP_CODE_ROSSKO?: SortOrder
+    ADB_SUP_CODE_ARKONA?: SortOrder
+  }
+
+  export type GA_ANKETA_SUPMinOrderByAggregateInput = {
+    ADB_ABA_ID?: SortOrder
+    ADB_SUP_NAME?: SortOrder
+    ADB_MAN_NAME1?: SortOrder
+    ADB_MAN_NAME2?: SortOrder
+    ADB_MAN_NAME3?: SortOrder
+    ADB_SUP_CODE_AE?: SortOrder
+    ADB_SUP_CODE_AUTORUS?: SortOrder
+    ADB_SUP_CODE_ROSSKO?: SortOrder
+    ADB_SUP_CODE_ARKONA?: SortOrder
+  }
+
+  export type GA_ANKETA_SUPSumOrderByAggregateInput = {
+    ADB_ABA_ID?: SortOrder
+  }
+
   export type GA_WS_USERSCountOrderByAggregateInput = {
-    WSU_ID?: SortOrder
     WSU_WSO_ID?: SortOrder
+    WSU_ID?: SortOrder
     WSU_EMAIL?: SortOrder
     WSU_NAME?: SortOrder
     WSU_FULL_NAME?: SortOrder
@@ -13549,8 +14762,8 @@ export namespace Prisma {
   }
 
   export type GA_WS_USERSAvgOrderByAggregateInput = {
-    WSU_ID?: SortOrder
     WSU_WSO_ID?: SortOrder
+    WSU_ID?: SortOrder
     WSU_ID_IN_DS?: SortOrder
     WSU_PRICE_TYPE?: SortOrder
     WSU_GRP_ID?: SortOrder
@@ -13558,8 +14771,8 @@ export namespace Prisma {
   }
 
   export type GA_WS_USERSMaxOrderByAggregateInput = {
-    WSU_ID?: SortOrder
     WSU_WSO_ID?: SortOrder
+    WSU_ID?: SortOrder
     WSU_EMAIL?: SortOrder
     WSU_NAME?: SortOrder
     WSU_FULL_NAME?: SortOrder
@@ -13585,8 +14798,8 @@ export namespace Prisma {
   }
 
   export type GA_WS_USERSMinOrderByAggregateInput = {
-    WSU_ID?: SortOrder
     WSU_WSO_ID?: SortOrder
+    WSU_ID?: SortOrder
     WSU_EMAIL?: SortOrder
     WSU_NAME?: SortOrder
     WSU_FULL_NAME?: SortOrder
@@ -13612,8 +14825,8 @@ export namespace Prisma {
   }
 
   export type GA_WS_USERSSumOrderByAggregateInput = {
-    WSU_ID?: SortOrder
     WSU_WSO_ID?: SortOrder
+    WSU_ID?: SortOrder
     WSU_ID_IN_DS?: SortOrder
     WSU_PRICE_TYPE?: SortOrder
     WSU_GRP_ID?: SortOrder
@@ -13628,8 +14841,16 @@ export namespace Prisma {
     divide?: bigint | number
   }
 
-  export type StringFieldUpdateOperationsInput = {
-    set?: string
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
+  }
+
+  export type NullableBigIntFieldUpdateOperationsInput = {
+    set?: bigint | number | null
+    increment?: bigint | number
+    decrement?: bigint | number
+    multiply?: bigint | number
+    divide?: bigint | number
   }
 
   export type NullableIntFieldUpdateOperationsInput = {
@@ -13640,28 +14861,16 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type BoolFieldUpdateOperationsInput = {
-    set?: boolean
+  export type NullableBoolFieldUpdateOperationsInput = {
+    set?: boolean | null
   }
 
-  export type DateTimeFieldUpdateOperationsInput = {
-    set?: Date | string
+  export type NullableDateTimeFieldUpdateOperationsInput = {
+    set?: Date | string | null
   }
 
-  export type NullableStringFieldUpdateOperationsInput = {
-    set?: string | null
-  }
-
-  export type FloatFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
-  }
-
-  export type IntFieldUpdateOperationsInput = {
-    set?: number
+  export type NullableFloatFieldUpdateOperationsInput = {
+    set?: number | null
     increment?: number
     decrement?: number
     multiply?: number
@@ -13679,10 +14888,10 @@ export namespace Prisma {
     not?: NestedBigIntFilter<$PrismaModel> | bigint | number
   }
 
-  export type NestedStringFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[] | ListStringFieldRefInput<$PrismaModel>
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+  export type NestedStringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -13690,7 +14899,7 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
-    not?: NestedStringFilter<$PrismaModel> | string
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
   export type NestedBigIntWithAggregatesFilter<$PrismaModel = never> = {
@@ -13731,10 +14940,10 @@ export namespace Prisma {
     not?: NestedFloatFilter<$PrismaModel> | number
   }
 
-  export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[] | ListStringFieldRefInput<$PrismaModel>
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -13742,10 +14951,10 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
-    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedStringFilter<$PrismaModel>
-    _max?: NestedStringFilter<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
   export type NestedIntNullableFilter<$PrismaModel = never> = {
@@ -13759,34 +14968,58 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
-  export type NestedBoolFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolFilter<$PrismaModel> | boolean
+  export type NestedBigIntNullableFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntNullableFilter<$PrismaModel> | bigint | number | null
   }
 
-  export type NestedDateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+  export type NestedBoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
+  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
     lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
-  export type NestedStringNullableFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  export type NestedBigIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel> | null
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel> | null
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntNullableWithAggregatesFilter<$PrismaModel> | bigint | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedBigIntNullableFilter<$PrismaModel>
+    _min?: NestedBigIntNullableFilter<$PrismaModel>
+    _max?: NestedBigIntNullableFilter<$PrismaModel>
+  }
+
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -13805,7 +15038,29 @@ export namespace Prisma {
     _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
-  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+  export type NestedBoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
+  }
+
+  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  }
+
+  export type NestedFloatNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | FloatFieldRefInput<$PrismaModel> | null
     in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
     notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
@@ -13813,78 +15068,12 @@ export namespace Prisma {
     lte?: number | FloatFieldRefInput<$PrismaModel>
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
-  }
-
-  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedBoolFilter<$PrismaModel>
-    _max?: NestedBoolFilter<$PrismaModel>
-  }
-
-  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
-  }
-
-  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
     _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedStringNullableFilter<$PrismaModel>
-    _max?: NestedStringNullableFilter<$PrismaModel>
-  }
-
-  export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedFloatFilter<$PrismaModel>
-    _min?: NestedFloatFilter<$PrismaModel>
-    _max?: NestedFloatFilter<$PrismaModel>
-  }
-
-  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedFloatNullableFilter<$PrismaModel>
+    _min?: NestedFloatNullableFilter<$PrismaModel>
+    _max?: NestedFloatNullableFilter<$PrismaModel>
   }
 
 
@@ -13901,6 +15090,10 @@ export namespace Prisma {
      */
     export type GA_ANKETA_BASEArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = GA_ANKETA_BASEDefaultArgs<ExtArgs>
     /**
+     * @deprecated Use GA_ANKETA_BRANDDefaultArgs instead
+     */
+    export type GA_ANKETA_BRANDArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = GA_ANKETA_BRANDDefaultArgs<ExtArgs>
+    /**
      * @deprecated Use GA_ANKETA_DOGOVORDefaultArgs instead
      */
     export type GA_ANKETA_DOGOVORArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = GA_ANKETA_DOGOVORDefaultArgs<ExtArgs>
@@ -13908,10 +15101,6 @@ export namespace Prisma {
      * @deprecated Use GA_ANKETA_OBOROTDefaultArgs instead
      */
     export type GA_ANKETA_OBOROTArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = GA_ANKETA_OBOROTDefaultArgs<ExtArgs>
-    /**
-     * @deprecated Use GA_ANKETA_BRANDDefaultArgs instead
-     */
-    export type GA_ANKETA_BRANDArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = GA_ANKETA_BRANDDefaultArgs<ExtArgs>
     /**
      * @deprecated Use GA_ANKETA_SCORESDefaultArgs instead
      */
@@ -13924,6 +15113,10 @@ export namespace Prisma {
      * @deprecated Use GA_ANKETA_SOREVNOVANIEDefaultArgs instead
      */
     export type GA_ANKETA_SOREVNOVANIEArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = GA_ANKETA_SOREVNOVANIEDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use GA_ANKETA_SUPDefaultArgs instead
+     */
+    export type GA_ANKETA_SUPArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = GA_ANKETA_SUPDefaultArgs<ExtArgs>
     /**
      * @deprecated Use GA_WS_USERSDefaultArgs instead
      */

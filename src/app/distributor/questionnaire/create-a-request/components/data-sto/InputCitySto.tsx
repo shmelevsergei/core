@@ -5,17 +5,21 @@ import {
     DaDataAddress,
     DaDataSuggestion,
 } from 'react-dadata'
-import { DADATA_API_KEY } from '@/server/lib/variables'
 import { Label } from '@/components/ui/label'
 import { useQuestionnaireState } from '@/app/distributor/questionnaire/store/questionnaire.context'
 
-const InputCitySto = ({ name }: { name?: string }) => {
+const InputCitySto = ({
+    name,
+    apiDaData,
+}: {
+    name?: string
+    apiDaData: string
+}) => {
     const cityRef = useRef<AddressSuggestions | null>(null)
     const [value, setValue] = useState<
         DaDataSuggestion<DaDataAddress> | undefined
     >()
-    const { state, setState } = useQuestionnaireState()
-    const apiKey: string = DADATA_API_KEY
+    const { setState } = useQuestionnaireState()
 
     const id = useId()
 
@@ -51,11 +55,13 @@ const InputCitySto = ({ name }: { name?: string }) => {
         }))
     }
 
+    useEffect(() => {})
+
     return (
         <div className={`grid w-full max-w-sm items-center gap-1.5`}>
             <Label htmlFor={id}>Город</Label>
             <AddressSuggestions
-                token={apiKey}
+                token={apiDaData}
                 onChange={handleInputChange}
                 value={value}
                 uid={id}

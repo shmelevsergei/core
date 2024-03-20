@@ -1,7 +1,17 @@
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import React from 'react'
+
+interface IDistributerCard {
+    name: string
+    image: StaticImageData
+    allSto: number
+    newsSto: number
+    allMoney: number
+    prevAllMoney: number
+    status: boolean
+}
 
 const DistributorCard = ({
     name,
@@ -11,7 +21,7 @@ const DistributorCard = ({
     allMoney,
     prevAllMoney,
     status = false,
-}) => {
+}: IDistributerCard) => {
     return (
         <Card className={cn('py-3 px-3 shadow-md')}>
             <CardHeader

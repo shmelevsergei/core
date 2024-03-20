@@ -1,12 +1,13 @@
 export interface IUser {
     id?: number
-    name: string
     password: string
+    login: string
 }
 
 export interface IUserResponse {
     id?: number
-    name: string
+    name?: string
     password: string
     role: string
+    login: string
 }

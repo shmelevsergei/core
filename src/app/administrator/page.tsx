@@ -17,7 +17,7 @@ import { fetchDataSorevnovanie } from '@/server/routs/webshop_db/fetchDataSorevn
 import { fetchDataScores } from '@/server/routs/webshop_db/fetchDataScores'
 import SalesDistributers from './components/salesDistributers/SalesDistributers'
 
-const Page = () => {
+const AdministratorPage = () => {
     const { state, setState } = useAdministratorState()
     const fetchDataCalled = useRef(false)
 
@@ -130,4 +130,4 @@ const Page = () => {
     )
 }
 
-export default Page
+export default AdministratorPage

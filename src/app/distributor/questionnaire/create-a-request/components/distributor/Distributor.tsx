@@ -1,12 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Title from '@/app/distributor/questionnaire/create-a-request/components/Title'
 import InputForm from '@/app/distributor/questionnaire/create-a-request/components/InputForm'
 import { cn } from '@/lib/utils'
-import { useDistributorState } from '@/app/distributor/store/distributor.context'
+import { getCookies } from '@/components/form/cookiesAction'
+import { useQuestionnaireState } from '../../../store/questionnaire.context'
 
 const Distributor = () => {
-    const { state } = useDistributorState()
+    const [name, setName] = useState('')
+    const { setState } = useQuestionnaireState()
 
+    useEffect(() => {
+        const getName = async () => {
+            const cookieData = await getCookies()
+
+            if (cookieData) {
+                setName(cookieData.name)
+                setState((prevState) => ({
+                    ...prevState,
+                    questionnaire: {
+                        ...prevState.questionnaire,
+                        distributor: cookieData.name,
+                    },
+                }))
+            }
+        }
+
+        getName()
+    }, [])
     return (
         <>
             <Title text={'Дистрибьютер'} />
@@ -17,7 +37,7 @@ const Distributor = () => {
                     type={'text'}
                     label={'Название'}
                     name={'distributor'}
-                    value={state.distributorId}
+                    value={name}
                     disabled={true}
                 />
             </div>

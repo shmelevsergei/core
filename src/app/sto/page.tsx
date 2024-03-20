@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Page = () => {
+const StoPage = () => {
     return <div></div>
 }
 
-export default Page
+export default StoPage

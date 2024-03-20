@@ -1,6 +1,7 @@
 import { cache } from 'react'
 import { prismaWebShop } from '@/lib/db'
 import { IAnketaDogovorRepository } from '@/repository/anketaDogovor.repository'
+import { GA_ANKETA_DOGOVOR } from '../../../../prisma/generate/client1'
 
 // const transformData = (data: Prisma.PrismaPromise<GetResult<Prisma.$GA_ANKETA_DOGOVORPayload<DefaultArgs>,
 //     {},
@@ -20,7 +21,7 @@ import { IAnketaDogovorRepository } from '@/repository/anketaDogovor.repository'
 // }
 class AnketaDogovor {
     getAnketaDogovorTrue = cache(
-        (): Promise<IAnketaDogovorRepository[]> =>
+        (): Promise<GA_ANKETA_DOGOVOR[]> =>
             prismaWebShop.gA_ANKETA_DOGOVOR.findMany({
                 where: {
                     ADO_STATUS: true,

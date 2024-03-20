@@ -5,21 +5,20 @@ import { cn } from '@/lib/utils'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Card } from '@/components/ui/card'
 import DownloadImage from '@/app/distributor/questionnaire/create-a-request/components/Photo/DownloadImage'
-import { QuestionnaireProvider } from '@/app/distributor/questionnaire/store/questionnaire.context'
 import Form from '@/app/distributor/questionnaire/create-a-request/components/Form'
 import { Toaster } from '@/components/ui/toaster'
+import { getCookies } from '@/components/form/cookiesAction'
 
 const Page = () => {
     return (
         <main>
-            <QuestionnaireProvider>
-                <Card className={cn('p-4 h-[calc(100vh-100px)]')}>
-                    <ScrollArea className={cn('h-full pr-4')}>
-                        <Form />
-                    </ScrollArea>
-                </Card>
-                <DownloadImage />
-            </QuestionnaireProvider>
+            <Card className={cn('p-4 h-[calc(100vh-100px)]')}>
+                <ScrollArea className={cn('h-full pr-4')}>
+                    <Form />
+                </ScrollArea>
+            </Card>
+            <DownloadImage />
+
             <Toaster />
         </main>
     )

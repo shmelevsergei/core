@@ -11,31 +11,30 @@ datasource db {
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model GA_ANKETA_ADDR {
   AAD_ABA_ID   BigInt @unique
-  AAD_SHIROTA  String
-  AAD_DOLGOTA  String
-  AAD_OBLAST   String
-  AAD_GOROD    String
-  AAD_ADDR     String
-  AAD_POSTCODE String
+  AAD_SHIROTA  String?
+  AAD_DOLGOTA  String?
+  AAD_OBLAST   String?
+  AAD_GOROD    String?
+  AAD_ADDR     String?
+  AAD_POSTCODE String?
 
   @@index([AAD_ABA_ID])
 
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not  handled by Prisma Client.
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model GA_ANKETA_BASE {
-  ABA_WSU_ID           BigInt   @default(0)
-  ABA_STO_NAME         String
-  ABA_STO_ID1          String
-  ABA_REMZONA_QTY      Int?     @default(0) @db.SmallInt
-  ABA_ENABLED          Boolean  @default(false)
-  ABA_PHONE            String
-  ABA_INN              String
-  ABA_DATETIME_CREATED DateTime @db.Timestamp(6)
-  ABA_DATETIME_UPDATED DateTime @db.Timestamp(6)
+  ABA_WSU_ID           BigInt?   @default(0)
+  ABA_STO_NAME         String?
+  ABA_STO_ID1          String?
+  ABA_REMZONA_QTY      Int?      @default(0) @db.SmallInt
+  ABA_ENABLED          Boolean?  @default(false)
+  ABA_PHONE            String?
+  ABA_INN              String?
+  ABA_DATETIME_CREATED DateTime? @db.Timestamp(6)
+  ABA_DATETIME_UPDATED DateTime? @db.Timestamp(6)
   ABA_ID               BigInt @unique
-  ABA_DATETIME         DateTime @db.Timestamp(6)
+  ABA_DATETIME         DateTime? @db.Timestamp(6)
   ABA_STO_ID2          String?
   ABA_STO_NAME_FIND    String?
   ABA_DESC             String?
@@ -76,6 +75,19 @@ model GA_ANKETA_BILETS {
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model GA_ANKETA_BRAND {
+  ABR_ABA_ID         BigInt @unique
+  ABR_STATUS         Boolean?
+  ABR_DATETIME       DateTime? @db.Timestamp(6)
+  ABR_HALF_STATUS    Boolean?  @default(false)
+  ABR_VYVESKA_STATUS Boolean?  @default(false)
+  ABR_KOROB_STATUS   Boolean?  @default(false)
+
+  @@index([ABR_ABA_ID])
+
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model GA_ANKETA_BRAND_IMG {
   ABI_ABA_ID BigInt?
   ABI_NUM    Int?    @db.SmallInt
@@ -102,57 +114,66 @@ model GA_ANKETA_DIR {
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model GA_ANKETA_DOGOVOR {
   ADO_ABA_ID   BigInt @unique
-  ADO_NAME1    String
-  ADO_NAME2    String
-  ADO_NAME3    String
-  ADO_PHONE    String
-  ADO_EMAIL    String
-  ADO_DATETIME DateTime @db.Timestamp(6)
-  ADO_STATUS   Boolean
+  ADO_NAME1    String?
+  ADO_NAME2    String?
+  ADO_NAME3    String?
+  ADO_PHONE    String?
+  ADO_EMAIL    String?
+  ADO_DATETIME DateTime? @db.Timestamp(6)
+  ADO_STATUS   Boolean?
 
   @@index([ADO_ABA_ID])
 
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model GA_ANKETA_INN {
+  AIN_ABA_ID BigInt?
+  AIN_NUM    Int?    @db.SmallInt
+  AIN_INN    String?
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model GA_ANKETA_OBOROT {
   ABO_ABA_ID                      BigInt @unique
-  ABO_DATETIME                    DateTime @db.Timestamp(6)
-  ABO_OBOROT_ALL                  Float    @db.Real
-  ABO_OBOROT_BRANDS_MONTH         Float    @db.Real
-  ABO_OBOROT_AE                   Float    @db.Real
-  ABO_OBOROT_ROSSKO               Float    @db.Real
-  ABO_OBOROT_ARKONA               Float    @db.Real
-  ABO_OBOROT_AUTORUS              Float    @db.Real
-  ABO_SCORES_MONTH_PLAN           Float    @db.Real
-  ABO_SCORES_MONTH_FAKT           Float    @db.Real
-  ABO_COUNT_ROSSKO                Int
-  ABO_COUNT_AE                    Int
-  ABO_COUNT_ARKONA                Int
-  ABO_COUNT_AUTORUS               Int
-  ABO_OBOROT_BRANDS               Float    @db.Real
-  ABO_OBOROT_BRAND_LOOK1          Float    @db.Real
-  ABO_SCORES                      Float    @db.Real
-  ABO_OBOROT_BRAND_LOOK2          Float    @db.Real
-  ABO_OBOROT_BRAND_LOOK2_ROSSKO   Float    @db.Real
-  ABO_OBOROT_BRAND_LOOK2_AE       Float    @db.Real
-  ABO_OBOROT_BRAND_LOOK2_ARKONA   Float    @db.Real
-  ABO_OBOROT_BRAND_LOOK2_AUTORUS  Float    @db.Real
-  ABO_OBOROT_BRANDS_MONTH_ROSSKO  Float    @db.Real
-  ABO_OBOROT_BRANDS_MONTH_AE      Float    @db.Real
-  ABO_OBOROT_BRANDS_MONTH_ARKONA  Float    @db.Real
-  ABO_OBOROT_BRANDS_MONTH_AUTORUS Float    @db.Real
-  ABO_OBOROT_BRAND1               Float    @default(0) @db.Real
-  ABO_OBOROT_BRAND2               Float    @default(0) @db.Real
-  ABO_OBOROT_BRAND3               Float    @default(0) @db.Real
-  ABO_OBOROT_BRAND4               Float    @default(0) @db.Real
-  ABO_OBOROT_BRAND5               Float    @default(0) @db.Real
-  ABO_OBOROT_BRAND6               Float    @default(0) @db.Real
-  ABO_OBOROT_NEXT                 Float    @default(0) @db.Real
-  ABO_SCORES_MONTH_PLAN_NEXT      Float    @default(0) @db.Real
-  ABO_ABA_REMZONA_QTY             Int      @db.SmallInt
-  ABO_OBOROT_PARTRA               Float    @default(0) @db.Real
-  ABO_SCORES_PARTRA               Float    @default(0) @db.Real
+  ABO_DATETIME                    DateTime? @db.Timestamp(6)
+  ABO_OBOROT_ALL                  Float?    @db.Real
+  ABO_OBOROT_BRANDS_MONTH         Float?    @db.Real
+  ABO_OBOROT_AE                   Float?    @db.Real
+  ABO_OBOROT_ROSSKO               Float?    @db.Real
+  ABO_OBOROT_ARKONA               Float?    @db.Real
+  ABO_OBOROT_AUTORUS              Float?    @db.Real
+  ABO_SCORES_MONTH_PLAN           Float?    @db.Real
+  ABO_SCORES_MONTH_FAKT           Float?    @db.Real
+  ABO_COUNT_ROSSKO                Int?
+  ABO_COUNT_AE                    Int?
+  ABO_COUNT_ARKONA                Int?
+  ABO_COUNT_AUTORUS               Int?
+  ABO_OBOROT_BRANDS               Float?    @db.Real
+  ABO_OBOROT_BRAND_LOOK1          Float?    @db.Real
+  ABO_SCORES                      Float?    @db.Real
+  ABO_OBOROT_BRAND_LOOK2          Float?    @db.Real
+  ABO_OBOROT_BRAND_LOOK2_ROSSKO   Float?    @db.Real
+  ABO_OBOROT_BRAND_LOOK2_AE       Float?    @db.Real
+  ABO_OBOROT_BRAND_LOOK2_ARKONA   Float?    @db.Real
+  ABO_OBOROT_BRAND_LOOK2_AUTORUS  Float?    @db.Real
+  ABO_OBOROT_BRANDS_MONTH_ROSSKO  Float?    @db.Real
+  ABO_OBOROT_BRANDS_MONTH_AE      Float?    @db.Real
+  ABO_OBOROT_BRANDS_MONTH_ARKONA  Float?    @db.Real
+  ABO_OBOROT_BRANDS_MONTH_AUTORUS Float?    @db.Real
+  ABO_OBOROT_BRAND1               Float?    @default(0) @db.Real
+  ABO_OBOROT_BRAND2               Float?    @default(0) @db.Real
+  ABO_OBOROT_BRAND3               Float?    @default(0) @db.Real
+  ABO_OBOROT_BRAND4               Float?    @default(0) @db.Real
+  ABO_OBOROT_BRAND5               Float?    @default(0) @db.Real
+  ABO_OBOROT_BRAND6               Float?    @default(0) @db.Real
+  ABO_OBOROT_NEXT                 Float?    @default(0) @db.Real
+  ABO_SCORES_MONTH_PLAN_NEXT      Float?    @default(0) @db.Real
+  ABO_ABA_REMZONA_QTY             Int?      @db.SmallInt
+  ABO_OBOROT_PARTRA               Float?    @default(0) @db.Real
+  ABO_SCORES_PARTRA               Float?    @default(0) @db.Real
 
   @@index([ABO_ABA_ID, ABO_DATETIME], map: "GA_ANKETA_OBOROT_ABO_ABA_ID_ABA_DATETIME_idx")
   @@index([ABO_ABA_ID])
@@ -464,38 +485,6 @@ model GA_ANKETA_OBOROT_COUNTS2 {
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
-model GA_SUP_50012_SELLOUT {
-  SPR_SPH_ID       Int?
-  SPR_INN          String?
-  SPR_CLIENT       String?
-  SPR_GROUPTYPE    String?
-  SPR_ARTICLE      String?
-  SPR_BRAND        String?
-  SPR_INFO         String?
-  SPR_QTY          Float?    @default(0) @db.Real
-  SPR_PRICE        Float?    @default(0) @db.Real
-  SPR_SUMMA        Float?    @default(0) @db.Real
-  SPR_ART_ID       Int?
-  SPR_DATETIME     DateTime? @db.Timestamp(6)
-  SPR_ADDR         String?
-  SPR_CLIENT_CODE  String?
-  SPR_CLIENT_ID    String?
-  SPR_CLIENT_CODE2 String?
-  SPR_ADDR_ENC     String?
-
-  @@ignore
-}
-
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
-model GA_ANKETA_INN {
-  AIN_ABA_ID BigInt?
-  AIN_NUM    Int?    @db.SmallInt
-  AIN_INN    String?
-
-  @@ignore
-}
-
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model GA_ANKETA_RULES {
   ANR_ABA_ID BigInt?
   ANR_RULES  String?
@@ -505,80 +494,85 @@ model GA_ANKETA_RULES {
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
-model GA_ANKETA_BRAND {
-  ABR_ABA_ID         BigInt @unique
-  ABR_STATUS         Boolean
-  ABR_DATETIME       DateTime @db.Timestamp(6)
-  ABR_HALF_STATUS    Boolean  @default(false)
-  ABR_VYVESKA_STATUS Boolean  @default(false)
-  ABR_KOROB_STATUS   Boolean  @default(false)
-
-  @@index([ABR_ABA_ID])
-
-}
-
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model GA_ANKETA_SCORES {
   ANS_WSU_ID   BigInt @unique
-  ANS_SCORES   Int
-  ANS_DATETIME DateTime @db.Timestamp(6)
-  ANS_ISSHOW   Boolean  @default(true)
+  ANS_SCORES   Int?
+  ANS_DATETIME DateTime? @db.Timestamp(6)
+  ANS_ISSHOW   Boolean?  @default(true)
+
 
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model GA_ANKETA_SCORES_HISTORY {
   ASH_WSU_ID          BigInt @unique
-  ASH_SCORES          Int
-  ASH_DATETIME        DateTime @db.Timestamp(6)
-  ASH_DESC            String
-  ASH_TYPE            Int      @db.SmallInt
-  ASH_SCORES_OLD      Int      @default(0)
-  ASH_EVENT_STATUS    Boolean  @default(true)
-  ASH_DATETIME_UPDATE DateTime @db.Timestamp(6)
-  ASH_IZO_ID          BigInt  @default(0)
+  ASH_SCORES          Int?
+  ASH_DATETIME        DateTime? @db.Timestamp(6)
+  ASH_DESC            String?
+  ASH_TYPE            Int?      @db.SmallInt
+  ASH_SCORES_OLD      Int?      @default(0)
+  ASH_EVENT_STATUS    Boolean?  @default(true)
+  ASH_DATETIME_UPDATE DateTime? @db.Timestamp(6)
+  ASH_IZO_ID          BigInt?   @default(0)
+
 
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model GA_ANKETA_SOREVNOVANIE {
-  ASR_YEAR        Int     @db.SmallInt
-  ASR_MONTH       Int     @db.SmallInt
+  ASR_YEAR        Int?     @db.SmallInt
+  ASR_MONTH       Int?     @db.SmallInt
   ASR_WSU_ID      BigInt @unique
-  ASR_LOGIN       String
-  ASR_FIO         String
-  ASR_SCORE       Int
-  ASR_DOLJNOST    String
-  ASR_RUKOVODITEL Boolean @default(false)
+  ASR_LOGIN       String?
+  ASR_FIO         String?
+  ASR_SCORE       Int?
+  ASR_DOLJNOST    String?
+  ASR_RUKOVODITEL Boolean? @default(false)
+
+
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model GA_ANKETA_SUP {
+  ADB_ABA_ID           BigInt @unique
+  ADB_SUP_NAME         String?
+  ADB_MAN_NAME1        String?
+  ADB_MAN_NAME2        String?
+  ADB_MAN_NAME3        String?
+  ADB_SUP_CODE_AE      String?
+  ADB_SUP_CODE_AUTORUS String?
+  ADB_SUP_CODE_ROSSKO  String?
+  ADB_SUP_CODE_ARKONA  String?
+
 
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model GA_WS_USERS {
-  WSU_ID                   BigInt @unique
-  WSU_WSO_ID               Int
-  WSU_EMAIL                String
-  WSU_NAME                 String
-  WSU_FULL_NAME            String
-  WSU_PHONE                String
-  WSU_ADDRESS              String
-  WSU_PASSWD               String
-  WSU_ID_IN_DS             Int
-  WSU_INN                  String
-  WSU_PRICE_TYPE           Int      @default(0) @db.SmallInt
-  WSU_GRP_ID               Int      @default(0)
-  WSU_WS_ID                Int      @default(0)
-  WSU_MOBILE               String
-  WSU_SHOW_SUP_ALIAS       Boolean  @default(false)
-  WSU_IS_ZS                Boolean  @default(false)
-  WSU_PASSWD_ENC           String
-  WSU_LOGIN_ENC            String
-  WSU_DATETIME_LAST_LOGIN  DateTime @db.Timestamp(6)
-  WSU_START_PAGE           String
-  WSU_SALT                 String
-  WSU_TEMP_TICKET          String
-  WSU_TEMP_TICKET_DATETIME DateTime @db.Timestamp(6)
-  WSU_DATETIME_CREATE      DateTime @db.Timestamp(6)
+  WSU_WSO_ID               Int?
+  WSU_ID                   BigInt    @unique
+  WSU_EMAIL                String?
+  WSU_NAME                 String?
+  WSU_FULL_NAME            String?
+  WSU_PHONE                String?
+  WSU_ADDRESS              String?
+  WSU_PASSWD               String?
+  WSU_ID_IN_DS             Int?
+  WSU_INN                  String?
+  WSU_PRICE_TYPE           Int?      @default(0) @db.SmallInt
+  WSU_GRP_ID               Int?      @default(0)
+  WSU_WS_ID                Int?      @default(0)
+  WSU_MOBILE               String?
+  WSU_SHOW_SUP_ALIAS       Boolean?  @default(false)
+  WSU_IS_ZS                Boolean?  @default(false)
+  WSU_PASSWD_ENC           String?
+  WSU_LOGIN_ENC            String?
+  WSU_DATETIME_LAST_LOGIN  DateTime? @db.Timestamp(6)
+  WSU_START_PAGE           String?
+  WSU_SALT                 String?
+  WSU_TEMP_TICKET          String?
+  WSU_TEMP_TICKET_DATETIME DateTime? @db.Timestamp(6)
+  WSU_DATETIME_CREATE      DateTime? @db.Timestamp(6)
 
   @@index([WSU_ID])
   @@index([WSU_NAME])

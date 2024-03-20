@@ -1,6 +1,7 @@
 import { cache } from 'react'
 import { prismaWebShop } from '@/lib/db'
 import { IAnketaBaseRepository } from '@/repository/anketaBase.repository'
+import { GA_ANKETA_BASE } from '../../../../prisma/generate/client1'
 
 // const transformData = async (data: Prisma.PrismaPromise<GetResult<Prisma.$GA_ANKETA_BASEPayload<DefaultArgs>,
 //     {},
@@ -25,7 +26,7 @@ import { IAnketaBaseRepository } from '@/repository/anketaBase.repository'
 
 class AnketaBase {
     getAnketaBaseEnabled = cache(
-        (): Promise<IAnketaBaseRepository[]> =>
+        (): Promise<GA_ANKETA_BASE[]> =>
             prismaWebShop.gA_ANKETA_BASE.findMany({
                 where: {
                     ABA_ENABLED: true,
@@ -34,7 +35,7 @@ class AnketaBase {
     )
 
     getAnketaBaseEnabledCurrentMonth = cache(
-        (): Promise<IAnketaBaseRepository[]> =>
+        (): Promise<GA_ANKETA_BASE[]> =>
             prismaWebShop.gA_ANKETA_BASE.findMany({
                 where: {
                     ABA_ENABLED: true,

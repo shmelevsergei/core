@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { IUserData } from '../page'
 import { useDistributorState } from './store/distributor.context'
 
-const Page = () => {
+const DistributorPage = () => {
     const { state, setState } = useDistributorState()
     useEffect(() => {
         const localData = localStorage.getItem('login')
@@ -17,7 +17,7 @@ const Page = () => {
         }))
     }, [])
 
-    return <div>Distributer</div>
+    return <div>Distributor</div>
 }
 
-export default Page
+export default DistributorPage

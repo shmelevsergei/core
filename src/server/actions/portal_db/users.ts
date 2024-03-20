@@ -9,17 +9,17 @@ class Users {
             let successHashed = 0
             const copyData = await Promise.all(
                 data?.map(async (user) => {
-                    console.log(`Обработка пользователя: ${user.name}`)
+                    console.log(`Обработка пользователя: ${user.login}`)
 
                     const hashedPasswordValue = await hashedPassword(
                         user.password
                     )
                     successHashed++
 
-                    console.log(`Захшировано: ${successHashed} паролей`)
+                    console.log(`Захэшировано: ${successHashed} паролей`)
 
                     return {
-                        name: user.name,
+                        login: user.login,
                         password: hashedPasswordValue,
                     }
                 })
@@ -40,7 +40,7 @@ class Users {
         try {
             const response = await prismaPortal.user.findFirst({
                 where: {
-                    name: data.name,
+                    name: data.login,
                 },
             })
 
