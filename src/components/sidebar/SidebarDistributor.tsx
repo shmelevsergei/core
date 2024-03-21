@@ -9,10 +9,13 @@ import {
     questionnaires,
     dataSto,
 } from '@/components/sidebar/linksSidebarDistributor'
-import { getQuestionnaire } from '@/app/distributor/questionnaire/fetchAction'
+import { getQuestionnaireByDistr } from '@/app/shared/actions/questionnaireAction'
+import { getCookies } from '../form/cookiesAction'
 
 const SidebarDistributor = async () => {
-    const questionnaireData = await getQuestionnaire()
+    const distr = await getCookies()
+
+    const questionnaireData = await getQuestionnaireByDistr(distr?.name)
 
     return (
         <aside

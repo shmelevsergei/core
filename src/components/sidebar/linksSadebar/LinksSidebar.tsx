@@ -8,7 +8,6 @@ import {
     AccordionTrigger,
 } from '@/components/ui/accordion'
 import { cn } from '@/lib/utils'
-import { IQuestionnaire } from '@/types/questionnaire/create-a-request/questionnaire'
 import { Questionnaire } from '../../../../prisma/generate/client2'
 
 type LinkList = {

@@ -29,7 +29,7 @@ const Distributor = () => {
     }, [])
     return (
         <>
-            <Title text={'Дистрибьютер'} />
+            <Title text={'Дистрибьютор'} />
             <div className={cn('mt-4 px-1')}>
                 <InputForm
                     id={'name'}

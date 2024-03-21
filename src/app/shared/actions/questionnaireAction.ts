@@ -20,6 +20,35 @@ export const getQuestionnaire = cache(async () => {
     })
 })
 
+export const getQuestionnaireById = cache(async (id: number) => {
+    return await prismaPortal.questionnaire.findFirst({
+        where: {
+            id,
+        },
+        include: {
+            distributor_employee: true,
+            inns: true,
+            images: true,
+            lifts: true,
+            manager: true,
+            signatoryManager: true,
+            confirmData: true,
+            data_sto: true,
+        },
+    })
+})
+
+export const getQuestionnaireByDistr = cache(async (distr: string) => {
+    return await prismaPortal.questionnaire.findMany({
+        where: {
+            distributor: distr,
+        },
+        include: {
+            data_sto: true,
+        },
+    })
+})
+
 export const createQuestionnaire = async (data: IQuestionnaire) => {
     try {
         const dataObject = await prismaPortal.questionnaire.create({

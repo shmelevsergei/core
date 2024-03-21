@@ -1,5 +1,5 @@
 import React from 'react'
-import { getQuestionnaire } from '../fetchAction'
+import { getQuestionnaire } from '../../../shared/actions/questionnaireAction'
 import {
     Table,
     TableBody,

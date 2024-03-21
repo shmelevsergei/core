@@ -46,10 +46,12 @@ export const questionnaires = {
         {
             href: '/administrator/questionnaire/questionnaire-sent',
             text: 'Заявки (шт.)',
+            status: 'sent',
         },
         {
             href: '',
             text: 'Отклоненные (шт.)',
+            status: 'rejected',
         },
         {
             href: '',

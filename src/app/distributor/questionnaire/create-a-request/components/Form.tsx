@@ -13,7 +13,7 @@ import Photo from '@/app/distributor/questionnaire/create-a-request/components/P
 import { Button } from '@/components/ui/button'
 import { useQuestionnaireState } from '@/app/distributor/questionnaire/store/questionnaire.context'
 import { toast } from '@/components/ui/use-toast'
-import { createQuestionnaire } from '../../fetchAction'
+import { createQuestionnaire } from '../../../../shared/actions/questionnaireAction'
 
 const Form = () => {
     const { state } = useQuestionnaireState()

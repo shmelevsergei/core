@@ -11,8 +11,10 @@ import {
     questionnaires,
     shop,
 } from '@/components/sidebar/linksSidebarAdministrator'
+import { getQuestionnaire } from '@/app/shared/actions/questionnaireAction'
 
-const SidebarAdministrator = () => {
+const SidebarAdministrator = async () => {
+    const dataQuestionnaire = await getQuestionnaire()
     return (
         <aside
             className={
@@ -37,7 +39,10 @@ const SidebarAdministrator = () => {
                 </Link>
                 <div className={'flex flex-col gap-4'}>
                     <LinksSidebar links={reports} />
-                    <LinksSidebar links={questionnaires} />
+                    <LinksSidebar
+                        links={questionnaires}
+                        questionnaireData={dataQuestionnaire}
+                    />
                     <LinksSidebar links={settings} />
                     <LinksSidebar links={shop} />
                 </div>

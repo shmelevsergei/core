@@ -1,5 +1,5 @@
 import React from 'react'
-import { getQuestionnaire } from '../fetchAction'
+import { getQuestionnaireByDistr } from '../../../shared/actions/questionnaireAction'
 import {
     Table,
     TableBody,
@@ -9,9 +9,11 @@ import {
     TableRow,
 } from '@/components/ui/table'
 import { formateDate } from '@/server/lib/functions'
+import { getCookies } from '@/components/form/cookiesAction'
 
 const Page = async () => {
-    const data = await getQuestionnaire()
+    const distr = await getCookies()
+    const data = await getQuestionnaireByDistr(distr?.name)
 
     const sentData = data.filter((item) => item.status === 'sent')
 
