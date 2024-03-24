@@ -18,6 +18,7 @@
 /public/downloads/images/
 /public/uploads
 /prisma/modules
+/uploads
 
 # misc
 .DS_Store
