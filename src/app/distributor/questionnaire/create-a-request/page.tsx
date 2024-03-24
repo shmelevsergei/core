@@ -7,7 +7,6 @@ import { Card } from '@/components/ui/card'
 import DownloadImage from '@/app/distributor/questionnaire/create-a-request/components/Photo/DownloadImage'
 import Form from '@/app/distributor/questionnaire/create-a-request/components/Form'
 import { Toaster } from '@/components/ui/toaster'
-import { getCookies } from '@/components/form/cookiesAction'
 
 const Page = () => {
     return (

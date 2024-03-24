@@ -7,7 +7,6 @@ import DistributorEmployee from '@/app/distributor/questionnaire/create-a-reques
 import DataSto from '@/app/distributor/questionnaire/create-a-request/components/data-sto/DataSto'
 import ManagerDetails from '@/app/distributor/questionnaire/create-a-request/components/manager-details/ManagerDetails'
 import Lifts from '@/app/distributor/questionnaire/create-a-request/components/lifts/Lifts'
-import ConfirmationDetails from '@/app/distributor/questionnaire/create-a-request/components/confirmation-details/ConfirmationDetails'
 import Comment from '@/app/distributor/questionnaire/create-a-request/components/comment/Comment'
 import Photo from '@/app/distributor/questionnaire/create-a-request/components/Photo/Photo'
 import { Button } from '@/components/ui/button'
