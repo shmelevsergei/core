@@ -1,33 +1,38 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { join } from 'path'
-import {unlink, writeFile, readFile} from 'fs/promises'
-
+import { unlink, writeFile, readFile, stat, mkdir } from 'fs/promises'
 
 export async function DELETE(req: NextRequest) {
-    const path = await req.json();
+    const path = await req.json()
 
     if (!path) {
-        return NextResponse.json({ success: false, error: 'Missing filePath' }, { status: 400});
+        return NextResponse.json(
+            { success: false, error: 'Missing filePath' },
+            { status: 400 }
+        )
     }
 
-    await unlink(path);
+    const delePathImage = process.cwd()
 
-    return NextResponse.json({});
+    await unlink(`${delePathImage}/public/${path}`)
+
+    return NextResponse.json({})
 }
-
 
 export async function GET(req: NextRequest) {
     try {
-
-        const { searchParams} = new URL(req.url)
+        const { searchParams } = new URL(req.url)
         const name = searchParams.get('fileName')
         if (!name) {
-            return NextResponse.json({ success: false, error: 'Missing filePath' }, { status: 400});
+            return NextResponse.json(
+                { success: false, error: 'Missing filePath' },
+                { status: 400 }
+            )
         }
 
         const projectPath = process.cwd()
 
-        const filePath = join(projectPath, 'uploads', name)
+        const filePath = join(projectPath, 'public', name)
 
         const fileContent = await readFile(filePath)
 
@@ -35,44 +40,66 @@ export async function GET(req: NextRequest) {
             headers: {
                 'Content-Type': 'application/octet-stream',
                 'Content-Disposition': `attachment; filename="${name}"`,
-            }
+            },
         })
-
     } catch (error) {
-        console.error(error);
-        return NextResponse.json({ success: false, error: 'Internal server error' }, { status: 500 });
+        console.error(error)
+        return NextResponse.json(
+            { success: false, error: 'Internal server error' },
+            { status: 500 }
+        )
     }
 }
 
-
 export async function POST(req: NextRequest) {
+    const data = await req.formData()
+    const file: File | null = (data.get('file') as File) || null
+
+    const buffer = Buffer.from(await file.arrayBuffer())
+
+    const relativeUploadDir = '/uploads/'
+
+    const uploadDir = join(process.cwd(), 'public', relativeUploadDir)
+
+    console.log(uploadDir)
+
     try {
-        const data = await req.formData()
-        const file: File | null = data.get('file') as unknown as File
-
-        if (!file) {
-            return NextResponse.json({ success: false })
+        await stat(uploadDir)
+    } catch (e: any) {
+        if (e.code === 'ENOENT') {
+            await mkdir(uploadDir, { recursive: true })
+        } else {
+            console.error(
+                'Error while trying to create directory when uploading a file\n',
+                e
+            )
+            return NextResponse.json(
+                { error: 'Something went wrong.' },
+                { status: 500 }
+            )
         }
+    }
 
-        const bytes = await file.arrayBuffer()
-        const buffer = Buffer.from(bytes)
-
+    try {
         const now = new Date()
         const timeStamp = now.toISOString().replace(/[-T:]/g, '').split('.')[0]
         const fileName = `${timeStamp}-${file.name}`
 
-        const projectPath = process.cwd()
+        await writeFile(`${uploadDir}/${fileName}`, buffer)
 
-        const writePath = join(projectPath, 'uploads', fileName);
-
-        await writeFile(writePath, buffer)
-
-        const response =  { success: true, path: writePath, fileName }
+        const fileUrl = `${relativeUploadDir}${fileName}`
+        const response = {
+            success: true,
+            path: fileUrl,
+            fileName,
+        }
 
         return NextResponse.json(response)
-    } catch (error) {
-        console.error(error);
-        return NextResponse.json({ success: false, error: 'Internal server error' }, { status: 500});
+    } catch (e: any) {
+        console.error('Error while trying to upload a file\n', e)
+        return NextResponse.json(
+            { error: 'Something went wrong.' },
+            { status: 500 }
+        )
     }
-
 }

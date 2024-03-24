@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils'
 import { Input } from '@/components/ui/input'
 import SubTitle from './SubTitle'
 
-const FormDataAccepted = ({ lifts }: { lifts: number }) => {
+const FormDataAccepted = ({ lifts }: { lifts?: number }) => {
     return (
         <>
             <Title title={'Данные подтверждения'} />
@@ -31,7 +31,6 @@ const FormDataAccepted = ({ lifts }: { lifts: number }) => {
                         name={'confirmation-lifts'}
                         placeholder={'Кол-во подъемников'}
                         type={'text'}
-                        value={lifts}
                     />
                 </div>
             </div>

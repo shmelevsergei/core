@@ -19,7 +19,7 @@ export const questionnaires = {
             status: 'accepted',
         },
         {
-            href: '',
+            href: '/distributor/questionnaire/questionnaires-rejected/',
             text: 'Отклоненные',
             status: 'rejected',
         },

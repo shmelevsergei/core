@@ -30,7 +30,18 @@ const ImageBlock = ({
     const handleRemoveClick = async (e: any) => {
         e.preventDefault()
 
-        if (state.questionnaire.images && path) {
+        if (!path) {
+            const updateImageClient = [...state.images]
+
+            updateImageClient.splice(index, 1)
+
+            setState((prevState) => ({
+                ...prevState,
+                images: updateImageClient,
+            }))
+        }
+
+        if (state.questionnaire.images) {
             const updateImageServer = [...state.questionnaire.images]
             const updateImageClient = [...state.images]
 

@@ -1,9 +1,9 @@
 'use server'
-
 import { prismaPortal } from '@/lib/db'
 import { IQuestionnaire } from '@/types/questionnaire/create-a-request/questionnaire'
 import { revalidatePath } from 'next/cache'
 import { cache } from 'react'
+import { ConfirmData, Status } from '../../../../prisma/generate/client2'
 
 export const getQuestionnaire = cache(async () => {
     return await prismaPortal.questionnaire.findMany({
@@ -48,6 +48,38 @@ export const getQuestionnaireByDistr = cache(async (distr: string) => {
         },
     })
 })
+
+export type UpdateConfirmData = {
+    lifts: number | number | undefined
+    loginOne: string
+    loginTwo: string
+}
+
+export type UpdateQuestionnaire = {
+    id: number
+    status: Status
+    comment?: string
+    confirmData?: UpdateConfirmData
+}
+
+export const updateQuestionnaire = async (data: UpdateQuestionnaire) => {
+    await prismaPortal.questionnaire.update({
+        where: {
+            id: data.id,
+        },
+        data: {
+            status: data.status,
+            comment: data.comment,
+            confirmData: {
+                update: {
+                    lifts: data.confirmData?.lifts,
+                    loginOne: data.confirmData?.loginOne,
+                    loginTwo: data.confirmData?.loginTwo,
+                },
+            },
+        },
+    })
+}
 
 export const createQuestionnaire = async (data: IQuestionnaire) => {
     try {

@@ -16,7 +16,7 @@ import { toast } from '@/components/ui/use-toast'
 import { createQuestionnaire } from '../../../../shared/actions/questionnaireAction'
 
 const Form = () => {
-    const { state } = useQuestionnaireState()
+    const { state, setState } = useQuestionnaireState()
     const [isDisabled, setIsDisabled] = useState(false)
     const [isUpload, setIsUpload] = useState(false)
     const [apiDaData, setApiDaData] = useState('')
@@ -36,18 +36,70 @@ const Form = () => {
     }
 
     useEffect(() => {
-        setTimeout(() => {
-            setIsDisabled(false)
-            setIsUpload(false)
-        }, 1000)
-    }, [isDisabled])
-
-    useEffect(() => {
         if (isUpload) {
             toast({
                 description: 'Анкета успешно отправлена',
                 duration: 3000,
             })
+
+            setState((s) => ({
+                ...s,
+                questionnaire: {
+                    ...s.questionnaire,
+                    comment: '',
+                    data_sto: {
+                        ...s.questionnaire.data_sto,
+                        address: '',
+                        area: '',
+                        city: '',
+                        code_client_avtoevro: '',
+                        code_client_avtorus: '',
+                        code_client_rossko: '',
+                        name: '',
+                    },
+                    distributor_employee: {
+                        ...s.questionnaire.distributor_employee,
+                        email: '',
+                        lastname: '',
+                        name: '',
+                        phone: '',
+                        surname: '',
+                    },
+                    images: [],
+                    inns: [],
+                    lifts: {
+                        ...s.questionnaire.lifts,
+                        fourPostLift: 0,
+                        fourPostLiftTraverse: 0,
+                        pits: 0,
+                        pitsEquippedTraverse: 0,
+                        postAdditionalEquipment: 0,
+                        postElectronicDiagnostic: 0,
+                        twoPostLiftScissors: 0,
+                    },
+                    manager: {
+                        ...s.questionnaire.manager,
+                        email: '',
+                        lastname: '',
+                        name: '',
+                        phone: '',
+                        surname: '',
+                    },
+                    signatoryManager: {
+                        ...s.questionnaire.signatoryManager,
+                        email: '',
+                        lastname: '',
+                        name: '',
+                        phone: '',
+                        surname: '',
+                    },
+                },
+                images: [],
+            }))
+
+            setTimeout(() => {}, 1000)
+            setIsDisabled(false)
+            setIsUpload(false)
         }
     }, [isUpload])
 
@@ -68,8 +120,6 @@ const Form = () => {
             <ManagerDetails />
             <Separator className={cn('my-3 w-full')} />
             <Lifts />
-            <Separator className={cn('my-3 w-full')} />
-            <ConfirmationDetails />
             <Separator className={cn('my-3 w-full')} />
             <Comment />
             <Separator className={cn('my-3 w-full')} />

@@ -16,7 +16,7 @@
 # production
 /build
 /public/downloads/images/
-/uploads
+/public/uploads
 /prisma/modules
 
 # misc
