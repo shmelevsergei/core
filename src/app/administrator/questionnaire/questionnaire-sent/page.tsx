@@ -12,11 +12,15 @@ import { formateDate } from '@/server/lib/functions'
 import { getQuestionnaire } from '@/app/shared/actions/questionnaireAction'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import { revalidatePath } from 'next/cache'
 
 const Page = async () => {
     const data = await getQuestionnaire()
 
     const sentData = data.filter((item) => item.status === 'sent')
+    
+    revalidatePath('/')
+    
 
     return (
         <div>
