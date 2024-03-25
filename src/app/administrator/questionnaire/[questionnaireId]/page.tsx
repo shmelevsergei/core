@@ -17,6 +17,7 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
+import CustomImage from './components/CustomImage'
 
 const Page = async ({ params }: { params: { questionnaireId: number } }) => {
     const data = await getQuestionnaireById(+params.questionnaireId)
@@ -375,12 +376,7 @@ const Page = async ({ params }: { params: { questionnaireId: number } }) => {
                                             'p-3 flex flex-col justify-between'
                                         )}
                                     >
-                                        <Image
-                                            width={200}
-                                            height={350}
-                                            src={image.path}
-                                            alt={image.description}
-                                        />
+                                        <CustomImage src={image.path} alt={image.description}/>
                                         <p className="mt-2">
                                             {image.description}
                                         </p>
