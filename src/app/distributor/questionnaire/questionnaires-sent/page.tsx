@@ -10,12 +10,15 @@ import {
 } from '@/components/ui/table'
 import { formateDate } from '@/server/lib/functions'
 import { getCookies } from '@/components/form/cookiesAction'
+import { revalidatePath } from 'next/cache'
 
 const Page = async () => {
     const distr = await getCookies()
     const data = await getQuestionnaireByDistr(distr?.name)
 
     const sentData = data.filter((item) => item.status === 'sent')
+
+    revalidatePath('/')
 
     return (
         <div>
